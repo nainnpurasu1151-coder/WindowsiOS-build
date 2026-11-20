@@ -39,5 +39,9 @@ HvFwCfg *hv_fw_cfg_create(HvMachine *m, uint64_t pa, uint16_t ncpus);
 int hv_fw_cfg_add_file(HvFwCfg *fc, const char *name, const void *data, uint32_t len);
 /* Add a guest-writable named file (e.g. "etc/ramfb") with a callback fired when DMA writes it. */
 int hv_fw_cfg_add_writable_file(HvFwCfg *fc, const char *name, uint32_t len, HvFwCfgWriteCb cb, void *opaque);
+/* Overwrite the current contents of a previously added file (len must not
+   exceed the registered file length). Used to seed guest-visible initial data,
+   e.g. the VMM-preset ramfb resolution in "etc/ramfb". Returns 0 on success. */
+int hv_fw_cfg_set_file_data(HvFwCfg *fc, int file_idx, const void *data, uint32_t len);
 
 #endif

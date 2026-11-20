@@ -222,6 +222,7 @@ final class VMViewModel: ObservableObject {
 
     func syncFromBridge() {
         let b = WinIOSBridge.shared
+        let wasJITLive = isJITLive
         isJITLive = b.isJITLive
         isDebuggerAttached = b.isDebuggerAttached
         isVMRunning = b.isVMRunning
@@ -236,6 +237,25 @@ final class VMViewModel: ObservableObject {
         usbKeyboardReady = b.usbKeyboardReady
         usbTabletReady = b.usbTabletReady
         usbEventsDelivered = b.usbEventsDelivered
+        // Auto-boot on the JIT handshake: when TXM JIT flips live (e.g. the
+        // StikDebug BRK handshake completing after a foreground return), start
+        // the VM without waiting for the BOOT WINDOWS 11 button.
+        if isJITLive && !wasJITLive {
+            autoStartIfReady()
+        }
+    }
+
+    /// Boots the VM through the exact same path as the manual BOOT button
+    /// (prepareAndStart), but only when JIT is live and nothing is running
+    /// yet. Double-start is prevented by didAutoLaunchAttempt here and by the
+    /// bridge's own _vmRunning/_unpacking guards in prepareAndStart.
+    private func autoStartIfReady() {
+        let b = WinIOSBridge.shared
+        guard b.isJITLive, !b.isVMRunning, !b.isUnpacking,
+              b.hasProvisionedMachine(), !didAutoLaunchAttempt else { return }
+        didAutoLaunchAttempt = true
+        b.prepareAndStart(with: nil)
+        syncFromBridge()
     }
 
     func onAppBecameActive() {
@@ -244,11 +264,7 @@ final class VMViewModel: ObservableObject {
             _ = b.tryAcquireJIT(true)
         }
         syncFromBridge()
-        if b.isJITLive && !b.isVMRunning && !b.isUnpacking && b.hasProvisionedMachine() && !didAutoLaunchAttempt {
-            didAutoLaunchAttempt = true
-            b.prepareAndStart(with: nil)
-            syncFromBridge()
-        }
+        autoStartIfReady()
     }
 
     func startOrRetry() {

@@ -191,6 +191,13 @@ int hv_fw_cfg_add_writable_file(HvFwCfg *fc, const char *name, uint32_t len, HvF
     return idx;
 }
 
+int hv_fw_cfg_set_file_data(HvFwCfg *fc, int file_idx, const void *data, uint32_t len) {
+    if (!fc || !data || file_idx < 0 || file_idx >= fc->nfiles) return -1;
+    if (len > fc->files[file_idx].len) return -1;
+    memcpy(fc->files[file_idx].data, data, len);
+    return 0;
+}
+
 HvFwCfg *hv_fw_cfg_create(HvMachine *m, uint64_t pa, uint16_t ncpus) {
     HvFwCfg *fc = calloc(1, sizeof *fc);
     fc->m = m;

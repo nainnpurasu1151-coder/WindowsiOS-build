@@ -403,6 +403,13 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
     NSString *codePath = [dir stringByAppendingPathComponent:@"code.fd"];
     NSString *varsPath = [dir stringByAppendingPathComponent:@"vars.fd"];
     NSString *diskPath = [dir stringByAppendingPathComponent:@"windows11.img"];
+    /* Optional driver disk: when drivers.img sits in the machine folder, the
+       engine attaches it as a second, read-only NVMe (serial WIN11INST) so the
+       guest can install drivers (e.g. NetKVM) before networking exists. */
+    NSString *driversPath = [dir stringByAppendingPathComponent:@"drivers.img"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:driversPath]) {
+        driversPath = nil;
+    }
 
     _configuredRamMB = ramMB;
     _configuredCPUs = 4;
@@ -411,7 +418,7 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
         .code_fd = codePath.fileSystemRepresentation,
         .vars_fd = varsPath.fileSystemRepresentation,
         .disk0 = diskPath.fileSystemRepresentation,
-        .disk1 = NULL,
+        .disk1 = driversPath ? driversPath.fileSystemRepresentation : NULL,
         .share_dir = sharedDir.fileSystemRepresentation,
         .share_sock = shareSock.fileSystemRepresentation,
         .ncpus = _configuredCPUs,

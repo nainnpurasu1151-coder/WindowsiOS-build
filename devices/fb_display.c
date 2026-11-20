@@ -15,10 +15,21 @@
    } __attribute__((packed));
 */
 
+/* Preferred boot resolution seeded into "etc/ramfb" for EDK2 (see
+   hv_fb_display_create). Must stay within the mode sanity limits enforced by
+   on_ramfb_write (64..8192 per axis). 2048x1536 is a standard 4:3 mode. */
+#define HV_RAMFB_PRESET_WIDTH  2048
+#define HV_RAMFB_PRESET_HEIGHT 1536
+
 static uint32_t be32(const uint8_t *p) {
     uint32_t v;
     memcpy(&v, p, 4);
     return __builtin_bswap32(v);
+}
+
+static void put_be32(uint8_t *p, uint32_t v) {
+    uint32_t be = __builtin_bswap32(v);
+    memcpy(p, &be, 4);
 }
 
 static uint64_t be64(const uint8_t *p) {
@@ -68,7 +79,23 @@ HvFbDisplay *hv_fb_display_create(HvMachine *m, HvFwCfg *fw_cfg) {
     fb->m = m;
     pthread_mutex_init(&fb->mu, NULL);
     if (fw_cfg) {
-        hv_fw_cfg_add_writable_file(fw_cfg, "etc/ramfb", 28, on_ramfb_write, fb);
+        int idx = hv_fw_cfg_add_writable_file(fw_cfg, "etc/ramfb", 28, on_ramfb_write, fb);
+        if (idx >= 0) {
+            /* VMM-preset resolution, per the QEMU ramfb contract: the VMM may
+               seed etc/ramfb with a preferred mode (addr == 0, width/height
+               set, fourcc/flags/stride == 0). EDK2's QemuRamFbDxe reads the
+               file when the driver starts and adopts the preset as its
+               initial GOP mode; it allocates the framebuffer itself and DMA-
+               writes the full RAMFBCfg back (handled by on_ramfb_write).
+               Without a preset EDK2 falls back to 800x600, and the guest OS
+               cannot switch modes afterwards (Windows BasicDisplay exposes
+               only the boot GOP mode), so the preset is the one chance to
+               pick a usable resolution. */
+            uint8_t preset[28] = {0};
+            put_be32(preset + 16, HV_RAMFB_PRESET_WIDTH);
+            put_be32(preset + 20, HV_RAMFB_PRESET_HEIGHT);
+            hv_fw_cfg_set_file_data(fw_cfg, idx, preset, sizeof preset);
+        }
     }
     return fb;
 }
