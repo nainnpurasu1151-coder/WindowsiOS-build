@@ -1,1 +1,265 @@
-I2luY2x1ZGUgImV4Y2VwdGlvbi5oIgoKI2luY2x1ZGUgPHNjaGVkLmg+CiNpbmNsdWRlIDxzdGRpby5oPgojaW5jbHVkZSA8c3RkbGliLmg+CiNpbmNsdWRlIDxzdHJpbmcuaD4KCiNpbmNsdWRlICJtYWNoaW5lLmgiCiNpbmNsdWRlICJkaXNwYXRjaC5oIgojaW5jbHVkZSAibW11LmgiCgovKiBPbmx5IEVMMCBhbmQgRUwxIGV4aXN0IGZvciB0aGUgZ3Vlc3Q7IEhlbmdlVk0gcGxheXMgRUwyIChQU0NJIG92ZXIgSFZDLCBhcwogICBRRU1VJ3Mgdm1hcHBsZSBtYWNoaW5lIHNldHMgdXApIGFuZCB0aGVyZSBpcyBubyBFTDMuICovCgojZGVmaW5lIFBTVEFURV9FWFRSQV9NQVNLICgoMXVsbCA8PCAyMikgfCAoMXVsbCA8PCAyMykgfCAoMXVsbCA8PCAxMikgfCAoMXVsbCA8PCAyNCkgfCAoMXVsbCA8PCAyNSkpCgp1aW50NjRfdCBodl9wc3RhdGVfZ2V0KEh2Q3B1ICpjcHUpIHsKICAgIHJldHVybiAoY3B1LT5uemN2ICYgMHhmMDAwMDAwMCkgfCAoY3B1LT5kYWlmICYgSFZfUFNUQVRFX0RBSUYpIHwgKGNwdS0+cHN0YXRlX2V4dHJhICYgUFNUQVRFX0VYVFJBX01BU0spIHwKICAgICAgICAgICAodWludDY0X3QpY3B1LT5lbCA8PCAyIHwgKGNwdS0+ZWwgPyBjcHUtPnNwc2VsIDogMCk7Cn0KCnZvaWQgaHZfc3Bfc3dpdGNoKEh2Q3B1ICpjcHUsIHVpbnQzMl90IGVsLCB1aW50MzJfdCBzcHNlbCkgewogICAgaWYgKGNwdS0+ZWwgPT0gMCB8fCBjcHUtPnNwc2VsID09IDApIGNwdS0+c3BfZWwwID0gY3B1LT5zcDsKICAgIGVsc2UgY3B1LT5zcF9lbDEgPSBjcHUtPnNwOwogICAgY3B1LT5lbCA9IGVsOwogICAgY3B1LT5zcHNlbCA9IGVsID8gc3BzZWwgOiAwOwogICAgY3B1LT5zcCA9IGNwdS0+c3BzZWwgPyBjcHUtPnNwX2VsMSA6IGNwdS0+c3BfZWwwOwp9CgpzdGF0aWMgdm9pZCBzZXRfZXh0cmEoSHZDcHUgKmNwdSwgdWludDY0X3QgZXh0cmEpIHsKICAgIC8qIFBBTiBzZWxlY3RzIGEgZGlmZmVyZW50IFRMQiB0YWJsZSAoaHZfdGxiX3RhYmxlKSwgc28gbm90aGluZyB0byBmbHVzaC4gKi8KICAgIGNwdS0+cHN0YXRlX2V4dHJhID0gZXh0cmE7Cn0KCnZvaWQgaHZfcHN0YXRlX3NldChIdkNwdSAqY3B1LCB1aW50NjRfdCBzcHNyKSB7CiAgICB1aW50MzJfdCBtID0gc3BzciAmIDB4MWY7CiAgICB1aW50MzJfdCBlbCA9IChtID4+IDIpICYgMzsKICAgIGlmICgobSAmIDB4MTApIHx8IGVsID4gMSkgZWwgPSAxOyAvKiBBQXJjaDMyIGFuZCBFTDIvRUwzIGRvIG5vdCBleGlzdDogYW4gaWxsZWdhbCByZXR1cm4sIGtlcHQgYXQgRUwxICovCiAgICBjcHUtPm56Y3YgPSBzcHNyICYgMHhmMDAwMDAwMDsKICAgIGNwdS0+ZGFpZiA9IHNwc3IgJiBIVl9QU1RBVEVfREFJRjsKICAgIHNldF9leHRyYShjcHUsIHNwc3IgJiBQU1RBVEVfRVhUUkFfTUFTSyk7CiAgICBodl9zcF9zd2l0Y2goY3B1LCBlbCwgbSAmIDEpOwp9Cgp2b2lkIGh2X3Rha2VfZXhjZXB0aW9uKEh2Q3B1ICpjcHUsIGludCB0eXBlLCB1aW50MzJfdCBlc3IsIHVpbnQ2NF90IGZhciwgaW50IHNldF9mYXIsIHVpbnQ2NF90IHJldCkgewogICAgaWYgKHR5cGUgPT0gSFZfRVhDX1NZTkMpIGNwdS0+bS0+c3RhdHMuZXhjZXB0aW9ucysrOwogICAgZWxzZSBjcHUtPm0tPnN0YXRzLmludGVycnVwdHMrKzsKICAgIHVpbnQ2NF90IHNwc3IgPSBodl9wc3RhdGVfZ2V0KGNwdSk7CiAgICB7CiAgICAgICAgSHZTdGF0cyAqc3QgPSAmY3B1LT5tLT5zdGF0czsKICAgICAgICB1aW50MzJfdCBrID0gc3QtPm5lbGNoZysrICYgMTU7CiAgICAgICAgc3QtPmVsY2hnW2tdLmZyb20gPSByZXQsIHN0LT5lbGNoZ1trXS5zcHNyID0gc3Bzciwgc3QtPmVsY2hnW2tdLmtpbmQgPSAodWludDMyX3QpdHlwZSwgc3QtPmVsY2hnW2tdLmVsID0gY3B1LT5lbDsKICAgICAgICBzdC0+ZWxjaGdba10udG8gPSBlc3I7CiAgICB9CiAgICBpZiAoY3B1LT5tLT50cmFjZSB8fCBjcHUtPm0tPmxvZyA+PSAyKQogICAgICAgIGZwcmludGYoc3RkZXJyLCAiZXhjZXB0aW9uIHR5cGUgJWQgZXNyICUwOHggZmFyICVsbHggZnJvbSBwYyAlbGx4IGVsJXVcbiIsIHR5cGUsIGVzciwgKHVuc2lnbmVkIGxvbmcgbG9uZylmYXIsCiAgICAgICAgICAgICAgICAodW5zaWduZWQgbG9uZyBsb25nKXJldCwgY3B1LT5lbCk7CiAgICB1aW50NjRfdCBvZmZzZXQgPSBjcHUtPmVsID09IDAgPyAweDQwMCA6IGNwdS0+c3BzZWwgPyAweDIwMCA6IDB4MDAwOwogICAgY3B1LT5zcHNyX2VsMSA9IHNwc3I7CiAgICBjcHUtPmVscl9lbDEgPSByZXQ7CiAgICBpZiAodHlwZSA9PSBIVl9FWENfU1lOQyB8fCB0eXBlID09IEhWX0VYQ19TRVJST1IpIGNwdS0+ZXNyX2VsMSA9IGVzcjsKICAgIGlmIChzZXRfZmFyKSBjcHUtPmZhcl9lbDEgPSBmYXI7CiAgICBodl9zcF9zd2l0Y2goY3B1LCAxLCAxKTsKICAgIGNwdS0+ZGFpZiA9IEhWX1BTVEFURV9EQUlGOwogICAgdWludDY0X3QgZXh0cmEgPSBjcHUtPnBzdGF0ZV9leHRyYTsKICAgIGlmICghKChjcHUtPnNjdGxyX2VsMSA+PiAyMykgJiAxKSkgZXh0cmEgfD0gSFZfUFNUQVRFX1BBTjsgLyogU0NUTFJfRUwxLlNQQU4gPT0gMCAqLwogICAgZXh0cmEgJj0gfigxdWxsIDw8IDEyKTsKICAgIGlmICgoY3B1LT5zY3Rscl9lbDEgPj4gNDQpICYgMSkgZXh0cmEgfD0gMXVsbCA8PCAxMjsgICAgICAvKiBTU0JTIGZyb20gRFNTQlMgKi8KICAgIHNldF9leHRyYShjcHUsIGV4dHJhKTsKICAgIGNwdS0+ZXhjbF9hZGRyID0gfjB1bGw7CiAgICBjcHUtPnBjID0gKGNwdS0+dmJhcl9lbDEgJiB+MHg3ZmZ1bGwpICsgb2Zmc2V0ICsgKHVpbnQ2NF90KXR5cGUgKiAweDgwOwogICAgY3B1LT5leGl0X3JlYXNvbiA9IEhWX0VYSVRfRVhDRVBUSU9OOwp9Cgp2b2lkIGh2X3JhaXNlX3N5bmMoSHZDcHUgKmNwdSwgdWludDMyX3QgZWMsIHVpbnQzMl90IGlzcywgdWludDY0X3QgZmFyLCB1aW50NjRfdCBwYykgewogICAgaW50IHNldF9mYXIgPSBlYyA9PSBIVl9FQ19QQ19BTElHTiB8fCBlYyA9PSBIVl9FQ19JQUJUX0xPV0VSIHx8IGVjID09IEhWX0VDX0lBQlRfU0FNRSB8fAogICAgICAgICAgICAgICAgICBlYyA9PSBIVl9FQ19EQUJUX0xPV0VSIHx8IGVjID09IEhWX0VDX0RBQlRfU0FNRTsKICAgIGh2X3Rha2VfZXhjZXB0aW9uKGNwdSwgSFZfRVhDX1NZTkMsIGVjIDw8IDI2IHwgMXUgPDwgMjUgfCAoaXNzICYgMHgxZmZmZmZmKSwgZmFyLCBzZXRfZmFyLCBwYyk7Cn0KCnZvaWQgaHZfcmFpc2VfdW5kZWYoSHZDcHUgKmNwdSwgdWludDY0X3QgcGMpIHsKICAgIHN0YXRpYyBpbnQgcmVwb3J0ZWQ7CiAgICBpZiAoY3B1LT5lbCA9PSAwICYmICgocGMgPj4gNTUpICYgMSkgJiYgcmVwb3J0ZWQrKyA8IDMpIGh2X2RlYnVnX2VsMF9pbl9rZXJuZWwoY3B1LCAidW5kZWYiKTsKICAgIGlmIChjcHUtPm0tPmxvZykgewogICAgICAgIHVpbnQzMl90IGluc24gPSAwOwogICAgICAgIHVpbnQ2NF90IHBhOwogICAgICAgIGlmICghaHZfbW11X2FjY2VzcyhjcHUsIHBjLCBIVl9BQ0NfRVhFQywgY3B1LT5lbCwgJnBhKSkgaHZfcGh5c19yZWFkKGNwdS0+bSwgcGEsICZpbnNuLCA0KTsKICAgICAgICBmcHJpbnRmKHN0ZGVyciwgInVuZGVmaW5lZDogcGMgJWxseCBpbnNuICUwOHggZWwldVxuIiwgKHVuc2lnbmVkIGxvbmcgbG9uZylwYywgaW5zbiwgY3B1LT5lbCk7CiAgICAgICAgaWYgKGNwdS0+ZWwgPT0gMSkgeyAvKiBhIGtlcm5lbCBhc3NlcnQ6IGl0cyBiYWNrdHJhY2UsIGZyb20gdGhlIGZyYW1lIHBvaW50ZXJzIChsciBmaXJzdCkgKi8KICAgICAgICAgICAgZnByaW50ZihzdGRlcnIsICIgIGJhY2t0cmFjZTogbHIgJWxseCIsICh1bnNpZ25lZCBsb25nIGxvbmcpKGNwdS0+eFszMF0gfCAweGZmZmZmZjgwMDAwMDAwMDB1bGwpKTsKICAgICAgICAgICAgdWludDY0X3QgZnAgPSBjcHUtPnhbMjldOwogICAgICAgICAgICBmb3IgKGludCBpID0gMDsgaSA8IDI0ICYmIGZwOyBpKyspIHsKICAgICAgICAgICAgICAgIHVpbnQ2NF90IGZyWzJdLCBmcGE7CiAgICAgICAgICAgICAgICBpZiAoaHZfbW11X2FjY2VzcyhjcHUsIGZwLCBIVl9BQ0NfUkVBRCwgMSwgJmZwYSkgfHwgaHZfcGh5c19yZWFkKGNwdS0+bSwgZnBhLCBmciwgMTYpKSBicmVhazsKICAgICAgICAgICAgICAgIHVpbnQ2NF90IHJldCA9IGZyWzFdIHwgMHhmZmZmZmY4MDAwMDAwMDAwdWxsOyAvKiBzdHJpcCB0aGUgUEFDIGJpdHMgKi8KICAgICAgICAgICAgICAgIGZwcmludGYoc3RkZXJyLCAiICVsbHgiLCAodW5zaWduZWQgbG9uZyBsb25nKXJldCk7CiAgICAgICAgICAgICAgICBpZiAoZnJbMF0gPD0gZnApIGJyZWFrOwogICAgICAgICAgICAgICAgZnAgPSBmclswXTsKICAgICAgICAgICAgfQogICAgICAgICAgICBmcHJpbnRmKHN0ZGVyciwgIlxuICB2YmFyICVsbHhcbiIsICh1bnNpZ25lZCBsb25nIGxvbmcpY3B1LT52YmFyX2VsMSk7CiAgICAgICAgfQogICAgfQogICAgaHZfcmFpc2Vfc3luYyhjcHUsIEhWX0VDX1VOS05PV04sIDAsIDAsIHBjKTsKfQoKdm9pZCBodl9yYWlzZV9hYm9ydChIdkNwdSAqY3B1LCBpbnQgaW5zbiwgdWludDY0X3QgdmEsIHVpbnQzMl90IGZzYywgaW50IHduciwgaW50IHMxcHR3LCB1aW50NjRfdCBwYykgewogICAgdWludDMyX3QgZWMgPSBpbnNuID8gKGNwdS0+ZWwgPyBIVl9FQ19JQUJUX1NBTUUgOiBIVl9FQ19JQUJUX0xPV0VSKQogICAgICAgICAgICAgICAgICAgICAgIDogKGNwdS0+ZWwgPyBIVl9FQ19EQUJUX1NBTUUgOiBIVl9FQ19EQUJUX0xPV0VSKTsKICAgIHVpbnQzMl90IGlzcyA9IGZzYyB8ICh1aW50MzJfdCkod25yICYmICFpbnNuKSA8PCA2IHwgKHVpbnQzMl90KXMxcHR3IDw8IDc7CiAgICBodl9yYWlzZV9zeW5jKGNwdSwgZWMsIGlzcywgdmEsIHBjKTsKfQoKdm9pZCBodl9lcmV0KEh2Q3B1ICpjcHUpIHsKICAgIGlmIChjcHUtPm0pIHsKICAgICAgICBIdlN0YXRzICpzdCA9ICZjcHUtPm0tPnN0YXRzOwogICAgICAgIHVpbnQzMl90IGsgPSBzdC0+bmVsY2hnKysgJiAxNTsKICAgICAgICBzdC0+ZWxjaGdba10uZnJvbSA9IGNwdS0+cGMsIHN0LT5lbGNoZ1trXS50byA9IGNwdS0+ZWxyX2VsMSwgc3QtPmVsY2hnW2tdLnNwc3IgPSBjcHUtPnNwc3JfZWwxOwogICAgICAgIHN0LT5lbGNoZ1trXS5raW5kID0gOSwgc3QtPmVsY2hnW2tdLmVsID0gY3B1LT5lbDsKICAgIH0KICAgIGNwdS0+cGMgPSBjcHUtPmVscl9lbDE7CiAgICBodl9wc3RhdGVfc2V0KGNwdSwgY3B1LT5zcHNyX2VsMSk7CiAgICBjcHUtPmV4Y2xfYWRkciA9IH4wdWxsOwp9CgpzdGF0aWMgSHZDcHUgKmNwdV9ieV9tcGlkcihIdk1hY2hpbmUgKm0sIHVpbnQ2NF90IG1waWRyKSB7CiAgICBmb3IgKGludCBpID0gMDsgaSA8IG0tPm5jcHVzOyBpKyspCiAgICAgICAgaWYgKG0tPmNwdXNbaV0gJiYgKG0tPmNwdXNbaV0tPm1waWRyICYgMHhmZjAwZmZmZmZmdWxsKSA9PSAobXBpZHIgJiAweGZmMDBmZmZmZmZ1bGwpKSByZXR1cm4gbS0+Y3B1c1tpXTsKICAgIHJldHVybiBOVUxMOwp9CgovKiBQU0NJIDEuMC4gKi8Kc3RhdGljIHVpbnQ2NF90IHBzY2koSHZDcHUgKmNwdSwgdWludDY0X3QgZm4pIHsKICAgIHN0YXRpYyBpbnQgbG9nID0gLTE7CiAgICBpZiAobG9nIDwgMCkgbG9nID0gZ2V0ZW52KCJIVl9QU0NJX0xPRyIpICE9IE5VTEw7CiAgICBpZiAobG9nICYmICgodWludDMyX3QpZm4gPj4gMjQgPT0gMHg4NCB8fCAodWludDMyX3QpZm4gPj4gMjQgPT0gMHhjNCkpCiAgICAgICAgZnByaW50ZihzdGRlcnIsICJwc2NpICUjbGx4IHgxICUjbGx4IHgyICUjbGx4IHgzICUjbGx4IHBjICVsbHhcbiIsICh1bnNpZ25lZCBsb25nIGxvbmcpZm4sICh1bnNpZ25lZCBsb25nIGxvbmcpY3B1LT54WzFdLAogICAgICAgICAgICAgICAgKHVuc2lnbmVkIGxvbmcgbG9uZyljcHUtPnhbMl0sICh1bnNpZ25lZCBsb25nIGxvbmcpY3B1LT54WzNdLCAodW5zaWduZWQgbG9uZyBsb25nKWNwdS0+cGMpOwogICAgc3dpdGNoICgodWludDMyX3QpZm4pIHsKICAgIGNhc2UgMHg4NDAwMDAwMDogcmV0dXJuIDB4MTAwMDA7ICAgICAgICAgICAgICAgICAgICAgICAgIC8qIFBTQ0lfVkVSU0lPTjogMS4wICovCiAgICBjYXNlIDB4ODQwMDAwMDY6IHJldHVybiAyOyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvKiBNSUdSQVRFX0lORk9fVFlQRTogbm8gdHJ1c3RlZCBPUyAqLwogICAgY2FzZSAweDg0MDAwMDA4OiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLyogU1lTVEVNX09GRiAqLwogICAgY2FzZSAweDg0MDAwMDA5OiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLyogU1lTVEVNX1JFU0VUICovCiAgICAgICAgZm9yIChpbnQgaSA9IDA7IGkgPCBjcHUtPm0tPm5jcHVzOyBpKyspIC8qIHRoZSB3aG9sZSBtYWNoaW5lIHN0b3BzICovCiAgICAgICAgICAgIGlmIChjcHUtPm0tPmNwdXNbaV0pIGNwdS0+bS0+Y3B1c1tpXS0+aGFsdGVkID0gKHVpbnQzMl90KWZuID09IDB4ODQwMDAwMDggPyAxIDogMjsKICAgICAgICBodl9tYWNoaW5lX2tpY2tfYWxsKGNwdS0+bSk7CiAgICAgICAgcmV0dXJuIDA7CiAgICBjYXNlIDB4ODQwMDAwMGE6IHsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvKiBQU0NJX0ZFQVRVUkVTICovCiAgICAgICAgdWludDMyX3QgcSA9ICh1aW50MzJfdCljcHUtPnhbMV07CiAgICAgICAgaWYgKHEgPT0gMHg4NDAwMDAwMCB8fCBxID09IDB4ODQwMDAwMDIgfHwgcSA9PSAweDg0MDAwMDA2IHx8IHEgPT0gMHg4NDAwMDAwOCB8fCBxID09IDB4ODQwMDAwMDkgfHwKICAgICAgICAgICAgcSA9PSAweDg0MDAwMDBhIHx8IHEgPT0gMHhjNDAwMDAwMyB8fCBxID09IDB4ODQwMDAwMDMgfHwgcSA9PSAweGM0MDAwMDA0IHx8IHEgPT0gMHg4NDAwMDAwNCkKICAgICAgICAgICAgcmV0dXJuIDA7CiAgICAgICAgcmV0dXJuICh1aW50NjRfdCktMTsKICAgIH0KICAgIGNhc2UgMHg4NDAwMDAwMjogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8qIENQVV9PRkY6IHVudGlsIGFub3RoZXIgQ1BVX09OICovCiAgICAgICAgY3B1LT5vZmYgPSAxOwogICAgICAgIHJldHVybiAwOwogICAgY2FzZSAweDg0MDAwMDAzOiBjYXNlIDB4YzQwMDAwMDM6IHsgICAgICAgICAgICAgICAgICAgICAgLyogQ1BVX09OOiB0YXJnZXQsIGVudHJ5IHBvaW50LCBjb250ZXh0IGlkICovCiAgICAgICAgSHZDcHUgKnQgPSBjcHVfYnlfbXBpZHIoY3B1LT5tLCBjcHUtPnhbMV0pOwogICAgICAgIGlmICghdCkgcmV0dXJuICh1aW50NjRfdCktMjsgICAgICAgICAgICAgICAgICAgICAgICAgLyogSU5WQUxJRF9QQVJBTUVURVJTICovCiAgICAgICAgaWYgKCF0LT5vZmYpIHJldHVybiAodWludDY0X3QpLTQ7ICAgICAgICAgICAgICAgICAgICAvKiBBTFJFQURZX09OICovCiAgICAgICAgd2hpbGUgKCFfX2F0b21pY19sb2FkX24oJnQtPnBhcmtlZF9vZmYsIF9fQVRPTUlDX1NFUV9DU1QpKSBzY2hlZF95aWVsZCgpOyAvKiBzdGlsbCBvbiBpdHMgd2F5IG91dCBvZiBDUFVfT0ZGICovCiAgICAgICAgdWludDY0X3QgbXBpZHIgPSB0LT5tcGlkciwgZW50cnkgPSBjcHUtPnhbMl0sIGNvbnRleHQgPSBjcHUtPnhbM107CiAgICAgICAgaWYgKCh1aW50MzJfdClmbiA9PSAweDg0MDAwMDAzKSBlbnRyeSA9ICh1aW50MzJfdCllbnRyeSwgY29udGV4dCA9ICh1aW50MzJfdCljb250ZXh0OwogICAgICAgIC8qIEFzIGF0IHJlc2V0OiBFTDFoLCBNTVUgYW5kIGNhY2hlcyBvZmYsIGV2ZXJ5dGhpbmcgbWFza2VkLiBJdHMgdGhyZWFkCiAgICAgICAgICAgd2FpdHMgb24gd2FrZV9tdSwgc28gaXQgY2Fubm90IHNlZSB0aGUgQ1BVIGhhbGYgcmVzZXQuICovCiAgICAgICAgcHRocmVhZF9tdXRleF9sb2NrKCZ0LT5wY19zdGF0ZS0+d2FrZV9tdSk7CiAgICAgICAgSHZQZXJDcHUgKnBjcyA9IHQtPnBjX3N0YXRlOwogICAgICAgIGh2X2NwdV9yZXNldF9pbmRleCh0LCBjcHUtPm0sIHQtPmluZGV4KTsKICAgICAgICB0LT5tcGlkciA9IG1waWRyOwogICAgICAgIHQtPnBjID0gZW50cnk7CiAgICAgICAgdC0+eFswXSA9IGNvbnRleHQ7CiAgICAgICAgdC0+cGFya2VkX29mZiA9IDE7CiAgICAgICAgX19hdG9taWNfc3RvcmVfbigmdC0+b2ZmLCAwLCBfX0FUT01JQ19SRUxFQVNFKTsKICAgICAgICBwY3MtPndha2VfcGVuZGluZyA9IDE7CiAgICAgICAgcHRocmVhZF9jb25kX3NpZ25hbCgmcGNzLT53YWtlX2N2KTsKICAgICAgICBwdGhyZWFkX211dGV4X3VubG9jaygmcGNzLT53YWtlX211KTsKICAgICAgICByZXR1cm4gMDsKICAgIH0KICAgIGNhc2UgMHg4NDAwMDAwNDogY2FzZSAweGM0MDAwMDA0OiB7ICAgICAgICAgICAgICAgICAgICAgIC8qIEFGRklOSVRZX0lORk86IDAgb24sIDEgb2ZmICovCiAgICAgICAgSHZDcHUgKnQgPSBjcHVfYnlfbXBpZHIoY3B1LT5tLCBjcHUtPnhbMV0pOwogICAgICAgIGlmICghdCkgcmV0dXJuICh1aW50NjRfdCktMjsKICAgICAgICByZXR1cm4gdC0+b2ZmID8gMSA6IDA7CiAgICB9CiAgICAvKiB2bWFwcGxlJ3MgcGFyYXZpcnR1YWxpemVkIFBBQyAoWE5VIG9zZm1rL2FybTY0L2h2X2h2Yy5oKTogdGhlIGd1ZXN0CiAgICAgICBjYW5ub3QgcHJvZ3JhbSBQQUMga2V5cyBpdHNlbGYsIHNvIHRoZSBoeXBlcnZpc29yIGRvZXMuIEhlbmdlVk0gbmV2ZXIKICAgICAgIHNpZ25zIHBvaW50ZXJzLCBzbyB0aGVyZSBpcyBub3RoaW5nIHRvIHByb2dyYW07IGVhY2ggY2FsbCBvbmx5IGhhcyB0bwogICAgICAgc3VjY2VlZCAoWE5VIHNwaW5zIG9uIGEgbm9uemVybyB4MCkuICovCiAgICBjYXNlIDB4YzEwMDAwMDA6IC8qIFZNQVBQTEVfUEFDX1NFVF9JTklUSUFMX1NUQVRFICovCiAgICBjYXNlIDB4YzEwMDAwMDI6IC8qIFZNQVBQTEVfUEFDX1NFVF9BX0tFWVMgKi8KICAgIGNhc2UgMHhjMTAwMDAwMzogLyogVk1BUFBMRV9QQUNfU0VUX0JfS0VZUyAqLwogICAgY2FzZSAweGMxMDAwMDA0OiAvKiBWTUFQUExFX1BBQ19TRVRfRUwwX0RJVkVSU0lGSUVSICovCiAgICBjYXNlIDB4YzEwMDAwMDU6IC8qIFZNQVBQTEVfUEFDX1NFVF9FTDBfRElWRVJTSUZJRVJfQVRfRUwxICovCiAgICBjYXNlIDB4YzEwMDAwMDY6IC8qIFZNQVBQTEVfUEFDX1NFVF9HX0tFWSAqLwogICAgY2FzZSAweGMxMDAwMGYwOiAvKiBWTUFQUExFX1BBQ19OT1AgKi8KICAgICAgICByZXR1cm4gMDsKICAgIGNhc2UgMHhjMTAwMDAwMTogLyogVk1BUFBMRV9QQUNfR0VUX0RFRkFVTFRfS0VZUzogeDIgPSBkZWZhdWx0IFJPUCBpZCwgeDMgPSBkZWZhdWx0IEpPUCBpZCAqLwogICAgICAgIGNwdS0+eFsyXSA9IDB4NTI0ZjUwOyAvKiB0aGUgdmFsdWVzIG9ubHkgbmFtZSBrZXlzLCBhbmQgbm8ga2V5IGlzIGV2ZXIgdXNlZCAqLwogICAgICAgIGNwdS0+eFszXSA9IDB4NGE0ZjUwOwogICAgICAgIHJldHVybiAwOwogICAgZGVmYXVsdDoKICAgICAgICBpZiAoY3B1LT5tLT5sb2cpIGZwcmludGYoc3RkZXJyLCAiaGVuZ2V2bTogdW5rbm93biBoeXBlcnZpc29yIGNhbGwgJSNsbHggKHgxICUjbGx4KSBhdCBlbCV1XG4iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAodW5zaWduZWQgbG9uZyBsb25nKWZuLCAodW5zaWduZWQgbG9uZyBsb25nKWNwdS0+eFsxXSwgY3B1LT5lbCk7CiAgICAgICAgcmV0dXJuICh1aW50NjRfdCktMTsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvKiBOT1RfU1VQUE9SVEVEICovCiAgICB9Cn0KCi8qIEJyaW5nLXVwIGFpZDogeDAteDMsIGFuZCBhbnkgc3RyaW5nIHRoZXkgcG9pbnQgdG8gKHJlYWQgd2l0aCB0aGUgY3VycmVudCBFTCdzIG1hcHBpbmcpLiAqLwp2b2lkIGh2X2RlYnVnX2FyZ3MoSHZDcHUgKmNwdSkgewogICAgZm9yIChpbnQgaSA9IDA7IGkgPCA0OyBpKyspIGZwcmludGYoc3RkZXJyLCAiIHglZD0lbGx4IiwgaSwgKHVuc2lnbmVkIGxvbmcgbG9uZyljcHUtPnhbaV0pOwogICAgZnByaW50ZihzdGRlcnIsICJcbiIpOwogICAgZm9yIChpbnQgaSA9IDA7IGkgPCA0OyBpKyspIHsKICAgICAgICBjaGFyIHN0clsxNjFdOwogICAgICAgIGludCBuID0gMDsKICAgICAgICBmb3IgKDsgbiA8IDE2MDsgbisrKSB7CiAgICAgICAgICAgIHVpbnQ2NF90IHBhOwogICAgICAgICAgICBpZiAoaHZfbW11X2FjY2VzcyhjcHUsIGNwdS0+eFtpXSArIG4sIEhWX0FDQ19SRUFELCBjcHUtPmVsLCAmcGEpIHx8IGh2X3BoeXNfcmVhZChjcHUtPm0sIHBhLCAmc3RyW25dLCAxKSB8fAogICAgICAgICAgICAgICAgc3RyW25dIDwgOSB8fCAodW5zaWduZWQgY2hhcilzdHJbbl0gPiAxMjYpCiAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICB9CiAgICAgICAgc3RyW25dID0gMDsKICAgICAgICBpZiAobiA+PSA0KSBmcHJpbnRmKHN0ZGVyciwgIiAgICB4JWQgLT4gXCIlc1wiXG4iLCBpLCBzdHIpOwogICAgfQp9CgppbnQgaHZfZXhjZXB0aW9uX2luc24oSHZDcHUgKmNwdSwgdWludDMyX3QgaW5zbiwgdWludDY0X3QgcGMpIHsKICAgIHVpbnQzMl90IGltbTE2ID0gKGluc24gPj4gNSkgJiAweGZmZmY7CiAgICB1aW50MzJfdCBvcGMgPSAoaW5zbiA+PiAyMSkgJiA3LCBsbCA9IGluc24gJiAzOwogICAgaWYgKG9wYyA9PSAwICYmIGxsID09IDEgJiYgY3B1LT5tLT5sb2cgPj0gMykgewogICAgICAgIGZwcmludGYoc3RkZXJyLCAic3ZjICMleCBhdCAlbGx4IGVsJXU6IiwgaW1tMTYsICh1bnNpZ25lZCBsb25nIGxvbmcpcGMsIGNwdS0+ZWwpOwogICAgICAgIGh2X2RlYnVnX2FyZ3MoY3B1KTsKICAgIH0KICAgIGlmIChvcGMgPT0gMCAmJiBsbCA9PSAxKSB7IC8qIFNWQzogRUxSIGlzIHRoZSBuZXh0IGluc3RydWN0aW9uICovCiAgICAgICAgaHZfdGFrZV9leGNlcHRpb24oY3B1LCBIVl9FWENfU1lOQywgSFZfRUNfU1ZDNjQgPDwgMjYgfCAxdSA8PCAyNSB8IGltbTE2LCAwLCAwLCBwYyArIDQpOwogICAgICAgIHJldHVybiAxOwogICAgfQogICAgaWYgKG9wYyA9PSAwICYmIGxsID09IDIgJiYgY3B1LT5lbCA9PSAxKSB7IC8qIEhWQzogdGhlIGh5cGVydmlzb3IncyBQU0NJIGFuZCB2bWFwcGxlJ3MgUEFDIGNhbGxzICovCiAgICAgICAgY3B1LT54WzBdID0gcHNjaShjcHUsIGNwdS0+eFswXSk7CiAgICAgICAgaWYgKCFjcHUtPmhhbHRlZCAmJiAhY3B1LT5vZmYpIHJldHVybiAwOyAvKiBsaWtlIGEgY2FsbDogdGhlIGJsb2NrIGNhcnJpZXMgb24gKHhudSBtYWtlcyBvbmUgcGVyIGNvbnRleHQgc3dpdGNoKSAqLwogICAgICAgIGNwdS0+cGMgPSBwYyArIDQ7CiAgICAgICAgY3B1LT5leGl0X3JlYXNvbiA9IGNwdS0+aGFsdGVkID8gSFZfRVhJVF9IQUxUIDogSFZfRVhJVF9CUkFOQ0g7IC8qIENQVV9PRkY6IHRoZSBkaXNwYXRjaGVyIHBhcmtzIGl0ICovCiAgICAgICAgcmV0dXJuIDE7CiAgICB9CiAgICBpZiAob3BjID09IDEgJiYgbGwgPT0gMCkgeyAvKiBCUksgKi8KICAgICAgICBodl90YWtlX2V4Y2VwdGlvbihjcHUsIEhWX0VYQ19TWU5DLCBIVl9FQ19CUksgPDwgMjYgfCAxdSA8PCAyNSB8IGltbTE2LCAwLCAwLCBwYyk7CiAgICAgICAgcmV0dXJuIDE7CiAgICB9CiAgICAvKiBTTUMgd2l0aCBubyBFTDMsIEhWQyBmcm9tIEVMMCwgSExUIHdpdGhvdXQgaGFsdGluZyBkZWJ1ZywgRENQUzogdW5kZWZpbmVkLiAqLwogICAgaHZfcmFpc2VfdW5kZWYoY3B1LCBwYyk7CiAgICByZXR1cm4gMTsKfQoKaW50IGh2X2NoZWNrX2ludGVycnVwdHMoSHZDcHUgKmNwdSkgewogICAgSHZNYWNoaW5lICptID0gY3B1LT5tOwogICAgSHZQZXJDcHUgKnAgPSBjcHUtPnBjX3N0YXRlOwogICAgKHZvaWQpbTsKICAgIGlmIChwLT5maXFfbGluZSAmJiAhKGNwdS0+ZGFpZiAmIEhWX1BTVEFURV9GKSkgewogICAgICAgIGh2X3Rha2VfZXhjZXB0aW9uKGNwdSwgSFZfRVhDX0ZJUSwgMCwgMCwgMCwgY3B1LT5wYyk7CiAgICAgICAgcmV0dXJuIDE7CiAgICB9CiAgICBpZiAocC0+aXJxX2xpbmUgJiYgIShjcHUtPmRhaWYgJiBIVl9QU1RBVEVfSSkpIHsKICAgICAgICBodl90YWtlX2V4Y2VwdGlvbihjcHUsIEhWX0VYQ19JUlEsIDAsIDAsIDAsIGNwdS0+cGMpOwogICAgICAgIHJldHVybiAxOwogICAgfQogICAgcmV0dXJuIDA7Cn0K
+#include "exception.h"
+
+#include <sched.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "machine.h"
+#include "dispatch.h"
+#include "mmu.h"
+
+/* Only EL0 and EL1 exist for the guest; HengeVM plays EL2 (PSCI over HVC, as
+   QEMU's vmapple machine sets up) and there is no EL3. */
+
+#define PSTATE_EXTRA_MASK ((1ull << 22) | (1ull << 23) | (1ull << 12) | (1ull << 24) | (1ull << 25))
+
+uint64_t hv_pstate_get(HvCpu *cpu) {
+    return (cpu->nzcv & 0xf0000000) | (cpu->daif & HV_PSTATE_DAIF) | (cpu->pstate_extra & PSTATE_EXTRA_MASK) |
+           (uint64_t)cpu->el << 2 | (cpu->el ? cpu->spsel : 0);
+}
+
+void hv_sp_switch(HvCpu *cpu, uint32_t el, uint32_t spsel) {
+    if (cpu->el == 0 || cpu->spsel == 0) cpu->sp_el0 = cpu->sp;
+    else cpu->sp_el1 = cpu->sp;
+    cpu->el = el;
+    cpu->spsel = el ? spsel : 0;
+    cpu->sp = cpu->spsel ? cpu->sp_el1 : cpu->sp_el0;
+}
+
+static void set_extra(HvCpu *cpu, uint64_t extra) {
+    /* PAN selects a different TLB table (hv_tlb_table), so nothing to flush. */
+    cpu->pstate_extra = extra;
+}
+
+void hv_pstate_set(HvCpu *cpu, uint64_t spsr) {
+    uint32_t m = spsr & 0x1f;
+    uint32_t el = (m >> 2) & 3;
+    if ((m & 0x10) || el > 1) el = 1; /* AArch32 and EL2/EL3 do not exist: an illegal return, kept at EL1 */
+    cpu->nzcv = spsr & 0xf0000000;
+    cpu->daif = spsr & HV_PSTATE_DAIF;
+    set_extra(cpu, spsr & PSTATE_EXTRA_MASK);
+    hv_sp_switch(cpu, el, m & 1);
+}
+
+void hv_take_exception(HvCpu *cpu, int type, uint32_t esr, uint64_t far, int set_far, uint64_t ret) {
+    if (type == HV_EXC_SYNC) cpu->m->stats.exceptions++;
+    else cpu->m->stats.interrupts++;
+    uint64_t spsr = hv_pstate_get(cpu);
+    {
+        HvStats *st = &cpu->m->stats;
+        uint32_t k = st->nelchg++ & 15;
+        st->elchg[k].from = ret, st->elchg[k].spsr = spsr, st->elchg[k].kind = (uint32_t)type, st->elchg[k].el = cpu->el;
+        st->elchg[k].to = esr;
+    }
+    if (cpu->m->trace || cpu->m->log >= 2)
+        fprintf(stderr, "exception type %d esr %08x far %llx from pc %llx el%u\n", type, esr, (unsigned long long)far,
+                (unsigned long long)ret, cpu->el);
+    uint64_t offset = cpu->el == 0 ? 0x400 : cpu->spsel ? 0x200 : 0x000;
+    cpu->spsr_el1 = spsr;
+    cpu->elr_el1 = ret;
+    if (type == HV_EXC_SYNC || type == HV_EXC_SERROR) cpu->esr_el1 = esr;
+    if (set_far) cpu->far_el1 = far;
+    hv_sp_switch(cpu, 1, 1);
+    cpu->daif = HV_PSTATE_DAIF;
+    uint64_t extra = cpu->pstate_extra;
+    if (!((cpu->sctlr_el1 >> 23) & 1)) extra |= HV_PSTATE_PAN; /* SCTLR_EL1.SPAN == 0 */
+    extra &= ~(1ull << 12);
+    if ((cpu->sctlr_el1 >> 44) & 1) extra |= 1ull << 12;      /* SSBS from DSSBS */
+    set_extra(cpu, extra);
+    cpu->excl_addr = ~0ull;
+    cpu->pc = (cpu->vbar_el1 & ~0x7ffull) + offset + (uint64_t)type * 0x80;
+    cpu->exit_reason = HV_EXIT_EXCEPTION;
+}
+
+void hv_raise_sync(HvCpu *cpu, uint32_t ec, uint32_t iss, uint64_t far, uint64_t pc) {
+    int set_far = ec == HV_EC_PC_ALIGN || ec == HV_EC_IABT_LOWER || ec == HV_EC_IABT_SAME ||
+                  ec == HV_EC_DABT_LOWER || ec == HV_EC_DABT_SAME;
+    hv_take_exception(cpu, HV_EXC_SYNC, ec << 26 | 1u << 25 | (iss & 0x1ffffff), far, set_far, pc);
+}
+
+void hv_raise_undef(HvCpu *cpu, uint64_t pc) {
+    static int reported;
+    if (cpu->el == 0 && ((pc >> 55) & 1) && reported++ < 3) hv_debug_el0_in_kernel(cpu, "undef");
+    if (cpu->m->log) {
+        uint32_t insn = 0;
+        uint64_t pa;
+        if (!hv_mmu_access(cpu, pc, HV_ACC_EXEC, cpu->el, &pa)) hv_phys_read(cpu->m, pa, &insn, 4);
+        fprintf(stderr, "undefined: pc %llx insn %08x el%u\n", (unsigned long long)pc, insn, cpu->el);
+        if (cpu->el == 1) { /* a kernel assert: its backtrace, from the frame pointers (lr first) */
+            fprintf(stderr, "  backtrace: lr %llx", (unsigned long long)(cpu->x[30] | 0xffffff8000000000ull));
+            uint64_t fp = cpu->x[29];
+            for (int i = 0; i < 24 && fp; i++) {
+                uint64_t fr[2], fpa;
+                if (hv_mmu_access(cpu, fp, HV_ACC_READ, 1, &fpa) || hv_phys_read(cpu->m, fpa, fr, 16)) break;
+                uint64_t ret = fr[1] | 0xffffff8000000000ull; /* strip the PAC bits */
+                fprintf(stderr, " %llx", (unsigned long long)ret);
+                if (fr[0] <= fp) break;
+                fp = fr[0];
+            }
+            fprintf(stderr, "\n  vbar %llx\n", (unsigned long long)cpu->vbar_el1);
+        }
+    }
+    hv_raise_sync(cpu, HV_EC_UNKNOWN, 0, 0, pc);
+}
+
+void hv_raise_abort(HvCpu *cpu, int insn, uint64_t va, uint32_t fsc, int wnr, int s1ptw, uint64_t pc) {
+    uint32_t ec = insn ? (cpu->el ? HV_EC_IABT_SAME : HV_EC_IABT_LOWER)
+                       : (cpu->el ? HV_EC_DABT_SAME : HV_EC_DABT_LOWER);
+    uint32_t iss = fsc | (uint32_t)(wnr && !insn) << 6 | (uint32_t)s1ptw << 7;
+    hv_raise_sync(cpu, ec, iss, va, pc);
+}
+
+void hv_eret(HvCpu *cpu) {
+    if (cpu->m) {
+        HvStats *st = &cpu->m->stats;
+        uint32_t k = st->nelchg++ & 15;
+        st->elchg[k].from = cpu->pc, st->elchg[k].to = cpu->elr_el1, st->elchg[k].spsr = cpu->spsr_el1;
+        st->elchg[k].kind = 9, st->elchg[k].el = cpu->el;
+    }
+    cpu->pc = cpu->elr_el1;
+    hv_pstate_set(cpu, cpu->spsr_el1);
+    cpu->excl_addr = ~0ull;
+}
+
+static HvCpu *cpu_by_mpidr(HvMachine *m, uint64_t mpidr) {
+    for (int i = 0; i < m->ncpus; i++)
+        if (m->cpus[i] && (m->cpus[i]->mpidr & 0xff00ffffffull) == (mpidr & 0xff00ffffffull)) return m->cpus[i];
+    return NULL;
+}
+
+/* PSCI 1.0. */
+static uint64_t psci(HvCpu *cpu, uint64_t fn) {
+    static int log = -1;
+    if (log < 0) log = getenv("HV_PSCI_LOG") != NULL;
+    if (log && ((uint32_t)fn >> 24 == 0x84 || (uint32_t)fn >> 24 == 0xc4))
+        fprintf(stderr, "psci %#llx x1 %#llx x2 %#llx x3 %#llx pc %llx\n", (unsigned long long)fn, (unsigned long long)cpu->x[1],
+                (unsigned long long)cpu->x[2], (unsigned long long)cpu->x[3], (unsigned long long)cpu->pc);
+    switch ((uint32_t)fn) {
+    case 0x84000000: return 0x10000;                         /* PSCI_VERSION: 1.0 */
+    case 0x84000006: return 2;                               /* MIGRATE_INFO_TYPE: no trusted OS */
+    case 0x84000008:                                         /* SYSTEM_OFF */
+    case 0x84000009:                                         /* SYSTEM_RESET */
+        for (int i = 0; i < cpu->m->ncpus; i++) /* the whole machine stops */
+            if (cpu->m->cpus[i]) cpu->m->cpus[i]->halted = (uint32_t)fn == 0x84000008 ? 1 : 2;
+        hv_machine_kick_all(cpu->m);
+        return 0;
+    case 0x8400000a: {                                       /* PSCI_FEATURES */
+        uint32_t q = (uint32_t)cpu->x[1];
+        if (q == 0x84000000 || q == 0x84000002 || q == 0x84000006 || q == 0x84000008 || q == 0x84000009 ||
+            q == 0x8400000a || q == 0xc4000003 || q == 0x84000003 || q == 0xc4000004 || q == 0x84000004)
+            return 0;
+        return (uint64_t)-1;
+    }
+    case 0x84000002:                                         /* CPU_OFF: until another CPU_ON */
+        cpu->off = 1;
+        return 0;
+    case 0x84000003: case 0xc4000003: {                      /* CPU_ON: target, entry point, context id */
+        HvCpu *t = cpu_by_mpidr(cpu->m, cpu->x[1]);
+        if (!t) return (uint64_t)-2;                         /* INVALID_PARAMETERS */
+        if (!t->off) return (uint64_t)-4;                    /* ALREADY_ON */
+        while (!__atomic_load_n(&t->parked_off, __ATOMIC_SEQ_CST)) sched_yield(); /* still on its way out of CPU_OFF */
+        uint64_t mpidr = t->mpidr, entry = cpu->x[2], context = cpu->x[3];
+        if ((uint32_t)fn == 0x84000003) entry = (uint32_t)entry, context = (uint32_t)context;
+        /* As at reset: EL1h, MMU and caches off, everything masked. Its thread
+           waits on wake_mu, so it cannot see the CPU half reset. */
+        pthread_mutex_lock(&t->pc_state->wake_mu);
+        HvPerCpu *pcs = t->pc_state;
+        hv_cpu_reset_index(t, cpu->m, t->index);
+        t->mpidr = mpidr;
+        t->pc = entry;
+        t->x[0] = context;
+        t->parked_off = 1;
+        __atomic_store_n(&t->off, 0, __ATOMIC_RELEASE);
+        pcs->wake_pending = 1;
+        pthread_cond_signal(&pcs->wake_cv);
+        pthread_mutex_unlock(&pcs->wake_mu);
+        return 0;
+    }
+    case 0x84000004: case 0xc4000004: {                      /* AFFINITY_INFO: 0 on, 1 off */
+        HvCpu *t = cpu_by_mpidr(cpu->m, cpu->x[1]);
+        if (!t) return (uint64_t)-2;
+        return t->off ? 1 : 0;
+    }
+    /* vmapple's paravirtualized PAC (XNU osfmk/arm64/hv_hvc.h): the guest
+       cannot program PAC keys itself, so the hypervisor does. HengeVM never
+       signs pointers, so there is nothing to program; each call only has to
+       succeed (XNU spins on a nonzero x0). */
+    case 0xc1000000: /* VMAPPLE_PAC_SET_INITIAL_STATE */
+    case 0xc1000002: /* VMAPPLE_PAC_SET_A_KEYS */
+    case 0xc1000003: /* VMAPPLE_PAC_SET_B_KEYS */
+    case 0xc1000004: /* VMAPPLE_PAC_SET_EL0_DIVERSIFIER */
+    case 0xc1000005: /* VMAPPLE_PAC_SET_EL0_DIVERSIFIER_AT_EL1 */
+    case 0xc1000006: /* VMAPPLE_PAC_SET_G_KEY */
+    case 0xc10000f0: /* VMAPPLE_PAC_NOP */
+        return 0;
+    case 0xc1000001: /* VMAPPLE_PAC_GET_DEFAULT_KEYS: x2 = default ROP id, x3 = default JOP id */
+        cpu->x[2] = 0x524f50; /* the values only name keys, and no key is ever used */
+        cpu->x[3] = 0x4a4f50;
+        return 0;
+    default:
+        if (cpu->m->log) fprintf(stderr, "hengevm: unknown hypervisor call %#llx (x1 %#llx) at el%u\n",
+                                 (unsigned long long)fn, (unsigned long long)cpu->x[1], cpu->el);
+        return (uint64_t)-1;                                 /* NOT_SUPPORTED */
+    }
+}
+
+/* Bring-up aid: x0-x3, and any string they point to (read with the current EL's mapping). */
+void hv_debug_args(HvCpu *cpu) {
+    for (int i = 0; i < 4; i++) fprintf(stderr, " x%d=%llx", i, (unsigned long long)cpu->x[i]);
+    fprintf(stderr, "\n");
+    for (int i = 0; i < 4; i++) {
+        char str[161];
+        int n = 0;
+        for (; n < 160; n++) {
+            uint64_t pa;
+            if (hv_mmu_access(cpu, cpu->x[i] + n, HV_ACC_READ, cpu->el, &pa) || hv_phys_read(cpu->m, pa, &str[n], 1) ||
+                str[n] < 9 || (unsigned char)str[n] > 126)
+                break;
+        }
+        str[n] = 0;
+        if (n >= 4) fprintf(stderr, "    x%d -> \"%s\"\n", i, str);
+    }
+}
+
+int hv_exception_insn(HvCpu *cpu, uint32_t insn, uint64_t pc) {
+    uint32_t imm16 = (insn >> 5) & 0xffff;
+    uint32_t opc = (insn >> 21) & 7, ll = insn & 3;
+    if (opc == 0 && ll == 1 && cpu->m->log >= 3) {
+        fprintf(stderr, "svc #%x at %llx el%u:", imm16, (unsigned long long)pc, cpu->el);
+        hv_debug_args(cpu);
+    }
+    if (opc == 0 && ll == 1) { /* SVC: ELR is the next instruction */
+        hv_take_exception(cpu, HV_EXC_SYNC, HV_EC_SVC64 << 26 | 1u << 25 | imm16, 0, 0, pc + 4);
+        return 1;
+    }
+    if (opc == 0 && ll == 2 && cpu->el == 1) { /* HVC: the hypervisor's PSCI and vmapple's PAC calls */
+        cpu->x[0] = psci(cpu, cpu->x[0]);
+        if (!cpu->halted && !cpu->off) return 0; /* like a call: the block carries on (xnu makes one per context switch) */
+        cpu->pc = pc + 4;
+        cpu->exit_reason = cpu->halted ? HV_EXIT_HALT : HV_EXIT_BRANCH; /* CPU_OFF: the dispatcher parks it */
+        return 1;
+    }
+    if (opc == 1 && ll == 0) { /* BRK */
+        hv_take_exception(cpu, HV_EXC_SYNC, HV_EC_BRK << 26 | 1u << 25 | imm16, 0, 0, pc);
+        return 1;
+    }
+    /* SMC with no EL3, HVC from EL0, HLT without halting debug, DCPS: undefined. */
+    hv_raise_undef(cpu, pc);
+    return 1;
+}
+
+int hv_check_interrupts(HvCpu *cpu) {
+    HvMachine *m = cpu->m;
+    HvPerCpu *p = cpu->pc_state;
+    (void)m;
+    if (p->fiq_line && !(cpu->daif & HV_PSTATE_F)) {
+        hv_take_exception(cpu, HV_EXC_FIQ, 0, 0, 0, cpu->pc);
+        return 1;
+    }
+    if (p->irq_line && !(cpu->daif & HV_PSTATE_I)) {
+        hv_take_exception(cpu, HV_EXC_IRQ, 0, 0, 0, cpu->pc);
+        return 1;
+    }
+    return 0;
+}

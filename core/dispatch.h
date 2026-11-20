@@ -1,1 +1,23 @@
-I2lmbmRlZiBIRU5HRVZNX0RJU1BBVENIX0gKI2RlZmluZSBIRU5HRVZNX0RJU1BBVENIX0gKCiNpbmNsdWRlICJjcHUuaCIKI2luY2x1ZGUgIm1hY2hpbmUuaCIKCi8qIFJ1bnMgdHJhbnNsYXRlZCBjb2RlIHVudGlsIHRoZSBDUFUgaGFsdHMsIHRoZSB0ZXN0IHN0b3AgUEMgaXMgcmVhY2hlZCwgb3IKICAgc29tZXRoaW5nIHRoZSBkaXNwYXRjaGVyIGNhbm5vdCBoYW5kbGUgaGFwcGVucy4gUmV0dXJucyB0aGUgSFZfRVhJVF8qIHJlYXNvbi4gKi8KaW50IGh2X3J1bihIdkNwdSAqY3B1KTsKLyogUnVucyBhIHNpbmdsZSBibG9jayAoYWZ0ZXIgaW50ZXJydXB0IGNoZWNrcykuICovCmludCBodl9ydW5fb25lKEh2Q3B1ICpjcHUpOwoKLyogRHJvcHMgZXZlcnkgdHJhbnNsYXRlZCBibG9jayAodGhlIEpJVCByZWdpb24gaXMgcmV1c2VkIGZyb20gdGhlIHN0YXJ0KS4gKi8Kdm9pZCBodl9mbHVzaF9ibG9ja3MoSHZNYWNoaW5lICptKTsKCnZvaWQgaHZfZW50ZXIoSHZDcHUgKmNwdSwgdm9pZCAqYmxvY2spOwovKiBXaGlsZSBodl9ydW4gcnVucywgdGhlIGhvc3QgRlBDUi9GUFNSIGhvbGQgdGhlIGd1ZXN0J3M7IHRoZXNlIG1vdmUgdGhlbSBpbiBhbmQgb3V0LiAqLwp2b2lkIGh2X2ZwX2VudGVyKEh2Q3B1ICpjcHUpOwp2b2lkIGh2X2ZwX2xlYXZlKEh2Q3B1ICpjcHUpOwoKdm9pZCBodl9kZWJ1Z19lbDBfaW5fa2VybmVsKEh2Q3B1ICpjcHUsIGNvbnN0IGNoYXIgKndoYXQpOwoKI2VuZGlmCg==
+#ifndef HENGEVM_DISPATCH_H
+#define HENGEVM_DISPATCH_H
+
+#include "cpu.h"
+#include "machine.h"
+
+/* Runs translated code until the CPU halts, the test stop PC is reached, or
+   something the dispatcher cannot handle happens. Returns the HV_EXIT_* reason. */
+int hv_run(HvCpu *cpu);
+/* Runs a single block (after interrupt checks). */
+int hv_run_one(HvCpu *cpu);
+
+/* Drops every translated block (the JIT region is reused from the start). */
+void hv_flush_blocks(HvMachine *m);
+
+void hv_enter(HvCpu *cpu, void *block);
+/* While hv_run runs, the host FPCR/FPSR hold the guest's; these move them in and out. */
+void hv_fp_enter(HvCpu *cpu);
+void hv_fp_leave(HvCpu *cpu);
+
+void hv_debug_el0_in_kernel(HvCpu *cpu, const char *what);
+
+#endif

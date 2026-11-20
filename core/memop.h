@@ -1,1 +1,57 @@
-I2lmbmRlZiBIRU5HRVZNX01FTU9QX0gKI2RlZmluZSBIRU5HRVZNX01FTU9QX0gKCiNpbmNsdWRlIDxzdGRpbnQuaD4KCiNpbmNsdWRlICJjcHUuaCIKCi8qIEEgZGVjb2RlZCBsb2FkL3N0b3JlLCBzaGFyZWQgYnkgdGhlIHRyYW5zbGF0b3IncyBmYXN0IHBhdGggYW5kIHRoZSBDIHNsb3cgcGF0aC4gKi8KdHlwZWRlZiBlbnVtIHsKICAgIEhWX01FTV9TSU5HTEUsICAgICAvKiBMRFIvU1RSIGFuZCBzaWduLWV4dGVuZGluZyBsb2FkcywgYWxsIGFkZHJlc3NpbmcgbW9kZXMsIEdQUiBvciBTSU1EJkZQICovCiAgICBIVl9NRU1fUEFJUiwgICAgICAgLyogTERQL1NUUC9MRE5QL1NUTlAvTERQU1cgKi8KICAgIEhWX01FTV9MSVRFUkFMLCAgICAvKiBMRFIgKGxpdGVyYWwpLCBMRFJTVyAobGl0ZXJhbCkgKi8KICAgIEhWX01FTV9MRFJBLCAgICAgICAvKiBMRFJBQS9MRFJBQjogYmFzZSArIHNjYWxlZCBpbW0xMCwgb3B0aW9uYWwgcHJlLWluZGV4IHdyaXRlYmFjayAqLwogICAgSFZfTUVNX09SREVSRUQsICAgIC8qIExEQVIvU1RMUi9MRExBUi9TVExMUiwgYW5kIExEQVBVUi9TVExVUiAoaW1tOSkgKi8KICAgIEhWX01FTV9FWENMLCAgICAgICAvKiBMRFhSL1NUWFIvTERBWFIvU1RMWFIgYW5kIHRoZSBwYWlyIGZvcm1zICovCiAgICBIVl9NRU1fQ0FTLCAgICAgICAgLyogQ0FTLCBDQVNBLCBDQVNMLCBDQVNBTCAoYWxsIHNpemVzKSAqLwogICAgSFZfTUVNX0NBU1AsICAgICAgIC8qIENBU1AgYW5kIGl0cyBvcmRlcmVkIGZvcm1zICovCiAgICBIVl9NRU1fQVRPTUlDLCAgICAgLyogTERBREQuLkxEVU1JTiwgU1dQLCBMREFQUiAqLwogICAgSFZfTUVNX1ZFQ19NVUxUSSwgIC8qIExEMS1MRDQgLyBTVDEtU1Q0IChtdWx0aXBsZSBzdHJ1Y3R1cmVzKSAqLwogICAgSFZfTUVNX1ZFQ19TSU5HTEUsIC8qIExEMS1MRDQgLyBTVDEtU1Q0IChzaW5nbGUgc3RydWN0dXJlKSBhbmQgTEQxUi1MRDRSICovCn0gSHZNZW1LaW5kOwoKdHlwZWRlZiBlbnVtIHsgSFZfQUREUl9CQVNFLCBIVl9BRERSX09GRlNFVCwgSFZfQUREUl9QUkUsIEhWX0FERFJfUE9TVCwgSFZfQUREUl9SRUcsIEhWX0FERFJfTElURVJBTCB9IEh2QWRkck1vZGU7Cgp0eXBlZGVmIHN0cnVjdCBIdk1lbU9wIHsKICAgIEh2TWVtS2luZCBraW5kOwogICAgSHZBZGRyTW9kZSBtb2RlOwogICAgdWludDhfdCBsb2FkLCBzdG9yZTsgICAvKiBib3RoIGZvciBhdG9taWNzLCBDQVMgYW5kIFNXUCAqLwogICAgdWludDhfdCB2ZWM7ICAgICAgICAgICAvKiBSdCAoYW5kIFJ0MikgYXJlIFNJTUQmRlAgcmVnaXN0ZXJzICovCiAgICB1aW50OF90IHNpemU7ICAgICAgICAgIC8qIGxvZzIgYnl0ZXMgb2Ygb25lIHJlZ2lzdGVyJ3MgYWNjZXNzICgwLi40KSAqLwogICAgdWludDhfdCBzaWduOyAgICAgICAgICAvKiAwOiB6ZXJvLWV4dGVuZCwgMzIgb3IgNjQ6IHNpZ24tZXh0ZW5kIHRvIHRoYXQgd2lkdGggKi8KICAgIHVpbnQ4X3QgdW5wcml2OyAgICAgICAgLyogTERUUi9TVFRSOiBFTDAgcGVybWlzc2lvbnMgKi8KICAgIHVpbnQ4X3QgYWxpZ247ICAgICAgICAgLyogbXVzdCBiZSBuYXR1cmFsbHkgYWxpZ25lZCAoYXRvbWljcywgZXhjbHVzaXZlcywgTERBUi9TVExSKSAqLwogICAgdWludDhfdCBydCwgcnQyLCBybiwgcm0sIHJzOwogICAgdWludDhfdCBleHQsIHNoaWZ0OyAgICAvKiByZWdpc3RlciBvZmZzZXQ6IG9wdGlvbiAoVVhUVyAyLCBMU0wgMywgU1hUVyA2LCBTWFRYIDcpIGFuZCBzaGlmdCAqLwogICAgdWludDhfdCBhdG9taWNfb3A7ICAgICAvKiBvMzpvcGMgZm9yIEhWX01FTV9BVE9NSUMgKi8KICAgIHVpbnQ4X3QgcnB0LCBzZWxlbTsgICAgLyogdmVjdG9yIHN0cnVjdHVyZXMgKi8KICAgIHVpbnQ4X3QgdnE7ICAgICAgICAgICAgLyogdmVjdG9yOiBRIGJpdCAqLwogICAgdWludDhfdCBpbmRleDsgICAgICAgICAvKiBzaW5nbGUgc3RydWN0dXJlOiBlbGVtZW50IGluZGV4OyByZXBsaWNhdGUgaWYgMHhmZiAqLwogICAgaW50NjRfdCBpbW07ICAgICAgICAgICAvKiBieXRlIG9mZnNldCwgb3IgcG9zdC1pbmRleCBhbW91bnQgKi8KICAgIHVpbnQzMl90IGJ5dGVzOyAgICAgICAgLyogdG90YWwgYnl0ZXMgdG91Y2hlZCAqLwp9IEh2TWVtT3A7CgovKiBSZXR1cm5zIDAsIG9yIC0xIGlmIHRoZSBlbmNvZGluZyBpcyB1bmFsbG9jYXRlZCBvciBhIGZlYXR1cmUgd2UgZG8gbm90IGV4cG9zZS4gKi8KaW50IGh2X21lbV9kZWNvZGUodWludDMyX3QgaW5zbiwgSHZNZW1PcCAqb3ApOwoKLyogRW11bGF0ZXMgb25lIGxvYWQvc3RvcmUgaW5zdHJ1Y3Rpb24gY29tcGxldGVseSBpbiBDOiBhZGRyZXNzLCB0cmFuc2xhdGlvbiwKICAgdGhlIGFjY2VzcyAoUkFNIG9yIE1NSU8pLCBhbmQgYmFzZSB3cml0ZWJhY2suIFRoaXMgaXMgdGhlIHNsb3cgcGF0aCBmb3IgVExCCiAgIG1pc3NlcyBhbmQgZGV2aWNlIGFjY2Vzc2VzLCBhbmQgdGhlIG9ubHkgcGF0aCBmb3IgZXhjbHVzaXZlcy4KICAgUmV0dXJucyAxIGlmIHRoZSBibG9jayBtdXN0IGxlYXZlIChhbiBhYm9ydCB3YXMgdGFrZW4pLiAqLwppbnQgaHZfbWVtX2VtdWxhdGUoSHZDcHUgKmNwdSwgdWludDMyX3QgaW5zbiwgdWludDY0X3QgcGMpOwoKLyogVmlydHVhbC1tZW1vcnkgYWNjZXNzIGZyb20gQyAodXNlZCBieSBEQyBaVkEgYW5kIHRlc3RzKS4gZWwgc2VsZWN0cyB0aGUKICAgcGVybWlzc2lvbnMuIFJldHVybnMgMCwgb3IgMSBhZnRlciB0YWtpbmcgYSBkYXRhIGFib3J0LiAqLwppbnQgaHZfdm1lbV94ZmVyKEh2Q3B1ICpjcHUsIHVpbnQ2NF90IHZhLCB2b2lkICpidWYsIHVpbnQzMl90IGxlbiwgaW50IHdyaXRlLCBpbnQgZWwsIHVpbnQ2NF90IHBjKTsKCiNlbmRpZgo=
+#ifndef HENGEVM_MEMOP_H
+#define HENGEVM_MEMOP_H
+
+#include <stdint.h>
+
+#include "cpu.h"
+
+/* A decoded load/store, shared by the translator's fast path and the C slow path. */
+typedef enum {
+    HV_MEM_SINGLE,     /* LDR/STR and sign-extending loads, all addressing modes, GPR or SIMD&FP */
+    HV_MEM_PAIR,       /* LDP/STP/LDNP/STNP/LDPSW */
+    HV_MEM_LITERAL,    /* LDR (literal), LDRSW (literal) */
+    HV_MEM_LDRA,       /* LDRAA/LDRAB: base + scaled imm10, optional pre-index writeback */
+    HV_MEM_ORDERED,    /* LDAR/STLR/LDLAR/STLLR, and LDAPUR/STLUR (imm9) */
+    HV_MEM_EXCL,       /* LDXR/STXR/LDAXR/STLXR and the pair forms */
+    HV_MEM_CAS,        /* CAS, CASA, CASL, CASAL (all sizes) */
+    HV_MEM_CASP,       /* CASP and its ordered forms */
+    HV_MEM_ATOMIC,     /* LDADD..LDUMIN, SWP, LDAPR */
+    HV_MEM_VEC_MULTI,  /* LD1-LD4 / ST1-ST4 (multiple structures) */
+    HV_MEM_VEC_SINGLE, /* LD1-LD4 / ST1-ST4 (single structure) and LD1R-LD4R */
+} HvMemKind;
+
+typedef enum { HV_ADDR_BASE, HV_ADDR_OFFSET, HV_ADDR_PRE, HV_ADDR_POST, HV_ADDR_REG, HV_ADDR_LITERAL } HvAddrMode;
+
+typedef struct HvMemOp {
+    HvMemKind kind;
+    HvAddrMode mode;
+    uint8_t load, store;   /* both for atomics, CAS and SWP */
+    uint8_t vec;           /* Rt (and Rt2) are SIMD&FP registers */
+    uint8_t size;          /* log2 bytes of one register's access (0..4) */
+    uint8_t sign;          /* 0: zero-extend, 32 or 64: sign-extend to that width */
+    uint8_t unpriv;        /* LDTR/STTR: EL0 permissions */
+    uint8_t align;         /* must be naturally aligned (atomics, exclusives, LDAR/STLR) */
+    uint8_t rt, rt2, rn, rm, rs;
+    uint8_t ext, shift;    /* register offset: option (UXTW 2, LSL 3, SXTW 6, SXTX 7) and shift */
+    uint8_t atomic_op;     /* o3:opc for HV_MEM_ATOMIC */
+    uint8_t rpt, selem;    /* vector structures */
+    uint8_t vq;            /* vector: Q bit */
+    uint8_t index;         /* single structure: element index; replicate if 0xff */
+    int64_t imm;           /* byte offset, or post-index amount */
+    uint32_t bytes;        /* total bytes touched */
+} HvMemOp;
+
+/* Returns 0, or -1 if the encoding is unallocated or a feature we do not expose. */
+int hv_mem_decode(uint32_t insn, HvMemOp *op);
+
+/* Emulates one load/store instruction completely in C: address, translation,
+   the access (RAM or MMIO), and base writeback. This is the slow path for TLB
+   misses and device accesses, and the only path for exclusives.
+   Returns 1 if the block must leave (an abort was taken). */
+int hv_mem_emulate(HvCpu *cpu, uint32_t insn, uint64_t pc);
+
+/* Virtual-memory access from C (used by DC ZVA and tests). el selects the
+   permissions. Returns 0, or 1 after taking a data abort. */
+int hv_vmem_xfer(HvCpu *cpu, uint64_t va, void *buf, uint32_t len, int write, int el, uint64_t pc);
+
+#endif

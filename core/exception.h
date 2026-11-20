@@ -1,1 +1,48 @@
-I2lmbmRlZiBIRU5HRVZNX0VYQ0VQVElPTl9ICiNkZWZpbmUgSEVOR0VWTV9FWENFUFRJT05fSAoKI2luY2x1ZGUgPHN0ZGludC5oPgoKI2luY2x1ZGUgImNwdS5oIgoKLyogRXhjZXB0aW9uIGNsYXNzZXMgKEVTUl9FTHguRUMpLiAqLwojZGVmaW5lIEhWX0VDX1VOS05PV04gICAgIDB4MDAKI2RlZmluZSBIVl9FQ19GUF9BQ0NFU1MgICAweDA3CiNkZWZpbmUgSFZfRUNfSUxMRUdBTCAgICAgMHgwZQojZGVmaW5lIEhWX0VDX1NWQzY0ICAgICAgIDB4MTUKI2RlZmluZSBIVl9FQ19IVkM2NCAgICAgICAweDE2CiNkZWZpbmUgSFZfRUNfU01DNjQgICAgICAgMHgxNwojZGVmaW5lIEhWX0VDX1NZU1JFRyAgICAgIDB4MTgKI2RlZmluZSBIVl9FQ19JQUJUX0xPV0VSICAweDIwCiNkZWZpbmUgSFZfRUNfSUFCVF9TQU1FICAgMHgyMQojZGVmaW5lIEhWX0VDX1BDX0FMSUdOICAgIDB4MjIKI2RlZmluZSBIVl9FQ19EQUJUX0xPV0VSICAweDI0CiNkZWZpbmUgSFZfRUNfREFCVF9TQU1FICAgMHgyNQojZGVmaW5lIEhWX0VDX1NQX0FMSUdOICAgIDB4MjYKI2RlZmluZSBIVl9FQ19CUksgICAgICAgICAweDNjCgplbnVtIHsgSFZfRVhDX1NZTkMgPSAwLCBIVl9FWENfSVJRID0gMSwgSFZfRVhDX0ZJUSA9IDIsIEhWX0VYQ19TRVJST1IgPSAzIH07CgovKiBQU1RBVEUgaW4gU1BTUiBsYXlvdXQsIGFuZCBzZXR0aW5nIGl0IGJhY2sgKHN3aXRjaGVzIEVMIGFuZCBTUCBiYW5rKS4gKi8KdWludDY0X3QgaHZfcHN0YXRlX2dldChIdkNwdSAqY3B1KTsKdm9pZCBodl9wc3RhdGVfc2V0KEh2Q3B1ICpjcHUsIHVpbnQ2NF90IHNwc3IpOwovKiBCYW5rIHRoZSBjdXJyZW50IFNQIGFuZCBzZWxlY3QgU1BfRUwwIG9yIFNQX0VMeCBmb3IgKGVsLCBzcHNlbCkuICovCnZvaWQgaHZfc3Bfc3dpdGNoKEh2Q3B1ICpjcHUsIHVpbnQzMl90IGVsLCB1aW50MzJfdCBzcHNlbCk7CgovKiBUYWtlcyBhbiBleGNlcHRpb24gdG8gRUwxLiByZXQgaXMgdGhlIHByZWZlcnJlZCByZXR1cm4gYWRkcmVzcyAoRUxSX0VMMSkuICovCnZvaWQgaHZfdGFrZV9leGNlcHRpb24oSHZDcHUgKmNwdSwgaW50IHR5cGUsIHVpbnQzMl90IGVzciwgdWludDY0X3QgZmFyLCBpbnQgc2V0X2ZhciwgdWludDY0X3QgcmV0KTsKdm9pZCBodl9yYWlzZV9zeW5jKEh2Q3B1ICpjcHUsIHVpbnQzMl90IGVjLCB1aW50MzJfdCBpc3MsIHVpbnQ2NF90IGZhciwgdWludDY0X3QgcGMpOwp2b2lkIGh2X3JhaXNlX3VuZGVmKEh2Q3B1ICpjcHUsIHVpbnQ2NF90IHBjKTsKdm9pZCBodl9yYWlzZV9hYm9ydChIdkNwdSAqY3B1LCBpbnQgaW5zbiwgdWludDY0X3QgdmEsIHVpbnQzMl90IGZzYywgaW50IHduciwgaW50IHMxcHR3LCB1aW50NjRfdCBwYyk7CnZvaWQgaHZfZXJldChIdkNwdSAqY3B1KTsKCi8qIFNWQywgSFZDIChQU0NJKSwgU01DLCBCUkssIEhMVCBhdCBwYy4gUmV0dXJucyAxOiB0aGUgYmxvY2sgYWx3YXlzIGxlYXZlcy4gKi8KaW50IGh2X2V4Y2VwdGlvbl9pbnNuKEh2Q3B1ICpjcHUsIHVpbnQzMl90IGluc24sIHVpbnQ2NF90IHBjKTsKCi8qIFByaW50cyB4MC14MyBhbmQgdGhlIHN0cmluZ3MgdGhleSBwb2ludCB0byAoYnJpbmctdXAgYWlkKS4gKi8Kdm9pZCBodl9kZWJ1Z19hcmdzKEh2Q3B1ICpjcHUpOwoKLyogQ2FsbGVkIGJ5IHRoZSBkaXNwYXRjaGVyIGJldHdlZW4gYmxvY2tzLiBSZXR1cm5zIDEgaWYgYW4gaW50ZXJydXB0IHdhcyB0YWtlbi4gKi8KaW50IGh2X2NoZWNrX2ludGVycnVwdHMoSHZDcHUgKmNwdSk7CgojZW5kaWYK
+#ifndef HENGEVM_EXCEPTION_H
+#define HENGEVM_EXCEPTION_H
+
+#include <stdint.h>
+
+#include "cpu.h"
+
+/* Exception classes (ESR_ELx.EC). */
+#define HV_EC_UNKNOWN     0x00
+#define HV_EC_FP_ACCESS   0x07
+#define HV_EC_ILLEGAL     0x0e
+#define HV_EC_SVC64       0x15
+#define HV_EC_HVC64       0x16
+#define HV_EC_SMC64       0x17
+#define HV_EC_SYSREG      0x18
+#define HV_EC_IABT_LOWER  0x20
+#define HV_EC_IABT_SAME   0x21
+#define HV_EC_PC_ALIGN    0x22
+#define HV_EC_DABT_LOWER  0x24
+#define HV_EC_DABT_SAME   0x25
+#define HV_EC_SP_ALIGN    0x26
+#define HV_EC_BRK         0x3c
+
+enum { HV_EXC_SYNC = 0, HV_EXC_IRQ = 1, HV_EXC_FIQ = 2, HV_EXC_SERROR = 3 };
+
+/* PSTATE in SPSR layout, and setting it back (switches EL and SP bank). */
+uint64_t hv_pstate_get(HvCpu *cpu);
+void hv_pstate_set(HvCpu *cpu, uint64_t spsr);
+/* Bank the current SP and select SP_EL0 or SP_ELx for (el, spsel). */
+void hv_sp_switch(HvCpu *cpu, uint32_t el, uint32_t spsel);
+
+/* Takes an exception to EL1. ret is the preferred return address (ELR_EL1). */
+void hv_take_exception(HvCpu *cpu, int type, uint32_t esr, uint64_t far, int set_far, uint64_t ret);
+void hv_raise_sync(HvCpu *cpu, uint32_t ec, uint32_t iss, uint64_t far, uint64_t pc);
+void hv_raise_undef(HvCpu *cpu, uint64_t pc);
+void hv_raise_abort(HvCpu *cpu, int insn, uint64_t va, uint32_t fsc, int wnr, int s1ptw, uint64_t pc);
+void hv_eret(HvCpu *cpu);
+
+/* SVC, HVC (PSCI), SMC, BRK, HLT at pc. Returns 1: the block always leaves. */
+int hv_exception_insn(HvCpu *cpu, uint32_t insn, uint64_t pc);
+
+/* Prints x0-x3 and the strings they point to (bring-up aid). */
+void hv_debug_args(HvCpu *cpu);
+
+/* Called by the dispatcher between blocks. Returns 1 if an interrupt was taken. */
+int hv_check_interrupts(HvCpu *cpu);
+
+#endif

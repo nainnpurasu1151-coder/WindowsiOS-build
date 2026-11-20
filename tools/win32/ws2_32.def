@@ -1,0 +1,16 @@
+; Import library definition for ws2_32 (ARM64).
+; Function list extracted from the __declspec(dllimport) declarations in
+; tools/winios_browser_arm64.c (Winsock APIs).
+LIBRARY ws2_32
+EXPORTS
+WSAStartup
+accept
+bind
+closesocket
+connect
+listen
+recv
+send
+setsockopt
+shutdown
+socket

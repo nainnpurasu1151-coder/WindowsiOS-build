@@ -1,0 +1,25 @@
+; Import library definition for kernel32 (ARM64).
+; Function list extracted from the __declspec(dllimport) declarations in
+; tools/opt_hive_arm64.c and tools/winios_browser_arm64.c.
+LIBRARY kernel32
+EXPORTS
+CloseHandle
+CreateFileW
+CreateProcessW
+CreateThread
+ExitProcess
+GetCommandLineW
+GetCurrentProcess
+GetFileAttributesW
+GetModuleFileNameW
+GetProcessHeap
+GetStdHandle
+GetTempPathW
+GetTickCount64
+HeapAlloc
+HeapFree
+MultiByteToWideChar
+Sleep
+WaitForMultipleObjects
+WideCharToMultiByte
+WriteFile

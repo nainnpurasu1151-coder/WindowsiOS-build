@@ -1,1 +1,96 @@
-I2lmbmRlZiBIRU5HRVZNX01NVV9ICiNkZWZpbmUgSEVOR0VWTV9NTVVfSAoKI2luY2x1ZGUgPHN0ZGludC5oPgojaW5jbHVkZSA8c3RkaW8uaD4KCiNpbmNsdWRlICJjcHUuaCIKCnN0cnVjdCBIdlJhbTsKCnR5cGVkZWYgZW51bSB7IEhWX0FDQ19SRUFEID0gMCwgSFZfQUNDX1dSSVRFID0gMSwgSFZfQUNDX0VYRUMgPSAyIH0gSHZBY2Nlc3M7CgovKiBSZXN1bHQgb2YgYSBzdGFnZSAxIHRyYW5zbGF0aW9uIGZvciB0aGUgRUwxJjAgcmVnaW1lLiAqLwp0eXBlZGVmIHN0cnVjdCBIdldhbGsgewogICAgdWludDY0X3QgcGE7CiAgICB1aW50MzJfdCBmc2M7ICAgICAgICAvKiAwIG9uIHN1Y2Nlc3MsIG90aGVyd2lzZSB0aGUgYWJvcnQncyBmYXVsdCBzdGF0dXMgY29kZSAqLwogICAgaW50IHMxcHR3OyAgICAgICAgICAgLyogdGhlIGZhdWx0IGhhcHBlbmVkIHJlYWRpbmcgYSB0YWJsZSAqLwogICAgdWludDY0X3QgYmxvY2tfc2l6ZTsgLyogc2l6ZSBvZiB0aGUgbWFwcGluZyB0aGF0IHdhcyBmb3VuZCAqLwogICAgdWludDhfdCByLCB3LCB4OyAgICAgLyogcGVybWlzc2lvbnMgYXQgdGhlIEVMIHRoYXQgd2FzIGFza2VkIGFib3V0ICovCiAgICB1aW50OF90IGF0dHI7ICAgICAgICAvKiBNQUlSIGF0dHJpYnV0ZSBieXRlICovCn0gSHZXYWxrOwoKLyogRmF1bHQgc3RhdHVzIGNvZGVzIChFU1IgSVNTIERGU0MvSUZTQykuICovCiNkZWZpbmUgSFZfRlNDX0FERFJfU0laRShsKSAgICgweDAwICsgKGwpKQojZGVmaW5lIEhWX0ZTQ19UUkFOU0xBVElPTihsKSAoMHgwNCArIChsKSkKI2RlZmluZSBIVl9GU0NfQUNDRVNTKGwpICAgICAgKDB4MDggKyAobCkpCiNkZWZpbmUgSFZfRlNDX1BFUk1JU1NJT04obCkgICgweDBjICsgKGwpKQojZGVmaW5lIEhWX0ZTQ19FWFRFUk5BTCAgICAgICAweDEwCiNkZWZpbmUgSFZfRlNDX0FMSUdOTUVOVCAgICAgIDB4MjEKCi8qIGVsIGlzIHRoZSBFTCB3aG9zZSBwZXJtaXNzaW9ucyBhcHBseSAoMCBmb3IgTERUUi9TVFRSIGF0IEVMMSkuICovCnZvaWQgaHZfbW11X3dhbGsoSHZDcHUgKmNwdSwgdWludDY0X3QgdmEsIEh2QWNjZXNzIGFjYywgaW50IGVsLCBIdldhbGsgKm91dCk7Cgp2b2lkIGh2X3RsYl9mbHVzaChIdkNwdSAqY3B1KTsKdm9pZCBodl90bGJfZmx1c2hfdmEoSHZDcHUgKmNwdSwgdWludDY0X3QgdmEpOwp2b2lkIGh2X3RsYl9mbHVzaF91c2VyKEh2Q3B1ICpjcHUpOwp2b2lkIGh2X2t2YV9oaXN0X2R1bXAoRklMRSAqZik7IC8qIEhWX0tWQV9ISVNULCBzZWUgbW11LmMgKi8KLyogQSBiaWcgcmFuZ2Ugb2Yga2VybmVsIFZBczogaXRzIGtlcm5lbCBlbnRyaWVzIGFuZCBjYWNoZWQgYnJhbmNoIHRhcmdldHMsIG5vdCBldmVyeSBwcm9jZXNzJ3MgZW50cmllcy4gKi8Kdm9pZCBodl90bGJfZmx1c2hfa2VybmVsX3JhbmdlKEh2Q3B1ICpjcHUsIHVpbnQ2NF90IHZhLCB1aW50NjRfdCBsZW4pOwp2b2lkIGh2X3RsYl9mbHVzaF91c2VyX3JhbmdlKEh2Q3B1ICpjcHUsIHVpbnQ2NF90IHZhLCB1aW50NjRfdCBsZW4pOwp1aW50NjRfdCBodl9tbXVfdWtleShjb25zdCBIdkNwdSAqY3B1KTsKdm9pZCBodl90bGJfc3dpdGNoX3VzZXIoSHZDcHUgKmNwdSwgdWludDY0X3Qgb2xkX3VrZXksIHVpbnQ2NF90IG5ld191a2V5KTsgLyogYSBwcm9jZXNzIHN3aXRjaCAqLwp2b2lkIGh2X3RsYl9mbHVzaF9rZXJuZWwoSHZDcHUgKmNwdSk7CnZvaWQgaHZfdGxiX3N0YXNoX2Ryb3AoSHZDcHUgKmNwdSwgaW50IGFzaWQpOyAvKiBhc2lkIC0xOiBhbGwgKi8KLyogRW1wdHkgdGhlIGluZGlyZWN0LWJyYW5jaCBjYWNoZSBmb3IgYWxsIHVzZXIgKDApIG9yIGZvciBrZXJuZWwgKDEpIFZBcy4gKi8Kdm9pZCBodl9pamNfcmVzZXQoSHZDcHUgKmNwdSwgaW50IGtlcm5lbCk7CnZvaWQgaHZfaWpjX3N3aXRjaF9rZXJuZWwoSHZDcHUgKmNwdSwgdWludDY0X3QgbmV3X3R0YnIxKTsKLyogVGhlIGluZGlyZWN0LWJyYW5jaCBjYWNoZSBzbG90IG9mIGEgdGFnIChWQSBeIHNhbHQpOyB0cmFuc2xhdGVkIGNvZGUgY29tcHV0ZXMgdGhlIHNhbWUuICovCi8qIFRoZSBjYWNoZSBpcyB0d28td2F5OiBhIHRhZydzIHNldCBpcyB0d28gZW50cmllcywgdGhpcyBvbmUgKHdheSAwLCB0aGUgb25lCiAgIGZpbGxlZCBsYXN0KSBhbmQgdGhlIG5leHQuICovCnN0YXRpYyBpbmxpbmUgdWludDMyX3QgaHZfaWpjX2luZGV4KHVpbnQ2NF90IHRhZykgewogICAgcmV0dXJuICh1aW50MzJfdCkoKCh0YWcgXiB0YWcgPj4gMTYgXiB0YWcgPj4gNDYpID4+IDIpICYgKCgxdSA8PCAoSFZfSUpDX0JJVFMgLSAxKSkgLSAxKSkgPDwgMTsKfQpzdGF0aWMgaW5saW5lIHVpbnQzMl90IGh2X2lqY19rZXkodWludDY0X3QgdmEsIHVpbnQ2NF90IHNhbHQpIHsKICAgIHJldHVybiAodWludDMyX3QpKCgodmEgPj4gSFZfVExCX1BBR0VfQklUUykgKiAweDllMzc3OWI5N2Y0YTdjMTV1bGwgXiAoc2FsdCA+PiA0OCkgKiAweGMyYjJhZTNkMjdkNGViNGZ1bGwpID4+IDQ0KTsKfQpzdGF0aWMgaW5saW5lIHVpbnQzMl90IGh2X2xhcmdlXzJtX2JpdCh1aW50NjRfdCB2YSkgewogICAgcmV0dXJuICh1aW50MzJfdCkoKCh2YSA+PiAyMSkgKiAweDllMzc3OWI5N2Y0YTdjMTV1bGwpID4+IDUyKTsgLyogMC4uNDA5NSAqLwp9CnN0YXRpYyBpbmxpbmUgdWludDMyX3QgaHZfbGFyZ2VfYmlnX2JpdCh1aW50NjRfdCB2YSkgewogICAgcmV0dXJuICh1aW50MzJfdCkoKCh2YSA+PiAzMCkgKiAweDllMzc3OWI5N2Y0YTdjMTV1bGwpID4+IDU1KTsgLyogMC4uNTExICovCn0KLyogRm9yZ2V0IG9uZSBhZGRyZXNzIHNwYWNlJ3MgY2FjaGVkIHVzZXIgdGFyZ2V0cy4gKi8Kdm9pZCBodl9pamNfZHJvcF9hc2lkKEh2Q3B1ICpjcHUsIHVpbnQxNl90IGFzaWQpOwovKiBUVEJSMCBjaGFuZ2VkOiB1c2UgdGhlIG5ldyBhZGRyZXNzIHNwYWNlJ3MgdXNlciBlbnRyaWVzLiAqLwp2b2lkIGh2X2lqY19zd2l0Y2goSHZDcHUgKmNwdSk7CnZvaWQgaHZfdGxiX2ZsdXNoX3ZhX2FzaWQoSHZDcHUgKmNwdSwgdWludDY0X3QgdmEsIGludCBhc2lkKTsgLyogYXNpZCAtMTogZXZlcnkgYWRkcmVzcyBzcGFjZSAqLwp2b2lkIGh2X2lqY19kcm9wX3ZhKEh2Q3B1ICpjcHUsIHVpbnQ2NF90IHZhLCBpbnQgYXNpZCk7Ci8qIFRyYW5zbGF0ZWQgY29kZSdzIFRMQiBtaXNzOiB3YWxrIGFuZCBmaWxsIHdpdGhvdXQgdGhlIGZ1bGwgaGVscGVyIChzZWUgbW11LmMpLiAqLwppbnQgaHZfdGxiX3JlZmlsbChIdkNwdSAqY3B1LCB1aW50NjRfdCB2YSwgdWludDMyX3QgZmxhZ3MpOwpzdHJ1Y3QgSHZCbG9jazsKdm9pZCBodl9pamNfZmlsbChIdkNwdSAqY3B1LCBzdHJ1Y3QgSHZCbG9jayAqYik7CmludCBodl9pamNfZmlsbF9jaGVja2VkKEh2Q3B1ICpjcHUsIHN0cnVjdCBIdkJsb2NrICpiKTsgLyogb25seSBpZiB0aGUgVExCIHN0aWxsIG1hcHMgaXQgKDA6IG5vdCBjYWNoZWQpICovCnZvaWQgKmh2X2lqY19yZXNvbHZlKEh2Q3B1ICpjcHUsIHVpbnQ2NF90IHZhLCB1aW50MzJfdCBmbGFncyk7Ci8qIEFub3RoZXIgQ1BVJ3MgVExCSSBvZiBvbmUgcGFnZTogZHJvcCB0YXJnZXQncyBlbnRyaWVzIGZvciBpdCBmcm9tIGhlcmUuIDEgaWYKICAgdGhhdCBpcyBlbm91Z2ggKG5vIHBhZ2Ugd2FsayBvZiB0YXJnZXQncyByYWNlZCBpdCksIDAgaWYgdGFyZ2V0IG11c3QgZG8gaXQKICAgaXRzZWxmIGFuZCBiZSB3YWl0ZWQgZm9yLiBJdHMgYnJhbmNoIGNhY2hlIGlzIHN0aWxsIHRhcmdldCdzIG93biBidXNpbmVzcy4gKi8KLyogYXNpZCAtMTogYWxsLiAxOiBkb25lOyAwOiByYWNlZCB0aGUgdGFyZ2V0J3Mgb3duIHBhZ2Ugd2FsayBvciBjYWNoZSBmaWxsCiAgICh0cnkgYWdhaW4pOyAtMTogdGhlIHRhcmdldCBoYXMgdG8gZG8gaXQgaXRzZWxmLiAqLwppbnQgaHZfdGxiaV9kcm9wX3JlbW90ZV92YShIdkNwdSAqdGFyZ2V0LCB1aW50NjRfdCB2YSwgaW50IGFzaWQpOyAgICAgICAvKiBqdXN0IHRoZSBjYWNoZWQgYnJhbmNoIHRhcmdldHMgaW4gdGhlIHBhZ2UgKi8Kdm9pZCBodl9pamNfZHJvcF9yYW5nZShIdkNwdSAqY3B1LCB1aW50NjRfdCB2YSwgdWludDY0X3QgbGVuLCBpbnQgYXNpZCk7CnZvaWQgaHZfdWNvZGVfYWRkKEh2Q3B1ICpjcHUsIHVpbnQ2NF90IHZhKTsgLyogYSB1c2VyIHRhcmdldCB3YXMgY2FjaGVkIGluIHRoaXMgcGFnZSAoY3VycmVudCBhZGRyZXNzIHNwYWNlKSAqLwp2b2lkIGh2X3RsYl9wcm90ZWN0X2NvZGUoSHZDcHUgKmNwdSwgY29uc3QgdWludDhfdCAqaG9zdF9wYWdlKTsKdm9pZCBodl90bGJfcHJvdGVjdF9jb2RlX3BhZ2UoSHZDcHUgKmNwdSwgc3RydWN0IEh2UmFtICpyYW0sIHVpbnQ2NF90IHBnKTsgLyogdGhlIHNhbWUsIHRocm91Z2ggdGhlIHBhZ2UncyB3cml0ZSBoaW50cyAqLwoKLyogVHJhbnNsYXRlcyBmb3IgYSBDIGFjY2VzcyBvZiBgbGVuYCBieXRlcyB0aGF0IHN0YXlzIGluc2lkZSBvbmUgMTYgS0IgcGFnZSwKICAgZmlsbGluZyB0aGUgVExCIHdoZW4gdGhlIHBhZ2UgaXMgb3JkaW5hcnkgUkFNLiBSZXR1cm5zIDAgYW5kIHNldHMgKnBhLCBvciB0aGUKICAgZmF1bHQgc3RhdHVzIGNvZGUuICovCnVpbnQzMl90IGh2X21tdV9hY2Nlc3MoSHZDcHUgKmNwdSwgdWludDY0X3QgdmEsIEh2QWNjZXNzIGFjYywgaW50IGVsLCB1aW50NjRfdCAqcGEpOwoKLyogRm9yIHRoZSBkaXNwYXRjaGVyOiBob3N0IHBvaW50ZXIgdG8gdGhlIGd1ZXN0IGluc3RydWN0aW9ucyBhdCB2YSBhbmQgaG93IG1hbnkKICAgY2FuIGJlIHJlYWQgYmVmb3JlIHRoZSBwYWdlIGVuZHMuIE9uIGEgZmF1bHQsIHRoZSBpbnN0cnVjdGlvbiBhYm9ydCBpcyB0YWtlbgogICBhbmQgTlVMTCBpcyByZXR1cm5lZC4gKi8KY29uc3QgdWludDMyX3QgKmh2X21tdV9mZXRjaChIdkNwdSAqY3B1LCB1aW50NjRfdCB2YSwgdWludDY0X3QgKnBhLCB1aW50MzJfdCAqYXZhaWwpOwoKI2VuZGlmCg==
+#ifndef HENGEVM_MMU_H
+#define HENGEVM_MMU_H
+
+#include <stdint.h>
+#include <stdio.h>
+
+#include "cpu.h"
+
+struct HvRam;
+
+typedef enum { HV_ACC_READ = 0, HV_ACC_WRITE = 1, HV_ACC_EXEC = 2 } HvAccess;
+
+/* Result of a stage 1 translation for the EL1&0 regime. */
+typedef struct HvWalk {
+    uint64_t pa;
+    uint32_t fsc;        /* 0 on success, otherwise the abort's fault status code */
+    int s1ptw;           /* the fault happened reading a table */
+    uint64_t block_size; /* size of the mapping that was found */
+    uint8_t r, w, x;     /* permissions at the EL that was asked about */
+    uint8_t attr;        /* MAIR attribute byte */
+} HvWalk;
+
+/* Fault status codes (ESR ISS DFSC/IFSC). */
+#define HV_FSC_ADDR_SIZE(l)   (0x00 + (l))
+#define HV_FSC_TRANSLATION(l) (0x04 + (l))
+#define HV_FSC_ACCESS(l)      (0x08 + (l))
+#define HV_FSC_PERMISSION(l)  (0x0c + (l))
+#define HV_FSC_EXTERNAL       0x10
+#define HV_FSC_ALIGNMENT      0x21
+
+/* el is the EL whose permissions apply (0 for LDTR/STTR at EL1). */
+void hv_mmu_walk(HvCpu *cpu, uint64_t va, HvAccess acc, int el, HvWalk *out);
+
+void hv_tlb_flush(HvCpu *cpu);
+void hv_tlb_flush_va(HvCpu *cpu, uint64_t va);
+void hv_tlb_flush_user(HvCpu *cpu);
+void hv_kva_hist_dump(FILE *f); /* HV_KVA_HIST, see mmu.c */
+/* A big range of kernel VAs: its kernel entries and cached branch targets, not every process's entries. */
+void hv_tlb_flush_kernel_range(HvCpu *cpu, uint64_t va, uint64_t len);
+void hv_tlb_flush_user_range(HvCpu *cpu, uint64_t va, uint64_t len);
+uint64_t hv_mmu_ukey(const HvCpu *cpu);
+void hv_tlb_switch_user(HvCpu *cpu, uint64_t old_ukey, uint64_t new_ukey); /* a process switch */
+void hv_tlb_flush_kernel(HvCpu *cpu);
+void hv_tlb_stash_drop(HvCpu *cpu, int asid); /* asid -1: all */
+/* Empty the indirect-branch cache for all user (0) or for kernel (1) VAs. */
+void hv_ijc_reset(HvCpu *cpu, int kernel);
+void hv_ijc_switch_kernel(HvCpu *cpu, uint64_t new_ttbr1);
+/* The indirect-branch cache slot of a tag (VA ^ salt); translated code computes the same. */
+/* The cache is two-way: a tag's set is two entries, this one (way 0, the one
+   filled last) and the next. */
+static inline uint32_t hv_ijc_index(uint64_t tag) {
+    return (uint32_t)(((tag ^ tag >> 16 ^ tag >> 46) >> 2) & ((1u << (HV_IJC_BITS - 1)) - 1)) << 1;
+}
+static inline uint32_t hv_ijc_key(uint64_t va, uint64_t salt) {
+    return (uint32_t)(((va >> HV_TLB_PAGE_BITS) * 0x9e3779b97f4a7c15ull ^ (salt >> 48) * 0xc2b2ae3d27d4eb4full) >> 44);
+}
+static inline uint32_t hv_large_2m_bit(uint64_t va) {
+    return (uint32_t)(((va >> 21) * 0x9e3779b97f4a7c15ull) >> 52); /* 0..4095 */
+}
+static inline uint32_t hv_large_big_bit(uint64_t va) {
+    return (uint32_t)(((va >> 30) * 0x9e3779b97f4a7c15ull) >> 55); /* 0..511 */
+}
+/* Forget one address space's cached user targets. */
+void hv_ijc_drop_asid(HvCpu *cpu, uint16_t asid);
+/* TTBR0 changed: use the new address space's user entries. */
+void hv_ijc_switch(HvCpu *cpu);
+void hv_tlb_flush_va_asid(HvCpu *cpu, uint64_t va, int asid); /* asid -1: every address space */
+void hv_ijc_drop_va(HvCpu *cpu, uint64_t va, int asid);
+/* Translated code's TLB miss: walk and fill without the full helper (see mmu.c). */
+int hv_tlb_refill(HvCpu *cpu, uint64_t va, uint32_t flags);
+struct HvBlock;
+void hv_ijc_fill(HvCpu *cpu, struct HvBlock *b);
+int hv_ijc_fill_checked(HvCpu *cpu, struct HvBlock *b); /* only if the TLB still maps it (0: not cached) */
+void *hv_ijc_resolve(HvCpu *cpu, uint64_t va, uint32_t flags);
+/* Another CPU's TLBI of one page: drop target's entries for it from here. 1 if
+   that is enough (no page walk of target's raced it), 0 if target must do it
+   itself and be waited for. Its branch cache is still target's own business. */
+/* asid -1: all. 1: done; 0: raced the target's own page walk or cache fill
+   (try again); -1: the target has to do it itself. */
+int hv_tlbi_drop_remote_va(HvCpu *target, uint64_t va, int asid);       /* just the cached branch targets in the page */
+void hv_ijc_drop_range(HvCpu *cpu, uint64_t va, uint64_t len, int asid);
+void hv_ucode_add(HvCpu *cpu, uint64_t va); /* a user target was cached in this page (current address space) */
+void hv_tlb_protect_code(HvCpu *cpu, const uint8_t *host_page);
+void hv_tlb_protect_code_page(HvCpu *cpu, struct HvRam *ram, uint64_t pg); /* the same, through the page's write hints */
+
+/* Translates for a C access of `len` bytes that stays inside one 16 KB page,
+   filling the TLB when the page is ordinary RAM. Returns 0 and sets *pa, or the
+   fault status code. */
+uint32_t hv_mmu_access(HvCpu *cpu, uint64_t va, HvAccess acc, int el, uint64_t *pa);
+
+/* For the dispatcher: host pointer to the guest instructions at va and how many
+   can be read before the page ends. On a fault, the instruction abort is taken
+   and NULL is returned. */
+const uint32_t *hv_mmu_fetch(HvCpu *cpu, uint64_t va, uint64_t *pa, uint32_t *avail);
+
+#endif

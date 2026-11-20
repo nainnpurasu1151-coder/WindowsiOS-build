@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>get-task-allow</key>
+	<true/>
+	<!-- Mirrors Henge's Henge.personal.entitlements: for a free personal
+	     team. Only survives re-signing if the provisioning profile the
+	     sideloader builds carries it; without it the app falls back to
+	     smaller guest RAM (see winios_bridge.m memory ladder). -->
+	<key>com.apple.developer.kernel.increased-memory-limit</key>
+	<true/>
+</dict>
+</plist>

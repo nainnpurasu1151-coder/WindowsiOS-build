@@ -1,1 +1,124 @@
-I2luY2x1ZGUgImNsYXNzaWZ5LmgiCgovKiBEZWNvZGluZyBmb2xsb3dzIHRoZSBBNjQgdG9wLWxldmVsIGVuY29kaW5nIHRhYmxlIGluIHRoZSBBcm0gQVJNOgogICBiaXRzIDI4Li4yNSBwaWNrIHRoZSBncm91cCwgdGhlbiBlYWNoIGdyb3VwIGlzIG5hcnJvd2VkIGJ5IG1hc2sgYW5kIHZhbHVlLiAqLwoKc3RhdGljIEh2SW5zbktpbmQgY2xhc3NpZnlfaGludCh1aW50MzJfdCBpbnNuKSB7CiAgICAvKiBISU5UICNpbW06IENSbSBpbiAxMS4uOCwgb3AyIGluIDcuLjUuICovCiAgICB1aW50MzJfdCBjcm0gPSAoaW5zbiA+PiA4KSAmIDB4ZjsKICAgIHVpbnQzMl90IG9wMiA9IChpbnNuID4+IDUpICYgMHg3OwogICAgdWludDMyX3QgaW1tID0gKGNybSA8PCAzKSB8IG9wMjsKICAgIHN3aXRjaCAoaW1tKSB7CiAgICBjYXNlIDI6ICAvKiBXRkUgKi8KICAgIGNhc2UgMzogIC8qIFdGSSAqLwogICAgICAgIHJldHVybiBIVl9JTlNOX1dBSVQ7CiAgICBjYXNlIDc6ICAvKiBYUEFDTFJJICovCiAgICBjYXNlIDg6IGNhc2UgMTA6IGNhc2UgMTI6IGNhc2UgMTQ6ICAgLyogUEFDSUExNzE2LCBQQUNJQjE3MTYsIEFVVElBMTcxNiwgQVVUSUIxNzE2ICovCiAgICBjYXNlIDI0OiBjYXNlIDI1OiBjYXNlIDI2OiBjYXNlIDI3OiAgLyogUEFDSUFaLCBQQUNJQVNQLCBQQUNJQlosIFBBQ0lCU1AgKi8KICAgIGNhc2UgMjg6IGNhc2UgMjk6IGNhc2UgMzA6IGNhc2UgMzE6ICAvKiBBVVRJQVosIEFVVElBU1AsIEFVVElCWiwgQVVUSUJTUCAqLwogICAgICAgIHJldHVybiBIVl9JTlNOX1BBQzsKICAgIGRlZmF1bHQ6CiAgICAgICAgLyogTk9QLCBZSUVMRCwgU0VWLCBTRVZMLCBFU0IsIFBTQiwgQ1NEQiwgQlRJIGFuZCB1bmFsbG9jYXRlZCBoaW50cyBydW4gYXMgTk9Qcy4gKi8KICAgICAgICByZXR1cm4gSFZfSU5TTl9DT1BZOwogICAgfQp9CgpzdGF0aWMgSHZJbnNuS2luZCBjbGFzc2lmeV9zeXN0ZW0odWludDMyX3QgaW5zbikgewogICAgdWludDMyX3QgbCA9IChpbnNuID4+IDIxKSAmIDE7CiAgICB1aW50MzJfdCBvcDAgPSAoaW5zbiA+PiAxOSkgJiAzOwogICAgdWludDMyX3Qgb3AxID0gKGluc24gPj4gMTYpICYgNzsKICAgIHVpbnQzMl90IGNybiA9IChpbnNuID4+IDEyKSAmIDB4ZjsKCiAgICBpZiAob3AwID09IDApIHsKICAgICAgICBpZiAobCA9PSAwICYmIGNybiA9PSAyICYmIG9wMSA9PSAzICYmIChpbnNuICYgMHgxZikgPT0gMHgxZikgcmV0dXJuIGNsYXNzaWZ5X2hpbnQoaW5zbik7CiAgICAgICAgaWYgKGwgPT0gMCAmJiBjcm4gPT0gMyAmJiBvcDEgPT0gMyAmJiAoaW5zbiAmIDB4MWYpID09IDB4MWYpIHsKICAgICAgICAgICAgdWludDMyX3Qgb3AyID0gKGluc24gPj4gNSkgJiA3OwogICAgICAgICAgICAvKiBDTFJFWCwgRFNCLCBETUIsIElTQiwgU0IgYW5kIHRoZSBEU0IgblhTIGZvcm1zLiAqLwogICAgICAgICAgICAodm9pZClvcDI7CiAgICAgICAgICAgIHJldHVybiBIVl9JTlNOX0JBUlJJRVI7CiAgICAgICAgfQogICAgICAgIGlmIChsID09IDAgJiYgY3JuID09IDQpIHJldHVybiBIVl9JTlNOX1NZU1JFRzsgLyogTVNSIChpbW1lZGlhdGUpIHRvIFBTVEFURSAqLwogICAgICAgIGlmIChsID09IDAgJiYgY3JuID09IDEgJiYgb3AxID09IDMgJiYgKGluc24gJiAweDFmKSA9PSAweDFmKSB7CiAgICAgICAgICAgIC8qIFdGRVQsIFdGSVQgKEZFQVRfV0Z4VCkgbGl2ZSBpbiBDUm49MS4gKi8KICAgICAgICAgICAgcmV0dXJuIEhWX0lOU05fV0FJVDsKICAgICAgICB9CiAgICAgICAgcmV0dXJuIEhWX0lOU05fVU5ERUZJTkVEOwogICAgfQogICAgaWYgKG9wMCA9PSAxKSByZXR1cm4gSFZfSU5TTl9TWVM7ICAgICAvKiBTWVMsIFNZU0wgKi8KICAgIHJldHVybiBIVl9JTlNOX1NZU1JFRzsgICAgICAgICAgICAgICAgLyogTVJTLCBNU1IgKHJlZ2lzdGVyKSAqLwp9CgpzdGF0aWMgSHZJbnNuS2luZCBjbGFzc2lmeV9icmFuY2hfZ3JvdXAodWludDMyX3QgaW5zbikgewogICAgaWYgKChpbnNuICYgMHg3YzAwMDAwMCkgPT0gMHgxNDAwMDAwMCkgcmV0dXJuIEhWX0lOU05fQlJBTkNIOyAgIC8qIEIsIEJMICovCiAgICBpZiAoKGluc24gJiAweDdlMDAwMDAwKSA9PSAweDM0MDAwMDAwKSByZXR1cm4gSFZfSU5TTl9CUkFOQ0g7ICAgLyogQ0JaLCBDQk5aICovCiAgICBpZiAoKGluc24gJiAweDdlMDAwMDAwKSA9PSAweDM2MDAwMDAwKSByZXR1cm4gSFZfSU5TTl9CUkFOQ0g7ICAgLyogVEJaLCBUQk5aICovCiAgICBpZiAoKGluc24gJiAweGZmMDAwMDAwKSA9PSAweDU0MDAwMDAwKSByZXR1cm4gSFZfSU5TTl9CUkFOQ0g7ICAgLyogQi5jb25kLCBCQy5jb25kICovCiAgICBpZiAoKGluc24gJiAweGZmMDAwMDAwKSA9PSAweGQ0MDAwMDAwKSByZXR1cm4gSFZfSU5TTl9FWENFUFRJT047CiAgICBpZiAoKGluc24gJiAweGZmYzAwMDAwKSA9PSAweGQ1MDAwMDAwKSByZXR1cm4gY2xhc3NpZnlfc3lzdGVtKGluc24pOwogICAgaWYgKChpbnNuICYgMHhmZTAwMDAwMCkgPT0gMHhkNjAwMDAwMCkgewogICAgICAgIHVpbnQzMl90IG9wYyA9IChpbnNuID4+IDIxKSAmIDB4ZjsKICAgICAgICBpZiAob3BjID09IDQpIHJldHVybiBIVl9JTlNOX0VSRVQ7ICAgICAgICAgICAgICAgICAgICAgICAgICAvKiBFUkVULCBFUkVUQUEsIEVSRVRBQiAqLwogICAgICAgIGlmIChvcGMgPT0gNSkgcmV0dXJuIEhWX0lOU05fVU5ERUZJTkVEOyAgICAgICAgICAgICAgICAgICAgIC8qIERSUFM6IG5vdCBhdCBFTDAvRUwxICovCiAgICAgICAgcmV0dXJuIEhWX0lOU05fQlJBTkNIX1JFRzsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLyogQlIsIEJMUiwgUkVUIGFuZCBQQUMgZm9ybXMgKi8KICAgIH0KICAgIHJldHVybiBIVl9JTlNOX1VOREVGSU5FRDsKfQoKc3RhdGljIEh2SW5zbktpbmQgY2xhc3NpZnlfbWVtb3J5KHVpbnQzMl90IGluc24pIHsKICAgIC8qIExvYWQgcmVnaXN0ZXIgKGxpdGVyYWwpOiBiaXRzIDI5Li4yNyA9IDAxMSwgYml0IDI0ID0gMC4gKi8KICAgIGlmICgoaW5zbiAmIDB4M2IwMDAwMDApID09IDB4MTgwMDAwMDApIHsKICAgICAgICB1aW50MzJfdCBvcGMgPSBpbnNuID4+IDMwOwogICAgICAgIHVpbnQzMl90IHYgPSAoaW5zbiA+PiAyNikgJiAxOwogICAgICAgIGlmIChvcGMgPT0gMyAmJiB2ID09IDApIHJldHVybiBIVl9JTlNOX1BSRUZFVENIOyAgICAgICAgICAgIC8qIFBSRk0gKGxpdGVyYWwpICovCiAgICAgICAgcmV0dXJuIEhWX0lOU05fTE9BRF9MSVRFUkFMOwogICAgfQogICAgLyogUFJGTSAoaW1tZWRpYXRlKSBhbmQgUFJGTSAocmVnaXN0ZXIpLCBQUkZVTTogc2l6ZT0xMSwgVj0wLCBvcGM9MTAuICovCiAgICBpZiAoKGluc24gJiAweGZmYzAwMDAwKSA9PSAweGY5ODAwMDAwKSByZXR1cm4gSFZfSU5TTl9QUkVGRVRDSDsgICAgICAgICAgICAvKiBQUkZNICh1bnNpZ25lZCBvZmZzZXQpICovCiAgICBpZiAoKGluc24gJiAweGZmZTAwYzAwKSA9PSAweGY4YTAwODAwKSByZXR1cm4gSFZfSU5TTl9QUkVGRVRDSDsgICAgICAgICAgICAvKiBQUkZNIChyZWdpc3RlcikgKi8KICAgIGlmICgoaW5zbiAmIDB4ZmZlMDBjMDApID09IDB4Zjg4MDAwMDApIHJldHVybiBIVl9JTlNOX1BSRUZFVENIOyAgICAgICAgICAgIC8qIFBSRlVNICovCiAgICByZXR1cm4gSFZfSU5TTl9NRU1PUlk7Cn0KCnN0YXRpYyBIdkluc25LaW5kIGNsYXNzaWZ5X2RwX3JlZ2lzdGVyKHVpbnQzMl90IGluc24pIHsKICAgIC8qIERhdGEtcHJvY2Vzc2luZyAoMSBzb3VyY2UpIHdpdGggb3Bjb2RlMiA9IDAwMDAxOiBQQUMqLCBBVVQqLCBYUEFDKi4gKi8KICAgIGlmICgoaW5zbiAmIDB4ZmZmZjAwMDApID09IDB4ZGFjMTAwMDApIHJldHVybiBIVl9JTlNOX1BBQzsKICAgIC8qIFBBQ0dBOiBEYXRhLXByb2Nlc3NpbmcgKDIgc291cmNlKSwgb3Bjb2RlIDAwMTEwMC4gKi8KICAgIGlmICgoaW5zbiAmIDB4ZmZlMGZjMDApID09IDB4OWFjMDMwMDApIHJldHVybiBIVl9JTlNOX1BBQzsKICAgIHJldHVybiBIVl9JTlNOX0NPUFk7Cn0KCkh2SW5zbktpbmQgaHZfY2xhc3NpZnkodWludDMyX3QgaW5zbikgewogICAgdWludDMyX3Qgb3AwID0gKGluc24gPj4gMjUpICYgMHhmOwogICAgLyogMDB4eDogVURGIGFuZCBTTUUgKDAwMDApLCBTVkUgKDAwMTApLCB1bmFsbG9jYXRlZC4gTm9uZSBhcmUgZXhwb3NlZCB0byB0aGUgZ3Vlc3QuICovCiAgICBpZiAoKG9wMCAmIDB4YykgPT0gMHgwKSByZXR1cm4gSFZfSU5TTl9VTkRFRklORUQ7CiAgICBpZiAoKG9wMCAmIDB4ZSkgPT0gMHg4KSB7ICAgICAgICAgICAgICAgICAgIC8qIDEwMHg6IGRhdGEgcHJvY2Vzc2luZywgaW1tZWRpYXRlICovCiAgICAgICAgaWYgKChpbnNuICYgMHgxZjAwMDAwMCkgPT0gMHgxMDAwMDAwMCkgcmV0dXJuIEhWX0lOU05fUENSRUw7CiAgICAgICAgcmV0dXJuIEhWX0lOU05fQ09QWTsKICAgIH0KICAgIGlmICgob3AwICYgMHhlKSA9PSAweGEpIHJldHVybiBjbGFzc2lmeV9icmFuY2hfZ3JvdXAoaW5zbik7IC8qIDEwMXggKi8KICAgIGlmICgob3AwICYgMHg1KSA9PSAweDQpIHJldHVybiBjbGFzc2lmeV9tZW1vcnkoaW5zbik7ICAgICAgIC8qIHgxeDAgKi8KICAgIGlmICgob3AwICYgMHg3KSA9PSAweDUpIHJldHVybiBjbGFzc2lmeV9kcF9yZWdpc3RlcihpbnNuKTsgIC8qIHgxMDEgKi8KICAgIGlmICgob3AwICYgMHg3KSA9PSAweDcpIHJldHVybiBIVl9JTlNOX0NPUFk7ICAgICAgICAgICAgICAgIC8qIHgxMTE6IFNJTUQgYW5kIEZQICovCiAgICByZXR1cm4gSFZfSU5TTl9VTkRFRklORUQ7Cn0KCmNvbnN0IGNoYXIgKmh2X2luc25fa2luZF9uYW1lKEh2SW5zbktpbmQga2luZCkgewogICAgc3dpdGNoIChraW5kKSB7CiAgICBjYXNlIEhWX0lOU05fQ09QWTogcmV0dXJuICJjb3B5IjsKICAgIGNhc2UgSFZfSU5TTl9QQ1JFTDogcmV0dXJuICJwY3JlbCI7CiAgICBjYXNlIEhWX0lOU05fQlJBTkNIOiByZXR1cm4gImJyYW5jaCI7CiAgICBjYXNlIEhWX0lOU05fQlJBTkNIX1JFRzogcmV0dXJuICJicmFuY2gtcmVnIjsKICAgIGNhc2UgSFZfSU5TTl9FUkVUOiByZXR1cm4gImVyZXQiOwogICAgY2FzZSBIVl9JTlNOX0xPQURfTElURVJBTDogcmV0dXJuICJsb2FkLWxpdGVyYWwiOwogICAgY2FzZSBIVl9JTlNOX01FTU9SWTogcmV0dXJuICJtZW1vcnkiOwogICAgY2FzZSBIVl9JTlNOX1BSRUZFVENIOiByZXR1cm4gInByZWZldGNoIjsKICAgIGNhc2UgSFZfSU5TTl9FWENFUFRJT046IHJldHVybiAiZXhjZXB0aW9uIjsKICAgIGNhc2UgSFZfSU5TTl9TWVNSRUc6IHJldHVybiAic3lzcmVnIjsKICAgIGNhc2UgSFZfSU5TTl9TWVM6IHJldHVybiAic3lzIjsKICAgIGNhc2UgSFZfSU5TTl9CQVJSSUVSOiByZXR1cm4gImJhcnJpZXIiOwogICAgY2FzZSBIVl9JTlNOX1dBSVQ6IHJldHVybiAid2FpdCI7CiAgICBjYXNlIEhWX0lOU05fUEFDOiByZXR1cm4gInBhYyI7CiAgICBjYXNlIEhWX0lOU05fVU5ERUZJTkVEOiByZXR1cm4gInVuZGVmaW5lZCI7CiAgICB9CiAgICByZXR1cm4gIj8iOwp9Cg==
+#include "classify.h"
+
+/* Decoding follows the A64 top-level encoding table in the Arm ARM:
+   bits 28..25 pick the group, then each group is narrowed by mask and value. */
+
+static HvInsnKind classify_hint(uint32_t insn) {
+    /* HINT #imm: CRm in 11..8, op2 in 7..5. */
+    uint32_t crm = (insn >> 8) & 0xf;
+    uint32_t op2 = (insn >> 5) & 0x7;
+    uint32_t imm = (crm << 3) | op2;
+    switch (imm) {
+    case 2:  /* WFE */
+    case 3:  /* WFI */
+        return HV_INSN_WAIT;
+    case 7:  /* XPACLRI */
+    case 8: case 10: case 12: case 14:   /* PACIA1716, PACIB1716, AUTIA1716, AUTIB1716 */
+    case 24: case 25: case 26: case 27:  /* PACIAZ, PACIASP, PACIBZ, PACIBSP */
+    case 28: case 29: case 30: case 31:  /* AUTIAZ, AUTIASP, AUTIBZ, AUTIBSP */
+        return HV_INSN_PAC;
+    default:
+        /* NOP, YIELD, SEV, SEVL, ESB, PSB, CSDB, BTI and unallocated hints run as NOPs. */
+        return HV_INSN_COPY;
+    }
+}
+
+static HvInsnKind classify_system(uint32_t insn) {
+    uint32_t l = (insn >> 21) & 1;
+    uint32_t op0 = (insn >> 19) & 3;
+    uint32_t op1 = (insn >> 16) & 7;
+    uint32_t crn = (insn >> 12) & 0xf;
+
+    if (op0 == 0) {
+        if (l == 0 && crn == 2 && op1 == 3 && (insn & 0x1f) == 0x1f) return classify_hint(insn);
+        if (l == 0 && crn == 3 && op1 == 3 && (insn & 0x1f) == 0x1f) {
+            uint32_t op2 = (insn >> 5) & 7;
+            /* CLREX, DSB, DMB, ISB, SB and the DSB nXS forms. */
+            (void)op2;
+            return HV_INSN_BARRIER;
+        }
+        if (l == 0 && crn == 4) return HV_INSN_SYSREG; /* MSR (immediate) to PSTATE */
+        if (l == 0 && crn == 1 && op1 == 3 && (insn & 0x1f) == 0x1f) {
+            /* WFET, WFIT (FEAT_WFxT) live in CRn=1. */
+            return HV_INSN_WAIT;
+        }
+        return HV_INSN_UNDEFINED;
+    }
+    if (op0 == 1) return HV_INSN_SYS;     /* SYS, SYSL */
+    return HV_INSN_SYSREG;                /* MRS, MSR (register) */
+}
+
+static HvInsnKind classify_branch_group(uint32_t insn) {
+    if ((insn & 0x7c000000) == 0x14000000) return HV_INSN_BRANCH;   /* B, BL */
+    if ((insn & 0x7e000000) == 0x34000000) return HV_INSN_BRANCH;   /* CBZ, CBNZ */
+    if ((insn & 0x7e000000) == 0x36000000) return HV_INSN_BRANCH;   /* TBZ, TBNZ */
+    if ((insn & 0xff000000) == 0x54000000) return HV_INSN_BRANCH;   /* B.cond, BC.cond */
+    if ((insn & 0xff000000) == 0xd4000000) return HV_INSN_EXCEPTION;
+    if ((insn & 0xffc00000) == 0xd5000000) return classify_system(insn);
+    if ((insn & 0xfe000000) == 0xd6000000) {
+        uint32_t opc = (insn >> 21) & 0xf;
+        if (opc == 4) return HV_INSN_ERET;                          /* ERET, ERETAA, ERETAB */
+        if (opc == 5) return HV_INSN_UNDEFINED;                     /* DRPS: not at EL0/EL1 */
+        return HV_INSN_BRANCH_REG;                                  /* BR, BLR, RET and PAC forms */
+    }
+    return HV_INSN_UNDEFINED;
+}
+
+static HvInsnKind classify_memory(uint32_t insn) {
+    /* Load register (literal): bits 29..27 = 011, bit 24 = 0. */
+    if ((insn & 0x3b000000) == 0x18000000) {
+        uint32_t opc = insn >> 30;
+        uint32_t v = (insn >> 26) & 1;
+        if (opc == 3 && v == 0) return HV_INSN_PREFETCH;            /* PRFM (literal) */
+        return HV_INSN_LOAD_LITERAL;
+    }
+    /* PRFM (immediate) and PRFM (register), PRFUM: size=11, V=0, opc=10. */
+    if ((insn & 0xffc00000) == 0xf9800000) return HV_INSN_PREFETCH;            /* PRFM (unsigned offset) */
+    if ((insn & 0xffe00c00) == 0xf8a00800) return HV_INSN_PREFETCH;            /* PRFM (register) */
+    if ((insn & 0xffe00c00) == 0xf8800000) return HV_INSN_PREFETCH;            /* PRFUM */
+    return HV_INSN_MEMORY;
+}
+
+static HvInsnKind classify_dp_register(uint32_t insn) {
+    /* Data-processing (1 source) with opcode2 = 00001: PAC*, AUT*, XPAC*. */
+    if ((insn & 0xffff0000) == 0xdac10000) return HV_INSN_PAC;
+    /* PACGA: Data-processing (2 source), opcode 001100. */
+    if ((insn & 0xffe0fc00) == 0x9ac03000) return HV_INSN_PAC;
+    return HV_INSN_COPY;
+}
+
+HvInsnKind hv_classify(uint32_t insn) {
+    uint32_t op0 = (insn >> 25) & 0xf;
+    /* 00xx: UDF and SME (0000), SVE (0010), unallocated. None are exposed to the guest. */
+    if ((op0 & 0xc) == 0x0) return HV_INSN_UNDEFINED;
+    if ((op0 & 0xe) == 0x8) {                   /* 100x: data processing, immediate */
+        if ((insn & 0x1f000000) == 0x10000000) return HV_INSN_PCREL;
+        return HV_INSN_COPY;
+    }
+    if ((op0 & 0xe) == 0xa) return classify_branch_group(insn); /* 101x */
+    if ((op0 & 0x5) == 0x4) return classify_memory(insn);       /* x1x0 */
+    if ((op0 & 0x7) == 0x5) return classify_dp_register(insn);  /* x101 */
+    if ((op0 & 0x7) == 0x7) return HV_INSN_COPY;                /* x111: SIMD and FP */
+    return HV_INSN_UNDEFINED;
+}
+
+const char *hv_insn_kind_name(HvInsnKind kind) {
+    switch (kind) {
+    case HV_INSN_COPY: return "copy";
+    case HV_INSN_PCREL: return "pcrel";
+    case HV_INSN_BRANCH: return "branch";
+    case HV_INSN_BRANCH_REG: return "branch-reg";
+    case HV_INSN_ERET: return "eret";
+    case HV_INSN_LOAD_LITERAL: return "load-literal";
+    case HV_INSN_MEMORY: return "memory";
+    case HV_INSN_PREFETCH: return "prefetch";
+    case HV_INSN_EXCEPTION: return "exception";
+    case HV_INSN_SYSREG: return "sysreg";
+    case HV_INSN_SYS: return "sys";
+    case HV_INSN_BARRIER: return "barrier";
+    case HV_INSN_WAIT: return "wait";
+    case HV_INSN_PAC: return "pac";
+    case HV_INSN_UNDEFINED: return "undefined";
+    }
+    return "?";
+}

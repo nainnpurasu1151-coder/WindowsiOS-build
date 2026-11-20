@@ -1,1 +1,504 @@
-I2luY2x1ZGUgIm1hY2hpbmUuaCIKCiNpbmNsdWRlIDxtYWNoL21hY2hfdGltZS5oPgojaW5jbHVkZSA8c2NoZWQuaD4KI2luY2x1ZGUgPHN0ZGlvLmg+CiNpbmNsdWRlIDxzdGRsaWIuaD4KI2luY2x1ZGUgPHN0cmluZy5oPgoKI2luY2x1ZGUgIm1tdS5oIgojaW5jbHVkZSAic3lzcmVnLmgiCgpleHRlcm4gdm9pZCBodl9leGl0KHZvaWQpOwpleHRlcm4gdm9pZCBodl9oZWxwZXJfZW50cnkodm9pZCk7CmV4dGVybiB2b2lkIGh2X2hlbHBlcl90aHVuayh2b2lkKTsKZXh0ZXJuIHZvaWQgaHZfY2hhaW5fdGh1bmsodm9pZCk7CmV4dGVybiB2b2lkIGh2X2lqY190aHVuayh2b2lkKTsKZXh0ZXJuIHZvaWQgaHZfeGp1bXBfdGh1bmsodm9pZCk7CgpzdGF0aWMgaW50IGluaXRfcmVzdChIdk1hY2hpbmUgKm0pOwoKaW50IGh2X2tub2JbSFZfS19DT1VOVF07CnN0YXRpYyBjb25zdCBjaGFyICpjb25zdCBodl9rbm9iX25hbWVzW0hWX0tfQ09VTlRdID0geyJIVl9OT19SQVMiLCAiSFZfU1VQRVJCTE9DS1MiLCAiSFZfR1JPVVBTIiwgIkhWX1dGSV9TUElOIiwgIkhWX0ZMVVNIIiwgIkhWX0sxIiwgIkhWX0syIiwgIkhWX0szIiwgIkhWX1RMQlQiLCAiSFZfSklUX0NBUCIsICJIVl9SRUNIRUNLIn07CgpzdGF0aWMgdm9pZCBrbm9ic19pbml0KHZvaWQpIHsKICAgIGZvciAoaW50IGkgPSAwOyBpIDwgSFZfS19DT1VOVDsgaSsrKQogICAgICAgIGh2X2tub2JbaV0gPSBnZXRlbnYoaHZfa25vYl9uYW1lc1tpXSkgPyBhdG9pKGdldGVudihodl9rbm9iX25hbWVzW2ldKSkgOiAwOwogICAgaWYgKGdldGVudigiSFZfTk9fUkFTIikgJiYgISpnZXRlbnYoIkhWX05PX1JBUyIpKSBodl9rbm9iW0hWX0tfTk9fUkFTXSA9IDE7Cn0KCmludCBodl9rbm9iX3NldChIdk1hY2hpbmUgKm0sIGNvbnN0IGNoYXIgKm5hbWUsIGludCB2YWx1ZSkgewogICAgZm9yIChpbnQgaSA9IDA7IGkgPCBIVl9LX0NPVU5UOyBpKyspCiAgICAgICAgaWYgKCFzdHJjbXAobmFtZSwgaHZfa25vYl9uYW1lc1tpXSkpIHsKICAgICAgICAgICAgaHZfa25vYltpXSA9IHZhbHVlOwogICAgICAgICAgICBfX2F0b21pY19zdG9yZV9uKCZtLT5mbHVzaF9wZW5kaW5nLCAxLCBfX0FUT01JQ19TRVFfQ1NUKTsKICAgICAgICAgICAgaHZfbWFjaGluZV9raWNrX2FsbChtKTsKICAgICAgICAgICAgcmV0dXJuIDE7CiAgICAgICAgfQogICAgcmV0dXJuIDA7Cn0KCmludCBodl9tYWNoaW5lX2luaXQoSHZNYWNoaW5lICptLCBzaXplX3Qgaml0X2J5dGVzKSB7CiAgICBtZW1zZXQobSwgMCwgc2l6ZW9mICptKTsKICAgIGlmIChodl9qaXRfcmVnaW9uX29wZW4oJm0tPmppdCwgaml0X2J5dGVzKSAhPSAwKSByZXR1cm4gLTE7CiAgICByZXR1cm4gaW5pdF9yZXN0KG0pOwp9CgppbnQgaHZfbWFjaGluZV9pbml0X2ppdChIdk1hY2hpbmUgKm0sIHZvaWQgKnJ4LCB2b2lkICpydywgc2l6ZV90IGppdF9ieXRlcykgewogICAga25vYnNfaW5pdCgpOwogICAgbWVtc2V0KG0sIDAsIHNpemVvZiAqbSk7CiAgICBpZiAoaHZfaml0X3JlZ2lvbl9hdHRhY2goJm0tPmppdCwgcngsIHJ3LCBqaXRfYnl0ZXMpICE9IDApIHJldHVybiAtMTsKICAgIHJldHVybiBpbml0X3Jlc3QobSk7Cn0KCnN0YXRpYyBpbnQgaW5pdF9yZXN0KEh2TWFjaGluZSAqbSkgewogICAgLyogVGhlIFRMQiBsYXlvdXQgKGNwdS5oKTogSFZfVExCVCBmcm9tIHRoZSBlbnZpcm9ubWVudCBoZXJlIHRvbywgc28gdGhlIE1hYyB0b29sIGFuZCB0aGUgdGVzdHMgY2FuIHBpY2sgaXQuICovCiAgICBodl9rbm9iW0hWX0tfVExCVF0gPSBnZXRlbnYoIkhWX1RMQlQiKSA/IGF0b2koZ2V0ZW52KCJIVl9UTEJUIikpIDogMTsgLyogdGFibGUtbWFqb3IgdW5sZXNzIGFza2VkOiA5LTIwJSBmYXN0ZXIgaW4gNSBvZiA2IHBhaXJlZCByb3VuZHMgb2YgdGhlIG1peCAqLwogICAgaHZfdGxiX3RtYWpvciA9IGh2X2tub2JbSFZfS19UTEJUXSAhPSAwOwogICAgLyogNCBLQiBwYWdlcyBleHBvc2Ugc3RhY2sgYWNjZXNzZXMgaW4gdGhlIGxhc3QgMTUgYnl0ZXMgb2YgZXZlcnkgcGFnZSAoNTAwSysvcyBvbiBXaW5kb3dzKToKICAgICAgIGV4YWN0IE9PTCByZWNoZWNrIGF2b2lkcyB0cmFwcGluZyB0byBDIG9uIGV2ZXJ5IHN0YWNrIHB1c2gvcG9wIGF0IHBhZ2UgdG9wLiAqLwogICAgaHZfa25vYltIVl9LX1JFQ0hFQ0tdID0gZ2V0ZW52KCJIVl9SRUNIRUNLIikgPyBhdG9pKGdldGVudigiSFZfUkVDSEVDSyIpKSA6IDE7CiAgICAvKiBBcyBtYW55IGJsb2NrcyBhcyB0aGUgcmVnaW9uIGhvbGRzIChhIGJsb2NrIGlzIGF0IGxlYXN0IH4xNjAgYnl0ZXMgb2YKICAgICAgIGNvZGUpLCBzbyB0aGUgcmVnaW9uIGZpbGxpbmcsIG5vdCB0aGlzIHRhYmxlLCBpcyB3aGF0IGZsdXNoZXM7IHR3bwogICAgICAgY2hhaW5hYmxlIGV4aXRzIGVhY2ggYXQgbW9zdC4gVW50b3VjaGVkIGVudHJpZXMgY29zdCBub3RoaW5nLiAqLwogICAgc2l6ZV90IGJ5dGVzID0gbS0+aml0LmNhcGFjaXR5ICogc2l6ZW9mKHVpbnQzMl90KTsKICAgIG0tPm1heF9ibG9ja3MgPSAodWludDMyX3QpKGJ5dGVzIC8gMTYwIDwgNDA5NiA/IDQwOTYgOiBieXRlcyAvIDE2MCk7CiAgICBtLT5tYXhfc2xvdHMgPSBtLT5tYXhfYmxvY2tzICogMjsKICAgIG0tPmJsb2NrcyA9IGNhbGxvYyhtLT5tYXhfYmxvY2tzLCBzaXplb2YoSHZCbG9jaykpOwogICAgaWYgKCFtLT5ibG9ja3MpIHJldHVybiAtMTsKICAgIG0tPnN0b3BfcGMgPSB+MHVsbDsKICAgIG0tPnN0b3BfcGMyID0gfjB1bGw7CiAgICBtLT5jaGFpbiA9IDE7CiAgICBtLT5zbG90cyA9IGNhbGxvYyhtLT5tYXhfc2xvdHMsIHNpemVvZiAqbS0+c2xvdHMpOwogICAgbS0+c2xvdF9zaXRlID0gY2FsbG9jKG0tPm1heF9zbG90cywgc2l6ZW9mICptLT5zbG90X3NpdGUpOwogICAgbS0+c2xvdF9zdHViID0gY2FsbG9jKG0tPm1heF9zbG90cywgc2l6ZW9mICptLT5zbG90X3N0dWIpOwogICAgbS0+c2xvdF9jb25kID0gY2FsbG9jKG0tPm1heF9zbG90cywgc2l6ZW9mICptLT5zbG90X2NvbmQpOwogICAgbS0+c2xvdF94YSA9IGNhbGxvYyhtLT5tYXhfc2xvdHMsIHNpemVvZiAqbS0+c2xvdF94YSk7CiAgICBtLT5zbG90X3hwYSA9IGNhbGxvYyhtLT5tYXhfc2xvdHMsIHNpemVvZiAqbS0+c2xvdF94cGEpOwogICAgbS0+eGNoYWluZWQgPSBjYWxsb2MobS0+bWF4X3Nsb3RzLCBzaXplb2YgKm0tPnhjaGFpbmVkKTsKICAgIGlmICghbS0+c2xvdHMgfHwgIW0tPnNsb3Rfc2l0ZSB8fCAhbS0+c2xvdF9zdHViIHx8ICFtLT5zbG90X2NvbmQgfHwgIW0tPnNsb3RfeGEgfHwgIW0tPnNsb3RfeHBhIHx8ICFtLT54Y2hhaW5lZCkgcmV0dXJuIC0xOwogICAgcHRocmVhZF9tdXRleF9pbml0KCZtLT5iaWdfbXUsIE5VTEwpOwogICAgcHRocmVhZF9jb25kX2luaXQoJm0tPmJpZ19jdiwgTlVMTCk7CiAgICBwdGhyZWFkX211dGV4YXR0cl90IHJhOwogICAgcHRocmVhZF9tdXRleGF0dHJfaW5pdCgmcmEpOwogICAgcHRocmVhZF9tdXRleGF0dHJfc2V0dHlwZSgmcmEsIFBUSFJFQURfTVVURVhfUkVDVVJTSVZFKTsKICAgIHB0aHJlYWRfbXV0ZXhfaW5pdCgmbS0+ZGV2X211LCAmcmEpOwogICAgcHRocmVhZF9tdXRleF9pbml0KCZtLT50cl9tdSwgTlVMTCk7CiAgICBwdGhyZWFkX211dGV4X2luaXQoJm0tPnN0d19tdSwgTlVMTCk7CiAgICBwdGhyZWFkX2NvbmRfaW5pdCgmbS0+c3R3X2N2LCBOVUxMKTsKICAgIGZvciAoaW50IGkgPSAwOyBpIDwgSFZfTUFYX0NQVVM7IGkrKykgeyAvKiB1bnRvdWNoZWQgcGFnZXMgY29zdCBub3RoaW5nLCBzbyBldmVyeSBDUFUgZ2V0cyBpdHMgdGFibGVzIG5vdyAqLwogICAgICAgIEh2UGVyQ3B1ICpwID0gJm0tPnBlcmNwdVtpXTsKICAgICAgICBwLT5pamMgPSBjYWxsb2MoSFZfSUpDX1RBQkxFUyAqIEhWX0lKQ19UQUJMRV9CWVRFUyAvIDgsIDgpOwogICAgICAgIHAtPnVjb2RlID0gY2FsbG9jKDF1IDw8IEhWX1VDT0RFX0JJVFMsIDgpOwogICAgICAgIHAtPmNpZF9jaHVua3MgPSBjYWxsb2MoNjU1MzYsIHNpemVvZiAqcC0+Y2lkX2NodW5rcyk7CiAgICAgICAgaWYgKCFwLT5pamMgfHwgIXAtPnVjb2RlIHx8ICFwLT5jaWRfY2h1bmtzKSByZXR1cm4gLTE7CiAgICAgICAgZm9yIChpbnQgayA9IDA7IGsgPCBIVl9TVEFTSEVTOyBrKyspIHsKICAgICAgICAgICAgcC0+c3Rhc2hba10uc2xvdCA9IGNhbGxvYyhIVl9TVEFTSF9DQVAsIHNpemVvZiAqcC0+c3Rhc2hba10uc2xvdCk7CiAgICAgICAgICAgIHAtPnN0YXNoW2tdLmVudCA9IGNhbGxvYyhIVl9TVEFTSF9DQVAsIHNpemVvZiAqcC0+c3Rhc2hba10uZW50KTsKICAgICAgICAgICAgaWYgKCFwLT5zdGFzaFtrXS5zbG90IHx8ICFwLT5zdGFzaFtrXS5lbnQpIHJldHVybiAtMTsKICAgICAgICB9CiAgICAgICAgcHRocmVhZF9tdXRleF9pbml0KCZwLT53YWtlX211LCBOVUxMKTsKICAgICAgICBwdGhyZWFkX2NvbmRfaW5pdCgmcC0+d2FrZV9jdiwgTlVMTCk7CiAgICAgICAgcHRocmVhZF9tdXRleF9pbml0KCZwLT5yZXFfbXUsIE5VTEwpOwogICAgfQogICAgcmV0dXJuIDA7Cn0KCl9fdGhyZWFkIEh2Q3B1ICpodl9zZWxmOwoKdm9pZCBodl9kZXZfbG9jayhIdk1hY2hpbmUgKm0pIHsKICAgIGlmIChwdGhyZWFkX211dGV4X3RyeWxvY2soJm0tPmRldl9tdSkgPT0gMCkgcmV0dXJuOwogICAgdWludDY0X3QgdDAgPSBtLT5zdGF0c19pbnRlcnZhbCA/IG1hY2hfYWJzb2x1dGVfdGltZSgpIDogMDsKICAgIHB0aHJlYWRfbXV0ZXhfbG9jaygmbS0+ZGV2X211KTsKICAgIGlmIChtLT5zdGF0c19pbnRlcnZhbCkgewogICAgICAgIG0tPnN0YXRzLmRldl93YWl0cysrOwogICAgICAgIG0tPnN0YXRzLmRldl93YWl0X3RpY2tzICs9IG1hY2hfYWJzb2x1dGVfdGltZSgpIC0gdDA7CiAgICB9Cn0KCnZvaWQgaHZfZGV2X3VubG9jayhIdk1hY2hpbmUgKm0pIHsKICAgIHB0aHJlYWRfbXV0ZXhfdW5sb2NrKCZtLT5kZXZfbXUpOwp9CgpzdGF0aWMgdWludDY0X3QgcG9zdF9sb2NrZWRfZG9uZShIdkNwdSAqdGFyZ2V0LCBIdlBlckNwdSAqcCkgewogICAgdWludDY0X3Qgc2VxID0gX19hdG9taWNfYWRkX2ZldGNoKCZwLT5yZXFfc2VxLCAxLCBfX0FUT01JQ19TRVFfQ1NUKTsKICAgIHB0aHJlYWRfbXV0ZXhfdW5sb2NrKCZwLT5yZXFfbXUpOwogICAgX19hdG9taWNfc3RvcmVfbigmdGFyZ2V0LT5leGl0X3JlcSwgMSwgX19BVE9NSUNfU0VRX0NTVCk7CiAgICBfX2FzbV9fIHZvbGF0aWxlKCJzZXYiIDo6OiAibWVtb3J5Iik7IC8qIGEgV0ZFIHdhaXRpbmcgaW4gcGxhY2UgKHdmZSgpIGluIGRpc3BhdGNoLmMpIHNlZXMgaXQgbm93ICovCiAgICBpZiAodGFyZ2V0LT5tLT5zdGF0c19pbnRlcnZhbCkgdGFyZ2V0LT5tLT5zdGF0cy5raWNrX3NyY1swXSsrOwogICAgcmV0dXJuIHNlcTsKfQoKdWludDY0X3QgaHZfY3B1X3Bvc3RfdGxiaShIdkNwdSAqdGFyZ2V0LCB1aW50MzJfdCBvcDEsIHVpbnQzMl90IGNybiwgdWludDMyX3QgY3JtLCB1aW50MzJfdCBvcDIsIHVpbnQ2NF90IHh0KSB7CiAgICBIdlBlckNwdSAqcCA9IHRhcmdldC0+cGNfc3RhdGU7CiAgICBwdGhyZWFkX211dGV4X2xvY2soJnAtPnJlcV9tdSk7CiAgICBpZiAocC0+bnJlcSA8IHNpemVvZiBwLT5yZXEgLyBzaXplb2YgcC0+cmVxWzBdKSB7CiAgICAgICAgcC0+cmVxW3AtPm5yZXFdLm9wMSA9IG9wMSwgcC0+cmVxW3AtPm5yZXFdLmNybiA9IGNybiwgcC0+cmVxW3AtPm5yZXFdLmNybSA9IGNybSwgcC0+cmVxW3AtPm5yZXFdLm9wMiA9IG9wMjsKICAgICAgICBwLT5yZXFbcC0+bnJlcV0ueHQgPSB4dDsKICAgICAgICBwLT5ucmVxKys7CiAgICB9IGVsc2UgewogICAgICAgIHAtPnJlcV9mbGFncyB8PSBIVl9SRVFfVExCX0FMTDsgLyogdG9vIG1hbnkgcXVldWVkOiBkcm9wIGV2ZXJ5dGhpbmcgaW5zdGVhZCAqLwogICAgfQogICAgcmV0dXJuIHBvc3RfbG9ja2VkX2RvbmUodGFyZ2V0LCBwKTsKfQoKdWludDY0X3QgaHZfY3B1X3Bvc3QoSHZDcHUgKnRhcmdldCwgdWludDMyX3QgZmxhZ3MpIHsKICAgIEh2UGVyQ3B1ICpwID0gdGFyZ2V0LT5wY19zdGF0ZTsKICAgIHB0aHJlYWRfbXV0ZXhfbG9jaygmcC0+cmVxX211KTsKICAgIHAtPnJlcV9mbGFncyB8PSBmbGFnczsKICAgIHJldHVybiBwb3N0X2xvY2tlZF9kb25lKHRhcmdldCwgcCk7Cn0KCnZvaWQgaHZfY3B1X3Byb2Nlc3NfcmVxdWVzdHMoSHZDcHUgKmNwdSkgewogICAgSHZQZXJDcHUgKnAgPSBjcHUtPnBjX3N0YXRlOwogICAgdWludDY0X3Qgc2VxID0gX19hdG9taWNfbG9hZF9uKCZwLT5yZXFfc2VxLCBfX0FUT01JQ19BQ1FVSVJFKTsKICAgIGlmIChzZXEgPT0gX19hdG9taWNfbG9hZF9uKCZwLT5hY2tfc2VxLCBfX0FUT01JQ19SRUxBWEVEKSkgcmV0dXJuOwogICAgc3RhdGljIF9fdGhyZWFkIHN0cnVjdCB7IHVpbnQzMl90IG9wMSwgY3JuLCBjcm0sIG9wMjsgdWludDY0X3QgeHQ7IH0gcVs2NF07CiAgICBwdGhyZWFkX211dGV4X2xvY2soJnAtPnJlcV9tdSk7CiAgICBzZXEgPSBwLT5yZXFfc2VxOwogICAgdWludDMyX3QgZmxhZ3MgPSBwLT5yZXFfZmxhZ3MsIG4gPSBwLT5ucmVxOwogICAgbWVtY3B5KHEsIHAtPnJlcSwgbiAqIHNpemVvZiBxWzBdKTsKICAgIHAtPnJlcV9mbGFncyA9IDA7CiAgICBwLT5ucmVxID0gMDsKICAgIHB0aHJlYWRfbXV0ZXhfdW5sb2NrKCZwLT5yZXFfbXUpOwogICAgaWYgKGZsYWdzICYgSFZfUkVRX1RMQl9BTEwpIHsKICAgICAgICBodl90bGJfZmx1c2goY3B1KTsKICAgIH0gZWxzZSB7CiAgICAgICAgZm9yICh1aW50MzJfdCBpID0gMDsgaSA8IG47IGkrKykgaHZfdGxiaV9hcHBseShjcHUsIHFbaV0ub3AxLCBxW2ldLmNybiwgcVtpXS5jcm0sIHFbaV0ub3AyLCBxW2ldLnh0KTsKICAgIH0KICAgIGlmIChmbGFncyAmIEhWX1JFUV9JSkNfUkVTRVQpIHsKICAgICAgICBodl9pamNfcmVzZXQoY3B1LCAwKTsKICAgICAgICBodl9pamNfcmVzZXQoY3B1LCAxKTsKICAgIH0KICAgIF9fYXRvbWljX3N0b3JlX24oJnAtPmFja19zZXEsIHNlcSwgX19BVE9NSUNfUkVMRUFTRSk7Cn0KCnZvaWQgaHZfY3B1X3N5bmMoSHZDcHUgKnNlbGYsIEh2Q3B1ICp0YXJnZXQsIHVpbnQ2NF90IHNlcSkgewogICAgSHZQZXJDcHUgKnQgPSB0YXJnZXQtPnBjX3N0YXRlLCAqcyA9IHNlbGYgPyBzZWxmLT5wY19zdGF0ZSA6IE5VTEw7CiAgICBIdk1hY2hpbmUgKm1tID0gdGFyZ2V0LT5tOwogICAgdWludDY0X3QgdDAgPSBtbS0+c3RhdHNfaW50ZXJ2YWwgPyBtYWNoX2Fic29sdXRlX3RpbWUoKSA6IDA7CiAgICBpZiAocykgX19hdG9taWNfc3RvcmVfbigmcy0+dGxiX2xpdmUsIDAsIF9fQVRPTUlDX1NFUV9DU1QpOyAvKiBvdGhlcnMgbmVlZCBub3Qgd2FpdCBmb3IgdGhpcyBvbmUgbWVhbndoaWxlICovCiAgICBmb3IgKHVpbnQzMl90IHNwaW5zID0gMDs7IHNwaW5zKyspIHsKICAgICAgICBpZiAoX19hdG9taWNfbG9hZF9uKCZ0LT5hY2tfc2VxLCBfX0FUT01JQ19BQ1FVSVJFKSA+PSBzZXEpIGJyZWFrOwogICAgICAgIGlmICghX19hdG9taWNfbG9hZF9uKCZ0LT50bGJfbGl2ZSwgX19BVE9NSUNfU0VRX0NTVCkpIGJyZWFrOyAvKiBwYXJrZWQ6IGl0IGRvZXMgdGhlIHdvcmsgYmVmb3JlIGl0IHJ1bnMgYWdhaW4gKi8KICAgICAgICBpZiAoc2VsZikgaHZfY3B1X3Byb2Nlc3NfcmVxdWVzdHMoc2VsZik7CiAgICAgICAgaWYgKHNwaW5zID4gMjAwKSBzY2hlZF95aWVsZCgpOwogICAgfQogICAgaWYgKHMpIHsKICAgICAgICBfX2F0b21pY19zdG9yZV9uKCZzLT50bGJfbGl2ZSwgMSwgX19BVE9NSUNfU0VRX0NTVCk7CiAgICAgICAgaHZfY3B1X3Byb2Nlc3NfcmVxdWVzdHMoc2VsZik7IC8qIGFueXRoaW5nIHRoYXQgY2FtZSBpbiB3aGlsZSB3ZSB3ZXJlIG5vdCBsaXZlICovCiAgICB9CiAgICBpZiAobW0tPnN0YXRzX2ludGVydmFsKSB7CiAgICAgICAgbW0tPnN0YXRzLnN5bmNzKys7CiAgICAgICAgbW0tPnN0YXRzLnN5bmNfdGlja3MgKz0gbWFjaF9hYnNvbHV0ZV90aW1lKCkgLSB0MDsKICAgIH0KfQoKdm9pZCBodl9iaWdfbG9jayhIdk1hY2hpbmUgKm0pIHsKICAgIGlmICghbS0+YmlnX2xvY2tfb24pIHJldHVybjsKICAgIHB0aHJlYWRfbXV0ZXhfbG9jaygmbS0+YmlnX211KTsKICAgIHVpbnQ2NF90IG1lID0gbS0+YmlnX25leHQrKzsKICAgIHdoaWxlIChtLT5iaWdfc2VydmluZyAhPSBtZSkgcHRocmVhZF9jb25kX3dhaXQoJm0tPmJpZ19jdiwgJm0tPmJpZ19tdSk7CiAgICBwdGhyZWFkX211dGV4X3VubG9jaygmbS0+YmlnX211KTsKfQoKdm9pZCBodl9iaWdfdW5sb2NrKEh2TWFjaGluZSAqbSkgewogICAgaWYgKCFtLT5iaWdfbG9ja19vbikgcmV0dXJuOwogICAgcHRocmVhZF9tdXRleF9sb2NrKCZtLT5iaWdfbXUpOwogICAgbS0+YmlnX3NlcnZpbmcrKzsKICAgIHB0aHJlYWRfY29uZF9icm9hZGNhc3QoJm0tPmJpZ19jdik7CiAgICBwdGhyZWFkX211dGV4X3VubG9jaygmbS0+YmlnX211KTsKfQoKdm9pZCBodl9iaWdfeWllbGQoSHZNYWNoaW5lICptKSB7CiAgICBpZiAoIW0tPmJpZ19sb2NrX29uKSByZXR1cm47CiAgICBwdGhyZWFkX211dGV4X2xvY2soJm0tPmJpZ19tdSk7CiAgICBpbnQgd2FpdGluZyA9IG0tPmJpZ19uZXh0IC0gbS0+YmlnX3NlcnZpbmcgPiAxOwogICAgcHRocmVhZF9tdXRleF91bmxvY2soJm0tPmJpZ19tdSk7CiAgICBpZiAoIXdhaXRpbmcpIHJldHVybjsKICAgIGh2X2JpZ191bmxvY2sobSk7CiAgICBodl9iaWdfbG9jayhtKTsKfQoKLyogTWFrZSBjcHUgbGVhdmUgaXRzIGJsb2NrIGF0IGl0cyBuZXh0IGNoZWNrZWQgZXhpdCAoYW5kIGVuZCBhbiBpbi1wbGFjZSBXRkUgd2FpdCkuICovCnZvaWQgaHZfY3B1X2tpY2soSHZDcHUgKmNwdSkgewogICAgX19hdG9taWNfc3RvcmVfbigmY3B1LT5leGl0X3JlcSwgMSwgX19BVE9NSUNfU0VRX0NTVCk7CiAgICBfX2FzbV9fIHZvbGF0aWxlKCJzZXYiIDo6OiAibWVtb3J5Iik7Cn0KCi8qIFJldHVybiB0YWJsZXM6IG5vdGhpbmcgdG8gcmV0dXJuIHRvLiBBIHRhZyBpcyBuZXZlciAwOiBzYWx0cyBhcmUgbm90LCBhbmQgbm8gVkEgaGFzIHRoZWlyIGJpdHMuICovCnZvaWQgaHZfcmV0X2NsZWFyKEh2Q3B1ICpjcHUpIHsKICAgIG1lbXNldChjcHUtPnJldF90YWIsIDAsIHNpemVvZiBjcHUtPnJldF90YWIpOwogICAgY3B1LT5yZXRfc2FsdFswXSA9IGNwdS0+cmV0X3NhbHRbMV0gPSAxdWxsIDw8IDQ4Owp9Cgp2b2lkIGh2X2NwdV93YWtlKEh2Q3B1ICpjcHUpIHsKICAgIF9fYXRvbWljX3N0b3JlX24oJmNwdS0+ZXhpdF9yZXEsIDEsIF9fQVRPTUlDX1NFUV9DU1QpOwogICAgX19hc21fXyB2b2xhdGlsZSgic2V2IiA6OjogIm1lbW9yeSIpOwogICAgaWYgKGNwdS0+bS0+c3RhdHNfaW50ZXJ2YWwpIGNwdS0+bS0+c3RhdHMua2lja19zcmNbMV0rKzsKICAgIEh2UGVyQ3B1ICpwID0gY3B1LT5wY19zdGF0ZTsKICAgIHB0aHJlYWRfbXV0ZXhfbG9jaygmcC0+d2FrZV9tdSk7CiAgICBwLT53YWtlX3BlbmRpbmcgPSAxOwogICAgcHRocmVhZF9jb25kX3NpZ25hbCgmcC0+d2FrZV9jdik7CiAgICBwdGhyZWFkX211dGV4X3VubG9jaygmcC0+d2FrZV9tdSk7Cn0KCnZvaWQgaHZfbWFjaGluZV9raWNrX2FsbChIdk1hY2hpbmUgKm0pIHsKICAgIGlmIChtLT5zdGF0c19pbnRlcnZhbCkgbS0+c3RhdHMua2lja19zcmNbMl0rKzsKICAgIGZvciAoaW50IGkgPSAwOyBpIDwgbS0+bmNwdXM7IGkrKykKICAgICAgICBpZiAobS0+Y3B1c1tpXSkgX19hdG9taWNfc3RvcmVfbigmbS0+Y3B1c1tpXS0+ZXhpdF9yZXEsIDEsIF9fQVRPTUlDX1NFUV9DU1QpOwogICAgX19hc21fXyB2b2xhdGlsZSgic2V2IiA6OjogIm1lbW9yeSIpOwp9CgovKiBEZXZpY2Ugd29yayBpcyBmb3IgQ1BVIDAsIHdoaWNoIHBvbGxzIHRoZSBkZXZpY2VzLiAqLwp2b2lkIGh2X21hY2hpbmVfd2FrZShIdk1hY2hpbmUgKm0pIHsKICAgIGlmIChtLT5zdGF0c19pbnRlcnZhbCkgbS0+c3RhdHMua2lja19zcmNbM10rKzsKICAgIGlmIChtLT5jcHUpIGh2X2NwdV93YWtlKG0tPmNwdSk7Cn0KCnZvaWQgaHZfbWFjaGluZV9mcmVlKEh2TWFjaGluZSAqbSkgewogICAgaHZfaml0X3JlZ2lvbl9jbG9zZSgmbS0+aml0KTsKICAgIGZvciAoaW50IGkgPSAwOyBpIDwgbS0+bnJhbTsgaSsrKSB7CiAgICAgICAgZnJlZShtLT5yYW1baV0uY29kZV9wYWdlcyk7CiAgICAgICAgZnJlZShtLT5yYW1baV0ucGFnZV9nZW4pOwogICAgfQogICAgZnJlZShtLT5ibG9ja3MpOwogICAgZm9yIChpbnQgaSA9IDA7IGkgPCBIVl9NQVhfQ1BVUzsgaSsrKSB7CiAgICAgICAgZnJlZShtLT5wZXJjcHVbaV0uaWpjKTsKICAgICAgICBmcmVlKG0tPnBlcmNwdVtpXS51Y29kZSk7CiAgICAgICAgZnJlZShtLT5wZXJjcHVbaV0uY2lkX2NodW5rcyk7CiAgICAgICAgZm9yIChpbnQgayA9IDA7IGsgPCBIVl9TVEFTSEVTOyBrKyspIHsKICAgICAgICAgICAgZnJlZShtLT5wZXJjcHVbaV0uc3Rhc2hba10uc2xvdCk7CiAgICAgICAgICAgIGZyZWUobS0+cGVyY3B1W2ldLnN0YXNoW2tdLmVudCk7CiAgICAgICAgfQogICAgfQogICAgZnJlZShtLT5zbG90cyk7CiAgICBmcmVlKG0tPnNsb3Rfc2l0ZSk7CiAgICBmcmVlKG0tPnNsb3Rfc3R1Yik7CiAgICBmcmVlKG0tPnNsb3RfY29uZCk7CiAgICBmcmVlKG0tPnNsb3RfeGEpOwogICAgZnJlZShtLT5zbG90X3hwYSk7CiAgICBmcmVlKG0tPnhjaGFpbmVkKTsKfQoKaW50IGh2X21hY2hpbmVfYWRkX3JhbShIdk1hY2hpbmUgKm0sIHVpbnQ2NF90IHBhLCB1aW50NjRfdCBzaXplLCB2b2lkICpob3N0LCBpbnQgcmVhZG9ubHkpIHsKICAgIGlmIChtLT5ucmFtID09IEhWX01BWF9SQU0pIHJldHVybiAtMTsKICAgIEh2UmFtICpyID0gJm0tPnJhbVttLT5ucmFtKytdOwogICAgci0+cGEgPSBwYTsKICAgIHItPnNpemUgPSBzaXplOwogICAgci0+aG9zdCA9IGhvc3Q7CiAgICByLT5yZWFkb25seSA9IHJlYWRvbmx5OwogICAgc2l6ZV90IHBhZ2VzID0gKHNpemUgKyAoMXUgPDwgSFZfVExCX1BBR0VfQklUUykgLSAxKSA+PiBIVl9UTEJfUEFHRV9CSVRTOwogICAgci0+cGFnZXNfbG9nMiA9IDA7CiAgICB3aGlsZSAoKDF1bGwgPDwgci0+cGFnZXNfbG9nMikgPCBwYWdlcykgci0+cGFnZXNfbG9nMisrOwogICAgLyogQSBwb3dlciBvZiB0d28sIHNvIHRyYW5zbGF0ZWQgY29kZSBib3VuZHMtY2hlY2tzIGEgcGFnZSBpbmRleCB3aXRoIG9uZSBzaGlmdCAoSUMgSVZBVSkuICovCiAgICByLT5jb2RlX3BhZ2VzID0gY2FsbG9jKChzaXplX3QpMSA8PCByLT5wYWdlc19sb2cyLCAxKTsKICAgIGlmICghbS0+bWFpbl9yYW0gfHwgc2l6ZSA+IG0tPm1haW5fcmFtLT5zaXplKSBtLT5tYWluX3JhbSA9IHI7CiAgICByLT5wYWdlX2dlbiA9IGNhbGxvYyhwYWdlcywgc2l6ZW9mICpyLT5wYWdlX2dlbik7CiAgICByLT53aGludCA9IGNhbGxvYyhwYWdlcyAqIEhWX01BWF9DUFVTLCBzaXplb2YgKnItPndoaW50KTsKICAgIHJldHVybiByLT5jb2RlX3BhZ2VzICYmIHItPnBhZ2VfZ2VuICYmIHItPndoaW50ID8gMCA6IC0xOwp9CgppbnQgaHZfbWFjaGluZV9hZGRfbW1pbyhIdk1hY2hpbmUgKm0sIHVpbnQ2NF90IHBhLCB1aW50NjRfdCBzaXplLCB2b2lkICpvcGFxdWUsCiAgICAgICAgICAgICAgICAgICAgICAgIHVpbnQ2NF90ICgqcmVhZCkodm9pZCAqLCB1aW50NjRfdCwgdW5zaWduZWQpLAogICAgICAgICAgICAgICAgICAgICAgICB2b2lkICgqd3JpdGUpKHZvaWQgKiwgdWludDY0X3QsIHVpbnQ2NF90LCB1bnNpZ25lZCksIGNvbnN0IGNoYXIgKm5hbWUpIHsKICAgIGlmIChtLT5ubW1pbyA9PSBIVl9NQVhfTU1JTykgcmV0dXJuIC0xOwogICAgbS0+bW1pb1ttLT5ubW1pbysrXSA9IChIdk1taW8pe3BhLCBzaXplLCBvcGFxdWUsIHJlYWQsIHdyaXRlLCBuYW1lLCAwfTsKICAgIHJldHVybiAwOwp9CgpIdlJhbSAqaHZfcmFtX2xvb2t1cChIdk1hY2hpbmUgKm0sIHVpbnQ2NF90IHBhKSB7CiAgICBmb3IgKGludCBpID0gMDsgaSA8IG0tPm5yYW07IGkrKykgewogICAgICAgIEh2UmFtICpyID0gJm0tPnJhbVtpXTsKICAgICAgICBpZiAocGEgLSByLT5wYSA8IHItPnNpemUpIHJldHVybiByOwogICAgfQogICAgcmV0dXJuIE5VTEw7Cn0KCnVpbnQzMl90ICpodl9zbWNfY291bnRzOwp1aW50NjRfdCAqaHZfc21jX2xhc3Q7CnVpbnQ2NF90IGh2X3NtY19wYWdlcywgaHZfc21jX2NwdSwgaHZfc21jX2RtYTsKCnZvaWQgaHZfaW52YWxpZGF0ZV9jb2RlKEh2TWFjaGluZSAqbSwgdWludDY0X3QgcGEpIHsKICAgIEh2UmFtICpyID0gaHZfcmFtX2xvb2t1cChtLCBwYSk7CiAgICBpZiAoIXIpIHJldHVybjsKICAgIHVpbnQ2NF90IHBnID0gKHBhIC0gci0+cGEpID4+IEhWX1RMQl9QQUdFX0JJVFM7CiAgICBpZiAoIXItPmNvZGVfcGFnZXNbcGddKSByZXR1cm47CiAgICAvKiBCbG9ja3MgcmVtZW1iZXIgdGhlIGdlbmVyYXRpb24gdGhleSB3ZXJlIG1hZGUgdW5kZXI7IGEgc3RhbGUgb25lIGlzCiAgICAgICByZXRyYW5zbGF0ZWQgdGhlIG5leHQgdGltZSBpdCBpcyBsb29rZWQgdXAuIFRoZSBibG9jayBydW5uaW5nIG5vdyBtYXkKICAgICAgIGZpbmlzaCB3aXRoIHRoZSBvbGQgY29kZSwgYXMgaXQgd291bGQgd2l0aCBhIHJlYWwgaW5zdHJ1Y3Rpb24gcGlwZWxpbmUuICovCiAgICByLT5jb2RlX3BhZ2VzW3BnXSA9IDA7CiAgICBfX2F0b21pY19hZGRfZmV0Y2goJnItPnBhZ2VfZ2VuW3BnXSwgMSwgX19BVE9NSUNfU0VRX0NTVCk7CiAgICBtLT5zdGF0cy5mbHVzaF9zbWMrKzsKICAgIGlmIChodl9zbWNfY291bnRzICYmIHBnIDwgaHZfc21jX3BhZ2VzKSB7CiAgICAgICAgaHZfc21jX2NvdW50c1twZ10rKzsKICAgICAgICB1aW50NjRfdCBjYWxsZXIgPSBodl9zZWxmID8gaHZfc2VsZi0+cGMgOiAwOwogICAgICAgIGh2X3NtY19sYXN0W3BnXSA9IGNhbGxlcjsKICAgICAgICBpZiAoaHZfc2VsZikgaHZfc21jX2NwdSsrOwogICAgICAgIGVsc2UgaHZfc21jX2RtYSsrOwogICAgfQogICAgLyogRXhpdHMgZnJvbSBvdGhlciBwYWdlcyBjaGFpbmVkIGludG8gdGhlIHN0YWxlIGJsb2NrcyBnbyBiYWNrIHRvIHRoZWlyIHN0dWIKICAgICAgICh3aG9zZSBuZXh0IGNoYWluIGZpbmRzIHRoZSBuZXcgdHJhbnNsYXRpb24pLiBVbmRlciB0aGUgdHJhbnNsYXRpb24gbG9jaywKICAgICAgIGFzIGNoYWluaW5nIHRoZW0gaXM6IG9uZSB0aGF0IHNhdyB0aGUgb2xkIGdlbmVyYXRpb24gaXMgZG9uZSBieSBub3cuICovCiAgICBwdGhyZWFkX211dGV4X2xvY2soJm0tPnRyX211KTsKICAgIHVpbnQ2NF90IHRwYSA9IChyLT5wYSArIChwZyA8PCBIVl9UTEJfUEFHRV9CSVRTKSkgfCAxOwogICAgZm9yICh1aW50MzJfdCBrID0gMDsgayA8IG0tPm54Y2hhaW5lZDspIHsKICAgICAgICB1aW50MzJfdCBpZHggPSBtLT54Y2hhaW5lZFtrXTsKICAgICAgICBpZiAobS0+c2xvdF94cGFbaWR4XSAhPSB0cGEpIHsKICAgICAgICAgICAgaysrOwogICAgICAgICAgICBjb250aW51ZTsKICAgICAgICB9CiAgICAgICAgbS0+c2xvdF94cGFbaWR4XSA9IDA7CiAgICAgICAgX19hdG9taWNfc3RvcmVfbigmbS0+c2xvdHNbaWR4XSwgMCwgX19BVE9NSUNfUkVMRUFTRSk7CiAgICAgICAgdWludDMyX3QgKnNpdGUgPSBtLT5zbG90X3NpdGVbaWR4XTsKICAgICAgICBpZiAoc2l0ZSkgewogICAgICAgICAgICB1aW50MzJfdCBpbnNuID0gMHgxNDAwMDAwMHUgfCAodWludDMyX3QpKChtLT5zbG90X3N0dWJbaWR4XSAtIHNpdGUpICYgMHgzZmZmZmZmKTsgLyogYmFjayB0byBpdHMgc3R1YiAqLwogICAgICAgICAgICBodl9qaXRfd3JpdGUoJm0tPmppdCwgc2l0ZSwgJmluc24sIDQpOwogICAgICAgICAgICBodl9qaXRfZmluaXNoKCZtLT5qaXQsIHNpdGUsIDEpOwogICAgICAgIH0KICAgICAgICBtLT54Y2hhaW5lZFtrXSA9IG0tPnhjaGFpbmVkWy0tbS0+bnhjaGFpbmVkXTsKICAgIH0KICAgIHB0aHJlYWRfbXV0ZXhfdW5sb2NrKCZtLT50cl9tdSk7CiAgICAvKiBUaGUgaW5kaXJlY3QtYnJhbmNoIGNhY2hlIG1heSBsZWFkIGludG8gdGhlIHN0YWxlIGJsb2Nrczogc3RhcnQgaXQgb3ZlciwKICAgICAgIGhlcmUgYXQgb25jZSBhbmQgb24gdGhlIG90aGVyIENQVXMgYmVmb3JlIHRoZXkgbmV4dCBsZWF2ZSBhIGJsb2NrICh0aGVpcgogICAgICAgY2FjaGUgbG9va3VwcyBhbmQgY2hhaW5lZCBleGl0cyBjaGVjayBleGl0X3JlcSBmaXJzdCkuICovCiAgICBmb3IgKGludCBpID0gMDsgaSA8IG0tPm5jcHVzOyBpKyspIHsKICAgICAgICBIdkNwdSAqYyA9IG0tPmNwdXNbaV07CiAgICAgICAgaWYgKCFjKSBjb250aW51ZTsKICAgICAgICAvKiBPbmx5IGEgQ1BVIG1heSByZXNldCBpdHMgb3duIGNhY2hlOyBmcm9tIGFueSBvdGhlciB0aHJlYWQgKGEgZGV2aWNlLAogICAgICAgICAgIG9yIG5vIENQVSBydW5uaW5nIHlldCkgaXQgaXMgYSByZXF1ZXN0LCBvciBhIHJ1bm5pbmcgQ1BVIGNvdWxkIHJlYWQgYQogICAgICAgICAgIGhhbGYtd3JpdHRlbiBlbnRyeSBhbmQganVtcCBpbnRvIHRoZSB3cm9uZyBjb2RlLiAqLwogICAgICAgIGlmIChjID09IGh2X3NlbGYpIHsKICAgICAgICAgICAgaHZfaWpjX3Jlc2V0KGMsIDApOwogICAgICAgICAgICBodl9pamNfcmVzZXQoYywgMSk7CiAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgaHZfY3B1X3Bvc3QoYywgSFZfUkVRX0lKQ19SRVNFVCk7CiAgICAgICAgfQogICAgfQogICAgbS0+c3RhdHMucmVzZXRfd2h5WzRdKys7CiAgICAvKiBNYWtlIGEgcnVubmluZyBjaGFpbiBsZWF2ZSAoY2hhaW5zIHN0YXkgcGF0Y2hlZDogc2VlIGNoYWluKCkgaW4gZGlzcGF0Y2guYykuICovCiAgICBodl9tYWNoaW5lX2tpY2tfYWxsKG0pOwp9Cgp2b2lkIGh2X2RtYV93cml0dGVuKEh2TWFjaGluZSAqbSwgdWludDY0X3QgcGEsIHVpbnQ2NF90IGxlbikgewogICAgSHZSYW0gKnIgPSBodl9yYW1fbG9va3VwKG0sIHBhKTsKICAgIGlmICghciB8fCAhbGVuIHx8IHBhICsgbGVuIC0gci0+cGEgPiByLT5zaXplKSByZXR1cm47CiAgICB1aW50NjRfdCBmaXJzdCA9IChwYSAtIHItPnBhKSA+PiBIVl9UTEJfUEFHRV9CSVRTLCBsYXN0ID0gKHBhICsgbGVuIC0gMSAtIHItPnBhKSA+PiBIVl9UTEJfUEFHRV9CSVRTOwogICAgZm9yICh1aW50NjRfdCBwZyA9IGZpcnN0OyBwZyA8PSBsYXN0OyBwZysrKQogICAgICAgIGlmIChfX2F0b21pY19sb2FkX24oJnItPmNvZGVfcGFnZXNbcGddLCBfX0FUT01JQ19BQ1FVSVJFKSkgaHZfaW52YWxpZGF0ZV9jb2RlKG0sIHItPnBhICsgKHBnIDw8IEhWX1RMQl9QQUdFX0JJVFMpKTsKfQoKSHZNbWlvICpodl9tbWlvX2xvb2t1cChIdk1hY2hpbmUgKm0sIHVpbnQ2NF90IHBhKSB7CiAgICBmb3IgKGludCBpID0gMDsgaSA8IG0tPm5tbWlvOyBpKyspIHsKICAgICAgICBIdk1taW8gKmQgPSAmbS0+bW1pb1tpXTsKICAgICAgICBpZiAocGEgLSBkLT5wYSA8IGQtPnNpemUpIHJldHVybiBkOwogICAgfQogICAgcmV0dXJuIE5VTEw7Cn0KCnZvaWQgKmh2X3BoeXNfcHRyKEh2TWFjaGluZSAqbSwgdWludDY0X3QgcGEsIHVpbnQ2NF90IGxlbikgewogICAgSHZSYW0gKnIgPSBodl9yYW1fbG9va3VwKG0sIHBhKTsKICAgIGlmICghciB8fCBwYSArIGxlbiAtIHItPnBhID4gci0+c2l6ZSkgcmV0dXJuIE5VTEw7CiAgICByZXR1cm4gci0+aG9zdCArIChwYSAtIHItPnBhKTsKfQoKLyogTU1JTyBpcyBhY2Nlc3NlZCBpbiBuYXR1cmFsbHkgc2l6ZWQgcGllY2VzIG9mIGF0IG1vc3QgOCBieXRlcy4gKi8KaW50IGh2X3BoeXNfcmVhZChIdk1hY2hpbmUgKm0sIHVpbnQ2NF90IHBhLCB2b2lkICpidWYsIHVuc2lnbmVkIGxlbikgewogICAgdm9pZCAqcCA9IGh2X3BoeXNfcHRyKG0sIHBhLCBsZW4pOwogICAgaWYgKHApIHsKICAgICAgICBtZW1jcHkoYnVmLCBwLCBsZW4pOwogICAgICAgIHJldHVybiAwOwogICAgfQogICAgSHZNbWlvICpkID0gaHZfbW1pb19sb29rdXAobSwgcGEpOwogICAgaWYgKCFkIHx8IGxlbiA+IDgpIHJldHVybiAtMTsKICAgIGlmICghZC0+c2VsZl9sb2NrZWQpIGh2X2Rldl9sb2NrKG0pOwogICAgdWludDY0X3QgdiA9IGQtPnJlYWQgPyBkLT5yZWFkKGQtPm9wYXF1ZSwgcGEgLSBkLT5wYSwgbGVuKSA6IDA7CiAgICBpZiAoIWQtPnNlbGZfbG9ja2VkKSBodl9kZXZfdW5sb2NrKG0pOwogICAgbWVtY3B5KGJ1ZiwgJnYsIGxlbik7CiAgICBpZiAobS0+bG9nID49IDMpCiAgICAgICAgZnByaW50ZihzdGRlcnIsICJtbWlvIHJlYWQgICVzKyVsbHggc2l6ZSAldSA9ICVsbHggcGMgJWxseFxuIiwgZC0+bmFtZSwgKHVuc2lnbmVkIGxvbmcgbG9uZykocGEgLSBkLT5wYSksIGxlbiwKICAgICAgICAgICAgICAgICh1bnNpZ25lZCBsb25nIGxvbmcpdiwgKHVuc2lnbmVkIGxvbmcgbG9uZyltLT5hY2Nlc3NfcGMpOwogICAgcmV0dXJuIDA7Cn0KCmludCBodl9waHlzX3dyaXRlKEh2TWFjaGluZSAqbSwgdWludDY0X3QgcGEsIGNvbnN0IHZvaWQgKmJ1ZiwgdW5zaWduZWQgbGVuKSB7CiAgICBIdlJhbSAqciA9IGh2X3JhbV9sb29rdXAobSwgcGEpOwogICAgaWYgKHIgJiYgcGEgKyBsZW4gLSByLT5wYSA8PSByLT5zaXplKSB7CiAgICAgICAgaWYgKHItPnJlYWRvbmx5KSByZXR1cm4gMDsgLyogUk9NOiB3cml0ZXMgYXJlIGlnbm9yZWQgKi8KICAgICAgICB1aW50NjRfdCBvZmYgPSBwYSAtIHItPnBhOwogICAgICAgIHVpbnQ2NF90IGZpcnN0ID0gb2ZmID4+IEhWX1RMQl9QQUdFX0JJVFMsIGxhc3QgPSAob2ZmICsgbGVuIC0gMSkgPj4gSFZfVExCX1BBR0VfQklUUzsKICAgICAgICBmb3IgKHVpbnQ2NF90IHBnID0gZmlyc3Q7IHBnIDw9IGxhc3Q7IHBnKyspCiAgICAgICAgICAgIGlmIChyLT5jb2RlX3BhZ2VzW3BnXSkgaHZfaW52YWxpZGF0ZV9jb2RlKG0sIHItPnBhICsgKHBnIDw8IEhWX1RMQl9QQUdFX0JJVFMpKTsgLyogYSB3cml0ZSB0byBjb2RlICovCiAgICAgICAgaWYgKG0tPndhdGNoX3BhICYmIG0tPndhdGNoX3BhIC0gcGEgPCBsZW4pIHsKICAgICAgICAgICAgdWludDY0X3QgdiA9IDA7CiAgICAgICAgICAgIG1lbWNweSgmdiwgKGNvbnN0IHVpbnQ4X3QgKilidWYgKyAobS0+d2F0Y2hfcGEgLSBwYSksIGxlbiAtIChtLT53YXRjaF9wYSAtIHBhKSA8IDggPyBsZW4gLSAobS0+d2F0Y2hfcGEgLSBwYSkgOiA4KTsKICAgICAgICAgICAgZnByaW50ZihzdGRlcnIsICJoZW5nZXZtOiB3YXRjaDogd3JpdGUgdG8gcGEgJWxseCA9ICVsbHggKCV1IGJ5dGVzIGF0IHBhICVsbHgpIGJ5IHBjICVsbHhcbiIsCiAgICAgICAgICAgICAgICAgICAgKHVuc2lnbmVkIGxvbmcgbG9uZyltLT53YXRjaF9wYSwgKHVuc2lnbmVkIGxvbmcgbG9uZyl2LCBsZW4sICh1bnNpZ25lZCBsb25nIGxvbmcpcGEsCiAgICAgICAgICAgICAgICAgICAgKHVuc2lnbmVkIGxvbmcgbG9uZyltLT5hY2Nlc3NfcGMpOwogICAgICAgIH0KICAgICAgICBtZW1jcHkoci0+aG9zdCArIG9mZiwgYnVmLCBsZW4pOwogICAgICAgIHJldHVybiAwOwogICAgfQogICAgSHZNbWlvICpkID0gaHZfbW1pb19sb29rdXAobSwgcGEpOwogICAgaWYgKCFkIHx8IGxlbiA+IDgpIHJldHVybiAtMTsKICAgIHVpbnQ2NF90IHYgPSAwOwogICAgbWVtY3B5KCZ2LCBidWYsIGxlbik7CiAgICBpZiAobS0+bG9nID49IDMpCiAgICAgICAgZnByaW50ZihzdGRlcnIsICJtbWlvIHdyaXRlICVzKyVsbHggc2l6ZSAldSA9ICVsbHggcGMgJWxseFxuIiwgZC0+bmFtZSwgKHVuc2lnbmVkIGxvbmcgbG9uZykocGEgLSBkLT5wYSksIGxlbiwKICAgICAgICAgICAgICAgICh1bnNpZ25lZCBsb25nIGxvbmcpdiwgKHVuc2lnbmVkIGxvbmcgbG9uZyltLT5hY2Nlc3NfcGMpOwogICAgaWYgKCFkLT5zZWxmX2xvY2tlZCkgaHZfZGV2X2xvY2sobSk7CiAgICBpZiAoZC0+d3JpdGUpIGQtPndyaXRlKGQtPm9wYXF1ZSwgcGEgLSBkLT5wYSwgdiwgbGVuKTsKICAgIGlmICghZC0+c2VsZl9sb2NrZWQpIGh2X2Rldl91bmxvY2sobSk7CiAgICByZXR1cm4gMDsKfQoKdm9pZCBodl9jcHVfcmVzZXQoSHZDcHUgKmNwdSwgSHZNYWNoaW5lICptKSB7CiAgICBodl9jcHVfcmVzZXRfaW5kZXgoY3B1LCBtLCAwKTsKfQoKdm9pZCBodl9jcHVfcmVzZXRfaW5kZXgoSHZDcHUgKmNwdSwgSHZNYWNoaW5lICptLCB1aW50MzJfdCBpbmRleCkgewogICAgLyogRXZlcnl0aGluZyBidXQgbSBhbmQgcGNfc3RhdGU6IG90aGVyIENQVXMnIFRMQklzIHJlYWQgdGhvc2Ugb2YgYSBDUFUKICAgICAgIGJlaW5nIHN0YXJ0ZWQgKFBTQ0kgQ1BVX09OKSBhdCBhbnkgdGltZS4gKi8KICAgIF9TdGF0aWNfYXNzZXJ0KG9mZnNldG9mKEh2Q3B1LCBtKSA8IG9mZnNldG9mKEh2Q3B1LCBwY19zdGF0ZSksICJIdkNwdSBsYXlvdXQiKTsKICAgIHNpemVfdCBhID0gb2Zmc2V0b2YoSHZDcHUsIG0pLCBiID0gb2Zmc2V0b2YoSHZDcHUsIHBjX3N0YXRlKTsKICAgIG1lbXNldChjcHUsIDAsIGEpOwogICAgbWVtc2V0KChjaGFyICopY3B1ICsgYSArIHNpemVvZiBjcHUtPm0sIDAsIGIgLSBhIC0gc2l6ZW9mIGNwdS0+bSk7CiAgICBtZW1zZXQoKGNoYXIgKiljcHUgKyBiICsgc2l6ZW9mIGNwdS0+cGNfc3RhdGUsIDAsIHNpemVvZiAqY3B1IC0gYiAtIHNpemVvZiBjcHUtPnBjX3N0YXRlKTsKICAgIGNwdS0+bSA9IG07CiAgICBjcHUtPmluZGV4ID0gaW5kZXg7CiAgICBjcHUtPnBjX3N0YXRlID0gJm0tPnBlcmNwdVtpbmRleF07CiAgICBtLT5jcHVzW2luZGV4XSA9IGNwdTsKICAgIGlmIChtLT5uY3B1cyA8PSAoaW50KWluZGV4KSBtLT5uY3B1cyA9IChpbnQpaW5kZXggKyAxOwogICAgaWYgKGluZGV4ID09IDApIG0tPmNwdSA9IGNwdTsKICAgIEh2UGVyQ3B1ICpwID0gY3B1LT5wY19zdGF0ZTsKICAgIC8qIElkcyBzdGFydCBvdmVyLCBzbyBlbnRyaWVzIHRhZ2dlZCB3aXRoIHRoZSBvbGQgb25lcyBtdXN0IGdvLiAqLwogICAgZm9yIChpbnQgdCA9IDA7IHQgPCBIVl9JSkNfVEFCTEVTOyB0KyspCiAgICAgICAgaWYgKHAtPmlqY190YWJsZXNfdXNlZCA+PiB0ICYgMSkgbWVtc2V0KHAtPmlqYyArIChzaXplX3QpdCAqIChIVl9JSkNfVEFCTEVfQllURVMgLyA4KSwgMCwgSFZfSUpDX1RBQkxFX0JZVEVTKTsKICAgIHAtPmlqY190YWJsZXNfdXNlZCA9IDA7CiAgICBtZW1zZXQocC0+aWpjX2tleWVkLCAwLCBzaXplb2YgcC0+aWpjX2tleWVkKTsKICAgIHAtPmlqY19rZXllZF9jb3VudCA9IDA7CiAgICBtZW1zZXQocC0+aWpjX3BhZ2VzLCAwLCBzaXplb2YgcC0+aWpjX3BhZ2VzKTsKICAgIG1lbXNldChwLT5pamNfaGludCwgMCwgc2l6ZW9mIHAtPmlqY19oaW50KTsKICAgIG1lbXNldChwLT5qYywgMCwgc2l6ZW9mIHAtPmpjKTsKICAgIGNwdS0+aWpjID0gKHVpbnQ2NF90KSh1aW50cHRyX3QpcC0+aWpjOwogICAgY3B1LT5saW5lc19wdHIgPSAodWludDY0X3QpKHVpbnRwdHJfdCkmcC0+aXJxX2xpbmU7CiAgICBmb3IgKGludCB0ID0gMDsgdCA8IEhWX0lKQ19UQUJMRVM7IHQrKykgY3B1LT5pamNfdGFiW3RdID0gKHVpbnQ2NF90KSh1aW50cHRyX3QpKHAtPmlqYyArIChzaXplX3QpdCAqIChIVl9JSkNfVEFCTEVfQllURVMgLyA4KSk7CiAgICBodl9yZXRfY2xlYXIoY3B1KTsKICAgIGNwdS0+bmV4dF9jaWQgPSAxOwogICAgY3B1LT5rZXJuZWxfZ2VuID0gMTsKICAgIGNwdS0+aWpjX3NhbHRbMV0gPSAxdWxsIDw8IDQ4OyAvKiB0YWdzIG9mIGFuIGFsbC16ZXJvIHRhYmxlIG5ldmVyIG1hdGNoICovCiAgICBodl9pamNfc3dpdGNoKGNwdSk7CiAgICBjcHUtPmV4aXRfcm91dGluZSA9ICh1aW50NjRfdClodl9leGl0OwogICAgY3B1LT5oZWxwZXJfcm91dGluZSA9ICh1aW50NjRfdClodl9oZWxwZXJfZW50cnk7CiAgICBjcHUtPmhlbHBlcl90aHVuayA9ICh1aW50NjRfdClodl9oZWxwZXJfdGh1bms7CiAgICBjcHUtPmNoYWluX3RodW5rID0gKHVpbnQ2NF90KWh2X2NoYWluX3RodW5rOwogICAgY3B1LT5pamNfdGh1bmsgPSAodWludDY0X3QpaHZfaWpjX3RodW5rOwogICAgY3B1LT54anVtcF90aHVuayA9ICh1aW50NjRfdClodl94anVtcF90aHVuazsKICAgIGNwdS0+ZWwgPSAxOwogICAgY3B1LT5zcHNlbCA9IDE7CiAgICBjcHUtPmRhaWYgPSBIVl9QU1RBVEVfREFJRjsKICAgIGNwdS0+ZXhjbF9hZGRyID0gfjB1bGw7CiAgICAvKiBBcmNoaXRlY3R1cmFsIHJlc2V0IHZhbHVlIGhhcyB0aGUgTU1VIGFuZCBjYWNoZXMgb2ZmOyBSRVMxIGJpdHMgc2V0LiAqLwogICAgY3B1LT5zY3Rscl9lbDEgPSAweDMwZDAwODAwOwogICAgaHZfdGxiX2ZsdXNoKGNwdSk7Cn0K
+#include "machine.h"
+
+#include <mach/mach_time.h>
+#include <sched.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "mmu.h"
+#include "sysreg.h"
+
+extern void hv_exit(void);
+extern void hv_helper_entry(void);
+extern void hv_helper_thunk(void);
+extern void hv_chain_thunk(void);
+extern void hv_ijc_thunk(void);
+extern void hv_xjump_thunk(void);
+
+static int init_rest(HvMachine *m);
+
+int hv_knob[HV_K_COUNT];
+static const char *const hv_knob_names[HV_K_COUNT] = {"HV_NO_RAS", "HV_SUPERBLOCKS", "HV_GROUPS", "HV_WFI_SPIN", "HV_FLUSH", "HV_K1", "HV_K2", "HV_K3", "HV_TLBT", "HV_JIT_CAP", "HV_RECHECK"};
+
+static void knobs_init(void) {
+    for (int i = 0; i < HV_K_COUNT; i++)
+        hv_knob[i] = getenv(hv_knob_names[i]) ? atoi(getenv(hv_knob_names[i])) : 0;
+    if (getenv("HV_NO_RAS") && !*getenv("HV_NO_RAS")) hv_knob[HV_K_NO_RAS] = 1;
+}
+
+int hv_knob_set(HvMachine *m, const char *name, int value) {
+    for (int i = 0; i < HV_K_COUNT; i++)
+        if (!strcmp(name, hv_knob_names[i])) {
+            hv_knob[i] = value;
+            __atomic_store_n(&m->flush_pending, 1, __ATOMIC_SEQ_CST);
+            hv_machine_kick_all(m);
+            return 1;
+        }
+    return 0;
+}
+
+int hv_machine_init(HvMachine *m, size_t jit_bytes) {
+    memset(m, 0, sizeof *m);
+    if (hv_jit_region_open(&m->jit, jit_bytes) != 0) return -1;
+    return init_rest(m);
+}
+
+int hv_machine_init_jit(HvMachine *m, void *rx, void *rw, size_t jit_bytes) {
+    knobs_init();
+    memset(m, 0, sizeof *m);
+    if (hv_jit_region_attach(&m->jit, rx, rw, jit_bytes) != 0) return -1;
+    return init_rest(m);
+}
+
+static int init_rest(HvMachine *m) {
+    /* The TLB layout (cpu.h): HV_TLBT from the environment here too, so the Mac tool and the tests can pick it. */
+    hv_knob[HV_K_TLBT] = getenv("HV_TLBT") ? atoi(getenv("HV_TLBT")) : 1; /* table-major unless asked: 9-20% faster in 5 of 6 paired rounds of the mix */
+    hv_tlb_tmajor = hv_knob[HV_K_TLBT] != 0;
+    /* 4 KB pages expose stack accesses in the last 15 bytes of every page (500K+/s on Windows):
+       exact OOL recheck avoids trapping to C on every stack push/pop at page top. */
+    hv_knob[HV_K_RECHECK] = getenv("HV_RECHECK") ? atoi(getenv("HV_RECHECK")) : 1;
+    /* As many blocks as the region holds (a block is at least ~160 bytes of
+       code), so the region filling, not this table, is what flushes; two
+       chainable exits each at most. Untouched entries cost nothing. */
+    size_t bytes = m->jit.capacity * sizeof(uint32_t);
+    m->max_blocks = (uint32_t)(bytes / 160 < 4096 ? 4096 : bytes / 160);
+    m->max_slots = m->max_blocks * 2;
+    m->blocks = calloc(m->max_blocks, sizeof(HvBlock));
+    if (!m->blocks) return -1;
+    m->stop_pc = ~0ull;
+    m->stop_pc2 = ~0ull;
+    m->chain = 1;
+    m->slots = calloc(m->max_slots, sizeof *m->slots);
+    m->slot_site = calloc(m->max_slots, sizeof *m->slot_site);
+    m->slot_stub = calloc(m->max_slots, sizeof *m->slot_stub);
+    m->slot_cond = calloc(m->max_slots, sizeof *m->slot_cond);
+    m->slot_xa = calloc(m->max_slots, sizeof *m->slot_xa);
+    m->slot_xpa = calloc(m->max_slots, sizeof *m->slot_xpa);
+    m->xchained = calloc(m->max_slots, sizeof *m->xchained);
+    if (!m->slots || !m->slot_site || !m->slot_stub || !m->slot_cond || !m->slot_xa || !m->slot_xpa || !m->xchained) return -1;
+    pthread_mutex_init(&m->big_mu, NULL);
+    pthread_cond_init(&m->big_cv, NULL);
+    pthread_mutexattr_t ra;
+    pthread_mutexattr_init(&ra);
+    pthread_mutexattr_settype(&ra, PTHREAD_MUTEX_RECURSIVE);
+    pthread_mutex_init(&m->dev_mu, &ra);
+    pthread_mutex_init(&m->tr_mu, NULL);
+    pthread_mutex_init(&m->stw_mu, NULL);
+    pthread_cond_init(&m->stw_cv, NULL);
+    for (int i = 0; i < HV_MAX_CPUS; i++) { /* untouched pages cost nothing, so every CPU gets its tables now */
+        HvPerCpu *p = &m->percpu[i];
+        p->ijc = calloc(HV_IJC_TABLES * HV_IJC_TABLE_BYTES / 8, 8);
+        p->ucode = calloc(1u << HV_UCODE_BITS, 8);
+        p->cid_chunks = calloc(65536, sizeof *p->cid_chunks);
+        if (!p->ijc || !p->ucode || !p->cid_chunks) return -1;
+        for (int k = 0; k < HV_STASHES; k++) {
+            p->stash[k].slot = calloc(HV_STASH_CAP, sizeof *p->stash[k].slot);
+            p->stash[k].ent = calloc(HV_STASH_CAP, sizeof *p->stash[k].ent);
+            if (!p->stash[k].slot || !p->stash[k].ent) return -1;
+        }
+        pthread_mutex_init(&p->wake_mu, NULL);
+        pthread_cond_init(&p->wake_cv, NULL);
+        pthread_mutex_init(&p->req_mu, NULL);
+    }
+    return 0;
+}
+
+__thread HvCpu *hv_self;
+
+void hv_dev_lock(HvMachine *m) {
+    if (pthread_mutex_trylock(&m->dev_mu) == 0) return;
+    uint64_t t0 = m->stats_interval ? mach_absolute_time() : 0;
+    pthread_mutex_lock(&m->dev_mu);
+    if (m->stats_interval) {
+        m->stats.dev_waits++;
+        m->stats.dev_wait_ticks += mach_absolute_time() - t0;
+    }
+}
+
+void hv_dev_unlock(HvMachine *m) {
+    pthread_mutex_unlock(&m->dev_mu);
+}
+
+static uint64_t post_locked_done(HvCpu *target, HvPerCpu *p) {
+    uint64_t seq = __atomic_add_fetch(&p->req_seq, 1, __ATOMIC_SEQ_CST);
+    pthread_mutex_unlock(&p->req_mu);
+    __atomic_store_n(&target->exit_req, 1, __ATOMIC_SEQ_CST);
+    __asm__ volatile("sev" ::: "memory"); /* a WFE waiting in place (wfe() in dispatch.c) sees it now */
+    if (target->m->stats_interval) target->m->stats.kick_src[0]++;
+    return seq;
+}
+
+uint64_t hv_cpu_post_tlbi(HvCpu *target, uint32_t op1, uint32_t crn, uint32_t crm, uint32_t op2, uint64_t xt) {
+    HvPerCpu *p = target->pc_state;
+    pthread_mutex_lock(&p->req_mu);
+    if (p->nreq < sizeof p->req / sizeof p->req[0]) {
+        p->req[p->nreq].op1 = op1, p->req[p->nreq].crn = crn, p->req[p->nreq].crm = crm, p->req[p->nreq].op2 = op2;
+        p->req[p->nreq].xt = xt;
+        p->nreq++;
+    } else {
+        p->req_flags |= HV_REQ_TLB_ALL; /* too many queued: drop everything instead */
+    }
+    return post_locked_done(target, p);
+}
+
+uint64_t hv_cpu_post(HvCpu *target, uint32_t flags) {
+    HvPerCpu *p = target->pc_state;
+    pthread_mutex_lock(&p->req_mu);
+    p->req_flags |= flags;
+    return post_locked_done(target, p);
+}
+
+void hv_cpu_process_requests(HvCpu *cpu) {
+    HvPerCpu *p = cpu->pc_state;
+    uint64_t seq = __atomic_load_n(&p->req_seq, __ATOMIC_ACQUIRE);
+    if (seq == __atomic_load_n(&p->ack_seq, __ATOMIC_RELAXED)) return;
+    static __thread struct { uint32_t op1, crn, crm, op2; uint64_t xt; } q[64];
+    pthread_mutex_lock(&p->req_mu);
+    seq = p->req_seq;
+    uint32_t flags = p->req_flags, n = p->nreq;
+    memcpy(q, p->req, n * sizeof q[0]);
+    p->req_flags = 0;
+    p->nreq = 0;
+    pthread_mutex_unlock(&p->req_mu);
+    if (flags & HV_REQ_TLB_ALL) {
+        hv_tlb_flush(cpu);
+    } else {
+        for (uint32_t i = 0; i < n; i++) hv_tlbi_apply(cpu, q[i].op1, q[i].crn, q[i].crm, q[i].op2, q[i].xt);
+    }
+    if (flags & HV_REQ_IJC_RESET) {
+        hv_ijc_reset(cpu, 0);
+        hv_ijc_reset(cpu, 1);
+    }
+    __atomic_store_n(&p->ack_seq, seq, __ATOMIC_RELEASE);
+}
+
+void hv_cpu_sync(HvCpu *self, HvCpu *target, uint64_t seq) {
+    HvPerCpu *t = target->pc_state, *s = self ? self->pc_state : NULL;
+    HvMachine *mm = target->m;
+    uint64_t t0 = mm->stats_interval ? mach_absolute_time() : 0;
+    if (s) __atomic_store_n(&s->tlb_live, 0, __ATOMIC_SEQ_CST); /* others need not wait for this one meanwhile */
+    for (uint32_t spins = 0;; spins++) {
+        if (__atomic_load_n(&t->ack_seq, __ATOMIC_ACQUIRE) >= seq) break;
+        if (!__atomic_load_n(&t->tlb_live, __ATOMIC_SEQ_CST)) break; /* parked: it does the work before it runs again */
+        if (self) hv_cpu_process_requests(self);
+        if (spins > 200) sched_yield();
+    }
+    if (s) {
+        __atomic_store_n(&s->tlb_live, 1, __ATOMIC_SEQ_CST);
+        hv_cpu_process_requests(self); /* anything that came in while we were not live */
+    }
+    if (mm->stats_interval) {
+        mm->stats.syncs++;
+        mm->stats.sync_ticks += mach_absolute_time() - t0;
+    }
+}
+
+void hv_big_lock(HvMachine *m) {
+    if (!m->big_lock_on) return;
+    pthread_mutex_lock(&m->big_mu);
+    uint64_t me = m->big_next++;
+    while (m->big_serving != me) pthread_cond_wait(&m->big_cv, &m->big_mu);
+    pthread_mutex_unlock(&m->big_mu);
+}
+
+void hv_big_unlock(HvMachine *m) {
+    if (!m->big_lock_on) return;
+    pthread_mutex_lock(&m->big_mu);
+    m->big_serving++;
+    pthread_cond_broadcast(&m->big_cv);
+    pthread_mutex_unlock(&m->big_mu);
+}
+
+void hv_big_yield(HvMachine *m) {
+    if (!m->big_lock_on) return;
+    pthread_mutex_lock(&m->big_mu);
+    int waiting = m->big_next - m->big_serving > 1;
+    pthread_mutex_unlock(&m->big_mu);
+    if (!waiting) return;
+    hv_big_unlock(m);
+    hv_big_lock(m);
+}
+
+/* Make cpu leave its block at its next checked exit (and end an in-place WFE wait). */
+void hv_cpu_kick(HvCpu *cpu) {
+    __atomic_store_n(&cpu->exit_req, 1, __ATOMIC_SEQ_CST);
+    __asm__ volatile("sev" ::: "memory");
+}
+
+/* Return tables: nothing to return to. A tag is never 0: salts are not, and no VA has their bits. */
+void hv_ret_clear(HvCpu *cpu) {
+    memset(cpu->ret_tab, 0, sizeof cpu->ret_tab);
+    cpu->ret_salt[0] = cpu->ret_salt[1] = 1ull << 48;
+}
+
+void hv_cpu_wake(HvCpu *cpu) {
+    __atomic_store_n(&cpu->exit_req, 1, __ATOMIC_SEQ_CST);
+    __asm__ volatile("sev" ::: "memory");
+    if (cpu->m->stats_interval) cpu->m->stats.kick_src[1]++;
+    HvPerCpu *p = cpu->pc_state;
+    pthread_mutex_lock(&p->wake_mu);
+    p->wake_pending = 1;
+    pthread_cond_signal(&p->wake_cv);
+    pthread_mutex_unlock(&p->wake_mu);
+}
+
+void hv_machine_kick_all(HvMachine *m) {
+    if (m->stats_interval) m->stats.kick_src[2]++;
+    for (int i = 0; i < m->ncpus; i++)
+        if (m->cpus[i]) __atomic_store_n(&m->cpus[i]->exit_req, 1, __ATOMIC_SEQ_CST);
+    __asm__ volatile("sev" ::: "memory");
+}
+
+/* Device work is for CPU 0, which polls the devices. */
+void hv_machine_wake(HvMachine *m) {
+    if (m->stats_interval) m->stats.kick_src[3]++;
+    if (m->cpu) hv_cpu_wake(m->cpu);
+}
+
+void hv_machine_free(HvMachine *m) {
+    hv_jit_region_close(&m->jit);
+    for (int i = 0; i < m->nram; i++) {
+        free(m->ram[i].code_pages);
+        free(m->ram[i].page_gen);
+    }
+    free(m->blocks);
+    for (int i = 0; i < HV_MAX_CPUS; i++) {
+        free(m->percpu[i].ijc);
+        free(m->percpu[i].ucode);
+        free(m->percpu[i].cid_chunks);
+        for (int k = 0; k < HV_STASHES; k++) {
+            free(m->percpu[i].stash[k].slot);
+            free(m->percpu[i].stash[k].ent);
+        }
+    }
+    free(m->slots);
+    free(m->slot_site);
+    free(m->slot_stub);
+    free(m->slot_cond);
+    free(m->slot_xa);
+    free(m->slot_xpa);
+    free(m->xchained);
+}
+
+int hv_machine_add_ram(HvMachine *m, uint64_t pa, uint64_t size, void *host, int readonly) {
+    if (m->nram == HV_MAX_RAM) return -1;
+    HvRam *r = &m->ram[m->nram++];
+    r->pa = pa;
+    r->size = size;
+    r->host = host;
+    r->readonly = readonly;
+    size_t pages = (size + (1u << HV_TLB_PAGE_BITS) - 1) >> HV_TLB_PAGE_BITS;
+    r->pages_log2 = 0;
+    while ((1ull << r->pages_log2) < pages) r->pages_log2++;
+    /* A power of two, so translated code bounds-checks a page index with one shift (IC IVAU). */
+    r->code_pages = calloc((size_t)1 << r->pages_log2, 1);
+    if (!m->main_ram || size > m->main_ram->size) m->main_ram = r;
+    r->page_gen = calloc(pages, sizeof *r->page_gen);
+    r->whint = calloc(pages * HV_MAX_CPUS, sizeof *r->whint);
+    return r->code_pages && r->page_gen && r->whint ? 0 : -1;
+}
+
+int hv_machine_add_mmio(HvMachine *m, uint64_t pa, uint64_t size, void *opaque,
+                        uint64_t (*read)(void *, uint64_t, unsigned),
+                        void (*write)(void *, uint64_t, uint64_t, unsigned), const char *name) {
+    if (m->nmmio == HV_MAX_MMIO) return -1;
+    m->mmio[m->nmmio++] = (HvMmio){pa, size, opaque, read, write, name, 0};
+    return 0;
+}
+
+HvRam *hv_ram_lookup(HvMachine *m, uint64_t pa) {
+    for (int i = 0; i < m->nram; i++) {
+        HvRam *r = &m->ram[i];
+        if (pa - r->pa < r->size) return r;
+    }
+    return NULL;
+}
+
+uint32_t *hv_smc_counts;
+uint64_t *hv_smc_last;
+uint64_t hv_smc_pages, hv_smc_cpu, hv_smc_dma;
+
+void hv_invalidate_code(HvMachine *m, uint64_t pa) {
+    HvRam *r = hv_ram_lookup(m, pa);
+    if (!r) return;
+    uint64_t pg = (pa - r->pa) >> HV_TLB_PAGE_BITS;
+    if (!r->code_pages[pg]) return;
+    /* Blocks remember the generation they were made under; a stale one is
+       retranslated the next time it is looked up. The block running now may
+       finish with the old code, as it would with a real instruction pipeline. */
+    r->code_pages[pg] = 0;
+    __atomic_add_fetch(&r->page_gen[pg], 1, __ATOMIC_SEQ_CST);
+    m->stats.flush_smc++;
+    if (hv_smc_counts && pg < hv_smc_pages) {
+        hv_smc_counts[pg]++;
+        uint64_t caller = hv_self ? hv_self->pc : 0;
+        hv_smc_last[pg] = caller;
+        if (hv_self) hv_smc_cpu++;
+        else hv_smc_dma++;
+    }
+    /* Exits from other pages chained into the stale blocks go back to their stub
+       (whose next chain finds the new translation). Under the translation lock,
+       as chaining them is: one that saw the old generation is done by now. */
+    pthread_mutex_lock(&m->tr_mu);
+    uint64_t tpa = (r->pa + (pg << HV_TLB_PAGE_BITS)) | 1;
+    for (uint32_t k = 0; k < m->nxchained;) {
+        uint32_t idx = m->xchained[k];
+        if (m->slot_xpa[idx] != tpa) {
+            k++;
+            continue;
+        }
+        m->slot_xpa[idx] = 0;
+        __atomic_store_n(&m->slots[idx], 0, __ATOMIC_RELEASE);
+        uint32_t *site = m->slot_site[idx];
+        if (site) {
+            uint32_t insn = 0x14000000u | (uint32_t)((m->slot_stub[idx] - site) & 0x3ffffff); /* back to its stub */
+            hv_jit_write(&m->jit, site, &insn, 4);
+            hv_jit_finish(&m->jit, site, 1);
+        }
+        m->xchained[k] = m->xchained[--m->nxchained];
+    }
+    pthread_mutex_unlock(&m->tr_mu);
+    /* The indirect-branch cache may lead into the stale blocks: start it over,
+       here at once and on the other CPUs before they next leave a block (their
+       cache lookups and chained exits check exit_req first). */
+    for (int i = 0; i < m->ncpus; i++) {
+        HvCpu *c = m->cpus[i];
+        if (!c) continue;
+        /* Only a CPU may reset its own cache; from any other thread (a device,
+           or no CPU running yet) it is a request, or a running CPU could read a
+           half-written entry and jump into the wrong code. */
+        if (c == hv_self) {
+            hv_ijc_reset(c, 0);
+            hv_ijc_reset(c, 1);
+        } else {
+            hv_cpu_post(c, HV_REQ_IJC_RESET);
+        }
+    }
+    m->stats.reset_why[4]++;
+    /* Make a running chain leave (chains stay patched: see chain() in dispatch.c). */
+    hv_machine_kick_all(m);
+}
+
+void hv_dma_written(HvMachine *m, uint64_t pa, uint64_t len) {
+    HvRam *r = hv_ram_lookup(m, pa);
+    if (!r || !len || pa + len - r->pa > r->size) return;
+    uint64_t first = (pa - r->pa) >> HV_TLB_PAGE_BITS, last = (pa + len - 1 - r->pa) >> HV_TLB_PAGE_BITS;
+    for (uint64_t pg = first; pg <= last; pg++)
+        if (__atomic_load_n(&r->code_pages[pg], __ATOMIC_ACQUIRE)) hv_invalidate_code(m, r->pa + (pg << HV_TLB_PAGE_BITS));
+}
+
+HvMmio *hv_mmio_lookup(HvMachine *m, uint64_t pa) {
+    for (int i = 0; i < m->nmmio; i++) {
+        HvMmio *d = &m->mmio[i];
+        if (pa - d->pa < d->size) return d;
+    }
+    return NULL;
+}
+
+void *hv_phys_ptr(HvMachine *m, uint64_t pa, uint64_t len) {
+    HvRam *r = hv_ram_lookup(m, pa);
+    if (!r || pa + len - r->pa > r->size) return NULL;
+    return r->host + (pa - r->pa);
+}
+
+/* MMIO is accessed in naturally sized pieces of at most 8 bytes. */
+int hv_phys_read(HvMachine *m, uint64_t pa, void *buf, unsigned len) {
+    void *p = hv_phys_ptr(m, pa, len);
+    if (p) {
+        memcpy(buf, p, len);
+        return 0;
+    }
+    HvMmio *d = hv_mmio_lookup(m, pa);
+    if (!d || len > 8) return -1;
+    if (!d->self_locked) hv_dev_lock(m);
+    uint64_t v = d->read ? d->read(d->opaque, pa - d->pa, len) : 0;
+    if (!d->self_locked) hv_dev_unlock(m);
+    memcpy(buf, &v, len);
+    if (m->log >= 3)
+        fprintf(stderr, "mmio read  %s+%llx size %u = %llx pc %llx\n", d->name, (unsigned long long)(pa - d->pa), len,
+                (unsigned long long)v, (unsigned long long)m->access_pc);
+    return 0;
+}
+
+int hv_phys_write(HvMachine *m, uint64_t pa, const void *buf, unsigned len) {
+    HvRam *r = hv_ram_lookup(m, pa);
+    if (r && pa + len - r->pa <= r->size) {
+        if (r->readonly) return 0; /* ROM: writes are ignored */
+        uint64_t off = pa - r->pa;
+        uint64_t first = off >> HV_TLB_PAGE_BITS, last = (off + len - 1) >> HV_TLB_PAGE_BITS;
+        for (uint64_t pg = first; pg <= last; pg++)
+            if (r->code_pages[pg]) hv_invalidate_code(m, r->pa + (pg << HV_TLB_PAGE_BITS)); /* a write to code */
+        if (m->watch_pa && m->watch_pa - pa < len) {
+            uint64_t v = 0;
+            memcpy(&v, (const uint8_t *)buf + (m->watch_pa - pa), len - (m->watch_pa - pa) < 8 ? len - (m->watch_pa - pa) : 8);
+            fprintf(stderr, "hengevm: watch: write to pa %llx = %llx (%u bytes at pa %llx) by pc %llx\n",
+                    (unsigned long long)m->watch_pa, (unsigned long long)v, len, (unsigned long long)pa,
+                    (unsigned long long)m->access_pc);
+        }
+        memcpy(r->host + off, buf, len);
+        return 0;
+    }
+    HvMmio *d = hv_mmio_lookup(m, pa);
+    if (!d || len > 8) return -1;
+    uint64_t v = 0;
+    memcpy(&v, buf, len);
+    if (m->log >= 3)
+        fprintf(stderr, "mmio write %s+%llx size %u = %llx pc %llx\n", d->name, (unsigned long long)(pa - d->pa), len,
+                (unsigned long long)v, (unsigned long long)m->access_pc);
+    if (!d->self_locked) hv_dev_lock(m);
+    if (d->write) d->write(d->opaque, pa - d->pa, v, len);
+    if (!d->self_locked) hv_dev_unlock(m);
+    return 0;
+}
+
+void hv_cpu_reset(HvCpu *cpu, HvMachine *m) {
+    hv_cpu_reset_index(cpu, m, 0);
+}
+
+void hv_cpu_reset_index(HvCpu *cpu, HvMachine *m, uint32_t index) {
+    /* Everything but m and pc_state: other CPUs' TLBIs read those of a CPU
+       being started (PSCI CPU_ON) at any time. */
+    _Static_assert(offsetof(HvCpu, m) < offsetof(HvCpu, pc_state), "HvCpu layout");
+    size_t a = offsetof(HvCpu, m), b = offsetof(HvCpu, pc_state);
+    memset(cpu, 0, a);
+    memset((char *)cpu + a + sizeof cpu->m, 0, b - a - sizeof cpu->m);
+    memset((char *)cpu + b + sizeof cpu->pc_state, 0, sizeof *cpu - b - sizeof cpu->pc_state);
+    cpu->m = m;
+    cpu->index = index;
+    cpu->pc_state = &m->percpu[index];
+    m->cpus[index] = cpu;
+    if (m->ncpus <= (int)index) m->ncpus = (int)index + 1;
+    if (index == 0) m->cpu = cpu;
+    HvPerCpu *p = cpu->pc_state;
+    /* Ids start over, so entries tagged with the old ones must go. */
+    for (int t = 0; t < HV_IJC_TABLES; t++)
+        if (p->ijc_tables_used >> t & 1) memset(p->ijc + (size_t)t * (HV_IJC_TABLE_BYTES / 8), 0, HV_IJC_TABLE_BYTES);
+    p->ijc_tables_used = 0;
+    memset(p->ijc_keyed, 0, sizeof p->ijc_keyed);
+    p->ijc_keyed_count = 0;
+    memset(p->ijc_pages, 0, sizeof p->ijc_pages);
+    memset(p->ijc_hint, 0, sizeof p->ijc_hint);
+    memset(p->jc, 0, sizeof p->jc);
+    cpu->ijc = (uint64_t)(uintptr_t)p->ijc;
+    cpu->lines_ptr = (uint64_t)(uintptr_t)&p->irq_line;
+    for (int t = 0; t < HV_IJC_TABLES; t++) cpu->ijc_tab[t] = (uint64_t)(uintptr_t)(p->ijc + (size_t)t * (HV_IJC_TABLE_BYTES / 8));
+    hv_ret_clear(cpu);
+    cpu->next_cid = 1;
+    cpu->kernel_gen = 1;
+    cpu->ijc_salt[1] = 1ull << 48; /* tags of an all-zero table never match */
+    hv_ijc_switch(cpu);
+    cpu->exit_routine = (uint64_t)hv_exit;
+    cpu->helper_routine = (uint64_t)hv_helper_entry;
+    cpu->helper_thunk = (uint64_t)hv_helper_thunk;
+    cpu->chain_thunk = (uint64_t)hv_chain_thunk;
+    cpu->ijc_thunk = (uint64_t)hv_ijc_thunk;
+    cpu->xjump_thunk = (uint64_t)hv_xjump_thunk;
+    cpu->el = 1;
+    cpu->spsel = 1;
+    cpu->daif = HV_PSTATE_DAIF;
+    cpu->excl_addr = ~0ull;
+    /* Architectural reset value has the MMU and caches off; RES1 bits set. */
+    cpu->sctlr_el1 = 0x30d00800;
+    hv_tlb_flush(cpu);
+}

@@ -1,1 +1,200 @@
-IyBUaGlyZC1QYXJ0eSBOb3RpY2VzICYgVXBzdHJlYW0gQXR0cmlidXRpb25zCgpgV2luZG93c2lPU2AgaXMgbGljZW5zZWQgYXMgYSB3aG9sZSB1bmRlciB0aGUgKipHTlUgR2VuZXJhbCBQdWJsaWMgTGljZW5zZSB2Mi4wIG9yIGxhdGVyKiogKGBHUEwtMi4wLW9yLWxhdGVyYDsgc2VlIFtgTElDRU5TRWBdKExJQ0VOU0UpKSwgcHJlc2VydmluZyBhbGwgdXBzdHJlYW0gY29weXJpZ2h0IG5vdGljZXMgYW5kIGNvcHlsZWZ0IG9ibGlnYXRpb25zIGZyb20gW2BMZXZpaWRldi9IZW5nZWBdKGh0dHBzOi8vZ2l0aHViLmNvbS9MZXZpaWRldi9IZW5nZSkgYW5kIFtgTGV2aWlkZXYvSHVza2BdKGh0dHBzOi8vZ2l0aHViLmNvbS9MZXZpaWRldi9IdXNrKS4KClRoaXMgcHJvamVjdCBzdGFuZHMgb24gdGhlIHNob3VsZGVycyBvZiBleHRyYW9yZGluYXJ5IG9wZW4tc291cmNlIHN5c3RlbXMgZW5naW5lZXJpbmcgYWNyb3NzIHRoZSBpT1MgYmluYXJ5LXRyYW5zbGF0aW9uLCB2aXJ0dWFsaXphdGlvbiwgYW5kIGZpcm13YXJlIGVjb3N5c3RlbXMuIEV2ZXJ5IHVwc3RyZWFtIHByb2plY3QsIGxpYnJhcnksIGZpcm13YXJlIHBhY2thZ2UsIGFuZCBkcml2ZXIgdGhhdCBoZWxwZWQgbWFrZSBgV2luZG93c2lPU2AgcG9zc2libGUgaXMgY3JlZGl0ZWQgYmVsb3cgYWxvbmcgd2l0aCBpdHMgZ292ZXJuaW5nIGxpY2Vuc2UgdGVybXMuCgotLS0KCiMjIFN1bW1hcnkgb2YgVXBzdHJlYW0gJiBFY29zeXN0ZW0gQ29tcG9uZW50cwoKfCBDb21wb25lbnQgfCBVcHN0cmVhbSBQcm9qZWN0IC8gQXV0aG9ycyB8IExpY2Vuc2UgfCBIb3cgVXNlZCBpbiBgV2luZG93c2lPU2AgfAp8IDotLS0gfCA6LS0tIHwgOi0tLSB8IDotLS0gfAp8ICoqSGVuZ2UqKiAoYEhlbmdlVk1gKSB8IFtgTGV2aWlkZXYvSGVuZ2VgXShodHRwczovL2dpdGh1Yi5jb20vTGV2aWlkZXYvSGVuZ2UpICYgW2BMZXZpaWRldi9IZW5nZSM3YF0oaHR0cHM6Ly9naXRodWIuY29tL0xldmlpZGV2L0hlbmdlL3B1bGwvNykgKExldmlpICYgY29udHJpYnV0b3JzKSB8IGBHUEwtMi4wLW9yLWxhdGVyYCB8IEZvdW5kYXRpb25hbCBBUk02NC10by1BUk02NCBkeW5hbWljIGJpbmFyeSB0cmFuc2xhdG9yLCBzdGFnZS0xIHNvZnR3YXJlIE1NVSBmb3VuZGF0aW9uLCBibG9jay9JSkMvcmV0dXJuIGNhY2hlcyAoYGNvcmUvYCwgYGhvc3QvZW50ZXIuU2AsIGBob3N0L2ppdF9yZWdpb24uY2ApLCBgLy5oZW5nZWAgV2ViREFWIHNoYXJlIHNlcnZlciAoYGhvc3Qvc2hhcmUuY2ApLCBhbmQgaU9TIDI2LzI3IFRYTSBkdWFsLW1hcHBlZCBKSVQgc3Vic3RyYXRlIChgaW9zL1NvdXJjZXMvTmF0aXZlL3dpbmlvc19qaXQuY2AsIGB3aW5pb3NfYnJrLlNgLCBgaGVuZ2Utaml0LmpzYCkgfAp8ICoqSHVzayoqIHwgW2BMZXZpaWRldi9IdXNrYF0oaHR0cHM6Ly9naXRodWIuY29tL0xldmlpZGV2L0h1c2spIChMZXZpaSAmIGNvbnRyaWJ1dG9ycykgfCBgR1BMLTIuMC1vci1sYXRlcmAgfCBBUk02NCBKSVQgYXJjaGl0ZWN0dXJlICYgdHJhbnNsYXRpb24gaW5zaWdodHMsIGlPUyBgbGlic2xpcnBgIGNyb3NzLWJ1aWxkIHBhdGNoZXMsIGFuZCBvbi1kZXZpY2UgSklUIGhlbHBlciBpbnRlZ3JhdGlvbiAoYHNjcmlwdHMvYnVpbGRfaW9zX2RlcHMuc2hgKSB8CnwgKipMaW51eFJ1bm5lcioqIHwgW2BteGhtMTFjci9MaW51eFJ1bm5lcmBdKGh0dHBzOi8vZ2l0aHViLmNvbS9teGhtMTFjci9MaW51eFJ1bm5lcikgKGRlcml2ZWQgZnJvbSBgaXNoLWFwcC9pc2hgICYgYHJjYXJtby9pb3MtbGludXhraXRgKSB8IGBHUEwtMi4wYCAvIGBHUEwtMy4wYCB8IEFyY2hpdGVjdHVyYWwgaW5zcGlyYXRpb24gYW5kIGVhcmx5IEFSTTY0IGd1ZXN0IE9TIGJyaW5nLXVwICYgaU9TIHJ1bnRpbWUgZGlzY2lwbGluZSBwYXR0ZXJucyAobm8gR1BMLTMuMC1vbmx5IHNvdXJjZSBmaWxlcyBsaW5rZWQpIHwKfCAqKlN0aWtEZWJ1ZyAvIFN0aWtKSVQqKiB8IFtgU3RlcGhlbkRldjAvU3Rpa0RlYnVnYF0oaHR0cHM6Ly9naXRodWIuY29tL1N0ZXBoZW5EZXYwL1N0aWtEZWJ1ZykgLyBgU3Rpa0pJVGAgKEJsdURvb2QgLyBTdGVwaGVuRGV2MCAmIGNvbnRyaWJ1dG9ycykgKyBbYGprY294c29uL2lkZXZpY2VgXShodHRwczovL2dpdGh1Yi5jb20vamtjb3hzb24vaWRldmljZSkgfCBgTVBMLTIuMGAgLyBgQlNELTMtQ2xhdXNlYCAvIGBNSVRgIHwgT24tZGV2aWNlIGlPUyAyNi8yNyBUWE0gZGVidWdnZXIgJiBKSVQgcGFnZS1ibGVzc2luZyBwcm90b2NvbCAoYHVuaXZlcnNhbC5qc2AgLyBgaW9zL1NvdXJjZXMvUmVzb3VyY2VzL2hlbmdlLWppdC5qc2AsIGBCUksgIzB4NjlgIC8gYEJSSyAjMHhGMDBEYCBkdWFsLW1hcHBlZCBSWC9SVyByZWdpb25zLCBhbmQgYENTX0RFQlVHR0VEYCBsZWRnZXItZXhlbXB0IG1lbW9yeSBzZXR1cCkgfAp8ICoqbGlic2xpcnAqKiB8IFtgZ2l0bGFiLmZyZWVkZXNrdG9wLm9yZy9zbGlycC9saWJzbGlycGBdKGh0dHBzOi8vZ2l0bGFiLmZyZWVkZXNrdG9wLm9yZy9zbGlycC9saWJzbGlycCkgLyBbYHV0bWFwcC9saWJzbGlycGBdKGh0dHBzOi8vZ2l0aHViLmNvbS91dG1hcHAvbGlic2xpcnApIChEYW5ueSBHYXNwYXJvdnNraSwgRmFicmljZSBCZWxsYXJkLCBRRU1VICYgbGlic2xpcnAgY29udHJpYnV0b3JzKSB8IGBCU0QtMy1DbGF1c2VgIHwgVXNlci1tb2RlIFRDUC9JUCArIERIQ1AgKyBETlMgTkFUIHN0YWNrIChgMTAuMC4yLjAvMjRgKSBsaW5rZWQgdmlhIGBob3N0L25ldF9zbGlycC5jYCAoZmV0Y2hlZCAmIGNyb3NzLWNvbXBpbGVkIGF0IGJ1aWxkIHRpbWUgYnkgYHNjcmlwdHMvYnVpbGRfaW9zX2RlcHMuc2hgKSB8CnwgKipHTGliIC8gbGliaW50bCAvIGxpYmZmaSAvIFBDUkUyKiogfCBHTk9NRSBHTGliIChgMi44My4wYCksIGBwcm94eS1saWJpbnRsYCwgYGxpYmZmaWAgKGAzLjUuMGApLCBgUENSRTJgIHwgYExHUEwtMi4xLW9yLWxhdGVyYCAvIGBNSVRgIC8gYEJTRC0zLUNsYXVzZWAgfCBUcmFuc2l0aXZlIGJ1aWxkLXRpbWUgc3RhdGljIGxpYnJhcmllcyByZXF1aXJlZCBieSBgbGlic2xpcnBgIG9uIGBhcm02NC1hcHBsZS1pb3NgIChgc2NyaXB0cy9idWlsZF9pb3NfZGVwcy5zaGAsIHN0YWdlZCBpbnRvIGlnbm9yZWQgYGlvcy9kZXBzL2ApIHwKfCAqKlRpYW5vQ29yZSBFREsyIChgQXJtVmlydFFlbXVgKSoqIHwgW2B0aWFub2NvcmUvZWRrMmBdKGh0dHBzOi8vZ2l0aHViLmNvbS90aWFub2NvcmUvZWRrMikgKFRpYW5vQ29yZSAvIEludGVsIC8gTGluYXJvIC8gQXJtIGNvbnRyaWJ1dG9ycykgfCBgQlNELTItQ2xhdXNlLVBhdGVudGAgfCBgQUFSQ0g2NGAgVUVGSSBmaXJtd2FyZSBpbWFnZSAoYFFFTVVfRUZJLmZkYCAtPiBgd29yay9jb2RlLmZkYCArIGB3b3JrL3ZhcnMuZmRgKS4gKipOb3QgYnVuZGxlZCBpbiB0aGlzIHJlcG9zaXRvcnkqKjsgZmV0Y2hlZCBhdCBwcm92aXNpb25pbmcgdGltZSB8CnwgKipSZWQgSGF0IGB2aXJ0aW8td2luYCAoYE5ldEtWTWApKiogfCBbYHZpcnRpby13aW4va3ZtLWd1ZXN0LWRyaXZlcnMtd2luZG93c2BdKGh0dHBzOi8vZ2l0aHViLmNvbS92aXJ0aW8td2luL2t2bS1ndWVzdC1kcml2ZXJzLXdpbmRvd3MpIChSZWQgSGF0LCBJbmMuICYgY29udHJpYnV0b3JzKSB8IGBCU0QtMy1DbGF1c2VgIC8gYEdQTC0yLjBgIHwgV0hRTC1zaWduZWQgV2luZG93cyAxMSBBUk02NCBWaXJ0SU8gRXRoZXJuZXQgbWluaXBvcnQgZHJpdmVyIChgTmV0S1ZNYCBgdzExL0FSTTY0YCkuICoqTm90IGJ1bmRsZWQgaW4gdGhpcyByZXBvc2l0b3J5Kio7IGZldGNoZWQgJiBpbmplY3RlZCBhdCBwcm92aXNpb25pbmcgdGltZSB8CgotLS0KCiMjIDEuIExldmlpZGV2L0hlbmdlICYgTGV2aWlkZXYvSGVuZ2UjNyAoYEdQTC0yLjAtb3ItbGF0ZXJgKQoKLSAqKlJlcG9zaXRvcnk6KiogPGh0dHBzOi8vZ2l0aHViLmNvbS9MZXZpaWRldi9IZW5nZT4gYW5kIDxodHRwczovL2dpdGh1Yi5jb20vTGV2aWlkZXYvSGVuZ2UvcHVsbC83PgotICoqTGljZW5zZToqKiBHTlUgR2VuZXJhbCBQdWJsaWMgTGljZW5zZSB2Mi4wIG9yIGxhdGVyIChgR1BMLTIuMC1vci1sYXRlcmApCgpgV2luZG93c2lPU2AgZGlyZWN0bHkgYWRhcHRzIGFuZCBleHRlbmRzIEhlbmdlJ3MgYEhlbmdlVk1gIEFSTTY0LXRvLUFSTTY0IGR5bmFtaWMgYmluYXJ5IHRyYW5zbGF0b3IgKGBjb3JlL2ApLCBhc3NlbWJseSBlbnRyeSB0cmFtcG9saW5lIGFuZCBkdWFsLW1hcHBlZCBKSVQgYWxsb2NhdG9yIChgaG9zdC9lbnRlci5TYCwgYGhvc3Qvaml0X3JlZ2lvbi5jYCksIGBsaWJzbGlycGAgKyBgLy5oZW5nZS9gIFdlYkRBViBndWVzdC1ob3N0IHRyYW5zcG9ydCAoYGhvc3QvbmV0X3NsaXJwLmNgLCBgaG9zdC9zaGFyZS5jYCksIGFuZCBpT1MgMjYvMjcgVFhNIGRlYnVnZ2VyLWFzc2lzdGVkIEpJVCBicmlkZ2UgKGBpb3MvU291cmNlcy9OYXRpdmUvd2luaW9zX2ppdC5jYCwgYGlvcy9Tb3VyY2VzL05hdGl2ZS93aW5pb3NfYnJrLlNgLCBgaW9zL1NvdXJjZXMvUmVzb3VyY2VzL2hlbmdlLWppdC5qc2ApLgoKU2lnbmlmaWNhbnQgbW9kaWZpY2F0aW9ucyB3ZXJlIG1hZGUgYWNyb3NzIGBjb3JlL2AsIGBkZXZpY2VzL2AsIGBob3N0L2AsIGBpb3MvYCwgYHNjcmlwdHMvYCwgYW5kIGB0b29scy9gIGluIE5vdmVtYmVyIDIwMjYgdG8gYm9vdCBhbmQgcnVuIE1pY3Jvc29mdCBXaW5kb3dzIDExIDI0SDIgQVJNNjQgKGBudG9za3JubC5leGVgICsgUHJpc20gYHh0YWppdDY0LmRsbGApLCBpbmNsdWRpbmcgNCBLQiBzdGFnZS0xIE1NVSBzdXBwb3J0IHdpdGggYFRDUl9FTDEuQTEgPSAxYCBBU0lELWtleWVkIGBIdlRsYlN0YXNoYCwgYExEWFBgL2BTVFhQYCBhbmQgYExEWFIgWFpSYCBMU0UgbG93ZXJpbmcsIHVuYWxpZ25lZCBgRkVBVF9MUkNQQzJgIGVtdWxhdGlvbiwgVUVGSS9BQ1BJIDYuMy9HSUN2MyBJVFMvTlZNZS94SENJL0ludGVsIElDSDYgSEQgQXVkaW8gdmlydHVhbCBoYXJkd2FyZSwgYGh2c3BhcnNlYCBibG9jayBzdG9yYWdlLCBuYXRpdmUgaU9TIGBTRlNhZmFyaVZpZXdDb250cm9sbGVyYCBPQXV0aCBsb29wYmFjayByZWxheSwgYW5kIHRoZSBmb2xkYWJsZSBpUGhvbmUgRHVvIFVJLiBBbGwgbW9kaWZpZWQgYW5kIG5ld2x5IGFkZGVkIGZpbGVzIGluIHRoZSBjb21iaW5lZCB3b3JrIHJlbWFpbiBsaWNlbnNlZCB1bmRlciAqKkdQTC0yLjAtb3ItbGF0ZXIqKiAoc2VlIFtgTElDRU5TRWBdKExJQ0VOU0UpKS4KCmBgYHRleHQKVGhpcyBwcm9ncmFtIGlzIGZyZWUgc29mdHdhcmU7IHlvdSBjYW4gcmVkaXN0cmlidXRlIGl0IGFuZC9vciBtb2RpZnkKaXQgdW5kZXIgdGhlIHRlcm1zIG9mIHRoZSBHTlUgR2VuZXJhbCBQdWJsaWMgTGljZW5zZSBhcyBwdWJsaXNoZWQgYnkKdGhlIEZyZWUgU29mdHdhcmUgRm91bmRhdGlvbjsgZWl0aGVyIHZlcnNpb24gMiBvZiB0aGUgTGljZW5zZSwgb3IKKGF0IHlvdXIgb3B0aW9uKSBhbnkgbGF0ZXIgdmVyc2lvbi4KClRoaXMgcHJvZ3JhbSBpcyBkaXN0cmlidXRlZCBpbiB0aGUgaG9wZSB0aGF0IGl0IHdpbGwgYmUgdXNlZnVsLApidXQgV0lUSE9VVCBBTlkgV0FSUkFOVFk7IHdpdGhvdXQgZXZlbiB0aGUgaW1wbGllZCB3YXJyYW50eSBvZgpNRVJDSEFOVEFCSUxJVFkgb3IgRklUTkVTUyBGT1IgQSBQQVJUSUNVTEFSIFBVUlBPU0UuICBTZWUgdGhlCkdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGZvciBtb3JlIGRldGFpbHMuCmBgYAoKLS0tCgojIyAyLiBMZXZpaWRldi9IdXNrIChgR1BMLTIuMC1vci1sYXRlcmApCgotICoqUmVwb3NpdG9yeToqKiA8aHR0cHM6Ly9naXRodWIuY29tL0xldmlpZGV2L0h1c2s+Ci0gKipMaWNlbnNlOioqIEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIHYyLjAgb3IgbGF0ZXIgKGBHUEwtMi4wLW9yLWxhdGVyYCkKCmBMZXZpaWRldi9IdXNrYCBwaW9uZWVyZWQgcHJhY3RpY2FsIEFSTTY0IHRyYW5zbGF0aW9uLCBpT1MgYGxpYnNsaXJwYCBidWlsZCBwYXRjaGVzLCBhbmQgb24tZGV2aWNlIFN0aWtKSVQgaW50ZWdyYXRpb24gcGF0dGVybnMgb24gbW9kZXJuIG5vbi1qYWlsYnJva2VuIGlPUyBkZXZpY2VzLiBQb3J0aW9ucyBvZiB0aGUgaU9TIEpJVC9kZXBlbmRlbmN5IGJ1aWxkIGZsb3cgKGBzY3JpcHRzL2J1aWxkX2lvc19kZXBzLnNoYCkgZHJhdyBkaXJlY3RseSBmcm9tIEh1c2sncyBvcGVuLXNvdXJjZSBhcmNoaXRlY3R1cmUgdW5kZXIgYEdQTC0yLjAtb3ItbGF0ZXJgLgoKLS0tCgojIyAzLiBteGhtMTFjci9MaW51eFJ1bm5lciAoYEdQTC0yLjBgIC8gYEdQTC0zLjBgIEluc3BpcmF0aW9uKQoKLSAqKlJlcG9zaXRvcnk6KiogPGh0dHBzOi8vZ2l0aHViLmNvbS9teGhtMTFjci9MaW51eFJ1bm5lcj4KLSAqKkxpbmVhZ2U6KiogRGVyaXZlZCBmcm9tIFtgaXNoLWFwcC9pc2hgXShodHRwczovL2dpdGh1Yi5jb20vaXNoLWFwcC9pc2gpIChUaGVvZG9yZSBEdWJvaXMgJiBjb250cmlidXRvcnMpIGFuZCBbYHJjYXJtby9pb3MtbGludXhraXRgXShodHRwczovL2dpdGh1Yi5jb20vcmNhcm1vL2lvcy1saW51eGtpdCkgKFJ1aSBDYXJtbyAmIGNvbnRyaWJ1dG9ycykKCkNyZWRpdGVkIHdpdGggZ3JhdGl0dWRlIGZvciBkZW1vbnN0cmF0aW5nIGVhcmx5IGd1ZXN0IE9TIGJyaW5nLXVwIHdvcmtmbG93cywgaU9TIEpldHNhbSBmb290cHJpbnQgZGlzY2lwbGluZSwgYW5kIGRlc2t0b3Agc2Vzc2lvbiBlcmdvbm9taWNzIG9uIGlPUyBoYXJkd2FyZS4gYFdpbmRvd3NpT1NgIGRvZXMgbm90IGxpbmsgc291cmNlIGZpbGVzIGZyb20gYExpbnV4UnVubmVyYC4KCi0tLQoKIyMgNC4gU3Rpa0RlYnVnIC8gU3Rpa0pJVCAoYE1QTC0yLjBgIC8gYEJTRC0zLUNsYXVzZWAgLyBgTUlUYCkKCi0gKipSZXBvc2l0b3JpZXM6KiogPGh0dHBzOi8vZ2l0aHViLmNvbS9TdGVwaGVuRGV2MC9TdGlrRGVidWc+LCBgU3Rpa0pJVGAsIGFuZCA8aHR0cHM6Ly9naXRodWIuY29tL2prY294c29uL2lkZXZpY2U+Ci0gKipBdXRob3JzOioqIFN0ZXBoZW5EZXYwIChCbHVEb29kKSwgSmFja3NvbiBDb3hzb24gKGBpZGV2aWNlYCksIGFuZCBjb250cmlidXRvcnMKLSAqKkxpY2Vuc2VzOioqIE1vemlsbGEgUHVibGljIExpY2Vuc2UgMi4wIChgTVBMLTIuMGApLCBgQlNELTMtQ2xhdXNlYCAoZGVidWdnZXIgc2NyaXB0IGNvbnZlbnRpb25zKSwgYW5kIGBNSVRgIChgaWRldmljZWApCgpPbiBpT1MgMjYgYW5kIGlPUyAyNyBkZXZpY2VzIGVxdWlwcGVkIHdpdGggQXBwbGUncyBUcnVzdGVkIEV4ZWN1dGlvbiBNb25pdG9yICgqKlRYTSoqKSwgaGFyZHdhcmUgZW5mb3JjZW1lbnQgYmxvY2tzIG9yZGluYXJ5IGBNQVBfSklUYCBleGVjdXRpb24gd2l0aG91dCBkZWJ1Z2dlciBwYWdlLWJsZXNzaW5nLiBgV2luZG93c2lPU2AgdXNlcyB0aGUgYEJSSyAjMHg2OWAgLyBgQlJLICMweEYwMERgIHByb3RvY29sIChgaW9zL1NvdXJjZXMvTmF0aXZlL3dpbmlvc19icmsuU2AsIGBpb3MvU291cmNlcy9SZXNvdXJjZXMvaGVuZ2Utaml0LmpzYCwgYW5kIGBzY3JpcHRzL19sbGRiX3R4bV9qaXQucHlgKSBwaW9uZWVyZWQgYnkgYFN0aWtEZWJ1Z2AgLyBgU3Rpa0pJVGAgYW5kIGFkYXB0ZWQgYnkgYExldmlpZGV2L0hlbmdlYCB0byBhbGxvY2F0ZSBhbmQgYmxlc3MgZHVhbC1tYXBwZWQgUlgvUlcgSklUIHJlZ2lvbnMgKGBfTTxzaXplPixyeGAgKyBgdm1fcmVtYXBgKSBhbmQgcHJlLWFsbG9jYXRlIGxlZGdlci1leGVtcHQgZ3Vlc3QgUkFNIHdoaWxlIGBDU19ERUJVR0dFRGAgaXMgYWN0aXZlIHByaW9yIHRvIGRlYnVnZ2VyIGRldGFjaC4KCi0gYFN0aWtKSVRgIGZyYW1ld29yayBjb21wb25lbnRzICh3aGVuIG9wdGlvbmFsbHkgc3RhZ2VkIHZpYSBgc2NyaXB0cy9idWlsZF9pb3NfZGVwcy5zaGApIGFyZSBnb3Zlcm5lZCBieSB0aGUgKipNb3ppbGxhIFB1YmxpYyBMaWNlbnNlIFZlcnNpb24gMi4wKiogKGBNUEwtMi4wYCwgY29tcGF0aWJsZSB3aXRoIGBHUEwtMi4wLW9yLWxhdGVyYCBMYXJnZXIgV29ya3MgdW5kZXIgTVBMLTIuMCBTZWN0aW9uIDMuMykuIEZ1bGwgTVBMLTIuMCB0ZXh0OiA8aHR0cHM6Ly93d3cubW96aWxsYS5vcmcvTVBMLzIuMC8+LgotIGBpZGV2aWNlYCAoQ29weXJpZ2h0IChjKSBKYWNrc29uIENveHNvbikgaXMgbGljZW5zZWQgdW5kZXIgdGhlICoqTUlUIExpY2Vuc2UqKi4KCi0tLQoKIyMgNS4gbGlic2xpcnAgKGBCU0QtMy1DbGF1c2VgKSAmIENyb3NzLUNvbXBpbGVkIFN0YXRpYyBEZXBlbmRlbmNpZXMKCi0gKipSZXBvc2l0b3J5OioqIDxodHRwczovL2dpdGxhYi5mcmVlZGVza3RvcC5vcmcvc2xpcnAvbGlic2xpcnA+IChtaXJyb3I6IDxodHRwczovL2dpdGh1Yi5jb20vdXRtYXBwL2xpYnNsaXJwPikKLSAqKkxpY2Vuc2U6KiogYEJTRC0zLUNsYXVzZWAKCmBXaW5kb3dzaU9TYCB1c2VzIGBsaWJzbGlycGAgKGB2NC45LjFgKSBpbiBgaG9zdC9uZXRfc2xpcnAuY2AgdG8gcHJvdmlkZSByb290bGVzcywgZW50aXRsZW1lbnQtZnJlZSB1c2VyLW1vZGUgVENQL0lQLCBVRFAsIElDTVAsIERIQ1AgKGAxMC4wLjIuMTVgKSwgRE5TIChgMTAuMC4yLjNgKSwgV2ViREFWIFVuaXgtc29ja2V0IGZvcndhcmRpbmcgKGAxMC4wLjIuNDo4MGApLCBhbmQgZHluYW1pYyBJUHY0L0lQdjYgT0F1dGggbG9vcGJhY2sgcG9ydCBmb3J3YXJkaW5nLiBgbGlic2xpcnBgIGlzIGZldGNoZWQgZnJvbSB1cHN0cmVhbSByZWxlYXNlIHRhcmJhbGxzIGR1cmluZyBgc2NyaXB0cy9idWlsZF9pb3NfZGVwcy5zaGAgKG9yIHZpYSBIb21lYnJldyBvbiBtYWNPUykgYW5kIGlzIG5ldmVyIGNvbW1pdHRlZCBhcyBiaW5hcnkgYXJ0aWZhY3RzIHRvIGdpdC4KCmBgYHRleHQKQ29weXJpZ2h0IChjKSAxOTk1LDE5OTYgRGFubnkgR2FzcGFyb3Zza2kuIEFsbCByaWdodHMgcmVzZXJ2ZWQuCkNvcHlyaWdodCAoYykgMjAwNC0yMDA4IEZhYnJpY2UgQmVsbGFyZC4KQ29weXJpZ2h0IChjKSBsaWJzbGlycCBjb250cmlidXRvcnMuCgpSZWRpc3RyaWJ1dGlvbiBhbmQgdXNlIGluIHNvdXJjZSBhbmQgYmluYXJ5IGZvcm1zLCB3aXRoIG9yIHdpdGhvdXQKbW9kaWZpY2F0aW9uLCBhcmUgcGVybWl0dGVkIHByb3ZpZGVkIHRoYXQgdGhlIGZvbGxvd2luZyBjb25kaXRpb25zCmFyZSBtZXQ6CgoxLiBSZWRpc3RyaWJ1dGlvbnMgb2Ygc291cmNlIGNvZGUgbXVzdCByZXRhaW4gdGhlIGFib3ZlIGNvcHlyaWdodAogICBub3RpY2UsIHRoaXMgbGlzdCBvZiBjb25kaXRpb25zIGFuZCB0aGUgZm9sbG93aW5nIGRpc2NsYWltZXIuCjIuIFJlZGlzdHJpYnV0aW9ucyBpbiBiaW5hcnkgZm9ybSBtdXN0IHJlcHJvZHVjZSB0aGUgYWJvdmUgY29weXJpZ2h0CiAgIG5vdGljZSwgdGhpcyBsaXN0IG9mIGNvbmRpdGlvbnMgYW5kIHRoZSBmb2xsb3dpbmcgZGlzY2xhaW1lciBpbiB0aGUKICAgZG9jdW1lbnRhdGlvbiBhbmQvb3Igb3RoZXIgbWF0ZXJpYWxzIHByb3ZpZGVkIHdpdGggdGhlIGRpc3RyaWJ1dGlvbi4KMy4gTmVpdGhlciB0aGUgbmFtZSBvZiB0aGUgY29weXJpZ2h0IGhvbGRlciBub3IgdGhlIG5hbWVzIG9mIGl0cwogICBjb250cmlidXRvcnMgbWF5IGJlIHVzZWQgdG8gZW5kb3JzZSBvciBwcm9tb3RlIHByb2R1Y3RzIGRlcml2ZWQKICAgZnJvbSB0aGlzIHNvZnR3YXJlIHdpdGhvdXQgc3BlY2lmaWMgcHJpb3Igd3JpdHRlbiBwZXJtaXNzaW9uLgoKVEhJUyBTT0ZUV0FSRSBJUyBQUk9WSURFRCBCWSBUSEUgQ09QWVJJR0hUIEhPTERFUlMgQU5EIENPTlRSSUJVVE9SUwoiQVMgSVMiIEFORCBBTlkgRVhQUkVTUyBPUiBJTVBMSUVEIFdBUlJBTlRJRVMsIElOQ0xVRElORywgQlVUIE5PVApMSU1JVEVEIFRPLCBUSEUgSU1QTElFRCBXQVJSQU5USUVTIE9GIE1FUkNIQU5UQUJJTElUWSBBTkQgRklUTkVTUyBGT1IKQSBQQVJUSUNVTEFSIFBVUlBPU0UgQVJFIERJU0NMQUlNRUQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRSBDT1BZUklHSFQKSE9MREVSIE9SIENPTlRSSUJVVE9SUyBCRSBMSUFCTEUgRk9SIEFOWSBESVJFQ1QsIElORElSRUNULCBJTkNJREVOVEFMLApTUEVDSUFMLCBFWEVNUExBUlksIE9SIENPTlNFUVVFTlRJQUwgREFNQUdFUyAoSU5DTFVESU5HLCBCVVQgTk9UCkxJTUlURUQgVE8sIFBST0NVUkVNRU5UIE9GIFNVQlNUSVRVVEUgR09PRFMgT1IgU0VSVklDRVM7IExPU1MgT0YgVVNFLApEQVRBLCBPUiBQUk9GSVRTOyBPUiBCVVNJTkVTUyBJTlRFUlJVUFRJT04pIEhPV0VWRVIgQ0FVU0VEIEFORCBPTiBBTlkKVEhFT1JZIE9GIExJQUJJTElUWSwgV0hFVEhFUiBJTiBDT05UUkFDVCwgU1RSSUNUIExJQUJJTElUWSwgT1IgVE9SVAooSU5DTFVESU5HIE5FR0xJR0VOQ0UgT1IgT1RIRVJXSVNFKSBBUklTSU5HIElOIEFOWSBXQVkgT1VUIE9GIFRIRSBVU0UKT0YgVEhJUyBTT0ZUV0FSRSwgRVZFTiBJRiBBRFZJU0VEIE9GIFRIRSBQT1NTSUJJTElUWSBPRiBTVUNIIERBTUFHRS4KYGBgCgojIyMgQnVpbGQtVGltZSBTdGF0aWMgRGVwZW5kZW5jaWVzIG9mIGBsaWJzbGlycGAgb24gaU9TIChgc2NyaXB0cy9idWlsZF9pb3NfZGVwcy5zaGApCgpXaGVuIGJ1aWxkaW5nIGBpb3MvZGVwcy9gIGxvY2FsbHk6Ci0gKipHTGliIGAyLjgzLjBgICYgYHByb3h5LWxpYmludGxgOioqIExpY2Vuc2VkIHVuZGVyIGBMR1BMLTIuMS1vci1sYXRlcmAgKDxodHRwczovL3d3dy5nbnUub3JnL2xpY2Vuc2VzL29sZC1saWNlbnNlcy9sZ3BsLTIuMS5odG1sPikuCi0gKipsaWJmZmkgYDMuNS4wYDoqKiBDb3B5cmlnaHQgKGMpIDE5OTYtMjAyNCBBbnRob255IEdyZWVuLCBSZWQgSGF0LCBJbmMuIGFuZCBjb250cmlidXRvcnMuIExpY2Vuc2VkIHVuZGVyIHRoZSBgTUlUYCBMaWNlbnNlLgotICoqUENSRTI6KiogQ29weXJpZ2h0IChjKSBVbml2ZXJzaXR5IG9mIENhbWJyaWRnZSAvIFBoaWxpcCBIYXplbC4gTGljZW5zZWQgdW5kZXIgYEJTRC0zLUNsYXVzZWAuCgotLS0KCiMjIDYuIFRpYW5vQ29yZSBFREsyIGBBcm1WaXJ0UWVtdWAgKGBCU0QtMi1DbGF1c2UtUGF0ZW50YCkKCi0gKipSZXBvc2l0b3J5OioqIDxodHRwczovL2dpdGh1Yi5jb20vdGlhbm9jb3JlL2VkazI+Ci0gKipMaWNlbnNlOioqIGBCU0QtMi1DbGF1c2UtUGF0ZW50YAoKYFdpbmRvd3NpT1NgIGJvb3RzIGBBQVJDSDY0YCBVRUZJIGZpcm13YXJlIChgQXJtVmlydFFlbXVgIGBRRU1VX0VGSS5mZGAsIG1hcHBlZCBpbnRvIGBwZmxhc2gwYCBhdCBgMHgwMDAwMDAwMGAgd2l0aCBwZXJzaXN0ZW50IENGSTAxIE5WUkFNIGBwZmxhc2gxYCBhdCBgMHgwNDAwMDAwMGApLiBGaXJtd2FyZSBiaW5hcmllcyAoYCouZmRgKSBhcmUgKipub3QqKiBzdG9yZWQgaW4gdGhpcyBnaXQgcmVwb3NpdG9yeTsgdGhleSBhcmUgc3VwcGxpZWQgbG9jYWxseSBpbiBgd29yay9jb2RlLmZkYCBhbmQgYHdvcmsvdmFycy5mZGAgZHVyaW5nIHByb3Zpc2lvbmluZy4KCmBgYHRleHQKU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEJTRC0yLUNsYXVzZS1QYXRlbnQKCkNvcHlyaWdodCAoYykgMjAxMSAtIDIwMjQsIEFSTSBMaW1pdGVkLiBBbGwgcmlnaHRzIHJlc2VydmVkLgpDb3B5cmlnaHQgKGMpIDIwMTQgLSAyMDI0LCBMaW5hcm8gTGltaXRlZC4gQWxsIHJpZ2h0cyByZXNlcnZlZC4KQ29weXJpZ2h0IChjKSAyMDA2IC0gMjAyNCwgSW50ZWwgQ29ycG9yYXRpb24uIEFsbCByaWdodHMgcmVzZXJ2ZWQuCgpSZWRpc3RyaWJ1dGlvbiBhbmQgdXNlIGluIHNvdXJjZSBhbmQgYmluYXJ5IGZvcm1zLCB3aXRoIG9yIHdpdGhvdXQKbW9kaWZpY2F0aW9uLCBhcmUgcGVybWl0dGVkIHByb3ZpZGVkIHRoYXQgdGhlIGZvbGxvd2luZyBjb25kaXRpb25zIGFyZSBtZXQ6CgoxLiBSZWRpc3RyaWJ1dGlvbnMgb2Ygc291cmNlIGNvZGUgbXVzdCByZXRhaW4gdGhlIGFib3ZlIGNvcHlyaWdodCBub3RpY2UsCiAgIHRoaXMgbGlzdCBvZiBjb25kaXRpb25zIGFuZCB0aGUgZm9sbG93aW5nIGRpc2NsYWltZXIuCjIuIFJlZGlzdHJpYnV0aW9ucyBpbiBiaW5hcnkgZm9ybSBtdXN0IHJlcHJvZHVjZSB0aGUgYWJvdmUgY29weXJpZ2h0IG5vdGljZSwKICAgdGhpcyBsaXN0IG9mIGNvbmRpdGlvbnMgYW5kIHRoZSBmb2xsb3dpbmcgZGlzY2xhaW1lciBpbiB0aGUgZG9jdW1lbnRhdGlvbgogICBhbmQvb3Igb3RoZXIgbWF0ZXJpYWxzIHByb3ZpZGVkIHdpdGggdGhlIGRpc3RyaWJ1dGlvbi4KClN1YmplY3QgdG8gdGhlIHRlcm1zIGFuZCBjb25kaXRpb25zIG9mIHRoaXMgbGljZW5zZSwgZWFjaCBjb3B5cmlnaHQgaG9sZGVyCmFuZCBjb250cmlidXRvciBoZXJlYnkgZ3JhbnRzIHRvIHRob3NlIHJlY2VpdmluZyByaWdodHMgdW5kZXIgdGhpcyBsaWNlbnNlCmEgcGVycGV0dWFsLCB3b3JsZHdpZGUsIG5vbi1leGNsdXNpdmUsIG5vLWNoYXJnZSwgcm95YWx0eS1mcmVlLCBpcnJldm9jYWJsZQooZXhjZXB0IGZvciBmYWlsdXJlIHRvIHNhdGlzZnkgdGhlIGNvbmRpdGlvbnMgb2YgdGhpcyBsaWNlbnNlKSBwYXRlbnQgbGljZW5zZQp0byBtYWtlLCBoYXZlIG1hZGUsIHVzZSwgb2ZmZXIgdG8gc2VsbCwgc2VsbCwgaW1wb3J0LCBhbmQgb3RoZXJ3aXNlIHRyYW5zZmVyCnRoaXMgc29mdHdhcmUsIHdoZXJlIHN1Y2ggbGljZW5zZSBhcHBsaWVzIG9ubHkgdG8gdGhvc2UgcGF0ZW50IGNsYWltcywgYWxyZWFkeQphY3F1aXJlZCBvciBoZXJlYWZ0ZXIgYWNxdWlyZWQsIGxpY2Vuc2FibGUgYnkgc3VjaCBjb3B5cmlnaHQgaG9sZGVyIG9yCmNvbnRyaWJ1dG9yIHRoYXQgYXJlIG5lY2Vzc2FyaWx5IGluZnJpbmdlZCBieToKCihhKSB0aGVpciBDb250cmlidXRpb24ocykgKHRoZSBsaWNlbnNlZCBjb3B5cmlnaHRzIG9mIGNvcHlyaWdodCBob2xkZXJzIGFuZAogICAgbm9uLWNvcHlyaWdodGFibGUgYWRkaXRpb25zIG9mIGNvbnRyaWJ1dG9ycywgaW4gc291cmNlIG9yIGJpbmFyeSBmb3JtKQogICAgYWxvbmU7IG9yCihiKSBjb21iaW5hdGlvbiBvZiB0aGVpciBDb250cmlidXRpb24ocykgd2l0aCB0aGUgd29yayBvZiBhdXRob3JzaGlwIHRvIHdoaWNoCiAgICBzdWNoIENvbnRyaWJ1dGlvbihzKSB3YXMgYWRkZWQgYnkgc3VjaCBjb3B5cmlnaHQgaG9sZGVyIG9yIGNvbnRyaWJ1dG9yLCBpZiwKICAgIGF0IHRoZSB0aW1lIHRoZSBDb250cmlidXRpb24gaXMgYWRkZWQsIHN1Y2ggYWRkaXRpb24gY2F1c2VzIHN1Y2ggY29tYmluYXRpb24KICAgIHRvIGJlIG5lY2Vzc2FyaWx5IGluZnJpbmdlZC4gVGhlIHBhdGVudCBsaWNlbnNlIHNoYWxsIG5vdCBhcHBseSB0byBhbnkgb3RoZXIKICAgIGNvbWJpbmF0aW9ucyB3aGljaCBpbmNsdWRlIHRoZSBDb250cmlidXRpb24uCgpFeGNlcHQgYXMgZXhwcmVzc2x5IHN0YXRlZCBhYm92ZSwgbm8gcGF0ZW50IGxpY2Vuc2UgaXMgZ3JhbnRlZCBlaXRoZXIgZXhwcmVzc2x5Cm9yIGJ5IGltcGxpY2F0aW9uLCBlc3RvcHBlbCwgb3Igb3RoZXJ3aXNlLgoKRElTQ0xBSU1FUgoKVEhJUyBTT0ZUV0FSRSBJUyBQUk9WSURFRCBCWSBUSEUgQ09QWVJJR0hUIEhPTERFUlMgQU5EIENPTlRSSUJVVE9SUyAiQVMgSVMiCkFORCBBTlkgRVhQUkVTUyBPUiBJTVBMSUVEIFdBUlJBTlRJRVMsIElOQ0xVRElORywgQlVUIE5PVCBMSU1JVEVEIFRPLCBUSEUKSU1QTElFRCBXQVJSQU5USUVTIE9GIE1FUkNIQU5UQUJJTElUWSBBTkQgRklUTkVTUyBGT1IgQSBQQVJUSUNVTEFSIFBVUlBPU0UgQVJFCkRJU0NMQUlNRUQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRSBDT1BZUklHSFQgSE9MREVSUyBPUiBDT05UUklCVVRPUlMgQkUgTElBQkxFCkZPUiBBTlkgRElSRUNULCBJTkRJUkVDVCwgSU5DSURFTlRBTCwgU1BFQ0lBTCwgRVhFTVBMQVJZLCBPUiBDT05TRVFVRU5USUFMCkRBTUFHRVMgKElOQ0xVRElORywgQlVUIE5PVCBMSU1JVEVEIFRPLCBQUk9DVVJFTUVOVCBPRiBTVUJTVElUVVRFIEdPT0RTIE9SClNFUlZJQ0VTOyBMT1NTIE9GIFVTRSwgREFUQSwgT1IgUFJPRklUUzsgT1IgQlVTSU5FU1MgSU5URVJSVVBUSU9OKSBIT1dFVkVSCkNBVVNFRCBBTkQgT04gQU5ZIFRIRU9SWSBPRiBMSUFCSUxJVFksIFdIRVRIRVIgSU4gQ09OVFJBQ1QsIFNUUklDVCBMSUFCSUxJVFksCk9SIFRPUlQgKElOQ0xVRElORyBORUdMSUdFTkNFIE9SIE9USEVSV0lTRSkgQVJJU0lORyBJTiBBTlkgV0FZIE9VVCBPRiBUSEUgVVNFCk9GIFRISVMgU09GVFdBUkUsIEVWRU4gSUYgQURWSVNFRCBPRiBUSEUgUE9TU0lCSUxJVFkgT0YgU1VDSCBEQU1BR0UuCmBgYAoKLS0tCgojIyA3LiBSZWQgSGF0IGB2aXJ0aW8td2luYCDigJQgYE5ldEtWTWAgQVJNNjQgRHJpdmVyIChgQlNELTMtQ2xhdXNlYCAvIGBHUEwtMi4wYCkKCi0gKipSZXBvc2l0b3J5OioqIDxodHRwczovL2dpdGh1Yi5jb20vdmlydGlvLXdpbi9rdm0tZ3Vlc3QtZHJpdmVycy13aW5kb3dzPgotICoqQ29weXJpZ2h0OioqIENvcHlyaWdodCAoYykgUmVkIEhhdCwgSW5jLiBhbmQgY29udHJpYnV0b3JzCi0gKipMaWNlbnNlOioqIGBCU0QtMy1DbGF1c2VgIChzb3VyY2UpIC8gV0hRTC1zaWduZWQgZHJpdmVyIHBhY2thZ2UgdGVybXMgKGB2aXJ0aW8td2luYCBJU08pCgpEdXJpbmcgb2ZmbGluZSBXaW5kb3dzIDExIGltYWdlIHByb3Zpc2lvbmluZyAoYHNjcmlwdHMvcHJvdmlzaW9uX3dpbmRvd3NfYXJtNjQucHlgKSwgdGhlIFdIUUwtc2lnbmVkIFdpbmRvd3MgMTEgQVJNNjQgYE5ldEtWTWAgZHJpdmVyIChgUENJXFZFTl8xQUY0JkRFVl8xMDAwJlNVQlNZU18wMDAxMUFGNGAgLyB0cmFuc2l0aW9uYWwgVmlydElPIEV0aGVybmV0KSBpcyBpbmplY3RlZCBpbnRvIHRoZSBndWVzdCBkcml2ZXIgc3RvcmUgdmlhIGBESVNNIC9BZGQtRHJpdmVyYC4gTm8gYHZpcnRpby13aW5gIGJpbmFyaWVzIGFyZSBjb21taXR0ZWQgdG8gdGhpcyByZXBvc2l0b3J5LgoKLS0tCgojIyA4LiBOb24tUmVkaXN0cmlidXRlZCBQcm9wcmlldGFyeSBHdWVzdCBTb2Z0d2FyZQoKVGhlIGZvbGxvd2luZyBwcm9wcmlldGFyeSBvcGVyYXRpbmcgc3lzdGVtIGFuZCBhcHBsaWNhdGlvbiBwYWNrYWdlcyBhcmUgKipuZXZlcioqIGluY2x1ZGVkIGluIHRoaXMgcmVwb3NpdG9yeSwgYXJlIGV4Y2x1ZGVkIHZpYSBbYC5naXRpZ25vcmVgXSguZ2l0aWdub3JlKSwgYW5kIGFyZSBmZXRjaGVkL2luc3RhbGxlZCBzdHJpY3RseSBvbiB0aGUgdXNlcidzIG93biBtYWNoaW5lIGludG8gYHdvcmsvYDoKCi0gKipNaWNyb3NvZnQgV2luZG93cyAxMSAyNEgyIEFSTTY0KiogKGBCdWlsZCAyNjEwMGApIOKAlCBQcm9wZXJ0eSBvZiBNaWNyb3NvZnQgQ29ycG9yYXRpb24sIGdvdmVybmVkIGJ5IHRoZSBNaWNyb3NvZnQgU29mdHdhcmUgTGljZW5zZSBUZXJtcy4gVXNlcnMgc3VwcGx5IHRoZWlyIG93biBvZmZpY2lhbCBNaWNyb3NvZnQgcmV0YWlsIEFSTTY0IEVTRC9JU08gKGB3b3JrL2Rvd25sb2Fkcy9XaW4xMV8yNEgyX0FSTTY0X2VuLXVzLmVzZGApLgotICoqR29vZ2xlIEFudGlncmF2aXR5IChgMi4zMS4wYCBXaW5kb3dzIEFSTTY0KSoqIOKAlCBQcm9wZXJ0eSBvZiBHb29nbGUgTExDLCBnb3Zlcm5lZCBieSBpdHMgcmVzcGVjdGl2ZSB0ZXJtcyBvZiBzZXJ2aWNlLgo=
+# Third-Party Notices & Upstream Attributions
+
+`WindowsiOS` is licensed as a whole under the **GNU General Public License v2.0 or later** (`GPL-2.0-or-later`; see [`LICENSE`](LICENSE)), preserving all upstream copyright notices and copyleft obligations from [`Leviidev/Henge`](https://github.com/Leviidev/Henge) and [`Leviidev/Husk`](https://github.com/Leviidev/Husk).
+
+This project stands on the shoulders of extraordinary open-source systems engineering across the iOS binary-translation, virtualization, and firmware ecosystems. Every upstream project, library, firmware package, and driver that helped make `WindowsiOS` possible is credited below along with its governing license terms.
+
+---
+
+## Summary of Upstream & Ecosystem Components
+
+| Component | Upstream Project / Authors | License | How Used in `WindowsiOS` |
+| :--- | :--- | :--- | :--- |
+| **Henge** (`HengeVM`) | [`Leviidev/Henge`](https://github.com/Leviidev/Henge) & [`Leviidev/Henge#7`](https://github.com/Leviidev/Henge/pull/7) (Levii & contributors) | `GPL-2.0-or-later` | Foundational ARM64-to-ARM64 dynamic binary translator, stage-1 software MMU foundation, block/IJC/return caches (`core/`, `host/enter.S`, `host/jit_region.c`), `/.henge` WebDAV share server (`host/share.c`), and iOS 26/27 TXM dual-mapped JIT substrate (`ios/Sources/Native/winios_jit.c`, `winios_brk.S`, `henge-jit.js`) |
+| **Husk** | [`Leviidev/Husk`](https://github.com/Leviidev/Husk) (Levii & contributors) | `GPL-2.0-or-later` | ARM64 JIT architecture & translation insights, iOS `libslirp` cross-build patches, and on-device JIT helper integration (`scripts/build_ios_deps.sh`) |
+| **LinuxRunner** | [`mxhm11cr/LinuxRunner`](https://github.com/mxhm11cr/LinuxRunner) (derived from `ish-app/ish` & `rcarmo/ios-linuxkit`) | `GPL-2.0` / `GPL-3.0` | Architectural inspiration and early ARM64 guest OS bring-up & iOS runtime discipline patterns (no GPL-3.0-only source files linked) |
+| **StikDebug / StikJIT** | [`StephenDev0/StikDebug`](https://github.com/StephenDev0/StikDebug) / `StikJIT` (BluDood / StephenDev0 & contributors) + [`jkcoxson/idevice`](https://github.com/jkcoxson/idevice) | `MPL-2.0` / `BSD-3-Clause` / `MIT` | On-device iOS 26/27 TXM debugger & JIT page-blessing protocol (`universal.js` / `ios/Sources/Resources/henge-jit.js`, `BRK #0x69` / `BRK #0xF00D` dual-mapped RX/RW regions, and `CS_DEBUGGED` ledger-exempt memory setup) |
+| **libslirp** | [`gitlab.freedesktop.org/slirp/libslirp`](https://gitlab.freedesktop.org/slirp/libslirp) / [`utmapp/libslirp`](https://github.com/utmapp/libslirp) (Danny Gasparovski, Fabrice Bellard, QEMU & libslirp contributors) | `BSD-3-Clause` | User-mode TCP/IP + DHCP + DNS NAT stack (`10.0.2.0/24`) linked via `host/net_slirp.c` (fetched & cross-compiled at build time by `scripts/build_ios_deps.sh`) |
+| **GLib / libintl / libffi / PCRE2** | GNOME GLib (`2.83.0`), `proxy-libintl`, `libffi` (`3.5.0`), `PCRE2` | `LGPL-2.1-or-later` / `MIT` / `BSD-3-Clause` | Transitive build-time static libraries required by `libslirp` on `arm64-apple-ios` (`scripts/build_ios_deps.sh`, staged into ignored `ios/deps/`) |
+| **TianoCore EDK2 (`ArmVirtQemu`)** | [`tianocore/edk2`](https://github.com/tianocore/edk2) (TianoCore / Intel / Linaro / Arm contributors) | `BSD-2-Clause-Patent` | `AARCH64` UEFI firmware image (`QEMU_EFI.fd` -> `work/code.fd` + `work/vars.fd`). **Not bundled in this repository**; fetched at provisioning time |
+| **Red Hat `virtio-win` (`NetKVM`)** | [`virtio-win/kvm-guest-drivers-windows`](https://github.com/virtio-win/kvm-guest-drivers-windows) (Red Hat, Inc. & contributors) | `BSD-3-Clause` / `GPL-2.0` | WHQL-signed Windows 11 ARM64 VirtIO Ethernet miniport driver (`NetKVM` `w11/ARM64`). **Not bundled in this repository**; fetched & injected at provisioning time |
+
+---
+
+## 1. Leviidev/Henge & Leviidev/Henge#7 (`GPL-2.0-or-later`)
+
+- **Repository:** <https://github.com/Leviidev/Henge> and <https://github.com/Leviidev/Henge/pull/7>
+- **License:** GNU General Public License v2.0 or later (`GPL-2.0-or-later`)
+
+`WindowsiOS` directly adapts and extends Henge's `HengeVM` ARM64-to-ARM64 dynamic binary translator (`core/`), assembly entry trampoline and dual-mapped JIT allocator (`host/enter.S`, `host/jit_region.c`), `libslirp` + `/.henge/` WebDAV guest-host transport (`host/net_slirp.c`, `host/share.c`), and iOS 26/27 TXM debugger-assisted JIT bridge (`ios/Sources/Native/winios_jit.c`, `ios/Sources/Native/winios_brk.S`, `ios/Sources/Resources/henge-jit.js`).
+
+Significant modifications were made across `core/`, `devices/`, `host/`, `ios/`, `scripts/`, and `tools/` in November 2026 to boot and run Microsoft Windows 11 24H2 ARM64 (`ntoskrnl.exe` + Prism `xtajit64.dll`), including 4 KB stage-1 MMU support with `TCR_EL1.A1 = 1` ASID-keyed `HvTlbStash`, `LDXP`/`STXP` and `LDXR XZR` LSE lowering, unaligned `FEAT_LRCPC2` emulation, UEFI/ACPI 6.3/GICv3 ITS/NVMe/xHCI/Intel ICH6 HD Audio virtual hardware, `hvsparse` block storage, native iOS `SFSafariViewController` OAuth loopback relay, and the foldable iPhone Duo UI. All modified and newly added files in the combined work remain licensed under **GPL-2.0-or-later** (see [`LICENSE`](LICENSE)).
+
+```text
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+```
+
+---
+
+## 2. Leviidev/Husk (`GPL-2.0-or-later`)
+
+- **Repository:** <https://github.com/Leviidev/Husk>
+- **License:** GNU General Public License v2.0 or later (`GPL-2.0-or-later`)
+
+`Leviidev/Husk` pioneered practical ARM64 translation, iOS `libslirp` build patches, and on-device StikJIT integration patterns on modern non-jailbroken iOS devices. Portions of the iOS JIT/dependency build flow (`scripts/build_ios_deps.sh`) draw directly from Husk's open-source architecture under `GPL-2.0-or-later`.
+
+---
+
+## 3. mxhm11cr/LinuxRunner (`GPL-2.0` / `GPL-3.0` Inspiration)
+
+- **Repository:** <https://github.com/mxhm11cr/LinuxRunner>
+- **Lineage:** Derived from [`ish-app/ish`](https://github.com/ish-app/ish) (Theodore Dubois & contributors) and [`rcarmo/ios-linuxkit`](https://github.com/rcarmo/ios-linuxkit) (Rui Carmo & contributors)
+
+Credited with gratitude for demonstrating early guest OS bring-up workflows, iOS Jetsam footprint discipline, and desktop session ergonomics on iOS hardware. `WindowsiOS` does not link source files from `LinuxRunner`.
+
+---
+
+## 4. StikDebug / StikJIT (`MPL-2.0` / `BSD-3-Clause` / `MIT`)
+
+- **Repositories:** <https://github.com/StephenDev0/StikDebug>, `StikJIT`, and <https://github.com/jkcoxson/idevice>
+- **Authors:** StephenDev0 (BluDood), Jackson Coxson (`idevice`), and contributors
+- **Licenses:** Mozilla Public License 2.0 (`MPL-2.0`), `BSD-3-Clause` (debugger script conventions), and `MIT` (`idevice`)
+
+On iOS 26 and iOS 27 devices equipped with Apple's Trusted Execution Monitor (**TXM**), hardware enforcement blocks ordinary `MAP_JIT` execution without debugger page-blessing. `WindowsiOS` uses the `BRK #0x69` / `BRK #0xF00D` protocol (`ios/Sources/Native/winios_brk.S`, `ios/Sources/Resources/henge-jit.js`, and `scripts/_lldb_txm_jit.py`) pioneered by `StikDebug` / `StikJIT` and adapted by `Leviidev/Henge` to allocate and bless dual-mapped RX/RW JIT regions (`_M<size>,rx` + `vm_remap`) and pre-allocate ledger-exempt guest RAM while `CS_DEBUGGED` is active prior to debugger detach.
+
+- `StikJIT` framework components (when optionally staged via `scripts/build_ios_deps.sh`) are governed by the **Mozilla Public License Version 2.0** (`MPL-2.0`, compatible with `GPL-2.0-or-later` Larger Works under MPL-2.0 Section 3.3). Full MPL-2.0 text: <https://www.mozilla.org/MPL/2.0/>.
+- `idevice` (Copyright (c) Jackson Coxson) is licensed under the **MIT License**.
+
+---
+
+## 5. libslirp (`BSD-3-Clause`) & Cross-Compiled Static Dependencies
+
+- **Repository:** <https://gitlab.freedesktop.org/slirp/libslirp> (mirror: <https://github.com/utmapp/libslirp>)
+- **License:** `BSD-3-Clause`
+
+`WindowsiOS` uses `libslirp` (`v4.9.1`) in `host/net_slirp.c` to provide rootless, entitlement-free user-mode TCP/IP, UDP, ICMP, DHCP (`10.0.2.15`), DNS (`10.0.2.3`), WebDAV Unix-socket forwarding (`10.0.2.4:80`), and dynamic IPv4/IPv6 OAuth loopback port forwarding. `libslirp` is fetched from upstream release tarballs during `scripts/build_ios_deps.sh` (or via Homebrew on macOS) and is never committed as binary artifacts to git.
+
+```text
+Copyright (c) 1995,1996 Danny Gasparovski. All rights reserved.
+Copyright (c) 2004-2008 Fabrice Bellard.
+Copyright (c) libslirp contributors.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived
+   from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
+
+### Build-Time Static Dependencies of `libslirp` on iOS (`scripts/build_ios_deps.sh`)
+
+When building `ios/deps/` locally:
+- **GLib `2.83.0` & `proxy-libintl`:** Licensed under `LGPL-2.1-or-later` (<https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html>).
+- **libffi `3.5.0`:** Copyright (c) 1996-2024 Anthony Green, Red Hat, Inc. and contributors. Licensed under the `MIT` License.
+- **PCRE2:** Copyright (c) University of Cambridge / Philip Hazel. Licensed under `BSD-3-Clause`.
+
+---
+
+## 6. TianoCore EDK2 `ArmVirtQemu` (`BSD-2-Clause-Patent`)
+
+- **Repository:** <https://github.com/tianocore/edk2>
+- **License:** `BSD-2-Clause-Patent`
+
+`WindowsiOS` boots `AARCH64` UEFI firmware (`ArmVirtQemu` `QEMU_EFI.fd`, mapped into `pflash0` at `0x00000000` with persistent CFI01 NVRAM `pflash1` at `0x04000000`). Firmware binaries (`*.fd`) are **not** stored in this git repository; they are supplied locally in `work/code.fd` and `work/vars.fd` during provisioning.
+
+```text
+SPDX-License-Identifier: BSD-2-Clause-Patent
+
+Copyright (c) 2011 - 2024, ARM Limited. All rights reserved.
+Copyright (c) 2014 - 2024, Linaro Limited. All rights reserved.
+Copyright (c) 2006 - 2024, Intel Corporation. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+Subject to the terms and conditions of this license, each copyright holder
+and contributor hereby grants to those receiving rights under this license
+a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+(except for failure to satisfy the conditions of this license) patent license
+to make, have made, use, offer to sell, sell, import, and otherwise transfer
+this software, where such license applies only to those patent claims, already
+acquired or hereafter acquired, licensable by such copyright holder or
+contributor that are necessarily infringed by:
+
+(a) their Contribution(s) (the licensed copyrights of copyright holders and
+    non-copyrightable additions of contributors, in source or binary form)
+    alone; or
+(b) combination of their Contribution(s) with the work of authorship to which
+    such Contribution(s) was added by such copyright holder or contributor, if,
+    at the time the Contribution is added, such addition causes such combination
+    to be necessarily infringed. The patent license shall not apply to any other
+    combinations which include the Contribution.
+
+Except as expressly stated above, no patent license is granted either expressly
+or by implication, estoppel, or otherwise.
+
+DISCLAIMER
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
+
+---
+
+## 7. Red Hat `virtio-win` — `NetKVM` ARM64 Driver (`BSD-3-Clause` / `GPL-2.0`)
+
+- **Repository:** <https://github.com/virtio-win/kvm-guest-drivers-windows>
+- **Copyright:** Copyright (c) Red Hat, Inc. and contributors
+- **License:** `BSD-3-Clause` (source) / WHQL-signed driver package terms (`virtio-win` ISO)
+
+During offline Windows 11 image provisioning (`scripts/provision_windows_arm64.py`), the WHQL-signed Windows 11 ARM64 `NetKVM` driver (`PCI\VEN_1AF4&DEV_1000&SUBSYS_00011AF4` / transitional VirtIO Ethernet) is injected into the guest driver store via `DISM /Add-Driver`. No `virtio-win` binaries are committed to this repository.
+
+---
+
+## 8. Non-Redistributed Proprietary Guest Software
+
+The following proprietary operating system and application packages are **never** included in this repository, are excluded via [`.gitignore`](.gitignore), and are fetched/installed strictly on the user's own machine into `work/`:
+
+- **Microsoft Windows 11 24H2 ARM64** (`Build 26100`) — Property of Microsoft Corporation, governed by the Microsoft Software License Terms. Users supply their own official Microsoft retail ARM64 ESD/ISO (`work/downloads/Win11_24H2_ARM64_en-us.esd`).
+- **Google Antigravity (`2.31.0` Windows ARM64)** — Property of Google LLC, governed by its respective terms of service.

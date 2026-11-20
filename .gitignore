@@ -1,1 +1,43 @@
-IyBCdWlsZCBvdXRwdXRzICYgZGVwZW5kZW5jeSBzdGFnaW5nCmJ1aWxkLwp3b3JrLwppb3MvZGVwcy8KaW9zLyoueGNvZGVwcm9qCmlvcy9EZXJpdmVkRGF0YS8KCiMgQXBwIGJ1bmRsZXMgJiBvYmplY3QgYXJjaGl2ZXMKKi5pcGEKKi50aXBhCiouYXBwCioueGNhcmNoaXZlCioubwoqLmEKKi5kU1lNLwoKIyBWaXJ0dWFsIG1hY2hpbmUgZGlzayBpbWFnZXMsIGZpcm13YXJlIGJsb2JzLCBhbmQgaW5zdGFsbGVyIHBheWxvYWRzCiouaW1nCiouaHZzcGFyc2UKKi5yYXcKKi5xY293MgoqLnZoZHgKKi52aGQKKi52bWRrCiouZXNkCioud2ltCiouc3dtCiouaXNvCiouZmQKKi5yb20KCiMgQ29tcGlsZWQgV2luZG93cyBQRSBndWVzdCBoZWxwZXJzICYgZHJpdmVycwoqLmV4ZQoqLmRsbAoqLnN5cwoqLnBkYgoqLm9iagoqLmxpYgoKIyBQeXRob24gJiBtYWNPUyBtZXRhZGF0YQpfX3B5Y2FjaGVfXy8KKi5weWMKLkRTX1N0b3JlCg==
+# Build outputs & dependency staging
+build/
+work/
+ios/deps/
+ios/*.xcodeproj
+ios/DerivedData/
+
+# App bundles & object archives
+*.ipa
+*.tipa
+*.app
+*.xcarchive
+*.o
+*.a
+*.dSYM/
+
+# Virtual machine disk images, firmware blobs, and installer payloads
+*.img
+*.hvsparse
+*.raw
+*.qcow2
+*.vhdx
+*.vhd
+*.vmdk
+*.esd
+*.wim
+*.swm
+*.iso
+*.fd
+*.rom
+
+# Compiled Windows PE guest helpers & drivers
+*.exe
+*.dll
+*.sys
+*.pdb
+*.obj
+*.lib
+
+# Python & macOS metadata
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,1 +1,107 @@
-Q0MgPSBjbGFuZwpDRkxBR1MgPSAtc3RkPWMxMSAtV2FsbCAtV2V4dHJhIC1PMiAtZyAtSWNvcmUgLUlob3N0IC1JZGV2aWNlcwpPQkpDRkxBR1MgPSAtZm9iamMtYXJjIC1XYWxsIC1XZXh0cmEgLU8yIC1nIC1JY29yZSAtSWhvc3QgLUlkZXZpY2VzCkIgPSBidWlsZAoKU0xJUlBfQ0ZMQUdTID0gJChzaGVsbCBQQVRIPS9vcHQvaG9tZWJyZXcvYmluOiQkUEFUSCBwa2ctY29uZmlnIC0tY2ZsYWdzIHNsaXJwKQpTTElSUF9MSUJTID0gJChzaGVsbCBQQVRIPS9vcHQvaG9tZWJyZXcvYmluOiQkUEFUSCBwa2ctY29uZmlnIC0tbGlicyBzbGlycCkKCkNPUkUgPSAkKEIpL2NsYXNzaWZ5Lm8gJChCKS9vcGVyYW5kcy5vICQoQikvdHJhbnNsYXRlLm8gJChCKS9kaXNwYXRjaC5vICQoQikvbW11Lm8gJChCKS9tZW1vcC5vIFwKICAgICAgICQoQikvZXhjZXB0aW9uLm8gJChCKS9zeXNyZWcubyAkKEIpL21hY2hpbmUubwpIT1NUID0gJChCKS9qaXRfcmVnaW9uLm8gJChCKS9lbnRlci5vICQoQikvZGlzay5vCkVOR0lORSA9ICQoQ09SRSkgJChIT1NUKQoKREVWID0gJChCKS9hY3BpLm8gJChCKS9mYl9kaXNwbGF5Lm8gJChCKS9mYl9tZXRhbC5vICQoQikvZmR0Lm8gJChCKS9md19jZmcubyAkKEIpL2dpY3YzLm8gJChCKS9oZGEubyBcCiAgICAgICQoQikvbnZtZS5vICQoQikvcGNpZS5vICQoQikvcGZsYXNoLm8gJChCKS9wbDAxMS5vICQoQikvcGwwMzEubyAkKEIpL3BsMDYxLm8gJChCKS90aW1lci5vIFwKICAgICAgJChCKS92aXJ0aW8ubyAkKEIpL3ZpcnRpb19ibGsubyAkKEIpL3ZpcnRpb19pbnB1dC5vICQoQikvdmlydGlvX25ldC5vICQoQikvdmlydGlvX3NuZC5vIFwKICAgICAgJChCKS93aW52aXJ0Lm8gJChCKS94aGNpLm8KClZNX0hPU1QgPSAkKEIpL3dpbnZtLm8gJChCKS9uZXRfc2xpcnAubyAkKEIpL3NoYXJlLm8gJChCKS9hdWRpb19tYWMubyAkKEIpL2h2c3BhcnNlLm8KCk1BQ19GUkFNRVdPUktTID0gLWZyYW1ld29yayBDb2NvYSAtZnJhbWV3b3JrIEZvdW5kYXRpb24gLWZyYW1ld29yayBRdWFydHpDb3JlIC1mcmFtZXdvcmsgTWV0YWwgXAogICAgICAgICAgICAgICAgIC1mcmFtZXdvcmsgQ29yZUdyYXBoaWNzIC1mcmFtZXdvcmsgSW1hZ2VJTyAtZnJhbWV3b3JrIFVuaWZvcm1UeXBlSWRlbnRpZmllcnMgXAogICAgICAgICAgICAgICAgIC1mcmFtZXdvcmsgQXVkaW9Ub29sYm94CgpDT1JFX1RFU1RTID0gJChCKS90ZXN0X2NsYXNzaWZ5ICQoQikvdGVzdF9qaXRfcmVnaW9uICQoQikvdGVzdF9vcGVyYW5kcyAkKEIpL3Rlc3Rfaml0ICQoQikvdGVzdF9tZW0gXAogICAgICAgICAgICAgJChCKS90ZXN0X21tdSAkKEIpL3Rlc3RfZXhjCgphbGw6ICQoQ09SRV9URVNUUykgJChCKS9odnNwYXJzZSAkKEIpL3dpbnZtCgojIG1tdS5jOiBubyBTSU1EIChodl90bGJfcmVmaWxsIHJ1bnMgd2l0aCB0aGUgZ3Vlc3QncyBTSU1EIHJlZ2lzdGVycyBsaXZlKS4KJChCKS9tbXUubzogY29yZS9tbXUuYyBjb3JlLyouaCBob3N0LyouaCB8ICQoQikKCSQoQ0MpICQoQ0ZMQUdTKSAtbWdlbmVyYWwtcmVncy1vbmx5IC1jICQ8IC1vICRACiQoQikvbmV0X3NsaXJwLm86IGhvc3QvbmV0X3NsaXJwLmMgaG9zdC8qLmggY29yZS8qLmggZGV2aWNlcy8qLmggfCAkKEIpCgkkKENDKSAkKENGTEFHUykgJChTTElSUF9DRkxBR1MpIC1jICQ8IC1vICRACiQoQikvZmJfbWV0YWwubzogZGV2aWNlcy9mYl9tZXRhbC5tIGRldmljZXMvKi5oIGNvcmUvKi5oIGhvc3QvKi5oIHwgJChCKQoJJChDQykgJChPQkpDRkxBR1MpIC1jICQ8IC1vICRACiQoQikvbWFpbl9tYWMubzogaG9zdC9tYWluX21hYy5tIGhvc3QvKi5oIGNvcmUvKi5oIGRldmljZXMvKi5oIHwgJChCKQoJJChDQykgJChPQkpDRkxBR1MpIC1jICQ8IC1vICRACiQoQikvJS5vOiBjb3JlLyUuYyBjb3JlLyouaCBob3N0LyouaCB8ICQoQikKCSQoQ0MpICQoQ0ZMQUdTKSAtYyAkPCAtbyAkQAokKEIpLyUubzogaG9zdC8lLmMgaG9zdC8qLmggY29yZS8qLmggZGV2aWNlcy8qLmggfCAkKEIpCgkkKENDKSAkKENGTEFHUykgLWMgJDwgLW8gJEAKJChCKS8lLm86IGhvc3QvJS5TIHwgJChCKQoJJChDQykgLWMgJDwgLW8gJEAKJChCKS8lLm86IGRldmljZXMvJS5jIGRldmljZXMvKi5oIGNvcmUvKi5oIGhvc3QvKi5oIHwgJChCKQoJJChDQykgJChDRkxBR1MpIC1jICQ8IC1vICRACgokKEIpL3dpbnZtOiAkKEIpL21haW5fbWFjLm8gJChFTkdJTkUpICQoREVWKSAkKFZNX0hPU1QpCgkkKENDKSAkKEIpL21haW5fbWFjLm8gJChFTkdJTkUpICQoREVWKSAkKFZNX0hPU1QpICQoU0xJUlBfTElCUykgJChNQUNfRlJBTUVXT1JLUykgLW8gJEAKCiQoQikvdGVzdF9jbGFzc2lmeTogdGVzdHMvdGVzdF9jbGFzc2lmeS5jIHRlc3RzL2NsYXNzaWZ5X2Nhc2VzLnMgJChCKS9jbGFzc2lmeS5vCgkkKENDKSAkKENGTEFHUykgJF4gLW8gJEAKJChCKS90ZXN0X2ppdF9yZWdpb246IHRlc3RzL3Rlc3Rfaml0X3JlZ2lvbi5jICQoQikvaml0X3JlZ2lvbi5vCgkkKENDKSAkKENGTEFHUykgJF4gLW8gJEAKJChCKS90ZXN0X29wZXJhbmRzOiB0ZXN0cy90ZXN0X29wZXJhbmRzLmMgdGVzdHMvb3BlcmFuZF9jYXNlcy5zICQoQikvb3BlcmFuZHMubwoJJChDQykgJChDRkxBR1MpICReIC1vICRACiQoQikvdGVzdF9tbXU6IHRlc3RzL3Rlc3RfbW11LmMgJChFTkdJTkUpCgkkKENDKSAkKENGTEFHUykgdGVzdHMvdGVzdF9tbXUuYyAkKEVOR0lORSkgLW8gJEAKCiQoQikvaHZzcGFyc2U6IHRvb2xzL2h2c3BhcnNlX21haW4uYyBob3N0L2h2c3BhcnNlLmMgaG9zdC9odnNwYXJzZS5oIHwgJChCKQoJJChDQykgJChDRkxBR1MpIHRvb2xzL2h2c3BhcnNlX21haW4uYyBob3N0L2h2c3BhcnNlLmMgLW8gJEAKCiQoQikvdGVzdF8lOiB0ZXN0cy90ZXN0XyUuYyB0ZXN0cy8lX3Byb2dyYW1zLlMgdGVzdHMvaGFybmVzcy5TIHRlc3RzL2hhcm5lc3MuaCAkKEVOR0lORSkKCSQoQ0MpICQoQ0ZMQUdTKSAtSXRlc3RzIHRlc3RzL3Rlc3RfJCouYyB0ZXN0cy8kKl9wcm9ncmFtcy5TIHRlc3RzL2hhcm5lc3MuUyAkKEVOR0lORSkgLW8gJEAKCnRlc3QtY29yZTogJChDT1JFX1RFU1RTKQoJQHVsaW1pdCAtcyA2NTUyMDsgZm9yIHQgaW4gJChDT1JFX1RFU1RTKTsgZG8gZWNobyAiPT0gJCR0IjsgJCR0IHx8IGV4aXQgMTsgZG9uZQoKJChCKToKCW1rZGlyIC1wICQoQikKCiMgLS0tLSBpT1Mgc3RhdGljIGxpYnJhcnkgdGFyZ2V0OiBidWlsZC9pb3MvbGlid2ludm0uYSAtLS0tCklPU19TREsgPSAkKHNoZWxsIHhjcnVuIC0tc2RrIGlwaG9uZW9zIC0tc2hvdy1zZGstcGF0aCkKSU9TX0NDID0geGNydW4gLS1zZGsgaXBob25lb3MgY2xhbmcgLWFyY2ggYXJtNjQgLW1pcGhvbmVvcy12ZXJzaW9uLW1pbj0xNy4wIC1pc3lzcm9vdCAkKElPU19TREspCklPU19TTElSUF9JTkMgPz0gaW9zL2RlcHMvaW5jbHVkZS9zbGlycApJT1NfQ0ZMQUdTID0gLXN0ZD1jMTEgLVdhbGwgLVdleHRyYSAtTzIgLWcgLUljb3JlIC1JaG9zdCAtSWRldmljZXMgLUkkKElPU19TTElSUF9JTkMpCklPU19PQkpDRkxBR1MgPSAtZm9iamMtYXJjIC1XYWxsIC1XZXh0cmEgLU8yIC1nIC1JY29yZSAtSWhvc3QgLUlkZXZpY2VzCklCID0gYnVpbGQvaW9zCgpJT1NfQ19TUkMgPSAkKHdpbGRjYXJkIGNvcmUvKi5jKSBcCiAgICAgICAgICAgIGhvc3Qvaml0X3JlZ2lvbi5jIGhvc3QvZGlzay5jIGhvc3Qvd2ludm0uYyBob3N0L25ldF9zbGlycC5jIGhvc3Qvc2hhcmUuYyBcCiAgICAgICAgICAgIGhvc3QvYXVkaW9fbWFjLmMgaG9zdC9odnNwYXJzZS5jIGhvc3QvcHJvZl9pb3MuYyBcCiAgICAgICAgICAgICQod2lsZGNhcmQgZGV2aWNlcy8qLmMpCklPU19PQkogPSAkKHBhdHN1YnN0ICUuYywkKElCKS8lLm8sJChJT1NfQ19TUkMpKSAkKElCKS9ob3N0L2VudGVyLm8gJChJQikvZGV2aWNlcy9mYl9tZXRhbC5vCgokKElCKS9jb3JlL21tdS5vOiBjb3JlL21tdS5jIGNvcmUvKi5oIGhvc3QvKi5oIGRldmljZXMvKi5oCglAbWtkaXIgLXAgJChkaXIgJEApCgkkKElPU19DQykgJChJT1NfQ0ZMQUdTKSAtbWdlbmVyYWwtcmVncy1vbmx5IC1jICQ8IC1vICRACiQoSUIpLyUubzogJS5jIGNvcmUvKi5oIGhvc3QvKi5oIGRldmljZXMvKi5oCglAbWtkaXIgLXAgJChkaXIgJEApCgkkKElPU19DQykgJChJT1NfQ0ZMQUdTKSAtYyAkPCAtbyAkQAokKElCKS9kZXZpY2VzL2ZiX21ldGFsLm86IGRldmljZXMvZmJfbWV0YWwubSBkZXZpY2VzLyouaCBjb3JlLyouaCBob3N0LyouaAoJQG1rZGlyIC1wICQoZGlyICRAKQoJJChJT1NfQ0MpICQoSU9TX09CSkNGTEFHUykgLWMgJDwgLW8gJEAKJChJQikvaG9zdC9lbnRlci5vOiBob3N0L2VudGVyLlMKCUBta2RpciAtcCAkKGRpciAkQCkKCSQoSU9TX0NDKSAtYyAkPCAtbyAkQAokKElCKS9saWJ3aW52bS5hOiAkKElPU19PQkopCglybSAtZiAkQAoJeGNydW4gLS1zZGsgaXBob25lb3MgbGlidG9vbCAtc3RhdGljIC1vICRAICQoSU9TX09CSikKCmlvcy1saWI6ICQoSUIpL2xpYndpbnZtLmEKCmNsZWFuOgoJcm0gLXJmICQoQikKCi5QSE9OWTogYWxsIHRlc3QtY29yZSBpb3MtbGliIGNsZWFuCg==
+CC = clang
+CFLAGS = -std=c11 -Wall -Wextra -O2 -g -Icore -Ihost -Idevices
+OBJCFLAGS = -fobjc-arc -Wall -Wextra -O2 -g -Icore -Ihost -Idevices
+B = build
+
+SLIRP_CFLAGS = $(shell PATH=/opt/homebrew/bin:$$PATH pkg-config --cflags slirp)
+SLIRP_LIBS = $(shell PATH=/opt/homebrew/bin:$$PATH pkg-config --libs slirp)
+
+CORE = $(B)/classify.o $(B)/operands.o $(B)/translate.o $(B)/dispatch.o $(B)/mmu.o $(B)/memop.o \
+       $(B)/exception.o $(B)/sysreg.o $(B)/machine.o
+HOST = $(B)/jit_region.o $(B)/enter.o $(B)/disk.o
+ENGINE = $(CORE) $(HOST)
+
+DEV = $(B)/acpi.o $(B)/fb_display.o $(B)/fb_metal.o $(B)/fdt.o $(B)/fw_cfg.o $(B)/gicv3.o $(B)/hda.o \
+      $(B)/nvme.o $(B)/pcie.o $(B)/pflash.o $(B)/pl011.o $(B)/pl031.o $(B)/pl061.o $(B)/timer.o \
+      $(B)/virtio.o $(B)/virtio_blk.o $(B)/virtio_input.o $(B)/virtio_net.o $(B)/virtio_snd.o \
+      $(B)/winvirt.o $(B)/xhci.o
+
+VM_HOST = $(B)/winvm.o $(B)/net_slirp.o $(B)/share.o $(B)/audio_mac.o $(B)/hvsparse.o
+
+MAC_FRAMEWORKS = -framework Cocoa -framework Foundation -framework QuartzCore -framework Metal \
+                 -framework CoreGraphics -framework ImageIO -framework UniformTypeIdentifiers \
+                 -framework AudioToolbox
+
+CORE_TESTS = $(B)/test_classify $(B)/test_jit_region $(B)/test_operands $(B)/test_jit $(B)/test_mem \
+             $(B)/test_mmu $(B)/test_exc
+
+all: $(CORE_TESTS) $(B)/hvsparse $(B)/winvm
+
+# mmu.c: no SIMD (hv_tlb_refill runs with the guest's SIMD registers live).
+$(B)/mmu.o: core/mmu.c core/*.h host/*.h | $(B)
+	$(CC) $(CFLAGS) -mgeneral-regs-only -c $< -o $@
+$(B)/net_slirp.o: host/net_slirp.c host/*.h core/*.h devices/*.h | $(B)
+	$(CC) $(CFLAGS) $(SLIRP_CFLAGS) -c $< -o $@
+$(B)/fb_metal.o: devices/fb_metal.m devices/*.h core/*.h host/*.h | $(B)
+	$(CC) $(OBJCFLAGS) -c $< -o $@
+$(B)/main_mac.o: host/main_mac.m host/*.h core/*.h devices/*.h | $(B)
+	$(CC) $(OBJCFLAGS) -c $< -o $@
+$(B)/%.o: core/%.c core/*.h host/*.h | $(B)
+	$(CC) $(CFLAGS) -c $< -o $@
+$(B)/%.o: host/%.c host/*.h core/*.h devices/*.h | $(B)
+	$(CC) $(CFLAGS) -c $< -o $@
+$(B)/%.o: host/%.S | $(B)
+	$(CC) -c $< -o $@
+$(B)/%.o: devices/%.c devices/*.h core/*.h host/*.h | $(B)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(B)/winvm: $(B)/main_mac.o $(ENGINE) $(DEV) $(VM_HOST)
+	$(CC) $(B)/main_mac.o $(ENGINE) $(DEV) $(VM_HOST) $(SLIRP_LIBS) $(MAC_FRAMEWORKS) -o $@
+
+$(B)/test_classify: tests/test_classify.c tests/classify_cases.s $(B)/classify.o
+	$(CC) $(CFLAGS) $^ -o $@
+$(B)/test_jit_region: tests/test_jit_region.c $(B)/jit_region.o
+	$(CC) $(CFLAGS) $^ -o $@
+$(B)/test_operands: tests/test_operands.c tests/operand_cases.s $(B)/operands.o
+	$(CC) $(CFLAGS) $^ -o $@
+$(B)/test_mmu: tests/test_mmu.c $(ENGINE)
+	$(CC) $(CFLAGS) tests/test_mmu.c $(ENGINE) -o $@
+
+$(B)/hvsparse: tools/hvsparse_main.c host/hvsparse.c host/hvsparse.h | $(B)
+	$(CC) $(CFLAGS) tools/hvsparse_main.c host/hvsparse.c -o $@
+
+$(B)/test_%: tests/test_%.c tests/%_programs.S tests/harness.S tests/harness.h $(ENGINE)
+	$(CC) $(CFLAGS) -Itests tests/test_$*.c tests/$*_programs.S tests/harness.S $(ENGINE) -o $@
+
+test-core: $(CORE_TESTS)
+	@ulimit -s 65520; for t in $(CORE_TESTS); do echo "== $$t"; $$t || exit 1; done
+
+$(B):
+	mkdir -p $(B)
+
+# ---- iOS static library target: build/ios/libwinvm.a ----
+IOS_SDK = $(shell xcrun --sdk iphoneos --show-sdk-path)
+IOS_CC = xcrun --sdk iphoneos clang -arch arm64 -miphoneos-version-min=17.0 -isysroot $(IOS_SDK)
+IOS_SLIRP_INC ?= ios/deps/include/slirp
+IOS_CFLAGS = -std=c11 -Wall -Wextra -O2 -g -Icore -Ihost -Idevices -I$(IOS_SLIRP_INC)
+IOS_OBJCFLAGS = -fobjc-arc -Wall -Wextra -O2 -g -Icore -Ihost -Idevices
+IB = build/ios
+
+IOS_C_SRC = $(wildcard core/*.c) \
+            host/jit_region.c host/disk.c host/winvm.c host/net_slirp.c host/share.c \
+            host/audio_mac.c host/hvsparse.c host/prof_ios.c \
+            $(wildcard devices/*.c)
+IOS_OBJ = $(patsubst %.c,$(IB)/%.o,$(IOS_C_SRC)) $(IB)/host/enter.o $(IB)/devices/fb_metal.o
+
+$(IB)/core/mmu.o: core/mmu.c core/*.h host/*.h devices/*.h
+	@mkdir -p $(dir $@)
+	$(IOS_CC) $(IOS_CFLAGS) -mgeneral-regs-only -c $< -o $@
+$(IB)/%.o: %.c core/*.h host/*.h devices/*.h
+	@mkdir -p $(dir $@)
+	$(IOS_CC) $(IOS_CFLAGS) -c $< -o $@
+$(IB)/devices/fb_metal.o: devices/fb_metal.m devices/*.h core/*.h host/*.h
+	@mkdir -p $(dir $@)
+	$(IOS_CC) $(IOS_OBJCFLAGS) -c $< -o $@
+$(IB)/host/enter.o: host/enter.S
+	@mkdir -p $(dir $@)
+	$(IOS_CC) -c $< -o $@
+$(IB)/libwinvm.a: $(IOS_OBJ)
+	rm -f $@
+	xcrun --sdk iphoneos libtool -static -o $@ $(IOS_OBJ)
+
+ios-lib: $(IB)/libwinvm.a
+
+clean:
+	rm -rf $(B)
+
+.PHONY: all test-core ios-lib clean

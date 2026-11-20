@@ -1,1 +1,87 @@
-I2luY2x1ZGUgIm9wZXJhbmRzLmgiCgovKiBGb2xsb3dzIHRoZSBBNjQgZW5jb2RpbmcgaW5kZXguIE9ubHkgdGhlIGNvcGllZCBncm91cHMgYXJlIGRlY29kZWQgaGVyZToKICAgZGF0YSBwcm9jZXNzaW5nIChpbW1lZGlhdGUpLCBkYXRhIHByb2Nlc3NpbmcgKHJlZ2lzdGVyKSwgYW5kIFNJTUQvRlAuICovCgpzdGF0aWMgdWludDMyX3QgZHBfaW1tZWRpYXRlKHVpbnQzMl90IGluc24pIHsKICAgIHVpbnQzMl90IG9wID0gKGluc24gPj4gMjMpICYgNzsKICAgIHN3aXRjaCAob3ApIHsKICAgIGNhc2UgMjogeyAvKiBhZGQvc3ViIChpbW1lZGlhdGUpOiBSZCBpcyBTUCB1bmxlc3MgZmxhZ3MgYXJlIHNldDsgUm4gaXMgU1AgKi8KICAgICAgICB1aW50MzJfdCBzID0gKGluc24gPj4gMjkpICYgMTsKICAgICAgICByZXR1cm4gSFZfRklFTERfUkQgfCBIVl9GSUVMRF9STiB8IEhWX0ZJRUxEX1JOX1NQIHwgKHMgPyAwIDogSFZfRklFTERfUkRfU1ApOwogICAgfQogICAgY2FzZSA0OiB7IC8qIGxvZ2ljYWwgKGltbWVkaWF0ZSk6IFJkIGlzIFNQIHVubGVzcyBBTkRTICovCiAgICAgICAgdWludDMyX3Qgb3BjID0gKGluc24gPj4gMjkpICYgMzsKICAgICAgICByZXR1cm4gSFZfRklFTERfUkQgfCBIVl9GSUVMRF9STiB8IChvcGMgPT0gMyA/IDAgOiBIVl9GSUVMRF9SRF9TUCk7CiAgICB9CiAgICBjYXNlIDU6IC8qIG1vdmUgd2lkZSAqLwogICAgICAgIHJldHVybiBIVl9GSUVMRF9SRDsKICAgIGNhc2UgNjogLyogYml0ZmllbGQgKi8KICAgICAgICByZXR1cm4gSFZfRklFTERfUkQgfCBIVl9GSUVMRF9STjsKICAgIGNhc2UgNzogLyogZXh0cmFjdCAqLwogICAgICAgIHJldHVybiBIVl9GSUVMRF9SRCB8IEhWX0ZJRUxEX1JOIHwgSFZfRklFTERfUk07CiAgICBkZWZhdWx0OgogICAgICAgIHJldHVybiAwOwogICAgfQp9CgpzdGF0aWMgdWludDMyX3QgZHBfcmVnaXN0ZXIodWludDMyX3QgaW5zbikgewogICAgdWludDMyX3Qgb3AxID0gKGluc24gPj4gMjgpICYgMTsKICAgIHVpbnQzMl90IG9wMiA9IChpbnNuID4+IDIxKSAmIDB4ZjsKICAgIGlmIChvcDEgPT0gMCkgewogICAgICAgIGlmICgob3AyICYgMHg5KSA9PSAweDkpIHsgLyogYWRkL3N1YiAoZXh0ZW5kZWQgcmVnaXN0ZXIpICovCiAgICAgICAgICAgIHVpbnQzMl90IHMgPSAoaW5zbiA+PiAyOSkgJiAxOwogICAgICAgICAgICByZXR1cm4gSFZfRklFTERfUkQgfCBIVl9GSUVMRF9STiB8IEhWX0ZJRUxEX1JNIHwgSFZfRklFTERfUk5fU1AgfCAocyA/IDAgOiBIVl9GSUVMRF9SRF9TUCk7CiAgICAgICAgfQogICAgICAgIC8qIGxvZ2ljYWwgKHNoaWZ0ZWQgcmVnaXN0ZXIpLCBhZGQvc3ViIChzaGlmdGVkIHJlZ2lzdGVyKSAqLwogICAgICAgIHJldHVybiBIVl9GSUVMRF9SRCB8IEhWX0ZJRUxEX1JOIHwgSFZfRklFTERfUk07CiAgICB9CiAgICBpZiAob3AyID09IDB4MikgeyAvKiBjb25kaXRpb25hbCBjb21wYXJlOiBSbSBpcyBhbiBpbW1lZGlhdGUgd2hlbiBiaXQgMTEgaXMgc2V0ICovCiAgICAgICAgcmV0dXJuIEhWX0ZJRUxEX1JOIHwgKCgoaW5zbiA+PiAxMSkgJiAxKSA/IDAgOiBIVl9GSUVMRF9STSk7CiAgICB9CiAgICBpZiAob3AyID09IDB4NiAmJiAoKGluc24gPj4gMzApICYgMSkpIHsgLyogZGF0YSBwcm9jZXNzaW5nICgxIHNvdXJjZSk6IFJtIGhvbGRzIG9wY29kZTIgKi8KICAgICAgICByZXR1cm4gSFZfRklFTERfUkQgfCBIVl9GSUVMRF9STjsKICAgIH0KICAgIGlmIChvcDIgJiAweDgpIHsgLyogZGF0YSBwcm9jZXNzaW5nICgzIHNvdXJjZSkgKi8KICAgICAgICByZXR1cm4gSFZfRklFTERfUkQgfCBIVl9GSUVMRF9STiB8IEhWX0ZJRUxEX1JNIHwgSFZfRklFTERfUkE7CiAgICB9CiAgICBpZiAob3AyID09IDB4MCAmJiAoKGluc24gPj4gMTApICYgMHgzZikgIT0gMCkgewogICAgICAgIC8qIFJNSUYsIFNFVEY4LCBTRVRGMTY6IG9ubHkgUm4gaXMgYSByZWdpc3Rlci4gUk1JRiBrZWVwcyBhbiBpbW1lZGlhdGUgaW4gdGhlCiAgICAgICAgICAgUm0gYml0cyBhbmQgYSBmbGFnIG1hc2sgaW4gdGhlIFJkIGJpdHMuICovCiAgICAgICAgcmV0dXJuIEhWX0ZJRUxEX1JOOwogICAgfQogICAgLyogYWRkL3N1YiB3aXRoIGNhcnJ5LCBmbGFnIG1hbmlwdWxhdGlvbiwgY29uZGl0aW9uYWwgc2VsZWN0LCAyIHNvdXJjZSAqLwogICAgcmV0dXJuIEhWX0ZJRUxEX1JEIHwgSFZfRklFTERfUk4gfCBIVl9GSUVMRF9STTsKfQoKc3RhdGljIHVpbnQzMl90IHNpbWRfZnAodWludDMyX3QgaW5zbikgewogICAgLyogQ29udmVyc2lvbiBiZXR3ZWVuIGZsb2F0aW5nLXBvaW50IGFuZCBpbnRlZ2VyLiAqLwogICAgaWYgKChpbnNuICYgMHg1ZjIwZmMwMCkgPT0gMHgxZTIwMDAwMCkgewogICAgICAgIHVpbnQzMl90IG9wY29kZSA9IChpbnNuID4+IDE2KSAmIDc7CiAgICAgICAgaWYgKG9wY29kZSA9PSAyIHx8IG9wY29kZSA9PSAzIHx8IG9wY29kZSA9PSA3KSByZXR1cm4gSFZfRklFTERfUk47IC8qIFNDVlRGLCBVQ1ZURiwgRk1PViB0byBGUCAqLwogICAgICAgIHJldHVybiBIVl9GSUVMRF9SRDsKICAgIH0KICAgIC8qIENvbnZlcnNpb24gYmV0d2VlbiBmbG9hdGluZy1wb2ludCBhbmQgZml4ZWQtcG9pbnQuICovCiAgICBpZiAoKGluc24gJiAweDVmMjAwMDAwKSA9PSAweDFlMDAwMDAwKSB7CiAgICAgICAgdWludDMyX3Qgb3Bjb2RlID0gKGluc24gPj4gMTYpICYgNzsKICAgICAgICBpZiAob3Bjb2RlID09IDIgfHwgb3Bjb2RlID09IDMpIHJldHVybiBIVl9GSUVMRF9STjsKICAgICAgICByZXR1cm4gSFZfRklFTERfUkQ7CiAgICB9CiAgICAvKiBBZHZhbmNlZCBTSU1EIGNvcHk6IERVUCAoZ2VuZXJhbCksIElOUyAoZ2VuZXJhbCksIFNNT1YsIFVNT1YuICovCiAgICBpZiAoKGluc24gJiAweDlmZTA4NDAwKSA9PSAweDBlMDAwNDAwKSB7CiAgICAgICAgdWludDMyX3QgaW1tNCA9IChpbnNuID4+IDExKSAmIDB4ZjsKICAgICAgICB1aW50MzJfdCBvcCA9IChpbnNuID4+IDI5KSAmIDE7CiAgICAgICAgaWYgKG9wID09IDAgJiYgKGltbTQgPT0gMSB8fCBpbW00ID09IDMpKSByZXR1cm4gSFZfRklFTERfUk47CiAgICAgICAgaWYgKG9wID09IDAgJiYgKGltbTQgPT0gNSB8fCBpbW00ID09IDcpKSByZXR1cm4gSFZfRklFTERfUkQ7CiAgICAgICAgcmV0dXJuIDA7CiAgICB9CiAgICByZXR1cm4gMDsKfQoKdWludDMyX3QgaHZfZ3ByX2ZpZWxkcyh1aW50MzJfdCBpbnNuKSB7CiAgICB1aW50MzJfdCBvcDAgPSAoaW5zbiA+PiAyNSkgJiAweGY7CiAgICBpZiAoKG9wMCAmIDB4ZSkgPT0gMHg4KSByZXR1cm4gZHBfaW1tZWRpYXRlKGluc24pOwogICAgaWYgKChvcDAgJiAweDcpID09IDB4NSkgcmV0dXJuIGRwX3JlZ2lzdGVyKGluc24pOwogICAgaWYgKChvcDAgJiAweDcpID09IDB4NykgcmV0dXJuIHNpbWRfZnAoaW5zbik7CiAgICByZXR1cm4gMDsgLyogaGludHM6IG5vIHJlZ2lzdGVycyAqLwp9Cg==
+#include "operands.h"
+
+/* Follows the A64 encoding index. Only the copied groups are decoded here:
+   data processing (immediate), data processing (register), and SIMD/FP. */
+
+static uint32_t dp_immediate(uint32_t insn) {
+    uint32_t op = (insn >> 23) & 7;
+    switch (op) {
+    case 2: { /* add/sub (immediate): Rd is SP unless flags are set; Rn is SP */
+        uint32_t s = (insn >> 29) & 1;
+        return HV_FIELD_RD | HV_FIELD_RN | HV_FIELD_RN_SP | (s ? 0 : HV_FIELD_RD_SP);
+    }
+    case 4: { /* logical (immediate): Rd is SP unless ANDS */
+        uint32_t opc = (insn >> 29) & 3;
+        return HV_FIELD_RD | HV_FIELD_RN | (opc == 3 ? 0 : HV_FIELD_RD_SP);
+    }
+    case 5: /* move wide */
+        return HV_FIELD_RD;
+    case 6: /* bitfield */
+        return HV_FIELD_RD | HV_FIELD_RN;
+    case 7: /* extract */
+        return HV_FIELD_RD | HV_FIELD_RN | HV_FIELD_RM;
+    default:
+        return 0;
+    }
+}
+
+static uint32_t dp_register(uint32_t insn) {
+    uint32_t op1 = (insn >> 28) & 1;
+    uint32_t op2 = (insn >> 21) & 0xf;
+    if (op1 == 0) {
+        if ((op2 & 0x9) == 0x9) { /* add/sub (extended register) */
+            uint32_t s = (insn >> 29) & 1;
+            return HV_FIELD_RD | HV_FIELD_RN | HV_FIELD_RM | HV_FIELD_RN_SP | (s ? 0 : HV_FIELD_RD_SP);
+        }
+        /* logical (shifted register), add/sub (shifted register) */
+        return HV_FIELD_RD | HV_FIELD_RN | HV_FIELD_RM;
+    }
+    if (op2 == 0x2) { /* conditional compare: Rm is an immediate when bit 11 is set */
+        return HV_FIELD_RN | (((insn >> 11) & 1) ? 0 : HV_FIELD_RM);
+    }
+    if (op2 == 0x6 && ((insn >> 30) & 1)) { /* data processing (1 source): Rm holds opcode2 */
+        return HV_FIELD_RD | HV_FIELD_RN;
+    }
+    if (op2 & 0x8) { /* data processing (3 source) */
+        return HV_FIELD_RD | HV_FIELD_RN | HV_FIELD_RM | HV_FIELD_RA;
+    }
+    if (op2 == 0x0 && ((insn >> 10) & 0x3f) != 0) {
+        /* RMIF, SETF8, SETF16: only Rn is a register. RMIF keeps an immediate in the
+           Rm bits and a flag mask in the Rd bits. */
+        return HV_FIELD_RN;
+    }
+    /* add/sub with carry, flag manipulation, conditional select, 2 source */
+    return HV_FIELD_RD | HV_FIELD_RN | HV_FIELD_RM;
+}
+
+static uint32_t simd_fp(uint32_t insn) {
+    /* Conversion between floating-point and integer. */
+    if ((insn & 0x5f20fc00) == 0x1e200000) {
+        uint32_t opcode = (insn >> 16) & 7;
+        if (opcode == 2 || opcode == 3 || opcode == 7) return HV_FIELD_RN; /* SCVTF, UCVTF, FMOV to FP */
+        return HV_FIELD_RD;
+    }
+    /* Conversion between floating-point and fixed-point. */
+    if ((insn & 0x5f200000) == 0x1e000000) {
+        uint32_t opcode = (insn >> 16) & 7;
+        if (opcode == 2 || opcode == 3) return HV_FIELD_RN;
+        return HV_FIELD_RD;
+    }
+    /* Advanced SIMD copy: DUP (general), INS (general), SMOV, UMOV. */
+    if ((insn & 0x9fe08400) == 0x0e000400) {
+        uint32_t imm4 = (insn >> 11) & 0xf;
+        uint32_t op = (insn >> 29) & 1;
+        if (op == 0 && (imm4 == 1 || imm4 == 3)) return HV_FIELD_RN;
+        if (op == 0 && (imm4 == 5 || imm4 == 7)) return HV_FIELD_RD;
+        return 0;
+    }
+    return 0;
+}
+
+uint32_t hv_gpr_fields(uint32_t insn) {
+    uint32_t op0 = (insn >> 25) & 0xf;
+    if ((op0 & 0xe) == 0x8) return dp_immediate(insn);
+    if ((op0 & 0x7) == 0x5) return dp_register(insn);
+    if ((op0 & 0x7) == 0x7) return simd_fp(insn);
+    return 0; /* hints: no registers */
+}

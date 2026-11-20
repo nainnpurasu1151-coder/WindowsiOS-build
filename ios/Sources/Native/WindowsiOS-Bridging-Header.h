@@ -1,1 +1,3 @@
-LyogU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAtb3ItbGF0ZXIgKi8KI2ltcG9ydCAid2luaW9zX2JyaWRnZS5oIgojaW5jbHVkZSAid2luaW9zX2ppdC5oIgo=
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+#import "winios_bridge.h"
+#include "winios_jit.h"

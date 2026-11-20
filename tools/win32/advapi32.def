@@ -1,0 +1,12 @@
+; Import library definition for advapi32 (ARM64).
+; Function list extracted from the __declspec(dllimport) declarations in
+; tools/opt_hive_arm64.c (registry + token privilege APIs).
+LIBRARY advapi32
+EXPORTS
+AdjustTokenPrivileges
+LookupPrivilegeValueW
+OpenProcessToken
+RegCloseKey
+RegCreateKeyExW
+RegOpenKeyExW
+RegSetValueExW
