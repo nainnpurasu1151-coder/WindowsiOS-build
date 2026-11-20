@@ -1,0 +1,129 @@
+# .github/workflows/build-windowsios.yml
+#
+# Builds a WindowsiOS.ipa from your fork's main branch on a GitHub-hosted
+# macOS runner, no Mac needed. Modelled on Henge's build-henge.yml
+# (GPL-2.0-or-later). Free on a PUBLIC repo: public repos get unlimited
+# minutes on hosted runners, including macOS. On a private repo, macOS
+# minutes bill at 10x, so keep this fork public.
+#
+# The IPA comes out unsigned with ad-hoc signing (package_ipa.sh's normal
+# output). The sideloader (SideInstaller, SideStore, ...) re-signs it with
+# your certificate on install and keeps the entitlements it can;
+# increased-memory-limit (the "personal" entitlements choice below) only
+# survives if your certificate/profile carries it.
+#
+# The upstream project.yml hard-codes the original author's DEVELOPMENT_TEAM,
+# provisioning profile and signing identity. package_ipa.sh overrides all of
+# them on the xcodebuild command line (CODE_SIGNING_ALLOWED=NO, empty
+# team/identity/profile), so nothing in project.yml needs editing.
+
+name: Build WindowsiOS IPA
+
+# Manual only (Actions tab > Build WindowsiOS IPA > Run workflow).
+on:
+  workflow_dispatch:
+    inputs:
+      entitlements:
+        description: "Entitlements to ad-hoc sign the IPA with"
+        type: choice
+        options:
+          - default
+          - personal
+        default: default
+
+env:
+  # scripts/build_ios_deps.sh reads $HUSK_REF for the libslirp patch and the
+  # StikJIT.xcframework copy. Upstream's default is the author's local path;
+  # point it at the Husk checkout next to this repo instead.
+  HUSK_REF: ${{ github.workspace }}/Husk
+
+jobs:
+  build-ipa:
+    # Xcode 27 image: ios/Sources references UIHingeInteraction directly, so
+    # the iOS 27 SDK (Xcode 27) is required to compile. Plain `xcode-27` is a
+    # standard runner, free on public repos.
+    runs-on: xcode-27
+    timeout-minutes: 120
+
+    steps:
+      - name: Check out WindowsiOS (this fork)
+        uses: actions/checkout@v4
+        with:
+          path: WindowsiOS
+
+      # Only needed by build_ios_deps.sh (libslirp patch + StikJIT.xcframework
+      # copy). Both uses are file-existence-guarded in the script.
+      - name: Check out Husk (libslirp patch / StikJIT.xcframework source)
+        uses: actions/checkout@v4
+        with:
+          repository: Leviidev/Husk
+          path: Husk
+
+      - name: Cache iOS dependency build
+        uses: actions/cache@v4
+        with:
+          path: WindowsiOS/work/ios_deps_build
+          key: winios-ios-deps-${{ hashFiles('WindowsiOS/scripts/build_ios_deps.sh') }}
+
+      - name: Install build tools
+        run: |
+          set -euxo pipefail
+          # llvm/lld are also here for the guest-helpers job's toolchain;
+          # python guarantees /opt/homebrew/bin/python3, which
+          # build_ios_deps.sh hard-codes into its meson cross files.
+          brew install xcodegen meson ninja pkg-config llvm python
+
+      # Cross-compiles libffi 3.5.0 + glib 2.83.0 + libslirp v4.9.1 for
+      # arm64-apple-ios and stages them into WindowsiOS/ios/deps/.
+      - name: Build iOS dependencies (libffi, glib, libslirp)
+        working-directory: WindowsiOS
+        run: bash scripts/build_ios_deps.sh
+
+      # libwinvm.a for the app, plus the core unit tests as a health check.
+      # (Deliberately not `make all`: the macOS winvm runner needs a
+      # Homebrew libslirp and belongs to the image-provisioning phase.)
+      - name: Build engine (ios-lib) and run core tests
+        working-directory: WindowsiOS
+        run: make -j"$(sysctl -n hw.ncpu)" ios-lib test-core
+
+      - name: Package WindowsiOS.ipa (unsigned, ad-hoc)
+        working-directory: WindowsiOS
+        env:
+          WINIOS_ENTITLEMENTS: ${{ inputs.entitlements == 'personal' && 'WindowsiOS.personal.entitlements' || 'WindowsiOS.entitlements' }}
+        run: zsh ios/scripts/package_ipa.sh
+
+      - name: Upload WindowsiOS.ipa
+        uses: actions/upload-artifact@v4
+        with:
+          name: WindowsiOS-ipa-${{ github.sha }}
+          path: /Users/runner/Desktop/WindowsiOS.ipa
+          if-no-files-found: error
+
+  # The freestanding AArch64 Win32 helpers the Windows image provisioning
+  # needs (scripts/optimize_windows_lite.py requires build/opt_hive_arm64.exe
+  # and stops without it). Upstream ships the sources with no build rule;
+  # scripts/build_guest_helpers.sh reconstructs it with clang + lld +
+  # llvm-dlltool-generated import libraries (tools/win32/*.def). Kept as a
+  # separate job so an IPA build never waits on it, and vice versa.
+  guest-helpers:
+    runs-on: macos-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out WindowsiOS (this fork)
+        uses: actions/checkout@v4
+
+      - name: Install LLVM
+        run: brew install llvm
+
+      - name: Build guest helper exes
+        run: bash scripts/build_guest_helpers.sh
+
+      - name: Upload guest helper exes
+        uses: actions/upload-artifact@v4
+        with:
+          name: WindowsiOS-guest-helpers-${{ github.sha }}
+          path: |
+            build/opt_hive_arm64.exe
+            build/WinIOSBrowser.exe
+          if-no-files-found: error
