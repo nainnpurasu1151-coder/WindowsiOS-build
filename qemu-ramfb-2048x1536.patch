@@ -1,0 +1,27 @@
+diff --git a/OvmfPkg/QemuRamfbDxe/QemuRamfb.c b/OvmfPkg/QemuRamfbDxe/QemuRamfb.c
+index 5a1044f..6b7b107 100644
+--- a/OvmfPkg/QemuRamfbDxe/QemuRamfb.c
++++ b/OvmfPkg/QemuRamfbDxe/QemuRamfb.c
+@@ -54,6 +54,10 @@ STATIC EFI_GRAPHICS_OUTPUT_MODE_INFORMATION  mQemuRamfbModeInfo[] = {
+     0,    // Version
+     1024, // HorizontalResolution
+     768,  // VerticalResolution
++  },{
++    0,     // Version
++    2048,  // HorizontalResolution
++    1536,  // VerticalResolution
+   }
+ };
+ 
+@@ -314,9 +318,9 @@ InitializeQemuRamfb (
+   mQemuRamfbMode.FrameBufferBase = FbBase;
+ 
+   //
+-  // 800 x 600
++  // 2048 x 1536
+   //
+-  QemuRamfbGraphicsOutputSetMode (&mQemuRamfbGraphicsOutput, 1);
++  QemuRamfbGraphicsOutputSetMode (&mQemuRamfbGraphicsOutput, 3);
+ 
+   //
+   // ramfb vendor devpath
