@@ -69,8 +69,9 @@ jobs:
 
       - name: Shape QEMU_EFI.fd into pflash code.fd (64 MiB)
         run: |
-          FV=edk2/Build/ArmVirtQemu-AARCH64/RELEASE_GCC/FV/QEMU_EFI.fd
-          ls -la "$(dirname "$FV")"
+          FV=$(find edk2/Build -name QEMU_EFI.fd -print -quit)
+          echo "Found firmware: $FV"
+          test -n "$FV"
           cp "$FV" code.fd
           truncate -s 64M code.fd
           ls -la code.fd
