@@ -4,6 +4,7 @@ import UIKit
 
 struct SessionView: View {
     @ObservedObject var vm: VMViewModel
+    @ObservedObject private var jit = JITCoordinator.shared
     private let uiHaptic = UIImpactFeedbackGenerator(style: .light)
 
     /// Phase 4 pre-flight indicator: whether the dummy JIT helper extension
@@ -57,6 +58,21 @@ struct SessionView: View {
                 SafariSheet(url: item.url)
                     .ignoresSafeArea()
                     .preferredColorScheme(.dark)
+            }
+            .sheet(isPresented: $jit.showSetup) {
+                JITSetupFlow()
+                    .preferredColorScheme(.dark)
+            }
+            .onChange(of: jit.attachGeneration) { _ in
+                // The built-in helper attached while the app stayed in the
+                // foreground, so the scene-phase path never fires: claim the
+                // JIT region through the same bridge call the StikDebug
+                // return trip uses, then let the usual auto-boot follow.
+                let b = WinIOSBridge.shared
+                if !b.isJITLive && b.isDebuggerAttached {
+                    _ = b.tryAcquireJIT(true)
+                }
+                vm.syncFromBridge()
             }
         }
         .ignoresSafeArea()
@@ -624,7 +640,7 @@ struct SessionView: View {
                 HStack(spacing: 10) {
                     if !vm.isJITLive {
                         Button {
-                            vm.requestStikDebugJIT()
+                            jit.enable()
                         } label: {
                             Text("ENABLE JIT")
                                 .font(.system(size: 11, weight: .semibold, design: .monospaced))

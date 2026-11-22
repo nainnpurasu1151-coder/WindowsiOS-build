@@ -27,6 +27,9 @@ targets:
           - "Resources/**"
       - path: Sources/Resources/henge-jit.js
         buildPhase: resources
+      # The messages the app and its JIT helper exchange (also compiled into
+      # the helper target through its JITHelper folder).
+      - path: JITHelper/WindowsiOSJITMessages.swift
     info:
       path: Sources/Info.plist
       properties:
@@ -38,6 +41,22 @@ targets:
         UIStatusBarHidden: true
         UIViewControllerBasedStatusBarAppearance: false
         NSMicrophoneUsageDescription: "Windows 11 and Antigravity use your iPhone Duo microphone for live voice input and audio capture."
+        # Built-in StikJIT (Phase 4): on-device pairing advertises over
+        # Bonjour and finishes under a continued-processing background task.
+        BGTaskSchedulerPermittedIdentifiers:
+          - "$(PRODUCT_BUNDLE_IDENTIFIER).pairing.*"
+        NSBonjourServices:
+          - _remotepairing-pairable-host._tcp
+          - _remotepairing._tcp
+        NSLocalNetworkUsageDescription: "Windows 11 uses the local network to pair with this iPad for JIT, without a computer."
+        LSApplicationQueriesSchemes:
+          - stikjit
+          - stikdebug
+          - localdevvpn
+        CFBundleURLTypes:
+          - CFBundleURLName: me.ammaar.windowsios
+            CFBundleURLSchemes:
+              - windowsios
         UIBackgroundModes:
           - audio
         UISupportedInterfaceOrientations:
@@ -84,6 +103,42 @@ targets:
           - -lffi
           - -lresolv
           - -liconv
+          # On-device pairing for Built-in StikJIT (Husk's src/rppairing-ios,
+          # staged into deps/lib by scripts/build_ios_deps.sh).
+          - -lhusk_rppairing
+    postBuildScripts:
+      - name: Embed StikJIT
+        # As in Henge/Husk: the helper links StikJIT; it lives in the app's
+        # Frameworks with a minimal Info.plist (installd refuses one
+        # without), signed here when signing is allowed. In CI
+        # (CODE_SIGNING_ALLOWED=NO) the codesign is skipped and
+        # package_ipa.sh's Frameworks loop does the final ad-hoc signing.
+        script: |
+          set -e
+          SRC="$SRCROOT/deps/StikJIT.xcframework/ios-arm64/StikJIT.framework"
+          DST="$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/StikJIT.framework"
+          rm -rf "$DST"
+          mkdir -p "$(dirname "$DST")"
+          ditto "$SRC" "$DST"
+          rm -rf "$DST/Headers" "$DST/Modules"
+          PLIST="$DST/Info.plist"
+          if [ ! -f "$PLIST" ]; then
+            plutil -create xml1 "$PLIST"
+            plutil -insert CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER.StikJIT" "$PLIST"
+            plutil -insert CFBundleExecutable -string StikJIT "$PLIST"
+            plutil -insert CFBundleName -string StikJIT "$PLIST"
+            plutil -insert CFBundlePackageType -string FMWK "$PLIST"
+            plutil -insert CFBundleInfoDictionaryVersion -string 6.0 "$PLIST"
+            plutil -insert CFBundleShortVersionString -string 1.9.0 "$PLIST"
+            plutil -insert CFBundleVersion -string 1.9.0 "$PLIST"
+            plutil -insert MinimumOSVersion -string 17.4 "$PLIST"
+            plutil -insert CFBundleSupportedPlatforms -array "$PLIST"
+            plutil -insert CFBundleSupportedPlatforms.0 -string iPhoneOS "$PLIST"
+          fi
+          if [ -n "$EXPANDED_CODE_SIGN_IDENTITY" ] && [ "$CODE_SIGNING_ALLOWED" != "NO" ]; then
+            codesign --force --sign "$EXPANDED_CODE_SIGN_IDENTITY" --timestamp=none "$DST"
+          fi
+        basedOnDependencyAnalysis: false
     dependencies:
       - target: WindowsiOSJITHelper
       - sdk: AVFoundation.framework
@@ -95,9 +150,10 @@ targets:
       - sdk: ImageIO.framework
       - sdk: UniformTypeIdentifiers.framework
 
-  # Phase 4 pre-flight: empty extension whose only job is to prove that the
-  # installer's re-signing keeps PlugIns/*.appex in the installed bundle.
-  # The real JIT helper replaces the dummy sources during the Phase 4 port.
+  # Built-in StikJIT's debugger (Phase 4): a process cannot debug itself, so
+  # StikJIT runs here and attaches to the app. iOS 26 and later. The
+  # pre-flight dummy proved the installer's re-signing keeps PlugIns/*.appex;
+  # these are the real helper sources.
   WindowsiOSJITHelper:
     type: app-extension
     platform: iOS
@@ -116,3 +172,8 @@ targets:
         LD_RUNPATH_SEARCH_PATHS:
           - "$(inherited)"
           - "@executable_path/../../Frameworks"
+    dependencies:
+      # StikJIT 1.9.0 (MPL-2.0, with idevice under MIT); embedded by the app's
+      # "Embed StikJIT" post-build phase, not from here.
+      - framework: deps/StikJIT.xcframework
+        embed: false

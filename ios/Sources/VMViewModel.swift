@@ -93,6 +93,8 @@ final class VMViewModel: ObservableObject {
     private var oauthPollTimer: Timer? = nil
 
     init() {
+        WinIOSLog.start()
+        JITBootstrap.noteLaunchState()
         let bridge = WinIOSBridge.shared
         bridge.installTrapGuard()
         bridge.onStateChanged = { [weak self] in
