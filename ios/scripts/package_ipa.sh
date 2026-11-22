@@ -16,12 +16,12 @@
 #   scripts/build_ios_deps.sh has staged ios/deps/
 #   make ios-lib has produced build/ios/libwinvm.a
 set -e
-# This app has no embedded frameworks or app extensions, so the Frameworks/
-# and PlugIns/ glob loops below match nothing. In zsh an unmatched glob is a
-# fatal "no matches found" error (unlike bash), which aborted the script
-# after a successful build in CI run #1. NULL_GLOB makes them expand to
-# nothing instead. (Henge's copy never hit this: Henge.app ships a framework
-# and an appex, so its globs always match.)
+# In zsh an unmatched glob is a fatal "no matches found" error (unlike
+# bash), which aborted this script after a successful build in CI run #1,
+# back when the app shipped no frameworks or extensions. NULL_GLOB makes
+# them expand to nothing instead. (Since Phase 4 the app ships StikJIT in
+# Frameworks/ and the JIT helper in PlugIns/, so the loops below do match;
+# NULL_GLOB stays as belt and braces.)
 setopt NULL_GLOB
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 IOS="$ROOT/ios"
@@ -42,12 +42,16 @@ missing=0
 for lib in "$ROOT/build/ios/libwinvm.a" \
            "$IOS/deps/lib/libslirp.a" "$IOS/deps/lib/libglib-2.0.a" \
            "$IOS/deps/lib/libintl.a" "$IOS/deps/lib/libpcre2-8.a" \
-           "$IOS/deps/lib/libffi.a"; do
+           "$IOS/deps/lib/libffi.a" "$IOS/deps/lib/libhusk_rppairing.a"; do
     if [ ! -f "$lib" ]; then
         echo "::error::Missing build input: ${lib#$ROOT/} (earlier CI step did not stage it)"
         missing=1
     fi
 done
+if [ ! -d "$IOS/deps/StikJIT.xcframework" ]; then
+    echo "::error::Missing build input: ios/deps/StikJIT.xcframework (earlier CI step did not stage it)"
+    missing=1
+fi
 [ $missing -eq 0 ] || { echo "==> missing build inputs; refusing to package" >&2; exit 1; }
 
 xcodegen generate --spec ios/project.yml >/dev/null

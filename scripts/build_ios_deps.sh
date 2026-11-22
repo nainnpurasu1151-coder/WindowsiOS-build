@@ -169,5 +169,11 @@ if [ -d "$HUSK_REF/src/app/Frameworks/StikJIT.xcframework" ]; then
     ditto "$HUSK_REF/src/app/Frameworks/StikJIT.xcframework" "$OUT_DEPS/StikJIT.xcframework"
 fi
 
+# Stage libhusk_rppairing.a if Husk's scripts/build_rppairing_ios.sh has run
+# (on-device pairing for Built-in StikJIT; the app links -lhusk_rppairing).
+if [ -f "$HUSK_REF/build/ios-arm64/lib/libhusk_rppairing.a" ]; then
+    cp "$HUSK_REF/build/ios-arm64/lib/libhusk_rppairing.a" "$OUT_DEPS/lib/libhusk_rppairing.a"
+fi
+
 echo "=== iOS dependencies staged in $OUT_DEPS ==="
 ls -lh "$OUT_DEPS/lib"
