@@ -32,9 +32,10 @@ on:
         default: default
 
 env:
-  # scripts/build_ios_deps.sh reads $HUSK_REF for the libslirp patch and the
-  # StikJIT.xcframework copy. Upstream's default is the author's local path;
-  # point it at the Husk checkout next to this repo instead.
+  # scripts/build_ios_deps.sh reads $HUSK_REF for the libslirp patch, the
+  # StikJIT.xcframework copy and the libhusk_rppairing.a staging. Upstream's
+  # default is the author's local path; point it at the Husk checkout next
+  # to this repo instead.
   HUSK_REF: ${{ github.workspace }}/Husk
 
 jobs:
@@ -51,18 +52,24 @@ jobs:
         with:
           path: WindowsiOS
 
-      # Only needed by build_ios_deps.sh (libslirp patch + StikJIT.xcframework
-      # copy). Both uses are file-existence-guarded in the script.
-      - name: Check out Husk (libslirp patch / StikJIT.xcframework source)
+      # Needed by build_ios_deps.sh (libslirp patch + StikJIT.xcframework
+      # copy + libhusk_rppairing.a staging) and by the rppairing build below.
+      # All uses are file-existence-guarded in the script. The ref is pinned
+      # (Henge's Bitrise flow pins the same rev) so builds are reproducible.
+      - name: Check out Husk (libslirp patch / StikJIT source / rppairing)
         uses: actions/checkout@v4
         with:
           repository: Leviidev/Husk
+          ref: afe83d45b31194c4cc9f7b3db7ec2c757db8346e
           path: Husk
 
       - name: Cache iOS dependency build
         uses: actions/cache@v4
         with:
-          path: WindowsiOS/work/ios_deps_build
+          path: |
+            WindowsiOS/work/ios_deps_build
+            Husk/third_party/build
+            Husk/build
           key: winios-ios-deps-${{ hashFiles('WindowsiOS/scripts/build_ios_deps.sh') }}
 
       - name: Install build tools
@@ -72,12 +79,39 @@ jobs:
           # python guarantees /opt/homebrew/bin/python3, which
           # build_ios_deps.sh hard-codes into its meson cross files.
           brew install xcodegen meson ninja pkg-config llvm python
+          # Rust for Husk's rppairing build. Runner images ship rustup; add
+          # the iOS target if it's missing (same fallback as Henge's flow).
+          rustup target add aarch64-apple-ios || {
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+            rustup target add aarch64-apple-ios
+          }
+
+      # On-device pairing for Built-in StikJIT (Phase 4). The crate lives in
+      # the Husk repo (src/rppairing-ios) and cargo fetches its crates.io
+      # dependencies itself, so unlike Henge's flow no fetch_sources.sh run
+      # is needed here. Produces Husk/build/ios-arm64/lib/libhusk_rppairing.a,
+      # which build_ios_deps.sh then stages into WindowsiOS/ios/deps/lib/.
+      - name: Build Husk's on-device pairing library (libhusk_rppairing.a)
+        working-directory: Husk
+        run: bash scripts/build_rppairing_ios.sh
 
       # Cross-compiles libffi 3.5.0 + glib 2.83.0 + libslirp v4.9.1 for
       # arm64-apple-ios and stages them into WindowsiOS/ios/deps/.
       - name: Build iOS dependencies (libffi, glib, libslirp)
         working-directory: WindowsiOS
         run: bash scripts/build_ios_deps.sh
+
+      # Built-in StikJIT on an iPad needs StikJIT 1.9.0 with the
+      # high-address patch (ci/build-stikjit.sh): the vendored build's
+      # nine-digit packet format truncates JIT mappings above 0xfffffffff.
+      # Replaces the vendored xcframework build_ios_deps.sh just staged.
+      - name: Build patched StikJIT.xcframework (iPad high-address fix)
+        working-directory: WindowsiOS
+        run: |
+          set -euxo pipefail
+          bash ci/build-stikjit.sh "${{ github.workspace }}/StikJIT"
+          rm -rf ios/deps/StikJIT.xcframework
+          ditto "${{ github.workspace }}/StikJIT/StikJIT.xcframework" ios/deps/StikJIT.xcframework
 
       # libwinvm.a for the app, plus the core unit tests as a health check.
       # (Deliberately not `make all`: the macOS winvm runner needs a
