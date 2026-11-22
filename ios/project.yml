@@ -85,6 +85,7 @@ targets:
           - -lresolv
           - -liconv
     dependencies:
+      - target: WindowsiOSJITHelper
       - sdk: AVFoundation.framework
       - sdk: SafariServices.framework
       - sdk: Metal.framework
@@ -93,3 +94,25 @@ targets:
       - sdk: CoreGraphics.framework
       - sdk: ImageIO.framework
       - sdk: UniformTypeIdentifiers.framework
+
+  # Phase 4 pre-flight: empty extension whose only job is to prove that the
+  # installer's re-signing keeps PlugIns/*.appex in the installed bundle.
+  # The real JIT helper replaces the dummy sources during the Phase 4 port.
+  WindowsiOSJITHelper:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: JITHelper
+        excludes:
+          - "Info.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: me.ammaar.windowsios.JITHelper
+        INFOPLIST_FILE: JITHelper/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        APPLICATION_EXTENSION_API_ONLY: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+        LD_RUNPATH_SEARCH_PATHS:
+          - "$(inherited)"
+          - "@executable_path/../../Frameworks"

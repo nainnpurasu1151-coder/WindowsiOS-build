@@ -6,6 +6,16 @@ struct SessionView: View {
     @ObservedObject var vm: VMViewModel
     private let uiHaptic = UIImpactFeedbackGenerator(style: .light)
 
+    /// Phase 4 pre-flight indicator: whether the dummy JIT helper extension
+    /// is present in the installed bundle's PlugIns (i.e. it survived the
+    /// installer's re-signing).
+    private var helperAppexStatusText: String {
+        let appex = Bundle.main.builtInPlugInsURL?
+            .appendingPathComponent("WindowsiOSJITHelper.appex")
+        let present = appex.map { FileManager.default.fileExists(atPath: $0.path) } ?? false
+        return present ? "HELPER APPEX: EMBEDDED" : "HELPER APPEX: MISSING"
+    }
+
     var body: some View {
         GeometryReader { geo in
             let size = geo.size
@@ -605,6 +615,10 @@ struct SessionView: View {
                     .font(.system(size: 10, weight: .medium, design: .monospaced))
                     .foregroundStyle(.white.opacity(0.60))
             }
+
+            Text(helperAppexStatusText)
+                .font(.system(size: 10, weight: .medium, design: .monospaced))
+                .foregroundStyle(.white.opacity(0.60))
 
             if !vm.isUnpacking {
                 HStack(spacing: 10) {
