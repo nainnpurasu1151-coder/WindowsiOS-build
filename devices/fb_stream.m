@@ -14,6 +14,12 @@
  *                     as a non-secure context), then the MJPEG <img>.
  *                     The page also sends mouse/keyboard input back over
  *                     the same WebSocket as JSON text messages.
+ *                     The status bar carries a fullscreen button
+ *                     (requestFullscreen on the page wrapper, status bar
+ *                     included); the native cursor is hidden over the
+ *                     screen area so only the guest cursor shows.
+ *                     Input mapping uses getBoundingClientRect(), so it
+ *                     stays correct in fullscreen.
  *   GET /ws        -> WebSocket endpoint carrying hardware-encoded H.264
  *                     (VideoToolbox, Constrained Baseline + CAVLC,
  *                     1280 px wide max, ~30 fps, ~5 Mbps, realtime/
@@ -1166,14 +1172,20 @@ static const char kIndexHTML[] =
     "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
     "<title>WindowsiOS Screen</title>"
     "<style>html,body{margin:0;background:#111;height:100%;color:#ccc;font-family:sans-serif}"
-    "#st{height:24px;line-height:24px;font-size:13px;padding:0 8px;white-space:nowrap;overflow:hidden}"
-    "#stage{width:100%;height:calc(100% - 24px);touch-action:none}"
-    "canvas{display:block;max-width:100%;max-height:100%;margin:0 auto}"
-    "img{display:block;max-width:100%;max-height:100%;margin:0 auto}</style>"
-    "</head><body><div id=\"st\">connecting...</div>"
-    "<div id=\"stage\"><canvas id=\"cv\" width=\"1280\" height=\"960\"></canvas></div>"
+    "#wrap{height:100%;background:#111}"
+    "#wrap:fullscreen{width:100%;height:100%}"
+    "#st{height:24px;line-height:24px;font-size:13px;padding:0 8px;display:flex;align-items:center}"
+    "#stx{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"
+    "#fsb{margin-left:8px;font-size:12px;line-height:18px;padding:1px 10px;cursor:pointer;flex:none}"
+    "#stage{width:100%;height:calc(100% - 24px);touch-action:none;cursor:none}"
+    "canvas{display:block;max-width:100%;max-height:100%;margin:0 auto;cursor:none}"
+    "img{display:block;max-width:100%;max-height:100%;margin:0 auto;cursor:none}</style>"
+    "</head><body><div id=\"wrap\"><div id=\"st\"><span id=\"stx\">connecting...</span>"
+    "<button id=\"fsb\" type=\"button\">全画面</button></div>"
+    "<div id=\"stage\"><canvas id=\"cv\" width=\"1280\" height=\"960\"></canvas></div></div>"
     "<script>(function(){"
-    "var st=document.getElementById('st'),stage=document.getElementById('stage');"
+    "var stx=document.getElementById('stx'),stage=document.getElementById('stage');"
+    "var wrap=document.getElementById('wrap'),fsb=document.getElementById('fsb');"
     "var cv=document.getElementById('cv'),ctx2d=cv.getContext('2d');"
     "var surface=cv;"
     "var ws=null,guestW=0,guestH=0;"
@@ -1183,7 +1195,7 @@ static const char kIndexHTML[] =
     "var gotFirst=false,frames=0,dispW=0,dispH=0;"
     "var lastT=performance.now(),lastFrameT=performance.now(),connectT=performance.now();"
     "var retries=0,gaveUp=false;"
-    "function status(s){st.textContent=s;}"
+    "function status(s){stx.textContent=s;}"
     "function noteFps(tag){"
     "  frames++;"
     "  var now=performance.now();"
@@ -1486,6 +1498,16 @@ static const char kIndexHTML[] =
     "  sendObj({t:'k',code:ev.code,down:0});"
     "});"
     "window.addEventListener('blur',function(){sendObj({t:'r'});});"
+    "fsb.addEventListener('click',function(){"
+    "  if(document.fullscreenElement){document.exitFullscreen();}"
+    "  else if(wrap.requestFullscreen){"
+    "    var rp=wrap.requestFullscreen();"
+    "    if(rp&&rp.catch)rp.catch(function(){});"
+    "  }"
+    "});"
+    "document.addEventListener('fullscreenchange',function(){"
+    "  fsb.textContent=document.fullscreenElement?'終了':'全画面';"
+    "});"
     "if('VideoDecoder' in window&&'EncodedVideoChunk' in window){"
     "  mode='webcodecs';"
     "}else{"
