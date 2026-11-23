@@ -1,23 +1,35 @@
 /* SPDX-License-Identifier: GPL-2.0-or-later */
 /* fb_stream.m — LAN screen-streaming TEST server (H.264 + MJPEG over HTTP).
  *
- * Purpose: let another device on the home Wi-Fi (e.g. a Chromebook) view the
- * guest screen in a plain browser while all processing stays on the iPad.
- * This is a feasibility probe for latency/quality, not a finished feature:
- * view-only, no input injection, no authentication — LAN use only.
+ * Purpose: let another device on the home Wi-Fi (e.g. a Chromebook) view and
+ * operate the guest screen in a plain browser while all processing stays on
+ * the iPad. This is a feasibility probe for latency/quality, not a finished
+ * feature: no authentication — LAN use only.
  *
- * Two streaming paths share one tiny HTTP server (single port):
- *   GET /          -> WebCodecs player page (H.264 over WebSocket, below);
- *                     auto-falls back to the MJPEG <img> when WebCodecs is
- *                     unavailable or the H.264 path stalls.
+ * One tiny HTTP server (single port) carries everything:
+ *   GET /          -> player page. Video decode order: WebCodecs
+ *                     VideoDecoder, then the bundled WASM decoder
+ *                     (/decoder.js, TinyH264/h264bsd — the only option on
+ *                     plain-http LAN origins, where WebCodecs is blocked
+ *                     as a non-secure context), then the MJPEG <img>.
+ *                     The page also sends mouse/keyboard input back over
+ *                     the same WebSocket as JSON text messages.
  *   GET /ws        -> WebSocket endpoint carrying hardware-encoded H.264
- *                     (VideoToolbox, 1280 px wide max, ~30 fps, ~5 Mbps,
- *                     realtime/no-B-frame settings). Wire format per binary
+ *                     (VideoToolbox, Constrained Baseline + CAVLC,
+ *                     1280 px wide max, ~30 fps, ~5 Mbps, realtime/
+ *                     no-B-frame settings). Wire format per binary
  *                     message: [0x01][avcC] once per config, then
  *                     [0x02][flags][8-byte BE timestamp us][AVCC sample].
- *                     Senders never queue deep: a client that falls behind
- *                     is resynced at the next keyframe instead of being fed
- *                     stale frames.
+ *                     A text message {"t":"size",...} reports the guest
+ *                     framebuffer size for input coordinate mapping.
+ *                     Client->server text messages are input events
+ *                     ({"t":"m"|"b"|"w"|"k"|"r", ...}); only the most
+ *                     recently connected client is the input source.
+ *                     Senders never queue deep: a client that falls
+ *                     behind is resynced at the next keyframe instead of
+ *                     being fed stale frames.
+ *   GET /decoder.js-> TinyH264 WASM decoder bundle (embedded base64, see
+ *                     fb_stream_decoder.h).
  *   GET /stream    -> multipart/x-mixed-replace MJPEG (~10 fps, <=1024 px
  *                     wide, JPEG q=0.6). Kept as fallback/debug path.
  *   GET /frame.jpg -> single JPEG snapshot.
@@ -25,6 +37,8 @@
  * The server runs on detached pthreads and only ever reads the framebuffer
  * through hv_fb_display_get_frame(); each frame is copied row-by-row on the
  * streaming thread before conversion, so the Metal presenter is unaffected.
+ * Input is injected exclusively through the existing host hooks
+ * hv_winvm_tablet() / hv_winvm_key_hid() (host/winvm.h).
  */
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
@@ -50,6 +64,8 @@
 
 #include "fb_display.h"
 #include "fb_stream.h"
+#include "fb_stream_decoder.h"
+#include "winvm.h"
 
 #define FB_STREAM_MAX_WIDTH 1024u
 #define FB_STREAM_FRAME_US 100000 /* ~10 fps */
@@ -84,6 +100,47 @@ static int write_all(int fd, const void *buf, size_t len) {
 
 static int send_str(int fd, const char *s) {
     return write_all(fd, s, strlen(s));
+}
+
+/* ---------- embedded WASM decoder bundle (/decoder.js) ---------- */
+
+static uint8_t *g_decoder_js;
+static size_t g_decoder_js_len;
+
+static void decoder_js_decode_once(void) {
+    static const char tbl[] =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    int8_t val[256];
+    for (int i = 0; i < 256; i++) val[i] = -1;
+    for (int i = 0; i < 64; i++) val[(uint8_t)tbl[i]] = (int8_t)i;
+
+    const char *b64 = kFbStreamDecoderJSBase64;
+    size_t blen = strlen(b64);
+    uint8_t *buf = (uint8_t *)malloc(blen * 3 / 4 + 4);
+    if (!buf) return;
+    size_t n = 0;
+    uint32_t acc = 0;
+    int nbits = 0;
+    for (size_t i = 0; i < blen; i++) {
+        int8_t v = val[(uint8_t)b64[i]];
+        if (v < 0) continue; /* skips '=' padding and any whitespace */
+        acc = (acc << 6) | (uint32_t)v;
+        nbits += 6;
+        if (nbits >= 8) {
+            nbits -= 8;
+            buf[n++] = (uint8_t)(acc >> nbits);
+        }
+    }
+    g_decoder_js = buf;
+    g_decoder_js_len = n;
+}
+
+/* Decode-once accessor for the embedded TinyH264 bundle. */
+static const uint8_t *decoder_js_bytes(size_t *out_len) {
+    static pthread_once_t once = PTHREAD_ONCE_INIT;
+    pthread_once(&once, decoder_js_decode_once);
+    if (out_len) *out_len = g_decoder_js_len;
+    return g_decoder_js;
 }
 
 /* ---------- MJPEG path (unchanged from the first test build) ---------- */
@@ -176,12 +233,19 @@ typedef struct WsClient {
     int qcount;
     pthread_mutex_t mu;
     struct WsClient *next; /* guarded by g_h264.mu */
+    /* Input state: touched only by this client's own thread. */
+    double in_x, in_y;  /* normalized pointer position, 0..1 */
+    uint8_t in_buttons; /* HID tablet button bits currently held */
+    double wheel_acc;   /* sub-step wheel remainder */
+    uint8_t keys[24];   /* HID usages currently held */
+    int nkeys;
 } WsClient;
 
 /* Lock order is always g_h264.mu -> WsClient.mu, never the reverse. */
 static struct {
     pthread_mutex_t mu;
     WsClient *clients;
+    WsClient *input_owner; /* guarded by mu: only this client may inject */
     int client_count;
     int encoder_run;    /* encoder thread should keep looping */
     int encoder_active; /* encoder thread exists */
@@ -411,8 +475,14 @@ static int h264_create_session(uint32_t tw, uint32_t th) {
         VTSessionSetProperty(s, kVTCompressionPropertyKey_MaxKeyFrameIntervalDuration, n_kfid);
         CFRelease(n_kfid);
     }
+    /* Constrained Baseline + CAVLC: the subset the in-page WASM decoder
+       (h264bsd via TinyH264) handles reliably — no CABAC, no B-frames
+       (already off above), no interlace. WebCodecs decodes it fine too,
+       and the avcC the clients receive reflects the change automatically. */
     VTSessionSetProperty(s, kVTCompressionPropertyKey_ProfileLevel,
-                         kVTProfileLevel_H264_High_AutoLevel);
+                         kVTProfileLevel_H264_Baseline_AutoLevel);
+    VTSessionSetProperty(s, kVTCompressionPropertyKey_H264EntropyMode,
+                         kVTH264EntropyMode_CAVLC);
     st = VTCompressionSessionPrepareToEncodeFrames(s);
     if (st != noErr) {
         fprintf(stderr, "fb_stream: VTCompressionSessionPrepare failed: %d\n", (int)st);
@@ -597,6 +667,7 @@ static void h264_client_register(WsClient *c) {
     pthread_mutex_lock(&g_h264.mu);
     c->next = g_h264.clients;
     g_h264.clients = c;
+    g_h264.input_owner = c; /* newest client is the input source */
     g_h264.client_count++;
     g_h264.force_key = 1; /* let the newcomer start at a keyframe ASAP */
     g_h264.encoder_run = 1;
@@ -619,9 +690,181 @@ static void h264_client_unregister(WsClient *c) {
     WsClient **pp = &g_h264.clients;
     while (*pp && *pp != c) pp = &(*pp)->next;
     if (*pp) *pp = c->next;
+    if (g_h264.input_owner == c) g_h264.input_owner = NULL;
     if (g_h264.client_count > 0) g_h264.client_count--;
     if (g_h264.client_count == 0) g_h264.encoder_run = 0;
     pthread_mutex_unlock(&g_h264.mu);
+}
+
+/* ---------- input injection (client -> server JSON text) ---------- */
+
+/* Minimal JSON field extraction: the messages come from our own player
+   page, so a strict parser is unnecessary. Finds "key" then ':' and
+   parses the value that follows. */
+static int fb_json_num(const char *js, const char *key, double *out) {
+    char pat[32];
+    snprintf(pat, sizeof(pat), "\"%s\"", key);
+    const char *p = strstr(js, pat);
+    if (!p) return 0;
+    p += strlen(pat);
+    while (*p == ' ' || *p == '\t' || *p == ':') p++;
+    char *end = NULL;
+    double v = strtod(p, &end);
+    if (end == p) return 0;
+    *out = v;
+    return 1;
+}
+
+static int fb_json_str(const char *js, const char *key, char *out, size_t outlen) {
+    char pat[32];
+    snprintf(pat, sizeof(pat), "\"%s\"", key);
+    const char *p = strstr(js, pat);
+    if (!p) return 0;
+    p += strlen(pat);
+    while (*p == ' ' || *p == '\t' || *p == ':') p++;
+    if (*p != '"') return 0;
+    p++;
+    size_t n = 0;
+    while (*p && *p != '"' && n < outlen - 1) out[n++] = *p++;
+    out[n] = '\0';
+    return n > 0;
+}
+
+/* Map a browser KeyboardEvent.code to a USB HID keyboard usage (page 0x07),
+   the form hv_winvm_key_hid() expects. Returns 0 for unmapped codes. */
+static uint8_t fb_hid_usage_for_code(const char *code) {
+    if (strlen(code) == 4 && strncmp(code, "Key", 3) == 0 &&
+        code[3] >= 'A' && code[3] <= 'Z')
+        return (uint8_t)(0x04 + (code[3] - 'A'));
+    if (strlen(code) == 6 && strncmp(code, "Digit", 5) == 0 &&
+        code[5] >= '0' && code[5] <= '9')
+        return code[5] == '0' ? 0x27 : (uint8_t)(0x1E + (code[5] - '1'));
+    if (strlen(code) == 7 && strncmp(code, "Numpad", 6) == 0 &&
+        code[6] >= '0' && code[6] <= '9')
+        return code[6] == '0' ? 0x62 : (uint8_t)(0x59 + (code[6] - '1'));
+    if (code[0] == 'F' && code[1] >= '1' && code[1] <= '9') {
+        int n = atoi(code + 1);
+        if (n >= 1 && n <= 12) return (uint8_t)(0x3A + n - 1);
+    }
+    static const struct { const char *code; uint8_t usage; } kNamed[] = {
+        { "Enter", 0x28 }, { "Escape", 0x29 }, { "Backspace", 0x2A },
+        { "Tab", 0x2B }, { "Space", 0x2C }, { "Minus", 0x2D },
+        { "Equal", 0x2E }, { "BracketLeft", 0x2F }, { "BracketRight", 0x30 },
+        { "Backslash", 0x31 }, { "NonUSHash", 0x32 }, { "Semicolon", 0x33 },
+        { "Quote", 0x34 }, { "Backquote", 0x35 }, { "Comma", 0x36 },
+        { "Period", 0x37 }, { "Slash", 0x38 }, { "CapsLock", 0x39 },
+        { "PrintScreen", 0x46 }, { "ScrollLock", 0x47 }, { "Pause", 0x48 },
+        { "Insert", 0x49 }, { "Home", 0x4A }, { "PageUp", 0x4B },
+        { "Delete", 0x4C }, { "End", 0x4D }, { "PageDown", 0x4E },
+        { "ArrowRight", 0x4F }, { "ArrowLeft", 0x50 }, { "ArrowDown", 0x51 },
+        { "ArrowUp", 0x52 }, { "NumLock", 0x53 }, { "NumpadDivide", 0x54 },
+        { "NumpadMultiply", 0x55 }, { "NumpadSubtract", 0x56 },
+        { "NumpadAdd", 0x57 }, { "NumpadEnter", 0x58 },
+        { "NumpadDecimal", 0x63 }, { "NumpadEqual", 0x67 },
+        { "IntlBackslash", 0x64 }, { "IntlRo", 0x87 }, { "IntlYen", 0x89 },
+        { "ContextMenu", 0x65 }, { "ControlLeft", 0xE0 },
+        { "ShiftLeft", 0xE1 }, { "AltLeft", 0xE2 }, { "MetaLeft", 0xE3 },
+        { "ControlRight", 0xE4 }, { "ShiftRight", 0xE5 }, { "AltRight", 0xE6 },
+        { "MetaRight", 0xE7 }, { "Lang1", 0x90 }, { "Lang2", 0x91 },
+    };
+    for (size_t i = 0; i < sizeof(kNamed) / sizeof(kNamed[0]); i++)
+        if (strcmp(code, kNamed[i].code) == 0) return kNamed[i].usage;
+    return 0;
+}
+
+/* Release everything this client is holding in the guest. */
+static void fb_input_release_all(WsClient *c) {
+    for (int i = 0; i < c->nkeys; i++) hv_winvm_key_hid(c->keys[i], 0);
+    c->nkeys = 0;
+    if (c->in_buttons) {
+        c->in_buttons = 0;
+        hv_winvm_tablet(c->in_x, c->in_y, 0, 0);
+    }
+    c->wheel_acc = 0;
+}
+
+/* Handle one input JSON text message from client `c`. Runs on c's own
+   thread; messages from any client other than the input owner are ignored. */
+static void fb_input_handle(WsClient *c, const uint8_t *data, size_t len) {
+    pthread_mutex_lock(&g_h264.mu);
+    int owner = (g_h264.input_owner == c);
+    pthread_mutex_unlock(&g_h264.mu);
+    if (!owner) return;
+
+    char js[1024];
+    if (len == 0 || len >= sizeof(js)) return;
+    memcpy(js, data, len);
+    js[len] = '\0';
+
+    char tbuf[8];
+    if (!fb_json_str(js, "t", tbuf, sizeof(tbuf))) return;
+
+    if (tbuf[0] == 'm') { /* pointer move, guest-pixel coordinates */
+        double gx, gy;
+        if (!fb_json_num(js, "x", &gx) || !fb_json_num(js, "y", &gy)) return;
+        const uint8_t *px = NULL;
+        uint32_t w = 0, h = 0, stride = 0;
+        if (!g_fb || hv_fb_display_get_frame(g_fb, &px, &w, &h, &stride) != 0)
+            return;
+        double nx = w > 1 ? gx / (double)(w - 1) : 0.0;
+        double ny = h > 1 ? gy / (double)(h - 1) : 0.0;
+        if (nx < 0) nx = 0;
+        if (nx > 1) nx = 1;
+        if (ny < 0) ny = 0;
+        if (ny > 1) ny = 1;
+        c->in_x = nx;
+        c->in_y = ny;
+        hv_winvm_tablet(nx, ny, c->in_buttons, 0);
+    } else if (tbuf[0] == 'b') { /* pointer button */
+        double btn, down;
+        if (!fb_json_num(js, "btn", &btn) || !fb_json_num(js, "down", &down))
+            return;
+        /* Browser MouseEvent.button: 0=left, 1=middle, 2=right.
+           HID tablet bits: bit0=left, bit1=right, bit2=middle. */
+        uint8_t bit = btn == 0 ? 0x01 : btn == 2 ? 0x02 : btn == 1 ? 0x04 : 0;
+        if (!bit) return;
+        if (down) c->in_buttons |= bit;
+        else c->in_buttons &= (uint8_t)~bit;
+        hv_winvm_tablet(c->in_x, c->in_y, c->in_buttons, 0);
+    } else if (tbuf[0] == 'w') { /* wheel; dy is browser deltaY (down>0) */
+        double dy;
+        if (!fb_json_num(js, "dy", &dy)) return;
+        c->wheel_acc += -dy; /* HID wheel: positive = up/away */
+        int steps = (int)(c->wheel_acc / 40.0);
+        if (steps != 0) {
+            c->wheel_acc -= steps * 40.0;
+            if (steps > 127) steps = 127;
+            if (steps < -127) steps = -127;
+            hv_winvm_tablet(c->in_x, c->in_y, c->in_buttons, (int8_t)steps);
+        }
+    } else if (tbuf[0] == 'k') { /* keyboard, KeyboardEvent.code */
+        char code[32];
+        double down;
+        if (!fb_json_str(js, "code", code, sizeof(code)) ||
+            !fb_json_num(js, "down", &down))
+            return;
+        uint8_t usage = fb_hid_usage_for_code(code);
+        if (!usage) return;
+        if (down) {
+            int held = 0;
+            for (int i = 0; i < c->nkeys; i++)
+                if (c->keys[i] == usage) held = 1;
+            if (!held && c->nkeys < (int)(sizeof(c->keys) / sizeof(c->keys[0]))) {
+                c->keys[c->nkeys++] = usage;
+                hv_winvm_key_hid(usage, 1);
+            }
+        } else {
+            for (int i = 0; i < c->nkeys; i++) {
+                if (c->keys[i] == usage) {
+                    c->keys[i] = c->keys[--c->nkeys];
+                    hv_winvm_key_hid(usage, 0);
+                    break;
+                }
+            }
+        }
+    } else if (tbuf[0] == 'r') { /* release all (page blur) */
+        fb_input_release_all(c);
+    }
 }
 
 /* ---------- WebSocket transport (minimal, server side) ---------- */
@@ -710,8 +953,9 @@ typedef struct {
 } WsReader;
 
 /* Read whatever is available and consume complete client frames: close
-   ends the connection, ping is answered with pong, everything else from
-   the player page is ignored. Returns -1 when the connection is over. */
+   ends the connection, ping is answered with pong, and complete text
+   frames are dispatched to the input handler. Returns -1 when the
+   connection is over. */
 static int ws_handle_input(WsClient *c, WsReader *r) {
     if (r->len == sizeof(r->buf)) return -1; /* frame larger than buffer: give up */
     ssize_t n = read(r->fd, r->buf + r->len, sizeof(r->buf) - r->len);
@@ -748,9 +992,14 @@ static int ws_handle_input(WsClient *c, WsReader *r) {
             const uint8_t *mk = r->buf + off + hdr - 4;
             for (uint64_t i = 0; i < plen; i++) payload[i] ^= mk[i & 3];
         }
+        int fin = (b0 & 0x80) != 0;
         if (opcode == 0x8) return -1; /* close */
         if (opcode == 0x9) {          /* ping -> pong */
             if (ws_send(c->fd, 0xA, payload, (size_t)plen) != 0) return -1;
+        } else if (opcode == 0x1 && fin) {
+            /* Text message: player-page input events (JSON). Fragmented
+               messages are not expected from our page and are dropped. */
+            fb_input_handle(c, payload, (size_t)plen);
         }
         off += hdr + (size_t)plen;
     }
@@ -783,6 +1032,8 @@ static void handle_ws_client(int fd, const char *req) {
     }
     c->fd = fd;
     c->need_key = 1;
+    c->in_x = 0.5;
+    c->in_y = 0.5;
     pthread_mutex_init(&c->mu, NULL);
     h264_client_register(c);
     fprintf(stderr, "fb_stream: H.264 WebSocket client connected\n");
@@ -792,8 +1043,44 @@ static void handle_ws_client(int fd, const char *req) {
     memset(&r, 0, sizeof(r));
     r.fd = fd;
     uint32_t sent_gen = 0;
+    uint32_t sent_gw = 0, sent_gh = 0;
     int dead = 0;
     while (!dead) {
+        /* 0a) client->server traffic (input events) must not wait for a
+           gap in the video flow: poll without blocking every iteration. */
+        {
+            struct pollfd ipfd;
+            ipfd.fd = fd;
+            ipfd.events = POLLIN;
+            ipfd.revents = 0;
+            if (poll(&ipfd, 1, 0) > 0) {
+                if ((ipfd.revents & POLLIN) && ws_handle_input(c, &r) != 0)
+                    dead = 1;
+                if (ipfd.revents & (POLLERR | POLLHUP)) dead = 1;
+            }
+            if (dead) break;
+        }
+
+        /* 0b) tell the page the guest framebuffer size (for mapping
+           pointer coordinates to guest pixels) whenever it changes */
+        {
+            const uint8_t *fpx = NULL;
+            uint32_t fw = 0, fh = 0, fstride = 0;
+            if (g_fb && hv_fb_display_get_frame(g_fb, &fpx, &fw, &fh, &fstride) == 0 &&
+                fw > 0 && fh > 0 && (fw != sent_gw || fh != sent_gh)) {
+                char msg[64];
+                int mn = snprintf(msg, sizeof(msg),
+                                  "{\"t\":\"size\",\"w\":%u,\"h\":%u}", fw, fh);
+                if (mn > 0 && ws_send(fd, 0x1, (const uint8_t *)msg, (size_t)mn) != 0)
+                    dead = 1;
+                else {
+                    sent_gw = fw;
+                    sent_gh = fh;
+                }
+            }
+            if (dead) break;
+        }
+
         /* 1) config first whenever it changed */
         uint8_t *cfg = NULL;
         size_t cfg_len = 0;
@@ -852,6 +1139,7 @@ static void handle_ws_client(int fd, const char *req) {
         }
     }
 
+    fb_input_release_all(c); /* never leave keys/buttons held in the guest */
     h264_client_unregister(c);
     /* Unregistered: no distributor can reference c anymore. */
     pthread_mutex_lock(&c->mu);
@@ -877,74 +1165,337 @@ static const char kIndexHTML[] =
     "<!DOCTYPE html><html><head><meta charset=\"utf-8\">"
     "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
     "<title>WindowsiOS Screen</title>"
-    "<style>html,body{margin:0;background:#111;height:100%;color:#ccc;"
-    "font-family:sans-serif}"
-    "#st{height:24px;line-height:24px;font-size:13px;padding:0 8px;"
-    "white-space:nowrap;overflow:hidden}"
-    "canvas{display:block;max-width:100%;max-height:calc(100% - 24px);"
-    "margin:0 auto}"
+    "<style>html,body{margin:0;background:#111;height:100%;color:#ccc;font-family:sans-serif}"
+    "#st{height:24px;line-height:24px;font-size:13px;padding:0 8px;white-space:nowrap;overflow:hidden}"
+    "#stage{width:100%;height:calc(100% - 24px);touch-action:none}"
+    "canvas{display:block;max-width:100%;max-height:100%;margin:0 auto}"
     "img{display:block;max-width:100%;max-height:100%;margin:0 auto}</style>"
     "</head><body><div id=\"st\">connecting...</div>"
-    "<canvas id=\"cv\" width=\"1280\" height=\"960\"></canvas>"
+    "<div id=\"stage\"><canvas id=\"cv\" width=\"1280\" height=\"960\"></canvas></div>"
     "<script>(function(){"
-    "var st=document.getElementById('st'),cv=document.getElementById('cv'),"
-    "ctx=cv.getContext('2d');"
-    "var decoder=null,ws=null,gotFirst=false,gaveUp=false,retries=0,frames=0,"
-    "lastT=performance.now();"
+    "var st=document.getElementById('st'),stage=document.getElementById('stage');"
+    "var cv=document.getElementById('cv'),ctx2d=cv.getContext('2d');"
+    "var surface=cv;"
+    "var ws=null,guestW=0,guestH=0;"
+    "var mode='none',reasons=[];"
+    "var avcc=null,spsNal=null,ppsNal=null,needKey=true,wcNeedKey=false;"
+    "var vd=null,wasmDec=null,wasmState='idle';"
+    "var gotFirst=false,frames=0,dispW=0,dispH=0;"
+    "var lastT=performance.now(),lastFrameT=performance.now(),connectT=performance.now();"
+    "var retries=0,gaveUp=false;"
     "function status(s){st.textContent=s;}"
-    "function fallback(){if(gaveUp)return;gaveUp=true;"
-    "try{if(ws)ws.close();}catch(e){}"
-    "status('H.264 unavailable - MJPEG fallback');"
-    "var img=document.createElement('img');img.src='/stream';"
-    "img.alt='guest screen';cv.replaceWith(img);}"
-    "setTimeout(function(){if(!gotFirst)fallback();},10000);"
+    "function noteFps(tag){"
+    "  frames++;"
+    "  var now=performance.now();"
+    "  if(now-lastT>=1000){"
+    "    status(tag+' - '+frames+' fps, '+dispW+'x'+dispH);"
+    "    frames=0;lastT=now;"
+    "  }"
+    "}"
+    "function vcSetup(){"
+    "  var hx=function(b){return ('0'+b.toString(16)).slice(-2);};"
+    "  var codec='avc1.'+hx(avcc[1])+hx(avcc[2])+hx(avcc[3]);"
+    "  if(vd&&vd.state!=='closed'){try{vd.close();}catch(e){}}"
+    "  vd=new VideoDecoder({"
+    "    output:function(f){"
+    "      if(cv.width!==f.displayWidth||cv.height!==f.displayHeight){"
+    "        cv.width=f.displayWidth;cv.height=f.displayHeight;"
+    "      }"
+    "      dispW=f.displayWidth;dispH=f.displayHeight;"
+    "      try{ctx2d.drawImage(f,0,0);}catch(e){}"
+    "      f.close();"
+    "      gotFirst=true;lastFrameT=performance.now();"
+    "      noteFps('H.264 (WebCodecs)');"
+    "    },"
+    "    error:function(e){if(mode==='webcodecs')startWasm('decode-error');}"
+    "  });"
+    "  try{"
+    "    vd.configure({codec:codec,description:avcc.buffer,optimizeForLatency:true});"
+    "  }catch(e){"
+    "    vd=null;"
+    "    startWasm('configure-failed');"
+    "  }"
+    "}"
+    "function vcFeed(u){"
+    "  if(!vd||vd.state!=='configured')return;"
+    "  var key=(u[1]&1)!==0;"
+    "  if(wcNeedKey&&!key)return;"
+    "  if(vd.decodeQueueSize>6){wcNeedKey=true;return;}"
+    "  if(key)wcNeedKey=false;"
+    "  var ts=0;for(var i=0;i<8;i++){ts=ts*256+u[2+i];}"
+    "  try{"
+    "    vd.decode(new EncodedVideoChunk({type:key?'key':'delta',timestamp:ts,data:u.subarray(10)}));"
+    "  }catch(e){if(mode==='webcodecs')startWasm('decode-error');}"
+    "}"
+    "function startWasm(reason){"
+    "  if(mode==='wasm'||mode==='mjpeg')return;"
+    "  if(reason)reasons.push(reason);"
+    "  mode='wasm';needKey=true;"
+    "  status('loading WASM decoder...');"
+    "  if(wasmState==='ready'||wasmState==='loading')return;"
+    "  wasmState='loading';"
+    "  var sc=document.createElement('script');"
+    "  sc.src='/decoder.js';"
+    "  sc.onload=function(){"
+    "    try{"
+    "      window.__TinyH264Factory().then(function(mod){"
+    "        try{"
+    "          wasmDec=new window.__TinyH264Decoder(mod,onWasmPicture);"
+    "          wasmState='ready';"
+    "        }catch(e){wasmState='failed';toMjpeg('wasm-init-failed');}"
+    "      },function(e){wasmState='failed';toMjpeg('wasm-load-failed');});"
+    "    }catch(e){wasmState='failed';toMjpeg('wasm-load-failed');}"
+    "  };"
+    "  sc.onerror=function(){wasmState='failed';toMjpeg('wasm-load-failed');};"
+    "  document.head.appendChild(sc);"
+    "}"
+    "var SC4=new Uint8Array([0,0,0,1]);"
+    "function feedNal(nal){"
+    "  if(!wasmDec||!nal)return;"
+    "  var buf=new Uint8Array(4+nal.length);"
+    "  buf.set(SC4,0);buf.set(nal,4);"
+    "  try{wasmDec.decode(buf);}catch(e){if(mode==='wasm')toMjpeg('decode-error');}"
+    "}"
+    "function wasmFeed(u){"
+    "  if(wasmState!=='ready')return;"
+    "  var key=(u[1]&1)!==0;"
+    "  var data=u.subarray(10);"
+    "  if(key){"
+    "    feedNal(spsNal);feedNal(ppsNal);needKey=false;"
+    "  }else if(needKey){"
+    "    return;"
+    "  }"
+    "  var off=0;"
+    "  while(off+4<=data.length){"
+    "    var len=((data[off]<<24)|(data[off+1]<<16)|(data[off+2]<<8)|data[off+3])>>>0;"
+    "    off+=4;"
+    "    if(len<=0||off+len>data.length)break;"
+    "    feedNal(data.subarray(off,off+len));"
+    "    off+=len;"
+    "  }"
+    "}"
+    "var glc=null,gl=null,glTexY=null,glTexU=null,glTexV=null;"
+    "function glInit(w,h){"
+    "  glc=document.createElement('canvas');"
+    "  glc.width=w;glc.height=h;"
+    "  gl=glc.getContext('webgl')||glc.getContext('experimental-webgl');"
+    "  if(!gl)return false;"
+    "  var vs='attribute vec2 p;varying vec2 v;void main(){v=vec2(p.x*0.5+0.5,0.5-p.y*0.5);gl_Position=vec4(p,0.0,1.0);}';"
+    "  var fs='precision mediump float;varying vec2 v;uniform sampler2D ty,tu,tv;'+"
+    "    'void main(){float y=texture2D(ty,v).r;float u=texture2D(tu,v).r-0.5;float w=texture2D(tv,v).r-0.5;'+"
+    "    'y=1.1643*(y-0.0625);'+"
+    "    'gl_FragColor=vec4(y+1.5960*w,y-0.3918*u-0.8130*w,y+2.0172*u,1.0);}';"
+    "  function mkSh(t,src){var s=gl.createShader(t);gl.shaderSource(s,src);gl.compileShader(s);return s;}"
+    "  var pr=gl.createProgram();"
+    "  gl.attachShader(pr,mkSh(gl.VERTEX_SHADER,vs));"
+    "  gl.attachShader(pr,mkSh(gl.FRAGMENT_SHADER,fs));"
+    "  gl.linkProgram(pr);"
+    "  if(!gl.getProgramParameter(pr,gl.LINK_STATUS))return false;"
+    "  gl.useProgram(pr);"
+    "  var bfr=gl.createBuffer();"
+    "  gl.bindBuffer(gl.ARRAY_BUFFER,bfr);"
+    "  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);"
+    "  var loc=gl.getAttribLocation(pr,'p');"
+    "  gl.enableVertexAttribArray(loc);"
+    "  gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);"
+    "  gl.uniform1i(gl.getUniformLocation(pr,'ty'),0);"
+    "  gl.uniform1i(gl.getUniformLocation(pr,'tu'),1);"
+    "  gl.uniform1i(gl.getUniformLocation(pr,'tv'),2);"
+    "  gl.pixelStorei(gl.UNPACK_ALIGNMENT,1);"
+    "  function mkTex(){var t=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t);"
+    "    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);"
+    "    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);"
+    "    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);"
+    "    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);return t;}"
+    "  glTexY=mkTex();glTexU=mkTex();glTexV=mkTex();"
+    "  stage.replaceChildren(glc);"
+    "  surface=glc;"
+    "  return true;"
+    "}"
+    "function drawYUV(pic,w,h){"
+    "  if(!gl||!glc||glc.width!==w||glc.height!==h){"
+    "    if(!glInit(w,h)){drawYUV2d(pic,w,h);return;}"
+    "  }"
+    "  var cw=w>>1,ch=h>>1,yLen=w*h,cLen=cw*ch;"
+    "  gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,glTexY);"
+    "  gl.texImage2D(gl.TEXTURE_2D,0,gl.LUMINANCE,w,h,0,gl.LUMINANCE,gl.UNSIGNED_BYTE,pic.subarray(0,yLen));"
+    "  gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,glTexU);"
+    "  gl.texImage2D(gl.TEXTURE_2D,0,gl.LUMINANCE,cw,ch,0,gl.LUMINANCE,gl.UNSIGNED_BYTE,pic.subarray(yLen,yLen+cLen));"
+    "  gl.activeTexture(gl.TEXTURE2);gl.bindTexture(gl.TEXTURE_2D,glTexV);"
+    "  gl.texImage2D(gl.TEXTURE_2D,0,gl.LUMINANCE,cw,ch,0,gl.LUMINANCE,gl.UNSIGNED_BYTE,pic.subarray(yLen+cLen,yLen+2*cLen));"
+    "  gl.viewport(0,0,w,h);"
+    "  gl.drawArrays(gl.TRIANGLE_STRIP,0,4);"
+    "}"
+    "var imgData=null;"
+    "function drawYUV2d(pic,w,h){"
+    "  if(surface!==cv){stage.replaceChildren(cv);surface=cv;}"
+    "  if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;imgData=null;}"
+    "  if(!imgData)imgData=ctx2d.createImageData(w,h);"
+    "  var d=imgData.data,cw=w>>1,yLen=w*h,cLen=cw*(h>>1);"
+    "  for(var y=0;y<h;y++){"
+    "    var yRow=y*w,uRow=(y>>1)*cw;"
+    "    for(var x=0;x<w;x++){"
+    "      var yy=pic[yRow+x]-16;"
+    "      var ci=yLen+uRow+(x>>1);"
+    "      var uu=pic[ci]-128,vv=pic[yLen+cLen+uRow+(x>>1)]-128;"
+    "      var o=(yRow+x)*4,Y=298*yy;"
+    "      d[o]=(Y+409*vv+128)>>8;"
+    "      d[o+1]=(Y-100*uu-208*vv+128)>>8;"
+    "      d[o+2]=(Y+516*uu+128)>>8;"
+    "      d[o+3]=255;"
+    "    }"
+    "  }"
+    "  ctx2d.putImageData(imgData,0,0);"
+    "}"
+    "function onWasmPicture(pic,w,h){"
+    "  dispW=w;dispH=h;gotFirst=true;lastFrameT=performance.now();"
+    "  drawYUV(pic,w,h);"
+    "  noteFps('H.264 (WASM)');"
+    "}"
+    "function toMjpeg(reason){"
+    "  if(mode==='mjpeg')return;"
+    "  if(reason)reasons.push(reason);"
+    "  mode='mjpeg';"
+    "  var img=document.createElement('img');"
+    "  img.src='/stream';img.alt='guest screen';"
+    "  stage.replaceChildren(img);surface=img;"
+    "  status('MJPEG fallback (reason: '+(reasons.length?reasons.join(', '):'unknown')+')');"
+    "}"
+    "function parseAvcc(a){"
+    "  spsNal=null;ppsNal=null;"
+    "  if(a.length<7)return;"
+    "  var o=5;"
+    "  var nSps=a[o++]&0x1f;"
+    "  for(var i=0;i<nSps;i++){"
+    "    if(o+2>a.length)return;"
+    "    var len=(a[o]<<8)|a[o+1];o+=2;"
+    "    if(o+len>a.length)return;"
+    "    if(i===0)spsNal=a.slice(o,o+len);"
+    "    o+=len;"
+    "  }"
+    "  if(o>=a.length)return;"
+    "  var nPps=a[o++];"
+    "  for(var j=0;j<nPps;j++){"
+    "    if(o+2>a.length)return;"
+    "    var len2=(a[o]<<8)|a[o+1];o+=2;"
+    "    if(o+len2>a.length)return;"
+    "    if(j===0)ppsNal=a.slice(o,o+len2);"
+    "    o+=len2;"
+    "  }"
+    "}"
     "function connect(){"
-    "decoder=null;"
-    "ws=new WebSocket('ws://'+location.host+'/ws');"
-    "ws.binaryType='arraybuffer';"
-    "ws.onmessage=function(ev){"
-    "var u=new Uint8Array(ev.data);if(u.length<1)return;"
-    "if(u[0]===1){"
-    "var avcc=u.slice(1);"
-    "var hx=function(b){return ('0'+b.toString(16)).slice(-2);};"
-    "var codec='avc1.'+hx(avcc[1])+hx(avcc[2])+hx(avcc[3]);"
-    "if(decoder&&decoder.state!=='closed'){try{decoder.close();}catch(e){}}"
-    "decoder=new VideoDecoder({"
-    "output:function(f){"
-    "if(cv.width!==f.displayWidth||cv.height!==f.displayHeight){"
-    "cv.width=f.displayWidth;cv.height=f.displayHeight;}"
-    "ctx.drawImage(f,0,0);f.close();"
-    "gotFirst=true;retries=0;frames++;"
-    "var now=performance.now();"
-    "if(now-lastT>=1000){status('H.264 live - '+frames+' fps, '+cv.width+'x'+cv.height);"
-    "frames=0;lastT=now;}"
-    "},"
-    "error:function(e){status('decoder error - reconnecting');"
-    "try{ws.close();}catch(_){}}"
+    "  needKey=true;wcNeedKey=false;connectT=performance.now();"
+    "  ws=new WebSocket('ws://'+location.host+'/ws');"
+    "  ws.binaryType='arraybuffer';"
+    "  ws.onmessage=function(ev){"
+    "    if(typeof ev.data==='string'){"
+    "      try{"
+    "        var m=JSON.parse(ev.data);"
+    "        if(m.t==='size'){guestW=m.w;guestH=m.h;}"
+    "      }catch(e){}"
+    "      return;"
+    "    }"
+    "    var u=new Uint8Array(ev.data);"
+    "    if(u.length<1)return;"
+    "    if(u[0]===1){"
+    "      avcc=u.slice(1);"
+    "      parseAvcc(avcc);"
+    "      needKey=true;wcNeedKey=false;"
+    "      if(mode==='webcodecs')vcSetup();"
+    "    }else if(u[0]===2){"
+    "      if(mode==='webcodecs')vcFeed(u);"
+    "      else if(mode==='wasm')wasmFeed(u);"
+    "    }"
+    "  };"
+    "  ws.onclose=function(){"
+    "    if(retries<5){"
+    "      retries++;"
+    "      if(mode!=='mjpeg')status('reconnecting...');"
+    "      setTimeout(connect,500);"
+    "    }else{"
+    "      gaveUp=true;"
+    "      if(mode!=='mjpeg')toMjpeg('ws-closed');"
+    "    }"
+    "  };"
+    "  ws.onerror=function(){};"
+    "}"
+    "setInterval(function(){"
+    "  if(mode==='mjpeg'||mode==='none')return;"
+    "  var now=performance.now();"
+    "  var ref=gotFirst?lastFrameT:connectT;"
+    "  if(now-ref>9000){"
+    "    if(mode==='webcodecs'){"
+    "      gotFirst=false;lastFrameT=now;connectT=now;"
+    "      startWasm('no-frames');"
+    "    }else if(mode==='wasm'){"
+    "      toMjpeg(wasmState==='ready'?'no-frames':'wasm-timeout');"
+    "    }"
+    "  }"
+    "},1000);"
+    "function sendObj(o){"
+    "  if(ws&&ws.readyState===1){try{ws.send(JSON.stringify(o));}catch(e){}}"
+    "}"
+    "var lastGX=-1,lastGY=-1,lastMoveT=0,wheelAcc=0;"
+    "function guestPos(ev){"
+    "  if(!guestW||!guestH||!surface)return null;"
+    "  var r=surface.getBoundingClientRect();"
+    "  if(r.width<2||r.height<2)return null;"
+    "  var nx=(ev.clientX-r.left)/r.width,ny=(ev.clientY-r.top)/r.height;"
+    "  if(nx<0)nx=0;if(nx>1)nx=1;if(ny<0)ny=0;if(ny>1)ny=1;"
+    "  return [Math.round(nx*(guestW-1)),Math.round(ny*(guestH-1))];"
+    "}"
+    "stage.addEventListener('pointerdown',function(ev){"
+    "  ev.preventDefault();"
+    "  var p=guestPos(ev);if(!p)return;"
+    "  lastGX=p[0];lastGY=p[1];"
+    "  sendObj({t:'m',x:p[0],y:p[1]});"
+    "  sendObj({t:'b',btn:ev.button,down:1});"
+    "  try{stage.setPointerCapture(ev.pointerId);}catch(e){}"
     "});"
-    "try{decoder.configure({codec:codec,description:avcc.buffer,"
-    "optimizeForLatency:true});}"
-    "catch(e){status('configure failed');fallback();}"
-    "}else if(u[0]===2){"
-    "if(!decoder||decoder.state!=='configured')return;"
-    "var key=(u[1]&1)!==0;"
-    "if(decoder.decodeQueueSize>6){try{ws.close();}catch(e){}return;}"
-    "var ts=0;for(var i=0;i<8;i++){ts=ts*256+u[2+i];}"
-    "try{decoder.decode(new EncodedVideoChunk({type:key?'key':'delta',"
-    "timestamp:ts,data:u.subarray(10)}));}catch(e){}"
+    "stage.addEventListener('pointermove',function(ev){"
+    "  var p=guestPos(ev);if(!p)return;"
+    "  if(p[0]===lastGX&&p[1]===lastGY)return;"
+    "  var now=performance.now();"
+    "  if(now-lastMoveT<16)return;"
+    "  lastMoveT=now;lastGX=p[0];lastGY=p[1];"
+    "  sendObj({t:'m',x:p[0],y:p[1]});"
+    "});"
+    "function ptrUp(ev){"
+    "  var p=guestPos(ev);"
+    "  if(p)sendObj({t:'m',x:p[0],y:p[1]});"
+    "  sendObj({t:'b',btn:ev.button,down:0});"
     "}"
-    "};"
-    "ws.onclose=function(){"
-    "if(gaveUp)return;"
-    "if(retries<5){retries++;status('reconnecting...');"
-    "setTimeout(function(){if(!gaveUp)connect();},500);}"
-    "else fallback();"
-    "};"
-    "ws.onerror=function(){};"
+    "stage.addEventListener('pointerup',ptrUp);"
+    "stage.addEventListener('pointercancel',ptrUp);"
+    "stage.addEventListener('wheel',function(ev){"
+    "  ev.preventDefault();"
+    "  wheelAcc+=(ev.deltaMode===1)?ev.deltaY*16:ev.deltaY;"
+    "  if(Math.abs(wheelAcc)>=40){"
+    "    sendObj({t:'w',dy:Math.round(wheelAcc)});"
+    "    wheelAcc=0;"
+    "  }"
+    "},{passive:false});"
+    "stage.addEventListener('contextmenu',function(ev){ev.preventDefault();});"
+    "window.addEventListener('keydown',function(ev){"
+    "  if(ev.code==='F12')return;"
+    "  ev.preventDefault();"
+    "  if(!ev.repeat)sendObj({t:'k',code:ev.code,down:1});"
+    "});"
+    "window.addEventListener('keyup',function(ev){"
+    "  ev.preventDefault();"
+    "  sendObj({t:'k',code:ev.code,down:0});"
+    "});"
+    "window.addEventListener('blur',function(){sendObj({t:'r'});});"
+    "if('VideoDecoder' in window&&'EncodedVideoChunk' in window){"
+    "  mode='webcodecs';"
+    "}else{"
+    "  reasons.push('no-videodecoder');"
+    "  startWasm(null);"
     "}"
-    "if(!('VideoDecoder' in window)||!('EncodedVideoChunk' in window)){"
-    "fallback();}else{status('connecting...');connect();}"
-    "})();</script></body></html>";
+    "status('connecting...');"
+    "connect();"
+    "})();</script></body></html>"
+    "";
 
 static void handle_client(int fd) {
     int one = 1;
@@ -989,6 +1540,20 @@ static void handle_client(int fd) {
     } else if (strcmp(path, "/ws") == 0) {
         handle_ws_client(fd, buf); /* takes ownership of fd */
         return;
+    } else if (strcmp(path, "/decoder.js") == 0) {
+        size_t dlen = 0;
+        const uint8_t *djs = decoder_js_bytes(&dlen);
+        if (djs && dlen > 0) {
+            char hdr[256];
+            snprintf(hdr, sizeof(hdr),
+                     "HTTP/1.1 200 OK\r\nContent-Type: application/javascript\r\n"
+                     "Content-Length: %zu\r\nCache-Control: no-cache\r\nConnection: close\r\n\r\n",
+                     dlen);
+            if (send_str(fd, hdr) == 0) (void)write_all(fd, djs, dlen);
+        } else {
+            (void)send_str(fd, "HTTP/1.1 503 Service Unavailable\r\nContent-Length: 0\r\n"
+                               "Connection: close\r\n\r\n");
+        }
     } else if (strcmp(path, "/frame.jpg") == 0) {
         NSData *jpg = fb_stream_encode_jpeg();
         if (jpg) {
@@ -1067,7 +1632,8 @@ static void *server_main(void *unused) {
         return NULL;
     }
     fprintf(stderr, "fb_stream: screen server listening on port %u "
-                    "(H.264/WebCodecs at /, MJPEG fallback at /stream)\n",
+                    "(H.264 at / via WebCodecs or WASM decoder, MJPEG fallback "
+                    "at /stream, input over the same WebSocket)\n",
             g_port);
     fflush(stderr);
 
