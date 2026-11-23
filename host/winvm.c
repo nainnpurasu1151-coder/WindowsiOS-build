@@ -17,6 +17,7 @@
 
 #include "audio_mac.h"
 #include "dispatch.h"
+#include "fb_stream.h"
 #include "net_slirp.h"
 #include "share.h"
 
@@ -208,6 +209,12 @@ int hv_winvm_create(const HvWinVmConfig *c, char *err, size_t errlen) {
     if (display_layer_set && board.fb) hv_fb_metal_set_layer(board.fb, (void *)display_layer);
     atomic_store_explicit(&display_fb, board.fb, memory_order_release);
     os_unfair_lock_unlock(&display_lock);
+
+#if TARGET_OS_IPHONE
+    /* LAN screen-streaming test server (MJPEG, view-only): lets a browser on
+       the home Wi-Fi watch the guest screen. See devices/fb_stream.m. */
+    if (board.fb) hv_fb_stream_start(board.fb, 8080);
+#endif
 
     return 0;
 }

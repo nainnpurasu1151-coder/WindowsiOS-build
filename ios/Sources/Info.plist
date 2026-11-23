@@ -26,6 +26,8 @@
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Windows 11 and Antigravity use your iPhone Duo microphone for live voice input and audio capture.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Windows 11 uses the local network to pair with this iPad for JIT, without a computer.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

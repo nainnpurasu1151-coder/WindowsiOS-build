@@ -81,7 +81,7 @@ IOS_C_SRC = $(wildcard core/*.c) \
             host/jit_region.c host/disk.c host/winvm.c host/net_slirp.c host/share.c \
             host/audio_mac.c host/hvsparse.c host/prof_ios.c \
             $(wildcard devices/*.c)
-IOS_OBJ = $(patsubst %.c,$(IB)/%.o,$(IOS_C_SRC)) $(IB)/host/enter.o $(IB)/devices/fb_metal.o
+IOS_OBJ = $(patsubst %.c,$(IB)/%.o,$(IOS_C_SRC)) $(IB)/host/enter.o $(IB)/devices/fb_metal.o $(IB)/devices/fb_stream.o
 
 $(IB)/core/mmu.o: core/mmu.c core/*.h host/*.h devices/*.h
 	@mkdir -p $(dir $@)
@@ -90,6 +90,9 @@ $(IB)/%.o: %.c core/*.h host/*.h devices/*.h
 	@mkdir -p $(dir $@)
 	$(IOS_CC) $(IOS_CFLAGS) -c $< -o $@
 $(IB)/devices/fb_metal.o: devices/fb_metal.m devices/*.h core/*.h host/*.h
+	@mkdir -p $(dir $@)
+	$(IOS_CC) $(IOS_OBJCFLAGS) -c $< -o $@
+$(IB)/devices/fb_stream.o: devices/fb_stream.m devices/*.h core/*.h host/*.h
 	@mkdir -p $(dir $@)
 	$(IOS_CC) $(IOS_OBJCFLAGS) -c $< -o $@
 $(IB)/host/enter.o: host/enter.S
