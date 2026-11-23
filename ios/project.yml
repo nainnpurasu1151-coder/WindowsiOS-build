@@ -148,6 +148,9 @@ targets:
       - sdk: AudioToolbox.framework
       - sdk: CoreGraphics.framework
       - sdk: ImageIO.framework
+      - sdk: VideoToolbox.framework
+      - sdk: CoreMedia.framework
+      - sdk: CoreVideo.framework
       - sdk: UniformTypeIdentifiers.framework
 
   # Built-in StikJIT's debugger (Phase 4): a process cannot debug itself, so
