@@ -21,6 +21,7 @@
 #include "hda.h"
 #include "virtio_net.h"
 #include "virtio_snd.h"
+#include "virtio_gpu.h"
 #include "xhci.h"
 
 /* Standard ARM64 'virt' physical memory map for EDK2 UEFI + Windows 11 ARM64 */
@@ -79,6 +80,7 @@ typedef struct HvWinVirt {
     HvXhci *usb;
     HvHda *hda;
     HvVirtioSnd *snd;
+    HvVirtioGpu *gpu; /* Android machine only (HV_VIRTIO_GPU=1) */
 
     uint32_t ged_events;
     void (*poll)(void);

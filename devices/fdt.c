@@ -194,9 +194,9 @@ uint8_t *hv_fdt_build_virt(int ncpus, uint64_t ram_base, uint64_t ram_size, size
     fdt_begin_node(&st, "pcie@10000000");
     {
         uint32_t imap_mask[4] = {0x1800U, 0, 0, 7};
-        uint32_t imap[16 * 10];
+        uint32_t imap[32 * 10];
         size_t idx = 0;
-        for (uint32_t slot = 0; slot < 4; slot++) {
+        for (uint32_t slot = 0; slot < 8; slot++) {
             for (uint32_t pin = 1; pin <= 4; pin++) {
                 uint32_t spi = 3U + ((slot + pin - 1U) & 3U);
                 imap[idx++] = slot << 11;
@@ -383,6 +383,10 @@ uint8_t *hv_fdt_build_virt(int ncpus, uint64_t ram_base, uint64_t ram_size, size
     /* /chosen */
     fdt_begin_node(&st, "chosen");
     fdt_prop_str(&st, &strs, "stdout-path", "/pl011@9000000");
+    /* Android/Linux EFI-stub boot: kernel cmdline lives in bootconfig
+       (initrd trailer); bootargs carries only the console so early logs are
+       never lost even if bootconfig parsing fails. */
+    fdt_prop_str(&st, &strs, "bootargs", "console=ttyAMA0 earlycon");
     {
         uint32_t rng[8] = {
             0x72b73f60U, 0xac405828U, 0xbe5e2714U, 0x7785d1e6U,
@@ -391,6 +395,21 @@ uint8_t *hv_fdt_build_virt(int ncpus, uint64_t ram_base, uint64_t ram_size, size
         fdt_prop_cells(&st, &strs, "rng-seed", rng, 8);
     }
     fdt_end_node(&st);
+
+    /* /firmware/android: insurance for libfstab's DT path and AVB.
+       Phase 2 conclusion: the file path (fstab.cf.f2fs.cts + bootconfig
+       androidboot.fstab_suffix) is sufficient, so these nodes are optional
+       and may be filled in when the Android disk layout is finalised.
+       Node skeleton only (no fstab children yet):
+       fdt_begin_node(&st, "firmware");
+       fdt_begin_node(&st, "android");
+       fdt_begin_node(&st, "vbmeta");
+       fdt_prop_str(&st, &strs, "compatible", "android,vbmeta");
+       fdt_prop_str(&st, &strs, "parts", "vbmeta,boot,init_boot,vendor_boot");
+       fdt_end_node(&st);
+       fdt_end_node(&st);
+       fdt_end_node(&st);
+       */
 
     fdt_end_node(&st); /* root */
     buf_u32(&st, FDT_END);
