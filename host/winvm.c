@@ -201,8 +201,6 @@ int hv_winvm_create(const HvWinVmConfig *c, char *err, size_t errlen) {
     if (board.net && !c->no_net) {
         if (hv_net_attach(&m, board.net) == 0) net_on = 1;
         else fprintf(stderr, "winvm: user-mode SLIRP networking unavailable\n");
-        /* Android 2nd machine: adb over TCP (guest adbd listens on 5555). */
-        if (net_on && getenv("HV_VIRTIO_GPU")) hv_net_add_hostfwd(5555, 5555);
     }
     if (board.hda && c->enable_sound) hv_audio_attach_hda(board.hda);
     board.poll = board_poll;

@@ -68,7 +68,6 @@ static void on_ramfb_write(void *opaque, const uint8_t *data, uint32_t len) {
     fb->stride = stride;
     fb->fourcc = fourcc;
     fb->active = 1;
-    fb->ext_active = 0; /* ramfb (EDK2/Windows) takes the screen back */
     pthread_mutex_unlock(&fb->mu);
 
     fprintf(stderr, "winvm: ramfb configured %ux%u stride=%u fourcc=0x%08x at PA 0x%llx\n",
@@ -101,38 +100,9 @@ HvFbDisplay *hv_fb_display_create(HvMachine *m, HvFwCfg *fw_cfg) {
     return fb;
 }
 
-void hv_fb_display_set_external(HvFbDisplay *fb, const uint8_t *pixels, uint32_t w, uint32_t h,
-                                uint32_t stride, uint32_t fourcc) {
-    if (!fb || !pixels || !w || !h) return;
-    pthread_mutex_lock(&fb->mu);
-    fb->ext_host = pixels;
-    fb->ext_width = w;
-    fb->ext_height = h;
-    fb->ext_stride = stride ? stride : w * 4;
-    fb->ext_fourcc = fourcc;
-    fb->ext_active = 1;
-    pthread_mutex_unlock(&fb->mu);
-}
-
-void hv_fb_display_clear_external(HvFbDisplay *fb) {
-    if (!fb) return;
-    pthread_mutex_lock(&fb->mu);
-    fb->ext_active = 0;
-    fb->ext_host = NULL;
-    pthread_mutex_unlock(&fb->mu);
-}
-
 int hv_fb_display_get_frame(HvFbDisplay *fb, const uint8_t **pixels, uint32_t *w, uint32_t *h, uint32_t *stride) {
     if (!fb) return -1;
     pthread_mutex_lock(&fb->mu);
-    if (fb->ext_active && fb->ext_host) {
-        *pixels = fb->ext_host;
-        *w = fb->ext_width;
-        *h = fb->ext_height;
-        *stride = fb->ext_stride;
-        pthread_mutex_unlock(&fb->mu);
-        return 0;
-    }
     if (!fb->active || !fb->fb_host || !fb->width || !fb->height) {
         pthread_mutex_unlock(&fb->mu);
         return -1;
