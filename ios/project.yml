@@ -33,14 +33,14 @@ targets:
     info:
       path: Sources/Info.plist
       properties:
-        CFBundleDisplayName: Windows 11
+        CFBundleDisplayName: Android
         LSRequiresIPhoneOS: true
         UILaunchScreen: {}
         UIFileSharingEnabled: true
         LSSupportsOpeningDocumentsInPlace: true
         UIStatusBarHidden: true
         UIViewControllerBasedStatusBarAppearance: false
-        NSMicrophoneUsageDescription: "Windows 11 and Antigravity use your iPhone Duo microphone for live voice input and audio capture."
+        NSMicrophoneUsageDescription: "Android and Antigravity use your iPhone Duo microphone for live voice input and audio capture."
         # Built-in StikJIT (Phase 4): on-device pairing advertises over
         # Bonjour and finishes under a continued-processing background task.
         BGTaskSchedulerPermittedIdentifiers:
@@ -48,15 +48,15 @@ targets:
         NSBonjourServices:
           - _remotepairing-pairable-host._tcp
           - _remotepairing._tcp
-        NSLocalNetworkUsageDescription: "Windows 11 uses the local network to pair with this iPad for JIT, without a computer."
+        NSLocalNetworkUsageDescription: "Android uses the local network to pair with this iPad for JIT, without a computer."
         LSApplicationQueriesSchemes:
           - stikjit
           - stikdebug
           - localdevvpn
         CFBundleURLTypes:
-          - CFBundleURLName: me.ammaar.windowsios
+          - CFBundleURLName: me.ammaar.androidios
             CFBundleURLSchemes:
-              - windowsios
+              - androidios
         UIBackgroundModes:
           - audio
         UISupportedInterfaceOrientations:
@@ -75,7 +75,7 @@ targets:
         get-task-allow: true
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: me.ammaar.windowsios
+        PRODUCT_BUNDLE_IDENTIFIER: me.ammaar.androidios
         PRODUCT_NAME: WindowsiOS
         CODE_SIGN_STYLE: Manual
         CODE_SIGN_IDENTITY: "Apple Development: Ammaar Reshi (6U8W89GC8D)"
@@ -167,7 +167,7 @@ targets:
           - "Info.plist"
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: me.ammaar.windowsios.JITHelper
+        PRODUCT_BUNDLE_IDENTIFIER: me.ammaar.androidios.JITHelper
         INFOPLIST_FILE: JITHelper/Info.plist
         GENERATE_INFOPLIST_FILE: NO
         APPLICATION_EXTENSION_API_ONLY: YES
