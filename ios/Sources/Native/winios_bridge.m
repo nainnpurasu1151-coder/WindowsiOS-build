@@ -258,27 +258,27 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
 
 - (NSString *)machineDirectory {
     NSString *docs = [self documentsPath];
-    NSString *win11Dir = [docs stringByAppendingPathComponent:@"Machines/Win11"];
+    NSString *androidDir = [docs stringByAppendingPathComponent:@"Machines/Android"];
     NSFileManager *fm = [NSFileManager defaultManager];
-    if ([fm fileExistsAtPath:[win11Dir stringByAppendingPathComponent:@"code.fd"]]) {
-        return win11Dir;
+    if ([fm fileExistsAtPath:[androidDir stringByAppendingPathComponent:@"code.fd"]]) {
+        return androidDir;
     }
     if ([fm fileExistsAtPath:[docs stringByAppendingPathComponent:@"code.fd"]]) {
         return docs;
     }
-    [fm createDirectoryAtPath:win11Dir withIntermediateDirectories:YES attributes:nil error:nil];
-    return win11Dir;
+    [fm createDirectoryAtPath:androidDir withIntermediateDirectories:YES attributes:nil error:nil];
+    return androidDir;
 }
 
 - (BOOL)hasRawDiskImageAt:(NSString *)dir {
-    NSString *raw = [dir stringByAppendingPathComponent:@"windows11.img"];
+    NSString *raw = [dir stringByAppendingPathComponent:@"android.img"];
     NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:raw error:nil];
     return attrs && [attrs fileSize] >= (64ull << 20);
 }
 
 - (BOOL)needsSparseUnpack {
     NSString *dir = [self machineDirectory];
-    NSString *sparse = [dir stringByAppendingPathComponent:@"windows11.hvsparse"];
+    NSString *sparse = [dir stringByAppendingPathComponent:@"android.hvsparse"];
     return [[NSFileManager defaultManager] fileExistsAtPath:sparse];
 }
 
@@ -292,7 +292,7 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
 
 - (void)updateUnpackProgress:(double)frac {
     _unpackProgress = frac;
-    _vmStatus = [NSString stringWithFormat:@"Unpacking Windows 11 NVMe image (%.0f%%)...", frac * 100.0];
+    _vmStatus = [NSString stringWithFormat:@"Unpacking Android NVMe image (%.0f%%)...", frac * 100.0];
     dispatch_async(_diagQueue, ^{
         [self writeDiagnosticsSnapshot];
     });
@@ -321,7 +321,7 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
     }
 
     if (![self hasProvisionedMachine]) {
-        _vmStatus = @"Place code.fd, vars.fd, and windows11.hvsparse in Documents/Machines/Win11";
+        _vmStatus = @"Place code.fd, vars.fd, and android.hvsparse in Documents/Machines/Android";
         dispatch_async(_diagQueue, ^{ [self writeDiagnosticsSnapshot]; });
         [self notifyChanged];
         return;
@@ -331,13 +331,13 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
     if ([self needsSparseUnpack]) {
         _unpacking = YES;
         _unpackProgress = 0.0;
-        _vmStatus = @"Unpacking Windows 11 NVMe image (0%)...";
+        _vmStatus = @"Unpacking Android NVMe image (0%)...";
         dispatch_async(_diagQueue, ^{ [self writeDiagnosticsSnapshot]; });
         [self notifyChanged];
 
-        NSString *src = [dir stringByAppendingPathComponent:@"windows11.hvsparse"];
-        NSString *dst = [dir stringByAppendingPathComponent:@"windows11.img"];
-        NSString *tmpDst = [dir stringByAppendingPathComponent:@"windows11.img.unpacking"];
+        NSString *src = [dir stringByAppendingPathComponent:@"android.hvsparse"];
+        NSString *dst = [dir stringByAppendingPathComponent:@"android.img"];
+        NSString *tmpDst = [dir stringByAppendingPathComponent:@"android.img.unpacking"];
 
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
             unlink(tmpDst.fileSystemRepresentation);
@@ -354,7 +354,7 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
                     [self startConfiguredVMInDirectory:dir];
                 } else {
                     unlink(tmpDst.fileSystemRepresentation);
-                    self->_vmStatus = @"Error: failed to unpack windows11.hvsparse";
+                    self->_vmStatus = @"Error: failed to unpack android.hvsparse";
                     dispatch_async(self->_diagQueue, ^{ [self writeDiagnosticsSnapshot]; });
                     [self notifyChanged];
                 }
@@ -379,6 +379,7 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
 
     NSString *ramBacking = [NSTemporaryDirectory() stringByAppendingPathComponent:@"win11_guest_ram.bin"];
     setenv("HV_RAM_FILE", ramBacking.fileSystemRepresentation, 1);
+    setenv("HV_VIRTIO_GPU", "1", 1);
 
     uint64_t preallocBytes = 0;
     void *preallocRam = winios_jit_guest_ram(&preallocBytes);
@@ -402,7 +403,7 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
 
     NSString *codePath = [dir stringByAppendingPathComponent:@"code.fd"];
     NSString *varsPath = [dir stringByAppendingPathComponent:@"vars.fd"];
-    NSString *diskPath = [dir stringByAppendingPathComponent:@"windows11.img"];
+    NSString *diskPath = [dir stringByAppendingPathComponent:@"android.img"];
     /* Optional driver disk: when drivers.img sits in the machine folder, the
        engine attaches it as a second, read-only NVMe (serial WIN11INST) so the
        guest can install drivers (e.g. NetKVM) before networking exists. */
@@ -412,7 +413,7 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
     }
 
     _configuredRamMB = ramMB;
-    _configuredCPUs = 4;
+    _configuredCPUs = 1;
 
     HvWinVmConfig cfg = {
         .code_fd = codePath.fileSystemRepresentation,
@@ -452,7 +453,7 @@ static void unpack_progress_cb(uint64_t done, uint64_t total, void *opaque) {
     _lastMachTicks = mach_absolute_time();
     _lastWfiTicks = 0;
     _lastWfiIdlePct = 0.0;
-    _vmStatus = [NSString stringWithFormat:@"Running Windows 11 ARM64 (%d vCPUs, %llu MB RAM)", _configuredCPUs, _configuredRamMB];
+    _vmStatus = [NSString stringWithFormat:@"Running Android ARM64 (%d vCPUs, %llu MB RAM)", _configuredCPUs, _configuredRamMB];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 
     hv_winvm_start(1, vm_exit_trampoline);
